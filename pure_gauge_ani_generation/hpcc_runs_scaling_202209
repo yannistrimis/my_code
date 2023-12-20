@@ -1,0 +1,34 @@
+NOTES FROM HPCC FIRST ATTEMPT
+
+sep 25 2022
+
+SYMANZIK IMPROVED ACTION
+
+24^3*24     4 lattices  1-1-1 (traj ora hb)
+    -n 16            	487 sec
+    -n 32            	265 sec
+    -n 64            	76 sec
+    -n 128           	44 sec
+    -n 256           	never...
+
+24^3*48     4 lattices  1-1-1 (traj ora hb)
+    -n 32            	492 sec
+    -n 64            	267 sec
+    -n 128           	130 sec
+
+24^3*48     1 lattice  10-10-1 (traj ora hb)
+    -n 128           	1400 sec (~23 min)
+
+24^3*48     5 lattices  4-3-2 (traj ora hb)
+    -n 128              1287 sec (~22 min)
+
+20^3*20     2 lattices  20-4-1 (traj ora hb)
+    -n 125              200 sec (~3.5 min)
+
+24^3*24     2 lattices  20-4-1 (traj ora hb)
+    -n 144              3800 sec (~1 h)
+
+PLAQUETTE ACTION
+
+24^3*48     2 lattices  4-3-2 (traj ora hb)
+    -n 128		17 sec

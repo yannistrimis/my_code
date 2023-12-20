@@ -1,0 +1,9 @@
+lat_name = ../../test_config/l44b1250a.1
+nx = 4
+nt = 4
+r_min = 1
+r_step = 1
+r_max = 4
+t_min = 1
+t_step = 1
+t_max = 4

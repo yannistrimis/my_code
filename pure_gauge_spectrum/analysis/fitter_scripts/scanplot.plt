@@ -1,0 +1,2 @@
+unset key
+plot "/mnt/home/trimisio/plot_data/spec_data/l1632b6647x100a/spec0mom_m1_0.12_m2_0.12_PION_5.n.scanfit" u 1:5:6 every 3::0 w err, "/mnt/home/trimisio/plot_data/spec_data/l1632b6647x100a/spec0mom_m1_0.12_m2_0.12_PION_5.n.scanfit" u ($1+0.1):5:6 every 3::1 w err, "/mnt/home/trimisio/plot_data/spec_data/l1632b6647x100a/spec0mom_m1_0.12_m2_0.12_PION_5.n.scanfit" u ($1+0.2):5:6 every 3::2 w err
