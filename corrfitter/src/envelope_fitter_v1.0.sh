@@ -1,40 +1,40 @@
 #!/bin/bash
 
-vol=1632
-beta=6850
-xg=100
+vol=1664
+beta=70805
+xg=18876
 src="eowfw"
 prefix="nlpi"
 taste="PION_05"
-to_print_state="Eo"
+to_print_state="En"
 to_print_nr=0
 
 #fitdir="/home/trimis/spec_data" # CMSE
 #dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE
 fitdir="/home/yannis/Physics/LQCD/spec_data" # LAPTOP
 dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
-tdata=17
-tp=32
-n_states=0
+tdata=33
+tp=64
+n_states=1
 m_states=1
 so="1.0"
 binsize=1
 
-#yesno="prior"
-yesno="free"
+yesno="prior"
+#yesno="free"
 
 if [ $1 == "scan" ]
 then
 
 tmin_min=3
-tmin_max=12
+tmin_max=26
 
-tmax_min=17
-tmax_max=17
+tmax_min=30
+tmax_max=30
 
-xq_arr=( "100" )
+xq_arr=( "1950" )
 mom_arr=( "p000" )
-mass_arr=( "0.01576" )
+mass_arr=( "0.01532" )
 
 for xq in ${xq_arr[@]};do
 echo "xq = ${xq}"
