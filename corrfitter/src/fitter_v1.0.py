@@ -7,7 +7,17 @@ import gvar as gv
 import numpy as np
 import corrfitter as cf
 from scipy.special import gammainc
+import sys
+sys.path.insert(0, '../..')
 from python_funcs import *
+
+def make_prior(N,M):
+    prior = collections.OrderedDict()
+    prior['log(an)'] = gv.log(gv.gvar(N * ['0.1(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N * ['0.1(10000.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(M * ['0.1(10000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M * ['0.1(10000)']))
+    return prior
 
 def main():
 
@@ -22,7 +32,8 @@ def main():
     str_so = input()
     str_bin = input()
     fittype = input()
-    print_state = input()
+    to_print_state = input()
+    to_print_nr = input()
 
 
     file_name = my_dir+'/'+file_name
@@ -43,18 +54,11 @@ def main():
     N = int(str_N)
     M = int(str_M)
 
-    listprior=[[],[],[],[]]
-
-    listprior[0] = N*['1(100)']
-    listprior[1] = N*['1(100)']
-    listprior[2] = M*['1(100)']
-    listprior[3] = ['0.29(100)','0.5(2)']
-
     if fittype == 'onefit' :
         print('\ndata from: ',file_name,'\n')
         print('tmin = ',tmin,'   tmax = ',tmax,'\n')
 
-    prior = make_prior(listprior)
+    prior = make_prior(N,M)
     fit = fitter.lsqfit( data=data, prior=prior, p0=p0 )
     if fittype == 'onefit' :
         print(30 * '=', 'nterm =', N,M)
@@ -105,10 +109,7 @@ def main():
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
     elif fittype == 'scanfit' :
         if test_param(fit,N,M) == 'ok' :
-            if print_state == 'n0' :
-                print(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,fit.p['dEn'][0].mean,fit.p['dEn'][0].sdev)
-            elif print_state == 'o0' :
-                print(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,fit.p['dEo'][0].mean,fit.p['dEo'][0].sdev)
+            print(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].sdev)
         elif test_param(fit,N,M) == 'not_ok' :
             print(N,M,tmin,tmax,0,0,0,0,0)
 
@@ -118,19 +119,13 @@ def make_data(filename,str_bin):
 def make_models(my_tdata,my_tfit,my_tp,str_so):
     return [cf.Corr2( datatag='PROP', tp=my_tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(1.0,float(str_so)) )]
 
-def make_prior(listprior):
-    prior = collections.OrderedDict()
-    prior['log(an)'] = gv.log(gv.gvar(listprior[0]))
-    prior['log(dEn)'] = gv.log(gv.gvar(listprior[1]))
-    prior['log(ao)'] = gv.log(gv.gvar(listprior[2]))
-    prior['log(dEo)'] = gv.log(gv.gvar(listprior[3]))
-    return prior
 
 def print_results(fit,N,M):
     p = fit.p
 
-    En = np.cumsum(p['dEn'])
-    an = p['an']
+    if N>0:
+        En = np.cumsum(p['dEn'])
+        an = p['an']
 
     if M>0:
         Eo = np.cumsum(p['dEo'])

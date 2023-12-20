@@ -6,7 +6,8 @@ xg=100
 src="eowfw"
 prefix="nlpi"
 taste="PION_05"
-print_state="o0"
+to_print_state="Eo"
+to_print_nr=0
 
 #fitdir="/home/trimis/spec_data" # CMSE
 #dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE
@@ -15,15 +16,18 @@ dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPT
 tdata=17
 tp=32
 n_states=0
-m_states=2
+m_states=1
 so="1.0"
 binsize=1
+
+#yesno="prior"
+yesno="free"
 
 if [ $1 == "scan" ]
 then
 
-tmin_min=0
-tmin_max=13
+tmin_min=3
+tmin_max=12
 
 tmax_min=17
 tmax_max=17
@@ -39,15 +43,15 @@ echo "	mom: ${mom}"
 for mass in ${mass_arr[@]};do
 echo "		mass: ${mass}"
 
-if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit ]
+if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${to_print_state}${to_print_nr}.${yesno}.scanfit ]
 then
-rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
+rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${to_print_state}${to_print_nr}.${yesno}.scanfit
 fi
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin++));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax++));do
 
-python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
+python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${to_print_state}${to_print_nr}.${yesno}.scanfit
 ${dir}
 ${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
 ${tmin}
@@ -59,7 +63,8 @@ ${m_states}
 ${so}
 ${binsize}
 scanfit
-${print_state}
+${to_print_state}
+${to_print_nr}
 EOF
 
 done # tmin
@@ -74,7 +79,7 @@ then
 
 xq="100"
 mom="p000"
-tmin=11
+tmin=9
 tmax=17
 
 mass=0.01576
@@ -91,6 +96,7 @@ ${m_states}
 ${so}
 ${binsize}
 onefit
+NA
 NA
 EOF
 
