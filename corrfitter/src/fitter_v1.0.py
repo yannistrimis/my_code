@@ -16,7 +16,7 @@ def make_prior(N,M):
     prior['log(an)'] = gv.log(gv.gvar(N * ['0.1(10000.0)']))
     prior['log(dEn)'] = gv.log(gv.gvar(N * ['0.1(10000.0)']))
     prior['log(ao)'] = gv.log(gv.gvar(M * ['0.1(10000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(['0.129(1)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M * ['0.1(10000.0)']))
     return prior
 
 def main():
@@ -109,9 +109,9 @@ def main():
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
     elif fittype == 'scanfit' :
         if test_param(fit,N,M) == 'ok' :
-            print(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].sdev)
+            print('%d %d %d %d %.8f %d %.8f %.8f %.8f'%(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].sdev))
         elif test_param(fit,N,M) == 'not_ok' :
-            print(N,M,tmin,tmax,0,0,0,0,0)
+            print('%d %d %d %d %.8f %d %.8f %.8f %.8f (BAD_CONSTRAINTS)'%(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].sdev))
 
 def make_data(filename,str_bin):
     return gv.dataset.avg_data(cf.read_dataset(filename,binsize=int(str_bin)))
@@ -138,6 +138,7 @@ def print_results(fit,N,M):
 
 def test_param(fit,N,M):
 
+    flag = 'ok'
     p = fit.p
 
     if N>0:
@@ -149,14 +150,18 @@ def test_param(fit,N,M):
         ao = p['ao']
 
     for i_state in range(N) :
-        if ( np.abs(an[i_state].sdev) > 10*np.abs(an[i_state].sdev) ) :
-            return 'not_ok'
+        if ( np.abs(En[i_state].sdev) > 100*np.abs(En[i_state].mean) ) :
+            flag = 'not_ok'
+        if ( np.abs(an[i_state].sdev) > 100*np.abs(an[i_state].mean) ) :
+            flag = 'not_ok'
 
     for j_state in range(M) :
-        if ( np.abs(ao[j_state].sdev) > 10*np.abs(ao[j_state].sdev) ) :
-            return 'not_ok'
+        if ( np.abs(Eo[j_state].sdev) > 100*np.abs(Eo[j_state].mean) ) :
+            flag = 'not_ok'
+        if ( np.abs(ao[j_state].sdev) > 100*np.abs(ao[j_state].mean) ) :
+            flag = 'not_ok'
 
-    return 'ok'
+    return flag
 
 
 if __name__ == '__main__':

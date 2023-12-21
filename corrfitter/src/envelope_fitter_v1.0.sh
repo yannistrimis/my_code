@@ -1,40 +1,40 @@
 #!/bin/bash
 
-vol=1664
-beta=70805
-xg=18876
+vol=16128
+beta=7225
+xg=36836
 src="eowfw"
 prefix="nlpi"
-taste="PION_05"
-to_print_state="En"
+taste="PION_0"
+to_print_state="Eo"
 to_print_nr=0
 
 #fitdir="/home/trimis/spec_data" # CMSE
 #dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE
 fitdir="/home/yannis/Physics/LQCD/spec_data" # LAPTOP
 dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
-tdata=33
-tp=64
-n_states=1
+tdata=65
+tp=128
+n_states=0
 m_states=1
-so="1.0"
+so="-1.0"
 binsize=1
 
-yesno="prior"
-#yesno="free"
+#yesno="prior"
+yesno="free"
 
 if [ $1 == "scan" ]
 then
 
-tmin_min=3
-tmin_max=26
+tmin_min=0
+tmin_max=20
 
-tmax_min=30
-tmax_max=30
+tmax_min=25
+tmax_max=25
 
-xq_arr=( "1950" )
+xq_arr=( "3750" )
 mom_arr=( "p000" )
-mass_arr=( "0.01532" )
+mass_arr=( "0.01448" )
 
 for xq in ${xq_arr[@]};do
 echo "xq = ${xq}"
@@ -77,12 +77,12 @@ done # xq
 elif [ $1 == "one"  ]
 then
 
-xq="100"
+xq="3750"
 mom="p000"
-tmin=9
-tmax=17
+tmin=18
+tmax=25
 
-mass=0.01576
+mass=0.01448
 
 python3 fitter_v1.0.py <<EOF
 ${dir}
