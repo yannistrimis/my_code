@@ -7,7 +7,7 @@
 
 # # # ENSEMBLE l1632b6850x100a ( x = 1.00, a = 0.16 fm, w0 = 1.08297 )
 
-# TUNING CHECK AT ms0 = 
+# TUNING CHECK AT ms0 = 0.0788
 
 # mom^2		E		dE
 0.00		0.55720		0.00062
@@ -39,7 +39,7 @@ PION_0		0.3674		0.0033		[9,17]{0.502 0.808} 0+1 o0
 
 # WE GET: xq0 = 1.95285
 
-# am = 0.02
+# m = 0.02
 
 #		x = 1.88			1.94				2.00				2.06
 # mom^2         E               dE              E               dE              E               dE              E               dE
