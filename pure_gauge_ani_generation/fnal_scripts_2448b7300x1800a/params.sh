@@ -43,7 +43,7 @@ out_name="out2448b7300x1800a"
 
 directory="/lustre1/ahisq/yannis_puregauge/lattices/l2448b7300x1800a"
 out_dir="/project/ahisq/yannis_puregauge/outputs/l2448b7300x1800a"
-path_build="/home/trimisio/all/comm_code/pure_gauge_ani_generation/build"
+path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/rungenl2448b7300x1800a"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl2448b7300x1800a"
 

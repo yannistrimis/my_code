@@ -108,7 +108,7 @@ cat <<EOF >> ../${my_dir}/params.sh
 
 directory="/mnt/scratch/trimisio/lattices/${lat_name}"
 out_dir="/mnt/home/trimisio/outputs/${lat_name}"
-path_build="/mnt/home/trimisio/comm_code/pure_gauge_ani_generation/build"
+path_build="/mnt/home/trimisio/my_code/pure_gauge_ani_generation/build"
 run_dir="/mnt/scratch/trimisio/runs/rungen${lat_name}"
 submit_dir="/mnt/home/trimisio/submits/subgen${lat_name}"
 
@@ -128,7 +128,7 @@ cat <<EOF >> ../${my_dir}/params.sh
 
 directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_puregauge/outputs/${lat_name}"
-path_build="/home/trimisio/all/comm_code/pure_gauge_ani_generation/build"
+path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/rungen${lat_name}"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subgen${lat_name}"
 
