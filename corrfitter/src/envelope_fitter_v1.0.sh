@@ -5,7 +5,7 @@ beta=70805
 xg=18876
 src="eowfw"
 prefix="nlpi"
-taste="PION_ij"
+taste="PION_i0"
 to_print_state="Eo"
 to_print_nr=0
 
@@ -26,11 +26,11 @@ yesno="free"
 if [ $1 == "scan" ]
 then
 
-tmin_min=9
-tmin_max=12
+tmin_min=0
+tmin_max=16
 
-tmax_min=17
-tmax_max=17
+tmax_min=22
+tmax_max=22
 
 xq_arr=( "1950" )
 mom_arr=( "p000" )
@@ -79,8 +79,8 @@ then
 
 xq="1950"
 mom="p000"
-tmin=9
-tmax=17
+tmin=10
+tmax=22
 
 mass=0.01532
 
