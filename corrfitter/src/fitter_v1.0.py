@@ -108,10 +108,10 @@ def main():
         print('[','GOODNESS OF FIT FROM MANUALLY CALCD CHI_2 (ONLY FOR INFINITELY WIDE PRIORS):',']','\n')
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
     elif fittype == 'scanfit' :
-        if test_param(fit,N,M) == 'ok' :
-            print('%d %d %d %d %.8f %d %.8f %.8f %.8f'%(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].sdev))
-        elif test_param(fit,N,M) == 'not_ok' :
-            print('%d %d %d %d %.8f %d %.8f %.8f %.8f (BAD_CONSTRAINTS)'%(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['d'+to_print_state])[int(to_print_nr)].sdev))
+        if test_param(fit,N,M,to_print_state,to_print_nr) == 'ok' :
+            print('%d %d %d %d %.8f %d %.8f %.8f %.8f'%(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['dE'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['dE'+to_print_state])[int(to_print_nr)].sdev))
+        elif test_param(fit,N,M,to_print_state,to_print_nr) == 'not_ok' :
+            print('%d %d %d %d %.8f %d %.8f %.8f %.8f (BAD_CONSTRAINTS)'%(N,M,tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points,np.cumsum(fit.p['dE'+to_print_state])[int(to_print_nr)].mean,np.cumsum(fit.p['dE'+to_print_state])[int(to_print_nr)].sdev))
 
 def make_data(filename,str_bin):
     return gv.dataset.avg_data(cf.read_dataset(filename,binsize=int(str_bin)))
@@ -136,10 +136,13 @@ def print_results(fit,N,M):
     for j_state in range(M) :
         print('ao[%d] = %s\t Eo[%d] = %s\n'%(j_state,ao[j_state],j_state,Eo[j_state]))
 
-def test_param(fit,N,M):
+def test_param(fit,N,M,to_print_state,to_print_nr):
 
     flag = 'ok'
     p = fit.p
+
+    ref_E_mean = p['dE'+to_print_state][int(to_print_nr)].mean
+    ref_a_mean = p['a'+to_print_state][int(to_print_nr)].mean
 
     if N>0:
         En = np.cumsum(p['dEn'])
@@ -150,16 +153,25 @@ def test_param(fit,N,M):
         ao = p['ao']
 
     for i_state in range(N) :
+        if ( np.abs(En[i_state].mean) < 0.05*np.abs(ref_E_mean) ) :
+            flag = 'not_ok'
+        if ( np.abs(an[i_state].mean) < 0.005*np.abs(ref_a_mean) ) :
+            flag = 'not_ok'
         if ( np.abs(En[i_state].sdev) > 100*np.abs(En[i_state].mean) ) :
             flag = 'not_ok'
         if ( np.abs(an[i_state].sdev) > 100*np.abs(an[i_state].mean) ) :
             flag = 'not_ok'
 
     for j_state in range(M) :
+        if ( np.abs(Eo[j_state].mean) < 0.05*np.abs(ref_E_mean) ) :
+            flag = 'not_ok'
+        if ( np.abs(ao[j_state].mean) < 0.005*np.abs(ref_a_mean) ) :
+            flag = 'not_ok'
         if ( np.abs(Eo[j_state].sdev) > 100*np.abs(Eo[j_state].mean) ) :
             flag = 'not_ok'
         if ( np.abs(ao[j_state].sdev) > 100*np.abs(ao[j_state].mean) ) :
             flag = 'not_ok'
+
 
     return flag
 

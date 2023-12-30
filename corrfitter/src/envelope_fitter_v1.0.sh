@@ -1,20 +1,20 @@
 #!/bin/bash
 
-vol=1664
-beta=70805
-xg=18876
+vol=16128
+beta=7225
+xg=36836
 src="eowfw"
 prefix="nlpi"
-taste="PION_i0"
-to_print_state="Eo"
+taste="PION_ij"
+to_print_state="o"
 to_print_nr=0
 
 #fitdir="/home/trimis/spec_data" # CMSE
 #dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE
 fitdir="/home/yannis/Physics/LQCD/spec_data" # LAPTOP
 dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
-tdata=33
-tp=64
+tdata=65
+tp=128
 n_states=1
 m_states=1
 so="1.0"
@@ -26,15 +26,15 @@ yesno="free"
 if [ $1 == "scan" ]
 then
 
-tmin_min=0
-tmin_max=16
+tmin_min=15
+tmin_max=39
 
-tmax_min=22
-tmax_max=22
+tmax_min=43
+tmax_max=43
 
-xq_arr=( "1950" )
+xq_arr=( "3750" )
 mom_arr=( "p000" )
-mass_arr=( "0.01532" )
+mass_arr=( "0.01448" )
 
 for xq in ${xq_arr[@]};do
 echo "xq = ${xq}"
@@ -43,15 +43,15 @@ echo "	mom: ${mom}"
 for mass in ${mass_arr[@]};do
 echo "		mass: ${mass}"
 
-if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${to_print_state}${to_print_nr}.${yesno}.scanfit ]
+if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit ]
 then
-rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${to_print_state}${to_print_nr}.${yesno}.scanfit
+rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit
 fi
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin++));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax++));do
 
-python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${to_print_state}${to_print_nr}.${yesno}.scanfit
+python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit
 ${dir}
 ${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
 ${tmin}
@@ -77,12 +77,12 @@ done # xq
 elif [ $1 == "one"  ]
 then
 
-xq="1950"
+xq="3750"
 mom="p000"
-tmin=10
-tmax=22
+tmin=20
+tmax=43
 
-mass=0.01532
+mass=0.01448
 
 python3 fitter_v1.0.py <<EOF
 ${dir}
