@@ -5,7 +5,7 @@ beta=70805
 xg=18876
 src="eowfw"
 prefix="nlpi"
-taste="PION_05"
+taste="PION_s"
 to_print_state="o"
 to_print_nr=0
 
@@ -17,7 +17,7 @@ tdata=33
 tp=64
 n_states=0
 m_states=2
-so="1.0"
+so="-1.0"
 binsize=1
 
 #yesno="prior"
@@ -27,11 +27,11 @@ if [ $1 == "scan" ]
 then
 
 tmin_min=10
-tmin_max=20
+tmin_max=17
 tmin_step=1
 
-tmax_min=25
-tmax_max=25
+tmax_min=28
+tmax_max=39
 tmax_step=1
 
 xq_arr=( "1950" )
@@ -81,8 +81,8 @@ then
 
 xq="1950"
 mom="p000"
-tmin=15
-tmax=25
+tmin=18
+tmax=32
 
 mass=0.01532
 
