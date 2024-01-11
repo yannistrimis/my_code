@@ -5,7 +5,7 @@ beta=70805
 xg=18876
 src="eowfw"
 prefix="nlpi"
-taste="PION_s"
+taste="PION_i0"
 to_print_state="o"
 to_print_nr=0
 
@@ -15,9 +15,9 @@ fitdir="/home/yannis/Physics/LQCD/spec_data" # LAPTOP
 dir="/home/yannis/Physics/LQCD/corrs_from_fnal/l${vol}b${beta}x${xg}a" # LAPTOP
 tdata=33
 tp=64
-n_states=0
-m_states=2
-so="-1.0"
+n_states=1
+m_states=1
+so="1.0"
 binsize=1
 
 #yesno="prior"
@@ -26,12 +26,12 @@ yesno="free"
 if [ $1 == "scan" ]
 then
 
-tmin_min=10
-tmin_max=17
+tmin_min=0
+tmin_max=16
 tmin_step=1
 
-tmax_min=28
-tmax_max=39
+tmax_min=22
+tmax_max=22
 tmax_step=1
 
 xq_arr=( "1950" )
