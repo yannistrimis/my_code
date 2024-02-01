@@ -11,8 +11,8 @@ ny=24
 nz=24
 nt=48
 
-lat_name="l2448b7300x1760a"
-out_name="sflow2448b7300x1760xf200a_dt0.015625"
+lat_name="l2448b7300x1800a"
+out_name="sflow2448b7300x1800xf200a_dt0.015625"
 
 xi_f=2.00
 
@@ -22,18 +22,18 @@ dt="0.015625"
 stoptime="3.5"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l2448b7300x1760a"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l2448b7300x1760a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l2448b7300x1800a"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l2448b7300x1800a"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/runsflowl2448b7300x1760a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subsflowl2448b7300x1760a"
+run_dir="/project/ahisq/yannis_puregauge/runs/runsflowl2448b7300x1800a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subsflowl2448b7300x1800a"
 
 executable="wilson_flow_bbb_a_dbl_gcc12openmpi4_20231218"
 
 sbatch_time="08:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="sfl1760"
+sbatch_jobname="sfl1800"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
