@@ -3,7 +3,7 @@
 
 cluster=fnal
 
-n_of_lat=5
+n_of_lat=10
 n_of_sub=1
 
 nx=24
@@ -30,7 +30,7 @@ submit_dir="/project/ahisq/yannis_puregauge/submits/subzflowl2448b7300x1760a"
 
 executable="wilson_flow_bbb_a_dbl_gcc12openmpi4_withzeuthen_20240130"
 
-sbatch_time="02:00:00"
+sbatch_time="08:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
 sbatch_jobname="zfl1760"

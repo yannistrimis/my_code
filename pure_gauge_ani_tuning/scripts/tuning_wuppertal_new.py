@@ -9,11 +9,14 @@ from python_funcs import *
 ### FOR PURE GAUGES ENSEMBLES. IT ALSO PRODUCES JACKKNIFE-BINNED DATA
 ### WHICH ARE STORED IN FILE FOR PLOTTING.
 
-cur_dir = '/mnt/home/trimisio/outputs'
-write_dir = '/mnt/home/trimisio/flow_data'
+# cur_dir = '/mnt/home/trimisio/outputs'
+# write_dir = '/mnt/home/trimisio/flow_data'
 
-vol = '2040'
-beta = '7200'
+cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+write_dir = '/home/trimisio/all/flow_data'
+
+vol = '2448'
+beta = '7300'
 xf = '200'
 xf_float = 2.0
 stream = 'a'
@@ -57,7 +60,7 @@ for x0 in x0_vec :
             if my_line[0] == 'GFLOW:' :
                 if i_file == first_file and i_x0 == 0 : ### WE FORM tau_arr ONLY ONCE
                     tau_arr[i_time] = float( my_line[1] )
-                if obs_type == 'clover' :	
+                if obs_type == 'clover' :
                     Et_arr[i_time,i,i_x0] = float( my_line[2] )
                     Es_arr[i_time,i,i_x0] = float( my_line[3] )
                 elif obs_type == 'wilson' :
@@ -74,7 +77,7 @@ for x0 in x0_vec :
         dEs_arr[:,i,i_x0] = deriv( Es_arr[:,i,i_x0] , float(dt) )
 
         for i_time in range(0,n_steps) :
-            dEt_arr[i_time,i,i_x0] = xf_float**2 * dEt_arr[i_time,i,i_x0] * tau_arr[i_time]	
+            dEt_arr[i_time,i,i_x0] = xf_float**2 * dEt_arr[i_time,i,i_x0] * tau_arr[i_time]
             dEs_arr[i_time,i,i_x0] = dEs_arr[i_time,i,i_x0] * tau_arr[i_time]
 
 ### AT THIS STAGE dES AND dEt MEASUREMENT POINTS HAVE BEEN FORMED
@@ -86,7 +89,7 @@ dEt_binned = np.zeros( ( n_steps , n_bins , len(x0_vec) ) )
 dEt_weight = np.zeros( ( n_steps , len(x0_vec) ) )
 
 for i_x0 in range(len(x0_vec)):
-    for i_time in range(n_steps):   
+    for i_time in range(n_steps):
         dEs_binned[i_time,:,i_x0] = jackknife(dEs_arr[i_time,:,i_x0],n_bins,'bins')
         dEs_error = jackknife(dEs_arr[i_time,:,i_x0],n_bins,'error')
         dEt_binned[i_time,:,i_x0] = jackknife(dEt_arr[i_time,:,i_x0],n_bins,'bins')
@@ -114,7 +117,7 @@ f_write.close()
 
 del Et_arr
 del Es_arr
-del dEt_arr     
+del dEt_arr
 del dEs_arr
 
 ### AT THIS STAGE QUANTITES HAVE BEEN RECORDED FOR A SELECTED x0
@@ -138,7 +141,7 @@ for i_x0 in range(len(x0_vec)):
 
         coeffs = np.polyfit(x_points,y_points,2,w=w_points)
         coeffs[2] = coeffs[2] - 0.15
-        solutions = np.roots(coeffs)        
+        solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
                 w0s_arr[i_bins,i_x0] = np.real(solutions[ii])
@@ -239,7 +242,7 @@ predicted_w0s = jackknife_for_binned(predicted_w0s_binned)
 print( flow_type,obs_type,'x_0 = ',predicted_x0[0],' +- ',predicted_x0[1],'  w_0s = ',predicted_w0s[0],' +- ',predicted_w0s[1] )
 
 
-### START DEBUGGING 
+### START DEBUGGING
 # for i_x0 in range(len(x0_vec)) :
 #     rat = jackknife_for_binned( ratios[:,i_x0] )
 #     print(rat)
