@@ -4,14 +4,14 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
-n_of_ens=9
+cluster="icer"
+n_of_ens=1
 
-nx=16
-nt=32
+nx=20
+nt=40
 
-beta_name="7100"
-xi_0_name_arr=("178" "180" "182" "184" "186" "188" "190" "192" "194")
+beta_name="7200"
+xi_0_name_arr=("1760") # "1780" "1800" "1820" "1840" "1860" "1880" "1900" "1920" "1940")
 stream="a"
 
 xi_f=2.00
@@ -22,13 +22,13 @@ exp_order="16"
 dt="0.015625"
 stoptime="3.5"
 
-sbatch_time="05:00:00"
+sbatch_time="02:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("zfl178" "zfl180" "zfl182" "zfl184" "zfl186" "zfl188" "zfl190" "zfl192" "zfl194")
+sbatch_jobname_arr=("zfl176") # "zfl178" "zfl180" "zfl182" "zfl184" "zfl186" "zfl188" "zfl190" "zfl192" "zfl194")
 
-n_of_sub=2
-n_of_lat=252
+n_of_sub=1
+n_of_lat=5
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -101,12 +101,12 @@ path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
 run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}"
 submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}"
 
-executable="wilson_flow_bbb_a_dbl_intel_20231006"
+executable="region_flow_bbb_a_dbl_gompi2023a_20240212"
 
 sbatch_time="${sbatch_time}"
 sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
-sbatch_module="intel/2020b"
+sbatch_module="gompi/2023a"
 
 EOF
 
