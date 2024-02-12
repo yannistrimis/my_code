@@ -3,8 +3,8 @@
 
 cluster=fnal
 
-n_of_lat=51
-n_of_sub=8
+n_of_lat=252
+n_of_sub=2
 
 nx=16
 ny=16
@@ -28,9 +28,9 @@ path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runzflowl1632b7100x184a"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subzflowl1632b7100x184a"
 
-executable="wilson_flow_bbb_a_dbl_gcc12openmpi4_withzeuthen_20240130"
+executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
-sbatch_time="02:00:00"
+sbatch_time="05:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
 sbatch_jobname="zfl184"
