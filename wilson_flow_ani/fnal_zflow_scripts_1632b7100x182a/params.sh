@@ -3,7 +3,7 @@
 
 cluster=fnal
 
-n_of_lat=252
+n_of_lat=200
 n_of_sub=2
 
 nx=16
