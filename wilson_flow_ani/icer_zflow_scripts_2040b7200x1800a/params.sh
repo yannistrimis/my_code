@@ -11,8 +11,8 @@ ny=20
 nz=20
 nt=40
 
-lat_name="l2040b7200x1760a"
-out_name="zflow2040b7200x1760xf200a_dt0.015625"
+lat_name="l2040b7200x1800a"
+out_name="zflow2040b7200x1800xf200a_dt0.015625"
 
 xi_f=2.00
 
@@ -22,16 +22,16 @@ dt="0.015625"
 stoptime="3.5"
 
 
-directory="/mnt/scratch/trimisio/lattices/l2040b7200x1760a"
-out_dir="/mnt/home/trimisio/outputs/l2040b7200x1760a"
+directory="/mnt/scratch/trimisio/lattices/l2040b7200x1800a"
+out_dir="/mnt/home/trimisio/outputs/l2040b7200x1800a"
 path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
-run_dir="/mnt/scratch/trimisio/runs/runzflowl2040b7200x1760a"
-submit_dir="/mnt/home/trimisio/submits/subzflowl2040b7200x1760a"
+run_dir="/mnt/scratch/trimisio/runs/runzflowl2040b7200x1800a"
+submit_dir="/mnt/home/trimisio/submits/subzflowl2040b7200x1800a"
 
 executable="region_flow_bbb_a_dbl_gompi2020b_20240213"
 
 sbatch_time="08:00:00"
 sbatch_ntasks="128"
-sbatch_jobname="zfl176"
+sbatch_jobname="zfl180"
 sbatch_module="gompi/2020b"
 
