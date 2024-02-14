@@ -4,13 +4,13 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
+cluster="fnal"
 n_of_ens=9
 
-nx=20
-nt=40
+nx=24
+nt=48
 
-beta_name="7200"
+beta_name="7300"
 xi_0_name_arr=("1760" "1780" "1800" "1820" "1840" "1860" "1880" "1900" "1920")
 stream="a"
 
@@ -22,7 +22,7 @@ exp_order="16"
 dt="0.015625"
 stoptime="3.5"
 
-sbatch_time="08:00:00"
+sbatch_time="12:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
 sbatch_jobname_arr=("zfl176" "zfl178" "zfl180" "zfl182" "zfl184" "zfl186" "zfl188" "zfl190" "zfl192")
