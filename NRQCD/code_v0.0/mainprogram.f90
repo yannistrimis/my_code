@@ -40,7 +40,7 @@
     iaction = 4
 
 ! Configuration file name.
-    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime"
+    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
 
 ! Stout smearing.
     nstoutsrc = 0
