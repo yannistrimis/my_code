@@ -7,11 +7,11 @@
 cluster="fnal"
 n_of_ens=9
 
-nx=24
-nt=48
+nx=16
+nt=32
 
-beta_name="7300"
-xi_0_name_arr=("1760" "1780" "1800" "1820" "1840" "1860" "1880" "1900" "1920")
+beta_name="6900"
+xi_0_name_arr=("178" "180" "182" "184" "186" "188" "190" "192" "194")
 stream="a"
 
 xi_f=2.00
@@ -22,13 +22,13 @@ exp_order="16"
 dt="0.015625"
 stoptime="3.5"
 
-sbatch_time="12:00:00"
+sbatch_time="8:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("zfl176" "zfl178" "zfl180" "zfl182" "zfl184" "zfl186" "zfl188" "zfl190" "zfl192")
+sbatch_jobname_arr=("zfl178" "zfl180" "zfl182" "zfl184" "zfl186" "nzfl188" "zfl190" "zfl192" "zfl194")
 
-n_of_sub=5
-n_of_lat=100
+n_of_sub=1
+n_of_lat=500
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
