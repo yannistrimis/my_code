@@ -3,8 +3,8 @@
 
 cluster=fnal
 
-n_of_lat=500
-n_of_sub=1
+n_of_lat=200
+n_of_sub=2
 
 nx=16
 ny=16
