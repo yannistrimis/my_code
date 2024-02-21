@@ -5,13 +5,13 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=9
 
 nx=16
 nt=32
 
 beta_name="7000"
-xi_0_name_arr=("1780") # "1800" "1820" "1840" "1860" "1880" "1900" "1920" "1940")
+xi_0_name_arr=("1780" "1800" "1820" "1840" "1860" "1880" "1900" "1920" "1940")
 stream="a"
 
 xi_f=2.00
@@ -22,13 +22,13 @@ exp_order="16"
 dt="0.015625"
 stoptime="3.5"
 
-sbatch_time="2:00:00"
+sbatch_time="8:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("nzfl178") # "nzfl180" "nzfl182" "nzfl184" "nzfl186" "nzfl188" "nzfl190" "nzfl192" "nzfl194")
+sbatch_jobname_arr=("nzfl178" "nzfl180" "nzfl182" "nzfl184" "nzfl186" "nzfl188" "nzfl190" "nzfl192" "nzfl194")
 
 n_of_sub=1
-n_of_lat=5
+n_of_lat=400
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
