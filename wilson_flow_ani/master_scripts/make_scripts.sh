@@ -5,19 +5,19 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=9
+n_of_ens=1
 
 nx=16
-nt=32
+nt=64
 
-beta_name="7000"
-xi_0_name_arr=("1780" "1800" "1820" "1840" "1860" "1880" "1900" "1920" "1940")
+beta_name="6900"
+xi_0_name_arr=("3340") # "3400" "3460" "3520" "3580" "3640" "3700" "3760" "3820")
 stream="a"
 
-xi_f=2.00
-xi_f_name="200"
+xi_f=4.00
+xi_f_name="400"
 
-flow_action="zeuthen"
+flow_action="wilson"
 exp_order="16"
 dt="0.015625"
 stoptime="3.5"
@@ -25,10 +25,10 @@ stoptime="3.5"
 sbatch_time="8:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("nzfl178" "nzfl180" "nzfl182" "nzfl184" "nzfl186" "nzfl188" "nzfl190" "nzfl192" "nzfl194")
+sbatch_jobname_arr=("wf334") # "wf340" "wf346" "wf352" "wf358" "wf364" "wf370" "wf376" "wf382")
 
 n_of_sub=1
-n_of_lat=400
+n_of_lat=5
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -115,7 +115,7 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/puregauge/lattices/${lat_name}"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_puregauge/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/run${prefix}${lat_name}"

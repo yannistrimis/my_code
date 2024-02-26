@@ -22,7 +22,7 @@ xf_float = 2.0
 stream = 'a'
 flow_type = input()
 obs_type = input()
-x0_vec = ['1760', '1780','1800','1820','1840','1860','1880','1900','1920']
+x0_vec = ['1760','1780','1800','1820','1840','1860','1880','1900','1920']
 x0_float_vec = [1.76,1.78,1.80,1.82,1.84,1.86,1.88,1.90,1.92]
 dt = '0.015625'
 n_files = 400
@@ -64,11 +64,14 @@ for x0 in x0_vec :
                     Et_arr[i_time,i,i_x0] = float( my_line[2] )
                     Es_arr[i_time,i,i_x0] = float( my_line[3] )
                 elif obs_type == 'wilson' :
-                    Et_arr[i_time,i,i_x0] = 6*( 3-float(my_line[4]) )
-                    Es_arr[i_time,i,i_x0] = 6*( 3-float(my_line[5]) )
+                    Et_arr[i_time,i,i_x0] = 6*( 3-float(my_line[6]) )
+                    Es_arr[i_time,i,i_x0] = 6*( 3-float(my_line[7]) )
                 elif obs_type == 'symanzik' :
-                    Et_arr[i_time,i,i_x0] = 10*( 3-float(my_line[4]) )-( 3-float(my_line[6]) )
-                    Es_arr[i_time,i,i_x0] = 10*( 3-float(my_line[5]) )-( 3-float(my_line[7]) )
+                    Et_arr[i_time,i,i_x0] = 10*( 3-float(my_line[6]) )-( 3-float(my_line[8]) )
+                    Es_arr[i_time,i,i_x0] = 10*( 3-float(my_line[7]) )-( 3-float(my_line[9]) )
+                elif obs_type == 'i_clover' :
+                    Et_arr[i_time,i,i_x0] = float( my_line[4] )
+                    Es_arr[i_time,i,i_x0] = float( my_line[5] )
                 Et_arr[i_time,i,i_x0] = tau_arr[i_time]*tau_arr[i_time]*Et_arr[i_time,i,i_x0]
                 Es_arr[i_time,i,i_x0] = tau_arr[i_time]*tau_arr[i_time]*Es_arr[i_time,i,i_x0]
                 i_time = i_time + 1
