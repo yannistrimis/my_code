@@ -5,13 +5,13 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=9
 
 nx=16
 nt=64
 
 beta_name="6900"
-xi_0_name_arr=("3340") # "3400" "3460" "3520" "3580" "3640" "3700" "3760" "3820")
+xi_0_name_arr=("3340" "3400" "3460" "3520" "3580" "3640" "3700" "3760" "3820")
 stream="a"
 
 xi_f=4.00
@@ -25,10 +25,10 @@ stoptime="3.5"
 sbatch_time="8:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("wf334") # "wf340" "wf346" "wf352" "wf358" "wf364" "wf370" "wf376" "wf382")
+sbatch_jobname_arr=("wf334" "wf340" "wf346" "wf352" "wf358" "wf364" "wf370" "wf376" "wf382")
 
 n_of_sub=1
-n_of_lat=5
+n_of_lat=400
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
