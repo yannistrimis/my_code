@@ -9,14 +9,14 @@ from python_funcs import *
 ### FOR PURE GAUGES ENSEMBLES. IT ALSO PRODUCES JACKKNIFE-BINNED DATA
 ### WHICH ARE STORED IN FILE FOR PLOTTING.
 
-# cur_dir = '/mnt/home/trimisio/outputs'
-# write_dir = '/mnt/home/trimisio/flow_data'
+cur_dir = '/mnt/home/trimisio/outputs'
+write_dir = '/mnt/home/trimisio/flow_data'
 
-cur_dir = '/project/ahisq/yannis_puregauge/outputs'
-write_dir = '/home/trimisio/all/flow_data'
+# cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+# write_dir = '/home/trimisio/all/flow_data'
 
-vol = '2448'
-beta = '7300'
+vol = '2040'
+beta = '7200'
 xf = '200'
 xf_float = 2.0
 stream = 'a'
