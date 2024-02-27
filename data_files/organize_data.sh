@@ -7,7 +7,7 @@ awk '$1 == "s" && $2 == "clover" { print $5,$7 }' tuning_schemes.data  > ssc.dat
 awk '$1 == "s" && $2 == "wilson" { print $5,$7 }' tuning_schemes.data  > ssw.data
 awk '$1 == "s" && $2 == "symanzik" { print $5,$7 }' tuning_schemes.data  > sss.data
 awk '$1 == "z" && $2 == "clover" { print $5,$7 }' tuning_schemes.data  > szc.data
-awk '$1 == "z" && $2 == "i_clover" { print $5,$7 }' tuning_schemes.data  > szic.data
+awk '$1 == "z" && $2 == "i_clover" { print $5,$7 }' tuning_schemes.data  > szi.data
 awk '$1 == "z" && $2 == "wilson" { print $5,$7 }' tuning_schemes.data  > szw.data
 awk '$1 == "z" && $2 == "symanzik" { print $5,$7 }' tuning_schemes.data  > szs.data
 
@@ -19,4 +19,9 @@ cat <<EOF > betafile.data
 7.3
 EOF
 
-paste betafile.data szic.data > beta_szic.data
+for file in ???.data
+do
+
+paste betafile.data ${file} > beta_${file}
+
+done
