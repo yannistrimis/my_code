@@ -25,6 +25,11 @@ i=1
 while [ $i -le $n_of_lat ]
 do
 
+if [ ! -f "${directory}/${lat_name}.${i_lat}" ]
+then
+break
+fi
+
 echo $i_lat
 file_name="${out_dir}/${out_name}.${i_lat}"
 
