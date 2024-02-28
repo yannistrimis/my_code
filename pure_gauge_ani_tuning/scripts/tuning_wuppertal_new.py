@@ -9,21 +9,21 @@ from python_funcs import *
 ### FOR PURE GAUGES ENSEMBLES. IT ALSO PRODUCES JACKKNIFE-BINNED DATA
 ### WHICH ARE STORED IN FILE FOR PLOTTING.
 
-cur_dir = '/mnt/home/trimisio/outputs'
-write_dir = '/mnt/home/trimisio/flow_data'
+# cur_dir = '/mnt/home/trimisio/outputs'
+# write_dir = '/mnt/home/trimisio/flow_data'
 
-# cur_dir = '/project/ahisq/yannis_puregauge/outputs'
-# write_dir = '/home/trimisio/all/flow_data'
+cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+write_dir = '/home/trimisio/all/flow_data'
 
-vol = '2040'
-beta = '7200'
-xf = '200'
-xf_float = 2.0
+vol = '1664'
+beta = '6900'
+xf = '400'
+xf_float = 4.0
 stream = 'a'
 flow_type = input()
 obs_type = input()
-x0_vec = ['1760','1780','1800','1820','1840','1860','1880','1900','1920']
-x0_float_vec = [1.76,1.78,1.80,1.82,1.84,1.86,1.88,1.90,1.92]
+x0_vec = ['3340', '3400', '3460', '3520', '3580', '3640', '3700', '3760', '3820']
+x0_float_vec = [3.34, 3.40, 3.46, 3.52, 3.58, 3.64, 3.70, 3.76, 3.82]
 dt = '0.015625'
 n_files = 400
 first_file =101

@@ -5,26 +5,26 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=2
 
 nx=16
 nt=64
 
-beta=7.10
-beta_name="7100"
+beta=6.9
+beta_name="6900"
 
-xi_0_arr=(3.34) # 3.40 3.46 3.52 3.58 3.64 3.70 3.76 3.82)
-xi_0_name_arr=("3340") # "3400" "3460" "3520" "3580" "3640" "3700" "3760" "3820")
+xi_0_arr=(3.22 3.28)
+xi_0_name_arr=("3220" "3280")
 
 stream="a"
 
-sbatch_time="8:00:00"
+sbatch_time="10:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("g334") # "g340" "g346" "g352" "g358" "g364" "g370" "g376" "g382")
+sbatch_jobname_arr=("g322" "g328")
 
-n_of_sub=1
-n_of_lat=5
+n_of_sub=5
+n_of_lat=100
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
