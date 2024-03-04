@@ -5,7 +5,7 @@ cluster=fnal
 
 init_seed=1158
 n_of_lat=100
-n_of_sub=5
+n_of_sub=2
 
 nx=16
 ny=16
