@@ -5,25 +5,25 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=9
+n_of_ens=8
 
 nx=16
 nt=64
 
-beta=7.0
-beta_name="7000"
+beta=6.9
+beta_name="6900"
 
-xi_0_arr=(3.22 3.28 3.34 3.40 3.46 3.52 3.58 3.64 3.70)
-xi_0_name_arr=("3220" "3280" "3340" "3400" "3460" "3520" "3580" "3640" "3700")
+xi_0_arr=(3.0 3.1 3.2 3.3 3.5 3.6 3.8 3.9)
+xi_0_name_arr=("3000" "3100" "3200" "3300" "3500" "3600" "3800" "3900")
 
 stream="a"
 
 sbatch_time="8:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("g3220" "g3280" "g3340" "g3400" "g3460" "g3520" "g3580" "g3640" "g3700")
+sbatch_jobname_arr=("g3000" "g3100" "g3200" "g3300" "g3500" "g3600" "g3800" "g3900")
 
-n_of_sub=10
+n_of_sub=6
 n_of_lat=50
 
 
