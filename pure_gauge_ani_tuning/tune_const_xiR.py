@@ -8,7 +8,7 @@ xi_g_target = 2.0
 
 nof_betas = 5
 
-f1 = open("beta_swc.data","r")
+f1 = open("../data_files/beta_swc.data","r")
 
 f1_content = f1.readlines()
 
