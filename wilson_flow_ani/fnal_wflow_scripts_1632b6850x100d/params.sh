@@ -3,6 +3,8 @@
 
 cluster=fnal
 
+first_lattice=1
+
 n_of_lat=4
 n_of_sub=1
 

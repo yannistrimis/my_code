@@ -12,7 +12,7 @@ i_lat=$(head -n 1 "${submit_dir}/guard" | tail -n 1)
 
 else
 
-i_lat=101
+i_lat=${first_lattice}
 cat << EOF > "${submit_dir}/guard"
 ${i_lat}
 EOF

@@ -29,6 +29,7 @@ sbatch_jobname_arr=("sc4" "sc8" "sc16" "sc32" "sc64" "sc128")
 
 n_of_sub=1
 n_of_lat=4
+first_lattice=1
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -71,6 +72,8 @@ cat <<EOF > ../${my_dir}/params.sh
 #!/bin/bash
 
 cluster=${cluster}
+
+first_lattice=${first_lattice}
 
 n_of_lat=${n_of_lat}
 n_of_sub=${n_of_sub}
