@@ -22,12 +22,12 @@ xf_float = 4.0
 stream = 'a'
 flow_type = input()
 obs_type = input()
-x0_vec = ['3220', '3280', '3340', '3400', '3460', '3520', '3580', '3640', '3700']
-x0_float_vec = [3.22, 3.28, 3.34, 3.40, 3.46, 3.52, 3.58, 3.64, 3.70]
+x0_vec = ['3000', '3100', '3200', '3300', '3400', '3500', '3600', '3700', '3800', '3900']
+x0_float_vec = [3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
 dt = '0.015625'
-n_files = 400
+n_files = 200
 first_file =101
-n_bins = 40
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
