@@ -32,7 +32,7 @@ submit_dir="/project/ahisq/yannis_puregauge/submits/subwflowl1632b6850x100e"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
-sbatch_time="16:00:00"
+sbatch_time="8:00:00"
 sbatch_nodes="2"
 sbatch_ntasks="32"
 sbatch_jobname="sc32"
