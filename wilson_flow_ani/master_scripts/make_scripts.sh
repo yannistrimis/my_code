@@ -4,32 +4,32 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="icer"
 n_of_ens=1
 
-nx=20
-nt=160
+nx=16
+nt=64
 
-beta_name="7298"
-xi_0_name="6867"
+beta_name="704115"
+xi_0_name="181411"
 stream_arr=("a")
 
-xi_f=8.00
-xi_f_name="800"
+xi_f=2.00
+xi_f_name="200"
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime="3.5"
+stoptime="3.0"
 
 sbatch_time="6:00:00"
 sbatch_nodes_arr=(4) # N/A WHEN icer IS SELECTED
-sbatch_ntasks_arr=(100)
-sbatch_jobname_arr=("w800")
+sbatch_ntasks_arr=(128)
+sbatch_jobname_arr=("wf200")
 
-n_of_sub=4
-n_of_lat=50
-first_lattice=51
+n_of_sub=5
+n_of_lat=100
+first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
