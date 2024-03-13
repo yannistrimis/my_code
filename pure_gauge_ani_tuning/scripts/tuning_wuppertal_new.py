@@ -9,25 +9,30 @@ from python_funcs import *
 ### FOR PURE GAUGES ENSEMBLES. IT ALSO PRODUCES JACKKNIFE-BINNED DATA
 ### WHICH ARE STORED IN FILE FOR PLOTTING.
 
+w0phys = 0.17355
+
 # cur_dir = '/mnt/home/trimisio/outputs'
 # write_dir = '/mnt/home/trimisio/flow_data'
 
 cur_dir = '/project/ahisq/yannis_puregauge/outputs'
 write_dir = '/home/trimisio/all/flow_data'
 
-vol = '1664'
-beta = '6900'
-xf = '400'
-xf_float = 4.0
+vol = '20160'
+beta = '7298'
+xf = '800'
+xf_float = 8.0
 stream = 'a'
 flow_type = input()
 obs_type = input()
-x0_vec = ['3000', '3100', '3200', '3300', '3400', '3500', '3600', '3700', '3800', '3900']
-x0_float_vec = [3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
-dt = '0.015625'
-n_files = 200
-first_file =101
-n_bins = 20
+check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
+# BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
+# IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
+x0_vec = ['6867']
+x0_float_vec = [6.867]
+dt = '0.01'
+n_files = 50
+first_file =51
+n_bins = 5
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
@@ -194,6 +199,20 @@ for i_x0 in range(len(x0_vec)):
 
 
 ### AT THIS STAGE WE HAVE RATIO POINTS AND WEIGHTS PER x0 PER BIN
+
+if check_single_ens == 'yes' :
+    w0_single_ens = np.zeros(2)
+    ratio_single_ens = np.zeros(2)
+
+    w0_single_ens = jackknife_for_binned(w0s_arr[:,0])
+    ratio_single_ens = jackknife_for_binned(ratios[:,0])
+    print('FOR THIS ENSEMBLE:')
+    print('w_0s = %.6f +- %.6f    w_0s/w_0t = %.6f +- %.6f'%(w0_single_ens[0],w0_single_ens[1],ratio_single_ens[0],ratio_single_ens[1]))
+    a_s_mean = w0phys / w0_single_ens[0]
+    a_s_sdev = ( w0phys / w0_single_ens[0]**2 ) * w0_single_ens[1]
+    print('SPATIAL LATTICE SPACING:')
+    print('a_s = %.6f +- %.6f'%(a_s_mean,a_s_sdev))
+    sys.exit()
 
 predicted_x0_binned = np.zeros(n_bins)
 predicted_w0s_binned = np.zeros(n_bins)
