@@ -5,39 +5,37 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=6
+n_of_ens=10
 
-nx_arr=(8 8 8 8 8 8)
-nt_arr=(8 16 32 64 128 256)
+nx=16
+nt=64
 
-beta_name="6850"
-xi_0_name="100"
-stream_arr=("h" "i" "j" "k" "l" "m")
+beta_name="7000"
+xi_0_name_arr=("3000" "3100" "3200" "3300" "3400" "3500" "3600" "3700" "3800" "3900")
+stream="a"
 
-xi_f=1.00
-xi_f_name="100"
+xi_f=4.00
+xi_f_name="400"
 
-flow_action="wilson"
+flow_action="zeuthen"
 exp_order="16"
 dt="0.015625"
-stoptime="3.5"
+stoptime="3.0"
 
 sbatch_time="6:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("sc8" "sc16" "sc32" "sc64" "sc128" "sc256")
+sbatch_jobname_arr=("z3000" "z3100" "z3200" "z3300" "z3400" "z3500" "z3600" "z3700" "z3800" "z3900")
 
-n_of_sub=1
-n_of_lat=4
-first_lattice=1
+n_of_sub=4
+n_of_lat=100
+first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
-nx=${nx_arr[${i_ens}]}
-nt=${nt_arr[${i_ens}]}
-stream=${stream_arr[${i_ens}]}
+xi_0_name=${xi_0_name_arr[${i_ens}]}
 sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
