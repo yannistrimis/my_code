@@ -5,12 +5,12 @@ cluster=icer
 
 init_seed=1158
 n_of_lat=50
-n_of_sub=12
+n_of_sub=4
 
-nx=16
-ny=16
-nz=16
-nt=64
+nx=20
+ny=20
+nz=20
+nt=160
 
 # MILC convention in the improved action is: beta=10/g^2
 # Here we use plaquette action and so that is not relevant.
@@ -21,11 +21,11 @@ nt=64
 # beta_s=beta/xi_0
 # beta_t=beta*xi_0
 
-beta_s=3.88132 #in the MILC colde this appears first
-beta_t=12.77342 #and this appears second
+beta_s=1.04412 #in the MILC colde this appears first
+beta_t=48.28000 #and this appears second
 
-beta_name="704115"
-xi_0_name="181411"
+beta_name="7100"
+xi_0_name="6800"
 
 warms=0
 trajecs=20
@@ -36,21 +36,21 @@ qhb_steps=1
 
 stream="a"
 
-ensemble="1664b704115x181411a"
-lat_name="l1664b704115x181411a"
-out_name="out1664b704115x181411a"
+ensemble="20160b7100x6800a"
+lat_name="l20160b7100x6800a"
+out_name="out20160b7100x6800a"
 
 
-directory="/mnt/scratch/trimisio/lattices/l1664b704115x181411a"
-out_dir="/mnt/home/trimisio/outputs/l1664b704115x181411a"
+directory="/mnt/scratch/trimisio/lattices/l20160b7100x6800a"
+out_dir="/mnt/home/trimisio/outputs/l20160b7100x6800a"
 path_build="/mnt/home/trimisio/my_code/pure_gauge_ani_generation/build"
-run_dir="/mnt/scratch/trimisio/runs/rungenl1664b704115x181411a"
-submit_dir="/mnt/home/trimisio/submits/subgenl1664b704115x181411a"
+run_dir="/mnt/scratch/trimisio/runs/rungenl20160b7100x6800a"
+submit_dir="/mnt/home/trimisio/submits/subgenl20160b7100x6800a"
 
 executable="su3_ora_symzk0_a_dbl_intel_ICER_20230828"
 
 sbatch_time="16:00:00"
-sbatch_ntasks="128"
-sbatch_jobname="gen2"
+sbatch_ntasks="100"
+sbatch_jobname="g6800"
 sbatch_module="intel/2020b"
 
