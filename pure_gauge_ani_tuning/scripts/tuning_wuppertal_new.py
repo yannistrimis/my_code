@@ -36,7 +36,7 @@ n_bins = 40
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
-f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err\n' )
+f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
 i_x0 = -1
 for x0 in x0_vec :
@@ -125,7 +125,7 @@ for i_time in range(n_steps):
     dEs_rec = jackknife(dEs_arr[i_time,:,i_x0_rec],n_bins,'average')
     dEs_err_rec = jackknife(dEs_arr[i_time,:,i_x0_rec],n_bins,'error')
     ratio_rec = jackknife(ratio_arr[i_time,:,i_x0_rec],n_bins,'average')
-    ratio_err_rec = jackknife(ratio_arr[i_time,:,i_x0_rec],n_bins,'average')
+    ratio_err_rec = jackknife(ratio_arr[i_time,:,i_x0_rec],n_bins,'error')
     f_write.write('%f %f %f %f %f %f %f %f %f %f %f\n'%(tau_arr[i_time],Et_rec,Et_err_rec,Es_rec,Es_err_rec,dEt_rec,dEt_err_rec,dEs_rec,dEs_err_rec,ratio_rec,ratio_err_rec))
 f_write.close()
 
