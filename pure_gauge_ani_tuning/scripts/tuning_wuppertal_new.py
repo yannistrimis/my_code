@@ -11,14 +11,14 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/mnt/home/trimisio/outputs'
-write_dir = '/mnt/home/trimisio/flow_data'
+# cur_dir = '/mnt/home/trimisio/outputs'
+# write_dir = '/mnt/home/trimisio/flow_data'
 
-# cur_dir = '/project/ahisq/yannis_puregauge/outputs'
-# write_dir = '/home/trimisio/all/flow_data'
+cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+write_dir = '/home/trimisio/all/flow_data'
 
-vol = '1664'
-beta = '704115'
+vol = '2448'
+beta = '7300'
 xf = '200'
 xf_float = 2.00
 stream = 'a'
@@ -27,8 +27,8 @@ obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ['181411']
-x0_float_vec = [1.81411]
+x0_vec = ['1760', '1780', '1800', '1820', '1840', '1860', '1880', '1900', '1920']
+x0_float_vec = [1.760, 1.780, 1.800, 1.820, 1.840, 1.860, 1.880, 1.900, 1.920]
 dt = '0.015625'
 n_files = 400
 first_file =101
@@ -56,6 +56,7 @@ for x0 in x0_vec :
             Et_arr = np.zeros(( n_steps , n_files , len(x0_vec) ))
             dEs_arr = np.zeros(( n_steps , n_files , len(x0_vec) ))
             dEt_arr = np.zeros(( n_steps , n_files , len(x0_vec) ))
+            ratio_arr = np.zeros(( n_steps , n_files , len(x0_vec) ))
 
         i_time = 0
         for i_line in range(len(content)):
@@ -87,6 +88,9 @@ for x0 in x0_vec :
         for i_time in range(0,n_steps) :
             dEt_arr[i_time,i,i_x0] = xf_float**2 * dEt_arr[i_time,i,i_x0] * tau_arr[i_time]
             dEs_arr[i_time,i,i_x0] = dEs_arr[i_time,i,i_x0] * tau_arr[i_time]
+            if i_time>0 :
+                ratio_arr[i_time,i,i_x0] = (dEs_arr[i_time,i,i_x0])/(dEt_arr[i_time,i,i_x0]) # WE OMIT THE FIRST ELEMENT; DIVISION BY ZERO
+
 
 ### AT THIS STAGE dES AND dEt MEASUREMENT POINTS HAVE BEEN FORMED
 
@@ -120,7 +124,9 @@ for i_time in range(n_steps):
     dEt_err_rec = jackknife(dEt_arr[i_time,:,i_x0_rec],n_bins,'error')
     dEs_rec = jackknife(dEs_arr[i_time,:,i_x0_rec],n_bins,'average')
     dEs_err_rec = jackknife(dEs_arr[i_time,:,i_x0_rec],n_bins,'error')
-    f_write.write('%f %f %f %f %f %f %f %f %f\n'%(tau_arr[i_time],Et_rec,Et_err_rec,Es_rec,Es_err_rec,dEt_rec,dEt_err_rec,dEs_rec,dEs_err_rec))
+    ratio_rec = jackknife(ratio_arr[i_time,:,i_x0_rec],n_bins,'average')
+    ratio_err_rec = jackknife(ratio_arr[i_time,:,i_x0_rec],n_bins,'average')
+    f_write.write('%f %f %f %f %f %f %f %f %f %f %f\n'%(tau_arr[i_time],Et_rec,Et_err_rec,Es_rec,Es_err_rec,dEt_rec,dEt_err_rec,dEs_rec,dEs_err_rec,ratio_rec,ratio_err_rec))
 f_write.close()
 
 del Et_arr
