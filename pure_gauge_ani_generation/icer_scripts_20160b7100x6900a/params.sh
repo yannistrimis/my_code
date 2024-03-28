@@ -5,7 +5,7 @@ cluster=icer
 
 init_seed=1158
 n_of_lat=50
-n_of_sub=4
+n_of_sub=2
 
 nx=20
 ny=20
@@ -49,7 +49,7 @@ submit_dir="/mnt/home/trimisio/submits/subgenl20160b7100x6900a"
 
 executable="su3_ora_symzk0_a_dbl_intel_ICER_20230828"
 
-sbatch_time="16:00:00"
+sbatch_time="24:00:00"
 sbatch_ntasks="100"
 sbatch_jobname="g6900"
 sbatch_module="intel/2020b"
