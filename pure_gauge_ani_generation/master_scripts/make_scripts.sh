@@ -4,26 +4,26 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
-n_of_ens=4
+cluster="fnal"
+n_of_ens=10
 
-nx=20
-nt=160
+nx=16
+nt=64
 
 beta=7.1
 beta_name="7100"
 
-xi_0_arr=(6.8 6.9 7.0 7.1)
-xi_0_name_arr=("6800" "6900" "7000" "7100")
+xi_0_arr=(3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9)
+xi_0_name_arr=("3000" "3100" "3200" "3300" "3400" "3500" "3600" "3700" "3800" "3900")
 
 stream="a"
 
-sbatch_time="16:00:00"
+sbatch_time="10:00:00"
 sbatch_nodes=4
-sbatch_ntasks=100
-sbatch_jobname_arr=("g6800" "g6900" "g7000" "g7100")
+sbatch_ntasks=128
+sbatch_jobname_arr=("g3000" "g3100" "g3200" "g3300" "g3400" "g3500" "g3600" "g3700" "g3800" "g3900")
 
-n_of_sub=4
+n_of_sub=7
 n_of_lat=50
 
 
