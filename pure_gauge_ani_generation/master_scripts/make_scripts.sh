@@ -10,8 +10,8 @@ n_of_ens=10
 nx=16
 nt=64
 
-beta=7.1
-beta_name="7100"
+beta=7.2
+beta_name="7200"
 
 xi_0_arr=(3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9)
 xi_0_name_arr=("3000" "3100" "3200" "3300" "3400" "3500" "3600" "3700" "3800" "3900")
@@ -23,8 +23,8 @@ sbatch_nodes=4
 sbatch_ntasks=128
 sbatch_jobname_arr=("g3000" "g3100" "g3200" "g3300" "g3400" "g3500" "g3600" "g3700" "g3800" "g3900")
 
-n_of_sub=7
-n_of_lat=50
+n_of_sub=4
+n_of_lat=100
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
