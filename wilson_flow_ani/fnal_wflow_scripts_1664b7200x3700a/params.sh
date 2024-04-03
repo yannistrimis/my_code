@@ -5,8 +5,8 @@ cluster=fnal
 
 first_lattice=101
 
-n_of_lat=100
-n_of_sub=4
+n_of_lat=50
+n_of_sub=1
 
 nx=16
 ny=16

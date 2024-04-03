@@ -21,11 +21,11 @@ nt=64
 # beta_s=beta/xi_0
 # beta_t=beta*xi_0
 
-beta_s=2.00000 #in the MILC colde this appears first
-beta_t=25.92000 #and this appears second
+beta_s=1.97297 #in the MILC colde this appears first
+beta_t=27.01000 #and this appears second
 
-beta_name="7200"
-xi_0_name="3600"
+beta_name="7300"
+xi_0_name="3700"
 
 warms=0
 trajecs=20
@@ -36,23 +36,23 @@ qhb_steps=1
 
 stream="a"
 
-ensemble="1664b7200x3600a"
-lat_name="l1664b7200x3600a"
-out_name="out1664b7200x3600a"
+ensemble="1664b7300x3700a"
+lat_name="l1664b7300x3700a"
+out_name="out1664b7300x3700a"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l1664b7200x3600a"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l1664b7200x3600a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l1664b7300x3700a"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l1664b7300x3700a"
 path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1664b7200x3600a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1664b7200x3600a"
+run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1664b7300x3700a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1664b7300x3700a"
 
 executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
 sbatch_time="10:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="g3600"
+sbatch_jobname="g3700"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
