@@ -7,24 +7,24 @@
 cluster="icer"
 n_of_ens=1
 
-nx=20
-nt=160
+nx=16
+nt=64
 
-beta=7.1
-beta_name="7100"
+beta=7.04115
+beta_name="704115"
 
-xi_0_arr=(6.7)
-xi_0_name_arr=("6700")
+xi_0_arr=(1.81411)
+xi_0_name_arr=("181411")
 
 stream="a"
 
 sbatch_time="10:00:00"
 sbatch_nodes=4
-sbatch_ntasks=100
-sbatch_jobname_arr=("g6700")
+sbatch_ntasks=128
+sbatch_jobname_arr=("g_xi200")
 
 n_of_sub=5
-n_of_lat=50
+n_of_lat=100
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
