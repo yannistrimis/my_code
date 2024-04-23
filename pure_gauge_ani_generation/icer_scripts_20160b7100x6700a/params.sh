@@ -4,8 +4,8 @@
 cluster=icer
 
 init_seed=1158
-n_of_lat=50
-n_of_sub=10
+n_of_lat=5
+n_of_sub=5
 
 nx=20
 ny=20
