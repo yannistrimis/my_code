@@ -11,28 +11,28 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/mnt/home/trimisio/outputs'
-write_dir = '/mnt/home/trimisio/flow_data'
+# cur_dir = '/mnt/home/trimisio/outputs'
+# write_dir = '/mnt/home/trimisio/flow_data'
 
-# cur_dir = '/project/ahisq/yannis_puregauge/outputs'
-# write_dir = '/project/ahisq/yannis_puregauge/flow_data'
+cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+write_dir = '/project/ahisq/yannis_puregauge/flow_data'
 
-vol = '20160'
-beta = '7100'
-xf = '800'
-xf_float = 8.00
+vol = '1664'
+beta = '7300'
+xf = '400'
+xf_float = 4.00
 stream = 'a'
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ["6700", "6800", "6900", "7000", "7100"]
-x0_float_vec = [6.7, 6.8, 6.9, 7.0, 7.1]
+x0_vec = ['3000', '3100', '3200', '3300', '3400', '3500', '3600', '3700', '3800', '3900']
+x0_float_vec = [3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
 dt = '0.015625'
-n_files = 50
-first_file =51
-n_bins = 10
+n_files = 200
+first_file =101
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
