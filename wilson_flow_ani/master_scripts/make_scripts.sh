@@ -4,20 +4,20 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
-n_of_ens=10
+cluster="icer"
+n_of_ens=1
 
-nx=16
-nt=64
+nx=20
+nt=160
 
-beta_name="7300"
-xi_0_name_arr=("3000" "3100" "3200" "3300" "3400" "3500" "3600" "3700" "3800" "3900")
+beta_name="7100"
+xi_0_name_arr=("6700")
 stream="a"
 
-xi_f=4.00
-xi_f_name="400"
+xi_f=8.00
+xi_f_name="800"
 
-flow_action="zeuthen"
+flow_action="wilson"
 exp_order="16"
 dt="0.015625"
 stoptime="3.0"
@@ -25,11 +25,11 @@ stoptime="3.0"
 sbatch_time="10:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("z3000" "z3100" "z3200" "z3300" "z3400" "z3500" "z3600" "z3700" "z3800" "z3900")
+sbatch_jobname_arr=("w6700")
 
-n_of_sub=3
-n_of_lat=100
-first_lattice=101
+n_of_sub=5
+n_of_lat=20
+first_lattice=51
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
