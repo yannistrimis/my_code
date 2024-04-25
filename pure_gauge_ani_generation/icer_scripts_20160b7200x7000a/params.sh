@@ -4,8 +4,8 @@
 cluster=icer
 
 init_seed=1158
-n_of_lat=50
-n_of_sub=2
+n_of_lat=20
+n_of_sub=10
 
 nx=20
 ny=20
@@ -21,11 +21,11 @@ nt=160
 # beta_s=beta/xi_0
 # beta_t=beta*xi_0
 
-beta_s=1.02899 #in the MILC colde this appears first
-beta_t=48.99000 #and this appears second
+beta_s=1.02857 #in the MILC colde this appears first
+beta_t=50.40000 #and this appears second
 
-beta_name="7100"
-xi_0_name="6900"
+beta_name="7200"
+xi_0_name="7000"
 
 warms=0
 trajecs=20
@@ -36,21 +36,21 @@ qhb_steps=1
 
 stream="a"
 
-ensemble="20160b7100x6900a"
-lat_name="l20160b7100x6900a"
-out_name="out20160b7100x6900a"
+ensemble="20160b7200x7000a"
+lat_name="l20160b7200x7000a"
+out_name="out20160b7200x7000a"
 
 
-directory="/mnt/scratch/trimisio/lattices/l20160b7100x6900a"
-out_dir="/mnt/home/trimisio/outputs/l20160b7100x6900a"
+directory="/mnt/scratch/trimisio/lattices/l20160b7200x7000a"
+out_dir="/mnt/home/trimisio/outputs/l20160b7200x7000a"
 path_build="/mnt/home/trimisio/my_code/pure_gauge_ani_generation/build"
-run_dir="/mnt/scratch/trimisio/runs/rungenl20160b7100x6900a"
-submit_dir="/mnt/home/trimisio/submits/subgenl20160b7100x6900a"
+run_dir="/mnt/scratch/trimisio/runs/rungenl20160b7200x7000a"
+submit_dir="/mnt/home/trimisio/submits/subgenl20160b7200x7000a"
 
 executable="su3_ora_symzk0_a_dbl_intel_ICER_20230828"
 
-sbatch_time="24:00:00"
+sbatch_time="10:00:00"
 sbatch_ntasks="100"
-sbatch_jobname="g6900"
+sbatch_jobname="g7000"
 sbatch_module="intel/2020b"
 

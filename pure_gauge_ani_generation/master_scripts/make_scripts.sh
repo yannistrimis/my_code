@@ -5,26 +5,26 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="icer"
-n_of_ens=1
+n_of_ens=5
 
-nx=16
-nt=64
+nx=20
+nt=160
 
-beta=7.04115
-beta_name="704115"
+beta=7.2
+beta_name="7200"
 
-xi_0_arr=(1.81411)
-xi_0_name_arr=("181411")
+xi_0_arr=(6.70 6.80 6.90 7.00 7.10)
+xi_0_name_arr=("6700" "6800" "6900" "7000" "7100")
 
 stream="a"
 
 sbatch_time="10:00:00"
 sbatch_nodes=4
-sbatch_ntasks=128
-sbatch_jobname_arr=("g_xi200")
+sbatch_ntasks=100
+sbatch_jobname_arr=("g6700" "g6800" "g6900" "g7000" "g7100")
 
-n_of_sub=5
-n_of_lat=100
+n_of_sub=10
+n_of_lat=20
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
