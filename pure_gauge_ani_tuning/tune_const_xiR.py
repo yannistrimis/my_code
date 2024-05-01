@@ -4,11 +4,11 @@ w0_phys = 0.17355
 a = 0.16
 
 w0_target = w0_phys/a
-xi_g_target = 2.0
+xi_g_target = 4.0
 
 nof_betas = 5
 
-f1 = open("../data_files/beta_swc.data","r")
+f1 = open("../data_files/beta_swc_xiR_4.data","r")
 
 f1_content = f1.readlines()
 
