@@ -4,14 +4,14 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
+cluster="fnal"
 n_of_ens=5
 
 nx=20
 nt=160
 
-beta_name="7200"
-xi_0_name_arr=("6700" "6800" "6900" "7000" "7100")
+beta_name="7300"
+xi_0_name_arr=("67000" "68000" "69000" "70000" "71000")
 stream="a"
 
 xi_f=8.00
