@@ -11,14 +11,14 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/mnt/home/trimisio/outputs'
-write_dir = '/mnt/home/trimisio/flow_data'
+# cur_dir = '/mnt/home/trimisio/outputs'
+# write_dir = '/mnt/home/trimisio/flow_data'
 
-# cur_dir = '/project/ahisq/yannis_puregauge/outputs'
-# write_dir = '/project/ahisq/yannis_puregauge/flow_data'
+cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+write_dir = '/project/ahisq/yannis_puregauge/flow_data'
 
 vol = '20160'
-beta = '7200'
+beta = '7300'
 xf = '800'
 xf_float = 8.00
 stream = 'a'
@@ -27,7 +27,7 @@ obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ['6700','6800','6900','7000','7100']
+x0_vec = ['67000','68000','69000','70000','71000']
 x0_float_vec = [6.7,6.8,6.9,7.0,7.1]
 dt = '0.015625'
 n_files = 50

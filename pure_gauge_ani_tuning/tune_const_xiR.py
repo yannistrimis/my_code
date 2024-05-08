@@ -1,14 +1,16 @@
 import numpy as np
 
+# REMEMBER TO TWEAK xi_g_target, nof_betas AND ORDER OF FIT POLYNOMIAL
+
 w0_phys = 0.17355
 a = 0.16
 
 w0_target = w0_phys/a
-xi_g_target = 4.0
+xi_g_target = 8.0
 
-nof_betas = 5
+nof_betas = 3
 
-f1 = open("../data_files/beta_swc_xiR_4.data","r")
+f1 = open("../data_files/beta_swc_xiR_8.data","r")
 
 f1_content = f1.readlines()
 
@@ -44,8 +46,8 @@ xi_weights = arr[:,2]
 w0_points = arr[:,3]
 w0_weights = arr[:,4]
 
-coeffs_w0 = np.polyfit(beta_points,w0_points,3,w=w0_weights)
-coeffs_w0[3] = coeffs_w0[3] - w0_target
+coeffs_w0 = np.polyfit(beta_points,w0_points,1,w=w0_weights)
+coeffs_w0[1] = coeffs_w0[1] - w0_target
 solutions = np.roots(coeffs_w0)
 
 for ii in range( len(solutions) ): # FOR SECURITY
