@@ -3,7 +3,7 @@
 
 cluster=fnal
 
-n_of_lat=3
+n_of_lat=5
 n_of_sub=1
 
 set_i_lat=101
@@ -41,7 +41,7 @@ build_script=build_input_nlpi.sh
 
 directory="/lustre1/ahisq/yannis_puregauge/lattices/l16128b7225x36836a"
 out_dir="/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec/l16128b7225x36836a"
-path_build="/home/trimisio/all/comm_code/pure_gauge_spectrum/build"
+path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runspecnlpil16128b7225x36836a"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subspecnlpil16128b7225x36836a"
 

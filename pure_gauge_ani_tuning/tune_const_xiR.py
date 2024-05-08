@@ -46,8 +46,8 @@ xi_weights = arr[:,2]
 w0_points = arr[:,3]
 w0_weights = arr[:,4]
 
-coeffs_w0 = np.polyfit(beta_points,w0_points,1,w=w0_weights)
-coeffs_w0[1] = coeffs_w0[1] - w0_target
+coeffs_w0 = np.polyfit(beta_points,w0_points,2,w=w0_weights)
+coeffs_w0[2] = coeffs_w0[2] - w0_target
 solutions = np.roots(coeffs_w0)
 
 for ii in range( len(solutions) ): # FOR SECURITY
@@ -55,7 +55,7 @@ for ii in range( len(solutions) ): # FOR SECURITY
         my_beta = np.real(solutions[ii])
         break
 
-coeffs_xi = np.polyfit(beta_points,xi_points,3,w=xi_weights)
+coeffs_xi = np.polyfit(beta_points,xi_points,2,w=xi_weights)
 my_xi0 = np.polyval(coeffs_xi,my_beta)
 
-print('xi_0 = %.6f    beta = %.6f'%(my_xi0,my_beta))
+print('xi_0 = %.6f    beta = %.6f\n'%(my_xi0,my_beta))
