@@ -5,8 +5,8 @@ cluster=fnal
 
 first_lattice=51
 
-n_of_lat=20
-n_of_sub=5
+n_of_lat=50
+n_of_sub=6
 
 nx=20
 ny=20
