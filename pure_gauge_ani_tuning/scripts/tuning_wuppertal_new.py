@@ -30,9 +30,9 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 x0_vec = ['67000','68000','69000','70000','71000']
 x0_float_vec = [6.7,6.8,6.9,7.0,7.1]
 dt = '0.015625'
-n_files = 50
-first_file =51
-n_bins = 10
+n_files = 200
+first_file =101
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )

@@ -10,8 +10,8 @@ n_of_ens=5
 nx=20
 nt=160
 
-beta=7.26
-beta_name="7260"
+beta=7.22
+beta_name="7220"
 
 xi_0_arr=(6.7 6.8 6.9 7.0 7.1)
 xi_0_name_arr=("6700" "6800" "6900" "7000" "7100")
@@ -23,7 +23,7 @@ sbatch_nodes=5
 sbatch_ntasks=200
 sbatch_jobname_arr=("g6700" "g6800" "g6900" "g7000" "g7100")
 
-n_of_sub=6
+n_of_sub=8
 n_of_lat=50
 
 
