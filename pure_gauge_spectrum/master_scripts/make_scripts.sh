@@ -4,37 +4,37 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="icer"
 n_of_ens=1
 
 nx=16
-nt=128
+nt=64
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="719156"
-xi_0_name="348992"
+beta_name="704115"
+xi_0_name="181411"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=64 # CHANGE ACCORDING TO nt
-source_prec=34 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=18 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.05
+mass1=0.06
 
 nxq=3
-xq1=3.76
-xq2=3.88
-xq3=4.00
+xq1=1.88
+xq2=1.94
+xq3=2.00
 
-xq1_name="3760"
-xq2_name="3880"
-xq3_name="4000"
+xq1_name="1880"
+xq2_name="1940"
+xq3_name="2000"
 
 err=1e-6
 max_cg_iterations=300
@@ -44,7 +44,7 @@ precision=2
 sbatch_time="02:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname="tun_xi4"
+sbatch_jobname="tun_xi2"
 
 prefix="tun"
 build_prefix="tun"
