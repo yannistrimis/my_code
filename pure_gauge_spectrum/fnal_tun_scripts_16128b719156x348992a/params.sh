@@ -3,8 +3,8 @@
 
 cluster=fnal
 
-n_of_lat=5
-n_of_sub=1
+n_of_lat=400
+n_of_sub=4
 
 set_i_lat=101
 set_seed=78324
