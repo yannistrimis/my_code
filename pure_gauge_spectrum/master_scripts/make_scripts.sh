@@ -13,8 +13,8 @@ nt=128
 set_i_lat=101
 set_seed=78324
 
-beta_name="7225"
-xi_0_name="36836"
+beta_name="719156"
+xi_0_name="348992"
 stream="a"
 
 u0=1
@@ -25,12 +25,16 @@ source_inc=64 # CHANGE ACCORDING TO nt
 source_prec=34 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.01448
+mass1=0.05
 
-nxq=1
-xq1=3.75
+nxq=3
+xq1=3.76
+xq2=3.88
+xq3=4.00
 
-xq1_name="3750"
+xq1_name="3760"
+xq2_name="3880"
+xq3_name="4000"
 
 err=1e-6
 max_cg_iterations=300
@@ -40,10 +44,10 @@ precision=2
 sbatch_time="02:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname="nlpi_xi4"
+sbatch_jobname="tun_xi4"
 
-prefix="nlpi"
-build_prefix="nlpi"
+prefix="tun"
+build_prefix="tun"
 
 n_of_sub=1
 n_of_lat=5
