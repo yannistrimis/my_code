@@ -10,8 +10,8 @@ n_of_ens=5
 nx=20
 nt=160
 
-beta_name="7300"
-xi_0_name_arr=("67000" "68000" "69000" "70000" "71000")
+beta_name="7260"
+xi_0_name_arr=("6700" "6800" "6900" "7000" "7100")
 stream="a"
 
 xi_f=8.00
@@ -23,13 +23,13 @@ dt="0.015625"
 stoptime="3.0"
 
 sbatch_time="10:00:00"
-sbatch_nodes=4 # N/A WHEN icer IS SELECTED
-sbatch_ntasks=100
-sbatch_jobname_arr=("w6700" "w6800" "w6900" "w7000" "w7100")
+sbatch_nodes=5 # N/A WHEN icer IS SELECTED
+sbatch_ntasks=200
+sbatch_jobname_arr=("8w67" "8w68" "8w69" "8w70" "8w71")
 
-n_of_sub=5
-n_of_lat=20
-first_lattice=51
+n_of_sub=8
+n_of_lat=50
+first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
