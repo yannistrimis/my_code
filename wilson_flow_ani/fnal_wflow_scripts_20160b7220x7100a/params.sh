@@ -13,8 +13,8 @@ ny=20
 nz=20
 nt=160
 
-lat_name="l20160b7260x6700a"
-out_name="wflow20160b7260x6700xf800a_dt0.015625"
+lat_name="l20160b7220x7100a"
+out_name="wflow20160b7220x7100xf800a_dt0.015625"
 
 xi_f=8.00
 
@@ -24,18 +24,18 @@ dt="0.015625"
 stoptime="3.0"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l20160b7260x6700a"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l20160b7260x6700a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l20160b7220x7100a"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l20160b7220x7100a"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/runwflowl20160b7260x6700a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subwflowl20160b7260x6700a"
+run_dir="/project/ahisq/yannis_puregauge/runs/runwflowl20160b7220x7100a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subwflowl20160b7220x7100a"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
 sbatch_time="10:00:00"
 sbatch_nodes="5"
 sbatch_ntasks="200"
-sbatch_jobname="8w67"
+sbatch_jobname="8w71"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
