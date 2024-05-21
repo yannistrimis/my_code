@@ -6,7 +6,13 @@ from matplotlib import pyplot as plt
 ### FOR PURE GAUGES ENSEMBLES. IT ALSO PRODUCES JACKKNIFE-BINNED DATA
 ### WHICH ARE STORED IN FILE FOR PLOTTING.
 
-cur_dir = '/mnt/home/trimisio/outputs'
+# cur_dir = '/mnt/home/trimisio/outputs'
+# write_dir = '/mnt/home/trimisio/flow_data'
+
+cur_dir = '/project/ahisq/yannis_puregauge/outputs'
+write_dir = '/project/ahisq/yannis_puregauge/flow_data'
+
+
 vol = '1632'
 beta = '6850'
 x0 = '100'

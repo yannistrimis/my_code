@@ -10,8 +10,8 @@ n_of_ens=1
 nx=16
 nt=32
 
-beta=6.67
-beta_name="6670"
+beta=6.81
+beta_name="6810"
 
 xi_0_arr=(1.0)
 xi_0_name_arr=("100")
@@ -21,10 +21,10 @@ stream="a"
 sbatch_time="10:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("g1_667")
+sbatch_jobname_arr=("g1_681")
 
 n_of_sub=4
-n_of_lat=100
+n_of_lat=150
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do

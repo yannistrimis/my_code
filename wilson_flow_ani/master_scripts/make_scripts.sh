@@ -10,7 +10,7 @@ n_of_ens=3
 nx=16
 nt=32
 
-beta_name_arr=("6830" "6850" "6870")
+beta_name_arr=("6630" "6650" "6670")
 xi_0_name_arr=("100" "100" "100")
 stream="a"
 
@@ -25,7 +25,7 @@ stoptime="3.5"
 sbatch_time="10:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("1w6830" "1w6850" "1w6870")
+sbatch_jobname_arr=("1w6630" "1w6650" "1w6670")
 
 n_of_sub=4
 n_of_lat=101

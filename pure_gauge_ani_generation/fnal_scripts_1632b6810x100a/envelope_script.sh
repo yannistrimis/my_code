@@ -13,6 +13,11 @@ then
 mkdir "${submit_dir}"
 fi
 
+if [ ! -d "${directory}" ]
+then
+mkdir "${directory}"
+fi
+
 if [ ! -d "${out_dir}" ]
 then
 mkdir "${out_dir}"

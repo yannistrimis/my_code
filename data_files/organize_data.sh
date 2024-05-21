@@ -16,9 +16,9 @@ awk '$1 == "w" && $2 == "clover" { print $5,$7,$10,$12 }' tuning_schemes_xiR_${x
 #awk '$1 == "z" && $2 == "symanzik" { print $5,$7,$10,$12 }' tuning_schemes_xiR_${xiR}.data  > szs_xiR_${xiR}.data
 
 cat <<EOF > betafile.data
-7.1
-7.2
-7.3
+7.22
+7.26
+7.30
 EOF
 
 for file in ???_xiR_${xiR}.data
