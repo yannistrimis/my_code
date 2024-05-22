@@ -7,23 +7,23 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=16
-nt=32
+nx=20
+nt=320
 
-beta=6.81
-beta_name="6810"
+beta=7.26025
+beta_name="726025"
 
-xi_0_arr=(1.0)
-xi_0_name_arr=("100")
+xi_0_arr=(6.89327)
+xi_0_name_arr=("689327")
 
 stream="a"
 
 sbatch_time="10:00:00"
-sbatch_nodes=4
-sbatch_ntasks=128
-sbatch_jobname_arr=("g1_681")
+sbatch_nodes=5
+sbatch_ntasks=200
+sbatch_jobname_arr=("g8")
 
-n_of_sub=4
+n_of_sub=8
 n_of_lat=150
 
 
