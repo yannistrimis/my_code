@@ -1,24 +1,24 @@
 #!/bin/bash
 
-ens_name="16128b7225x36836"
-masses=("0.0724")
+ens_name="1664b704115x181411"
+masses=("0.06")
 mas_len=${#masses[@]}
 
-prefix="tuncheck"
+prefix="tun"
 
-xq_arr=("3750")
+xq_arr=("1880" "1940" "2000")
 sinks_arr=("PION_5")
 
-mom_arr=("p000")
+mom_arr=("p100" "p110")
 
 for mom in ${mom_arr[@]}
 do
 echo "${mom}"
 
-source1="random_color_wall"
-source2="random_color_wall"
+source1="CORNER/momentum"
+source2="CORNER"
 
-src_label="rcw"
+src_label="cw"
 
 sinkop1="identity"
 sinkop2="identity"
