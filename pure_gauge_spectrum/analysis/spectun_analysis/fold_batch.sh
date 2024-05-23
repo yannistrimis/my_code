@@ -1,16 +1,16 @@
 #!/bin/bash
-nt=128 # DON'T FORGET TO CHANGE !!!
-ens_name="16128b7225x36836"
-masses=("0.0724")
+nt=64 # DON'T FORGET TO CHANGE !!!
+ens_name="1664b704115x181411"
+masses=("0.06")
 mas_len=${#masses[@]}
 
-prefix="tuncheck"
+prefix="tun"
 
-xq_arr=("3750")
+xq_arr=("1880" "1940" "2000")
 sinks_arr=("PION_5")
 
 mom_arr=("p000" "p100" "p110")
-src_label="rcw"
+src_label="cw"
 
 for mom in ${mom_arr[@]}
 do
