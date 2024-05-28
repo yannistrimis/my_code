@@ -18,7 +18,7 @@ cur_dir = '/project/ahisq/yannis_puregauge/outputs'
 write_dir = '/project/ahisq/yannis_puregauge/flow_data'
 
 vol = '1632'
-beta = '6630'
+beta = '6870'
 xf = '100'
 xf_float = 1.00
 stream = 'a'

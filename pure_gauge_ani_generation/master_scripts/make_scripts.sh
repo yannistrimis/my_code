@@ -7,24 +7,24 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=20
-nt=320
+nx=16
+nt=32
 
-beta=7.26025
-beta_name="726025"
+beta=6.81823
+beta_name="681823"
 
-xi_0_arr=(6.89327)
-xi_0_name_arr=("689327")
+xi_0_arr=(1.00)
+xi_0_name_arr=("100000")
 
 stream="a"
 
 sbatch_time="10:00:00"
 sbatch_nodes=5
 sbatch_ntasks=200
-sbatch_jobname_arr=("g8")
+sbatch_jobname_arr=("g1")
 
-n_of_sub=8
-n_of_lat=150
+n_of_sub=5
+n_of_lat=201
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
