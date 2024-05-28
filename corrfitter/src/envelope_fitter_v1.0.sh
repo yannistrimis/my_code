@@ -1,23 +1,22 @@
 #!/bin/bash
 
 vol=1664
-beta=70805
-xg=18876
-src="eowfw"
-prefix="nlpi"
-taste="PION_i0"
-to_print_state="o"
+beta=704115
+xg=181411
+src="cw"
+prefix="tun"
+taste="PION_5"
+to_print_state="n"
 to_print_nr=0
 
-#fitdir="/home/trimis/spec_data" # CMSE
-#dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE
-fitdir="/home/yannis/Physics/LQCD/spec_data" # LAPTOP
-dir="/home/yannis/Physics/LQCD/corrs_from_fnal/l${vol}b${beta}x${xg}a" # LAPTOP
+fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
+dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE
+
 tdata=33
 tp=64
 n_states=1
 m_states=1
-so="1.0"
+so="-1.0"
 binsize=1
 
 #yesno="prior"
@@ -26,17 +25,17 @@ yesno="free"
 if [ $1 == "scan" ]
 then
 
-tmin_min=0
-tmin_max=16
+tmin_min=4
+tmin_max=20
 tmin_step=1
 
-tmax_min=22
-tmax_max=22
+tmax_min=27
+tmax_max=27
 tmax_step=1
 
-xq_arr=( "1950" )
-mom_arr=( "p000" )
-mass_arr=( "0.01532" )
+xq_arr=( "1880" )
+mom_arr=( "p110" )
+mass_arr=( "0.06" )
 
 for xq in ${xq_arr[@]};do
 echo "xq = ${xq}"
@@ -79,12 +78,12 @@ done # xq
 elif [ $1 == "one"  ]
 then
 
-xq="1950"
-mom="p000"
-tmin=18
-tmax=32
+xq="2000"
+mom="p110"
+tmin=11
+tmax=27
 
-mass=0.01532
+mass=0.06
 
 python3 fitter_v1.0.py <<EOF
 ${dir}

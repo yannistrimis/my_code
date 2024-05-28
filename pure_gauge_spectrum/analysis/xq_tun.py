@@ -9,15 +9,15 @@ def func(x,a,b):
 
 # INPUT
 N_space = 16
-x_ren = 4.0
-N_of_x0 = 1
+x_ren = 2.0
+N_of_x0 = 3
 N_of_mom = 3
 
-x0_arr=np.array([ 3.75 ])
+x0_arr=np.array([ 1.88, 1.94, 2.00 ])
 
-my_arr = np.array([[0.00,            0.13903,         0.00013],\
-[1.00,            0.17083,         0.00025],\
-[2.00,            0.1970,          0.0010]])
+my_arr = np.array([[0.00, 0.25910, 0.00024, 0.25464, 0.00024, 0.25040, 0.00023],\
+[1.00, 0.32913, 0.00051, 0.32342, 0.00049, 0.31798, 0.00048],\
+[2.00, 0.38523, 0.00083, 0.37851, 0.00079, 0.37209, 0.00076]])
 
 #ENDETH INPUT
 
@@ -25,7 +25,7 @@ for i in range(N_of_mom):
     my_arr[i,0]=my_arr[i,0]*((2*np.pi)/N_space)**2
 
     for j in range(N_of_x0):
-        my_arr[i,2*j+2]=2*my_arr[2*j+1,1]*my_arr[2*j+2,2]
+        my_arr[i,2*j+2]=2*my_arr[i,2*j+1]*my_arr[i,2*j+2]
         my_arr[i,2*j+1]=my_arr[i,2*j+1]**2
 
 x_arr=np.zeros((N_of_x0,2))
