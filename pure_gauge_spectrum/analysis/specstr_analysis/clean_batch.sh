@@ -1,12 +1,12 @@
 #!/bin/bash
 
-ens_name="1664b70805x18876"
-masses=("0.1" "0.12")
+ens_name="1664b704115x181411"
+masses=("0.03" "0.05" "0.07" "0.09" "0.11")
 mas_len=${#masses[@]}
 
 prefix="str"
 
-xq_arr=("1950")
+xq_arr=("1980")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
@@ -27,7 +27,7 @@ for sinks in "${sinks_arr[@]}"
 do
 echo "${sinks}"
 
-for i_file in {101..501..1}
+for i_file in {101..500..1}
 do
 
 echo "    ${i_file}"
