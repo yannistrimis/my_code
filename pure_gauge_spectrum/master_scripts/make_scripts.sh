@@ -24,33 +24,33 @@ n_sources=2
 source_inc=32 # CHANGE ACCORDING TO nt
 source_prec=18 # CHANGE ACCORDING TO nt
 
-nmasses=1
-mass1=0.06
+nmasses=5
+mass1=0.03
+mass2=0.05
+mass3=0.07
+mass4=0.09
+mass5=0.11
 
-nxq=3
-xq1=1.88
-xq2=1.94
-xq3=2.00
+nxq=1
+xq1=1.98
 
-xq1_name="1880"
-xq2_name="1940"
-xq3_name="2000"
+xq1_name="1980"
 
 err=1e-6
 max_cg_iterations=300
 action=hisq
 precision=2
 
-sbatch_time="02:00:00"
+sbatch_time="04:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname="tun_xi2"
+sbatch_jobname="str_xi2"
 
-prefix="tun"
-build_prefix="tun"
+prefix="str"
+build_prefix="str"
 
-n_of_sub=1
-n_of_lat=5
+n_of_sub=5
+n_of_lat=100
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
