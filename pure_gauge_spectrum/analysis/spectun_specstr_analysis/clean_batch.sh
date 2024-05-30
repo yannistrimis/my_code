@@ -9,13 +9,13 @@ prefix="tun"
 xq_arr=("3760" "3880" "4000")
 sinks_arr=("PION_5")
 
-mom_arr=("p100" "p110")
+mom_arr=("p000")
 
 for mom in ${mom_arr[@]}
 do
 echo "${mom}"
 
-source1="CORNER/momentum"
+source1="CORNER"
 source2="CORNER"
 
 src_label="cw"

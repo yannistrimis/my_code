@@ -3,7 +3,7 @@
 
 cluster=fnal
 
-n_of_lat=150
+n_of_lat=100
 n_of_sub=2
 
 set_i_lat=101
@@ -47,7 +47,7 @@ submit_dir="/project/ahisq/yannis_puregauge/submits/subspectunl16128b719156x3489
 
 executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20240507"
 
-sbatch_time="02:00:00"
+sbatch_time="04:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
 sbatch_jobname="tun_xi4"

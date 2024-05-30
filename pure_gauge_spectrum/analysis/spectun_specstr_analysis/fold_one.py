@@ -9,9 +9,9 @@ out_name = input()
 
 nt = int(str_nt)
 
-out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
+# out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
 
-# out_dir = '/home/trimisio/all/spec_data' # FNAL
+out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
 
 f_write = open('%s/l%s/%s.%s'%(out_dir,ens_name,out_name,i_file),'w')

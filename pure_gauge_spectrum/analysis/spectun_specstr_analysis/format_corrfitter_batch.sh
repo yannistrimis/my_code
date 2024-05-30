@@ -1,16 +1,17 @@
 #!/bin/bash
 
-ens_name="1664b704115x181411"
-masses=("0.06")
+ens_name="16128b719156x348992"
+masses=("0.05")
 mas_len=${#masses[@]}
 
 prefix="tun"
 
-xq_arr=("1880" "1940" "2000")
+xq_arr=("3760" "3880" "4000")
 sinks_arr=("PION_5")
 
 mom_arr=("p000" "p100" "p110")
 src_label="cw"
+
 
 first=101
 last=500
