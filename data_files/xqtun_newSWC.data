@@ -10,7 +10,7 @@
 0.11
 
 
-### xi = 2; ENSEMBLE: l1664b704115x181411a (iCER)
+### xi = 2; ENSEMBLE: l1664b704115x181411a (iCER); a = 0.16 fm
 
 # Anisotropy tuning for m = 0.06
 
@@ -24,12 +24,22 @@
 
 # Strange mass tuning for xi_0 = 1.980
 
-#m	E	dE
-0.03
-0.05
-0.07
-0.09
-0.11
+#m	E		dE
+0.03	0.17981		0.00025
+0.05	0.23024		0.00024
+0.07	0.27183		0.00025
+0.09	0.30831		0.00024
+0.11	0.34146		0.00027
+
+# This leads to m_s = 0.073037
+
+# Tuning check at ms = 0.0730, xi_0 = 1.980:
+
+#p^2	E	dE
+0.00
+1.00
+2.00
+
 
 ### xi = 4; ENSEMBLE: l16128b719156x348992a (FNAL)
 

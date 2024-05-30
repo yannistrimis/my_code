@@ -1,52 +1,52 @@
 #!/bin/bash
 
-vol=16128
-beta=719156
-xg=348992
+vol=1664
+beta=704115
+xg=181411
 src="cw"
-prefix="tun"
+prefix="str"
 taste="PION_5"
 to_print_state="n"
 to_print_nr=0
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
-# dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
-dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a"
+dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
+# dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> FNAL
 
-tdata=65
-tp=128
+tdata=33
+tp=64
 n_states=1
-m_states=1
+m_states=0
 so="-1.0"
 binsize=1
 
-xq="4000"
-mom="p110"
-mass="0.05"
+xq="1980"
+mom="p000"
+mass="0.11"
 
 #yesno="prior"
 yesno="free"
 
-tmin_min=5
-tmin_max=45
+tmin_min=3
+tmin_max=20
 tmin_step=1
 
-tmax_min=54
-tmax_max=54
+tmax_min=23
+tmax_max=23
 tmax_step=1
 
-tmin_one=30
-tmax_one=54
+tmin_one=15
+tmax_one=23
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
+
+if [ $1 == "scan" ]
+then
 
 if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit ]
 then
 rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit
 fi
-
-if [ $1 == "scan" ]
-then
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin=${tmin}+${tmin_step}));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
