@@ -1,8 +1,8 @@
 #!/bin/bash
 
-vol=1664
-beta=704115
-xg=181411
+vol=16128
+beta=719156
+xg=348992
 src="cw"
 prefix="tun"
 taste="PION_5"
@@ -10,44 +10,43 @@ to_print_state="n"
 to_print_nr=0
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
-dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE
+# dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
+dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a"
 
-tdata=33
-tp=64
+tdata=65
+tp=128
 n_states=1
 m_states=1
 so="-1.0"
 binsize=1
 
+xq="4000"
+mom="p110"
+mass="0.05"
+
 #yesno="prior"
 yesno="free"
 
-if [ $1 == "scan" ]
-then
-
-tmin_min=4
-tmin_max=20
+tmin_min=5
+tmin_max=45
 tmin_step=1
 
-tmax_min=27
-tmax_max=27
+tmax_min=54
+tmax_max=54
 tmax_step=1
 
-xq_arr=( "1880" )
-mom_arr=( "p110" )
-mass_arr=( "0.06" )
+tmin_one=30
+tmax_one=54
 
-for xq in ${xq_arr[@]};do
-echo "xq = ${xq}"
-for mom in ${mom_arr[@]};do
-echo "	mom: ${mom}"
-for mass in ${mass_arr[@]};do
-echo "		mass: ${mass}"
+echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
 if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit ]
 then
 rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.E${to_print_state}${to_print_nr}.${yesno}.scanfit
 fi
+
+if [ $1 == "scan" ]
+then
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin=${tmin}+${tmin_step}));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
@@ -71,25 +70,14 @@ EOF
 done # tmin
 done # tmax
 
-done # mass
-done # mom
-done # xq
-
 elif [ $1 == "one"  ]
 then
-
-xq="2000"
-mom="p110"
-tmin=11
-tmax=27
-
-mass=0.06
 
 python3 fitter_v1.0.py <<EOF
 ${dir}
 ${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
-${tmin}
-${tmax}
+${tmin_one}
+${tmax_one}
 ${tdata}
 ${tp}
 ${n_states}
@@ -100,6 +88,5 @@ onefit
 NA
 NA
 EOF
-
 
 fi
