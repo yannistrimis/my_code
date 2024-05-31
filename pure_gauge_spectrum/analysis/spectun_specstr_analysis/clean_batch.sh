@@ -1,12 +1,12 @@
 #!/bin/bash
 
 ens_name="16128b719156x348992"
-masses=("0.05")
+masses=("0.03" "0.05" "0.07" "0.09" "0.11")
 mas_len=${#masses[@]}
 
-prefix="tun"
+prefix="str"
 
-xq_arr=("3760" "3880" "4000")
+xq_arr=("4000")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
