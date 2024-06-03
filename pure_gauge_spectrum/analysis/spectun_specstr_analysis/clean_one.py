@@ -13,11 +13,11 @@ sinkop2 = input()
 sinks = input()
 out_name = input()
 
-# cur_dir = '/mnt/home/trimisio/outputs/pure_gauge_spec' # ICER
-# out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
+cur_dir = '/mnt/home/trimisio/outputs/pure_gauge_spec' # ICER
+out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
 
-cur_dir = '/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec' # FNAL
-out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
+# cur_dir = '/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec' # FNAL
+# out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
 
 f_read = open('%s/l%s/%s.%s'%(cur_dir,ens_name,pre_name,i_file),'r')

@@ -1,21 +1,21 @@
 #!/bin/bash
 
-ens_name="16128b719156x348992"
-masses=("0.03" "0.05" "0.07" "0.09" "0.11")
+ens_name="1664b704115x181411"
+masses=("0.073")
 mas_len=${#masses[@]}
 
-prefix="str"
+prefix="tuncheck"
 
-xq_arr=("4000")
+xq_arr=("1980")
 sinks_arr=("PION_5")
 
-mom_arr=("p000")
+mom_arr=("p100" "p110")
 
 for mom in ${mom_arr[@]}
 do
 echo "${mom}"
 
-source1="CORNER"
+source1="CORNER/momentum"
 source2="CORNER"
 
 src_label="cw"
