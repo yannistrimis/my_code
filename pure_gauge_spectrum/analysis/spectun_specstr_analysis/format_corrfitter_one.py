@@ -1,9 +1,9 @@
 # 4 SPACES INSTEAD OF TAB
 import numpy as np
 
-out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
+# out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
 
-# out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
+out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
 
 ens_name = input()
