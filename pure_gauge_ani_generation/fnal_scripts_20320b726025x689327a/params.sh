@@ -49,7 +49,7 @@ submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl20320b726025x689327a"
 
 executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
-sbatch_time="15:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes="5"
 sbatch_ntasks="200"
 sbatch_jobname="g8"
