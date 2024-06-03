@@ -1,42 +1,42 @@
 #!/bin/bash
 
-vol=16128
-beta=719156
-xg=348992
+vol=1664
+beta=704115
+xg=181411
 src="cw"
-prefix="str"
+prefix="tuncheck"
 taste="PION_5"
 to_print_state="n"
 to_print_nr=0
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
-# dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
-dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> FNAL
+dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
+# dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> FNAL
 
-tdata=65
-tp=128
+tdata=33
+tp=64
 n_states=1
-m_states=0
+m_states=1
 so="-1.0"
 binsize=1
 
-xq="4000"
-mom="p000"
-mass="0.11"
+xq="1980"
+mom="p110"
+mass="0.073"
 
 #yesno="prior"
 yesno="free"
 
-tmin_min=5
-tmin_max=55
+tmin_min=3
+tmin_max=25
 tmin_step=1
 
-tmax_min=60
-tmax_max=60
-tmax_step=5
+tmax_min=30
+tmax_max=30
+tmax_step=2
 
-tmin_one=39
-tmax_one=60
+tmin_one=12
+tmax_one=30
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
