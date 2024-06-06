@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# THIS SCRIPT CREATES DIRECTORIES FOR PURE GAUGE GRADIENT FLOW.
+# THIS SCRIPT CREATES DIRECTORIES FOR aHISQ SPECTRUM.
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
@@ -8,49 +8,45 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=128
+nt=32
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="719156"
-xi_0_name="348992"
+beta_name="681823"
+xi_0_name="100000"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=64 # CHANGE ACCORDING TO nt
-source_prec=34 # CHANGE ACCORDING TO nt
+source_inc=16 # CHANGE ACCORDING TO nt
+source_prec=10 # CHANGE ACCORDING TO nt
 
-nmasses=5
-mass1=0.03
-mass2=0.05
-mass3=0.07
-mass4=0.09
-mass5=0.11
+nmasses=1
+mass1=0.01524
 
 nxq=1
-xq1=4.000
+xq1=1.000
 
-xq1_name="4000"
+xq1_name="1000"
 
 err=1e-6
 max_cg_iterations=300
 action=hisq
 precision=2
 
-sbatch_time="08:00:00"
+sbatch_time="16:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname="str_xi4"
+sbatch_jobname="nlpi_xi1"
 
-prefix="str"
-build_prefix="str"
+prefix="nlpi"
+build_prefix="nlpi"
 
 n_of_sub=5
-n_of_lat=100
+n_of_lat=200
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 

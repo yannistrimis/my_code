@@ -1,42 +1,47 @@
 #!/bin/bash
 
-vol=1664
-beta=704115
-xg=181411
+vol=1632
+beta=681823
+xg=100000
 src="cw"
-prefix="tuncheck"
+prefix="str"
 taste="PION_5"
 to_print_state="n"
 to_print_nr=0
 
-fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
-dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
+# fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
+# dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
 # dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> FNAL
 
-tdata=33
-tp=64
+fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
+# dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> iCER
+dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> FNAL
+
+
+tdata=17
+tp=32
 n_states=1
-m_states=1
+m_states=0
 so="-1.0"
 binsize=1
 
-xq="1980"
-mom="p110"
-mass="0.073"
+xq="1000"
+mom="p000"
+mass="0.11"
 
 #yesno="prior"
 yesno="free"
 
 tmin_min=3
-tmin_max=25
+tmin_max=15
 tmin_step=1
 
-tmax_min=30
-tmax_max=30
-tmax_step=2
+tmax_min=17
+tmax_max=17
+tmax_step=1
 
-tmin_one=12
-tmax_one=30
+tmin_one=11
+tmax_one=17
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
