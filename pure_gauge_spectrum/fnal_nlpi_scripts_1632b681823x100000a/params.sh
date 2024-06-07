@@ -4,7 +4,7 @@
 cluster=fnal
 
 n_of_lat=200
-n_of_sub=5
+n_of_sub=1
 
 set_i_lat=101
 set_seed=78324
