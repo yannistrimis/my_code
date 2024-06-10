@@ -1,14 +1,13 @@
 #!/bin/bash
 
-ens_name="1664b704115x181411"
-masses=("0.0146")
+ens_name="16128b719156x348992"
+masses=("0.01446")
 mas_len=${#masses[@]}
 
 prefix="nlpi"
 
-xq_arr=("1980")
-#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
-sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
+xq_arr=("4000")
+sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
 
