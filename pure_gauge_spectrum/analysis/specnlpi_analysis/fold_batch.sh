@@ -1,15 +1,16 @@
 #!/bin/bash
 
-nt=128 # DON'T FORGET TO CHANGE !!!
+nt=32 # DON'T FORGET TO CHANGE !!!
 
-ens_name="16128b7225x36836"
-masses=("0.01448")
+ens_name="1632b681823x100000"
+masses=("0.01524")
 mas_len=${#masses[@]}
 
 prefix="nlpi"
 
-xq_arr=("3750")
-sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
+xq_arr=("1000")
+#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
 src_label="eowfw"
@@ -22,7 +23,7 @@ for sinks in ${sinks_arr[@]}
 do
 echo "${sinks}"
 
-for i_file in {101..500..1}
+for i_file in {101..1100..1}
 do
 echo "    ${i_file}"
 

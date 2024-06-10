@@ -17,7 +17,7 @@ out_name = input()
 # out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
 
 cur_dir = '/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec' # FNAL
-out_dir = '/home/trimisio/all/spec_data' # FNAL
+out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
 
 f_read = open('%s/l%s/%s.%s'%(cur_dir,ens_name,pre_name,i_file),'r')
