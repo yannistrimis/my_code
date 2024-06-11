@@ -1,20 +1,21 @@
-#TASTE          E               dE              FIT INFO
+#TASTE          E               dE              [tmin,tmax]{chisq,Q}
 
 ### xi = 1; ENSEMBLE: l1632b681823x100000a (FNAL); a = 0.16 fm; m_l = 0.01524
 PION_5		0.25467		0.00040		[8,17]{1.074,0.377} 1+0 n0
 PION_05		0.3036		0.0023		[10,17]{1.334,0.246} 0+1 o0
+PION_i5
 
-
-### xi = 2; ENSEMBLE: l1664b704115x181411a (iCER); a = 0.16 fm
-PION_5
-PION_05
-
+### xi = 2; ENSEMBLE: l1664b704115x181411a (iCER); a = 0.16 fm; m_l = 0.01460
+PION_5		0.12754		0.00024		[18,27]{1.008,0.423} 1+0 n0
+PION_05		0.12859		0.00056		[25,33]{1.178,0.315} 0+1 o0
+PION_i5
 
 ### xi = 4; ENSEMBLE: l16128b719156x348992a (FNAL); a = 0.16 fm; m_l = 0.01446
 PION_5          0.06371		0.00017		[48,63]{1.141,0.318} 1+0 n0
 PION_05		0.06391		0.00022		[49,60]{1.143,0.327} 0+1 o0
-
+PION_i5
 
 ### xi = 8; ENSEMBLE: l20320b726025x689327a (FNAL); a = 0.16 fm
 PION_5          -               -               [?,?]{?,?} ?+? n0
 PION_05
+PION_i5

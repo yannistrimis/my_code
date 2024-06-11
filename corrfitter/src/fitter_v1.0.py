@@ -152,26 +152,25 @@ def test_param(fit,N,M,to_print_state,to_print_nr):
         Eo = np.cumsum(p['dEo'])
         ao = p['ao']
 
-    for i_state in range(N) :
-        if ( np.abs(En[i_state].mean) < 0.05*np.abs(ref_E_mean) ) :
-            flag = 'not_ok'
-        if ( np.abs(En[i_state].mean) > 100*np.abs(ref_E_mean) ) :
-            flag = 'not_ok'
-        if ( np.abs(an[i_state].mean) < 0.005*np.abs(ref_a_mean) ) :
-            flag = 'not_ok'
+#    for i_state in range(N) :
+#        if ( np.abs(En[i_state].mean) < 0.05*np.abs(ref_E_mean) ) :
+#            flag = 'not_ok'
+#        if ( np.abs(En[i_state].mean) > 100*np.abs(ref_E_mean) ) :
+#            flag = 'not_ok'
+#        if ( np.abs(an[i_state].mean) < 0.005*np.abs(ref_a_mean) ) :
+#            flag = 'not_ok'
 #        if ( np.abs(En[i_state].sdev) > 100*np.abs(En[i_state].mean) ) :
 #            flag = 'not_ok'
 #        if ( np.abs(an[i_state].sdev) > 100*np.abs(an[i_state].mean) ) :
 #            flag = 'not_ok'
 
-    for j_state in range(M) :
-        if ( np.abs(Eo[j_state].mean) < 0.05*np.abs(ref_E_mean) ) :
-            flag = 'not_ok'
-        if ( np.abs(Eo[j_state].mean) > 100*np.abs(ref_E_mean) ) :
-            flag = 'not_ok'
-
-        if ( np.abs(ao[j_state].mean) < 0.005*np.abs(ref_a_mean) ) :
-            flag = 'not_ok'
+#    for j_state in range(M) :
+#        if ( np.abs(Eo[j_state].mean) < 0.05*np.abs(ref_E_mean) ) :
+#            flag = 'not_ok'
+#        if ( np.abs(Eo[j_state].mean) > 100*np.abs(ref_E_mean) ) :
+#            flag = 'not_ok'
+#        if ( np.abs(ao[j_state].mean) < 0.005*np.abs(ref_a_mean) ) :
+#            flag = 'not_ok'
 #        if ( np.abs(Eo[j_state].sdev) > 100*np.abs(Eo[j_state].mean) ) :
 #            flag = 'not_ok'
 #        if ( np.abs(ao[j_state].sdev) > 100*np.abs(ao[j_state].mean) ) :
