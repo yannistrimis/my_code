@@ -1,12 +1,12 @@
 #!/bin/bash
 
-vol=1632
-beta=681823
-xg=100000
-src="cw"
-prefix="str"
-taste="PION_5"
-to_print_state="n"
+vol=16128
+beta=719156
+xg=348992
+src="eowfw"
+prefix="nlpi"
+taste="PION_05"
+to_print_state="o"
 to_print_nr=0
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
@@ -18,30 +18,30 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> FNAL
 
 
-tdata=17
-tp=32
-n_states=1
-m_states=0
-so="-1.0"
+tdata=65
+tp=128
+n_states=0
+m_states=1
+so="1.0"
 binsize=1
 
-xq="1000"
+xq="4000"
 mom="p000"
-mass="0.11"
+mass="0.01446"
 
 #yesno="prior"
 yesno="free"
 
-tmin_min=3
-tmin_max=15
+tmin_min=25
+tmin_max=55
 tmin_step=1
 
-tmax_min=17
-tmax_max=17
-tmax_step=1
+tmax_min=60
+tmax_max=60
+tmax_step=3
 
-tmin_one=11
-tmax_one=17
+tmin_one=49
+tmax_one=60
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
