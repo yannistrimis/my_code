@@ -1,8 +1,8 @@
 #!/bin/bash
 
-vol=1664
-beta=704115
-xg=181411
+vol=1632
+beta=681823
+xg=100000
 src="eowfw"
 prefix="nlpi"
 taste="PION_05"
@@ -14,31 +14,31 @@ to_print_nr=0
 # dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> FNAL
 
 fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
-dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> iCER
-# dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> FNAL
+# dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> iCER
+dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> FNAL
 
 
-tdata=33
-tp=64
+tdata=17
+tp=32
 n_states=0
-m_states=1
+m_states=2
 so="1.0"
 binsize=1
 
-xq="1980"
+xq="1000"
 mom="p000"
-mass="0.0146"
+mass="0.01524"
 
 #yesno="prior"
 yesno="free"
 
-tmin_min=15
-tmin_max=28
-tmin_step=1
+tmin_min=0
+tmin_max=12
+tmin_step=3
 
-tmax_min=33
-tmax_max=33
-tmax_step=3
+tmax_min=9
+tmax_max=17
+tmax_step=2
 
 tmin_one=25
 tmax_one=33
