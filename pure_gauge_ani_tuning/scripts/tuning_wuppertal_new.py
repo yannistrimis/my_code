@@ -17,22 +17,22 @@ w0phys = 0.17355
 cur_dir = '/project/ahisq/yannis_puregauge/outputs'
 write_dir = '/project/ahisq/yannis_puregauge/flow_data'
 
-vol = '20320'
-beta = '726025'
-xf = '800'
-xf_float = 8.00
+vol = '1632'
+beta = '6870'
+xf = '100'
+xf_float = 1.00
 stream = 'a'
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ['689327']
-x0_float_vec = [6.89327]
+x0_vec = ['100']
+x0_float_vec = [1.00]
 dt = '0.015625'
-n_files = 200
+n_files = 400
 first_file =101
-n_bins = 20
+n_bins = 40
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
