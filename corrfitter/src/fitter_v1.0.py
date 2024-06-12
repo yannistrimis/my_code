@@ -29,6 +29,7 @@ def main():
     str_tp = input()
     str_N = input()
     str_M = input()
+    str_sn = input()
     str_so = input()
     str_bin = input()
     fittype = input()
@@ -46,7 +47,7 @@ def main():
 
     my_tfit = range(tmin,tmax)
     my_tdata = range(0,tdatamax)
-    my_models = make_models(my_tdata,my_tfit,my_tp,str_so)
+    my_models = make_models(my_tdata,my_tfit,my_tp,str_sn,str_so)
     fitter = cf.CorrFitter(models=my_models)
 
     p0 = None
@@ -116,8 +117,8 @@ def main():
 def make_data(filename,str_bin):
     return gv.dataset.avg_data(cf.read_dataset(filename,binsize=int(str_bin)))
 
-def make_models(my_tdata,my_tfit,my_tp,str_so):
-    return [cf.Corr2( datatag='PROP', tp=my_tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(1.0,float(str_so)) )]
+def make_models(my_tdata,my_tfit,my_tp,str_sn,str_so):
+    return [cf.Corr2( datatag='PROP', tp=my_tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(float(str_sn),float(str_so)) )]
 
 
 def print_results(fit,N,M):

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-vol=1632
-beta=681823
-xg=100000
+vol=16128
+beta=719156
+xg=348992
 src="eowfw"
 prefix="nlpi"
-taste="PION_05"
-to_print_state="o"
+taste="PION_i5"
+to_print_state="n"
 to_print_nr=0
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
@@ -18,30 +18,31 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> FNAL
 
 
-tdata=17
-tp=32
-n_states=0
-m_states=2
-so="1.0"
+tdata=65
+tp=128
+n_states=1
+m_states=1
+sn="1.0"
+so="-1.0"
 binsize=1
 
-xq="1000"
+xq="4000"
 mom="p000"
-mass="0.01524"
+mass="0.01446"
 
 #yesno="prior"
 yesno="free"
 
-tmin_min=0
-tmin_max=12
-tmin_step=3
+tmin_min=5
+tmin_max=40
+tmin_step=1
 
-tmax_min=9
-tmax_max=17
-tmax_step=2
+tmax_min=60
+tmax_max=60
+tmax_step=5
 
-tmin_one=25
-tmax_one=33
+tmin_one=30
+tmax_one=60
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
@@ -65,6 +66,7 @@ ${tdata}
 ${tp}
 ${n_states}
 ${m_states}
+${sn}
 ${so}
 ${binsize}
 scanfit
@@ -87,6 +89,7 @@ ${tdata}
 ${tp}
 ${n_states}
 ${m_states}
+${sn}
 ${so}
 ${binsize}
 onefit
