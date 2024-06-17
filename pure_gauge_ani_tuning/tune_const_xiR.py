@@ -3,14 +3,14 @@ import numpy as np
 # REMEMBER TO TWEAK xi_g_target, nof_betas AND ORDER OF FIT POLYNOMIAL
 
 w0_phys = 0.17355
-a = 0.16
+a = 0.2
 
 w0_target = w0_phys/a
-xi_g_target = 8.0
+xi_g_target = 2.0
 
-nof_betas = 3
+nof_betas = 5
 
-f1 = open("../data_files/beta_swc_xiR_8.data","r")
+f1 = open("../data_files/beta_swc_xiR_2.data","r")
 
 f1_content = f1.readlines()
 
@@ -51,7 +51,7 @@ coeffs_w0[2] = coeffs_w0[2] - w0_target
 solutions = np.roots(coeffs_w0)
 
 for ii in range( len(solutions) ): # FOR SECURITY
-    if solutions[ii] < beta_points[nof_betas-1] and solutions[ii] > beta_points[0] :
+    if solutions[ii] < ( beta_points[nof_betas-1] + 0.1 ) and solutions[ii] > ( beta_points[0] - 0.1 ) :
         my_beta = np.real(solutions[ii])
         break
 

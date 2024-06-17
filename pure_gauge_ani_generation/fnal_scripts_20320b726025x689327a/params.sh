@@ -4,8 +4,8 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=150
-n_of_sub=8
+n_of_lat=10
+n_of_sub=1
 
 nx=20
 ny=20
