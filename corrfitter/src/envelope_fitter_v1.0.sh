@@ -38,7 +38,7 @@ mass="0.0146"
 yesno="free"
 
 tmin_min=0
-tmin_max=6
+tmin_max=12
 tmin_step=1
 
 tmax_min=18
