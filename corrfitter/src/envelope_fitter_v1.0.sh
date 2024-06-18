@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 vol=1664
@@ -6,25 +7,28 @@ xg=181411
 src="eowfw"
 prefix="nlpi"
 taste="PION_i"
-to_print_state="n"
+to_print_state="o"
 to_print_nr=0
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
 # dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> FNAL
 
-fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
-dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> iCER
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
+# dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> iCER
 # dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP -> FNAL
+
+fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
+dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 
 
 tdata=33
 tp=64
-n_states=2
-m_states=2
-sn="1.0"
+n_states=1
+m_states=1
+sn="-1.0"
 so="1.0"
-binsize=1
+binsize=10
 
 xq="1980"
 mom="p000"
@@ -34,15 +38,15 @@ mass="0.0146"
 yesno="free"
 
 tmin_min=0
-tmin_max=4
+tmin_max=6
 tmin_step=1
 
-tmax_min=10
-tmax_max=14
+tmax_min=18
+tmax_max=18
 tmax_step=1
 
-tmin_one=0
-tmax_one=33
+tmin_one=6
+tmax_one=18
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 

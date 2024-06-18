@@ -13,10 +13,10 @@ from python_funcs import *
 
 def make_prior(N,M):
     prior = collections.OrderedDict()
-    prior['log(an)'] = gv.log(gv.gvar(N*['0.2+-10000.0']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.17+-10000.0']))
-    prior['log(ao)'] = gv.log(gv.gvar(M*['0.1+-10000.0']))
-    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.1+-10000.0']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['0.1(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.5(10000.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(M*['0.1(10000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.18(10000.0)']))
     return prior
 
 def main():
