@@ -7,8 +7,8 @@ from python_funcs import *
 nx = 16
 lat_nt = 64
 vol = str(nx) + str(lat_nt)
-beta = '70805'
-x0 = '18876'
+beta = '704115'
+x0 = '181411'
 stream = 'a'
 ens_name = vol+'b'+beta+'x'+x0+stream
 
@@ -21,7 +21,7 @@ nt = int(lat_nt/2)+1 # QUICK SOLUTION FOR FOLDED DATA
 
 
 # cur_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
-cur_dir = '/home/trimisio/all/spec_data' # FNAL
+cur_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 
 f_read = open('%s/l%s/%s.specdata'%(cur_dir,ens_name,pre_name),'r')
 content = f_read.readlines()
