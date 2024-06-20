@@ -12,10 +12,10 @@
     integer, public, parameter :: KI=4
 
 ! Define the real precision, KR=4 for single and KR=8 for double.
-    integer, public, parameter :: KR=8 ! YT 20240620
+    integer, public, parameter :: KR=4 ! YT 20240620
 
 ! Define the complex precision, KC=4 for single and KC=8 for double.
-    integer, public, parameter :: KC=8 ! YT 20240620
+    integer, public, parameter :: KC=4 ! YT 20240620
 
 ! Define the number of space-time dimensions.
 ! NOTE: At present the code will only work with ndir=4.

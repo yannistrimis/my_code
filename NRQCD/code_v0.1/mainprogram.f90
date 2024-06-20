@@ -40,7 +40,8 @@
     iaction = 4
 
 ! Configuration file name.
-    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
+!    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
+    cfgfile = "/home/yannis/Physics/l1632b6850x100a.1.trunc"
 
 ! Stout smearing.
     nstoutsrc = 0
