@@ -136,6 +136,9 @@
     endif
     call aveplaq(Utad,cutboundaries,bwdnbr,fwdnbr,plaq)
     write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
+    call aveplaq(Utad,.false.,bwdnbr,fwdnbr,plaq)
+    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
+
 
 ! Apply the tadpole factors.
     call tadfield(Utad,uzeros,uzerot)

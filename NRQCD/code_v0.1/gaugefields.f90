@@ -381,6 +381,7 @@
     else
      nsites = nxyzt
     endif
+    write(unit=*,fmt="(a,i8)") "nsites = ", nsites
 
 ! Sum.
     do ixyzt = 1,nsites
