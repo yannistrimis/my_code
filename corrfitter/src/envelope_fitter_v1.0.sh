@@ -6,7 +6,7 @@ beta=704115
 xg=181411
 src="eowfw"
 prefix="nlpi"
-taste="PION_i"
+taste="PION_ij"
 to_print_state="o"
 to_print_nr=0
 
@@ -24,11 +24,11 @@ dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 
 tdata=33
 tp=64
-n_states=1
+n_states=0
 m_states=1
 sn="-1.0"
 so="1.0"
-binsize=10
+binsize=1
 
 xq="1980"
 mom="p000"
@@ -37,16 +37,16 @@ mass="0.0146"
 # yesno="prior"
 yesno="free"
 
-tmin_min=0
-tmin_max=12
+tmin_min=1
+tmin_max=20
 tmin_step=1
 
-tmax_min=18
-tmax_max=18
+tmax_min=33
+tmax_max=33
 tmax_step=1
 
 tmin_one=6
-tmax_one=18
+tmax_one=23
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
