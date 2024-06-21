@@ -134,10 +134,10 @@
     else
      cutboundaries = .false.
     endif
-    call aveplaq(Utad,cutboundaries,bwdnbr,fwdnbr,plaq)
-    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
-    call aveplaq(Utad,.false.,bwdnbr,fwdnbr,plaq)
-    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
+!    call aveplaq(Utad,cutboundaries,bwdnbr,fwdnbr,plaq)
+!    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
+    call aveplaq(Utad,.false.,bwdnbr,fwdnbr,plaq) ! YT 20240620
+    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq ! YT 20240620
 
 
 ! Apply the tadpole factors.
