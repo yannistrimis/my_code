@@ -1,14 +1,14 @@
 
 #!/bin/bash
 
-vol=16128
-beta=719156
-xg=348992
-src="eowfw"
-prefix="nlpi"
-taste="PION_i0"
-to_print_state="o"
-to_print_nr=1
+vol=20320
+beta=726025
+xg=689327
+src="cw"
+prefix="tun"
+taste="PION_5"
+to_print_state="n"
+to_print_nr=0
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}a" # CMSE
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}a" # CMSE -> iCER
@@ -22,31 +22,31 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 
 
-tdata=65
-tp=128
-n_states=0
-m_states=2
-sn="-1.0"
-so="1.0"
+tdata=161
+tp=320
+n_states=1
+m_states=1
+sn="1.0"
+so="-1.0"
 binsize=1
 
-xq="4000"
-mom="p000"
-mass="0.01446"
+xq="8200"
+mom="p110"
+mass="0.07"
 
-yesno="prior"
-# yesno="free"
+# yesno="prior"
+yesno="free"
 
-tmin_min=1
-tmin_max=51
-tmin_step=2
+tmin_min=30
+tmin_max=60
+tmin_step=3
 
-tmax_min=20
-tmax_max=20
-tmax_step=5
+tmax_min=70
+tmax_max=70
+tmax_step=10
 
-tmin_one=45
-tmax_one=65
+tmin_one=57
+tmax_one=70
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 

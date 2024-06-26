@@ -68,3 +68,24 @@
 
 # This leads to m_s = 0.072277
 # Thus nlpi with m_s = 0.0723 
+
+### xi = 8; ENSEMBLE: l20320b726025x689327a (FNAL); a = 0.16 fm
+
+# Anisotropy tuning for m = 0.07 # TOO LATE TIMES YIELD NOTHING BUT NOISE; IN THESE FITS tmax ~ 100
+
+#p^2            xi=7.60                         xi=7.80                         xi=8.00				xi=8.20 
+#               E               dE              E               dE              E               dE		E		dE
+0.00		0.070570	0.000046	0.069558        0.000045	0.068587	0.000045	0.067656	0.000044
+1.00		0.081136	0.000088	0.079953	0.000086	0.078817	0.000085	0.077724	0.000083
+2.00		0.09055		0.00013		0.08923		0.00013		0.08795		0.00013		0.08673		0.00012
+
+# This leads to xi_0 = 7.87119
+
+# Strange mass tuning for xi_0 = 7.870
+
+#m      E               dE
+0.03    
+0.05    
+0.07    
+0.09    
+0.11    
