@@ -7,36 +7,34 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=20
-nt=320
+nx=16
+nt=64
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="726025"
-xi_0_name="689327"
-stream="a"
+beta_name="704115"
+xi_0_name="181411"
+stream="z"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=160 # CHANGE ACCORDING TO nt
-source_prec=82 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=18 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.07
+mass3=0.07
 
-nxq=4
-xq1=7.60
-xq2=7.80
-xq3=8.00
-xq4=8.20
+nxq=3
+xq1=1.84
+xq2=1.92
+xq3=2.00
 
-xq1_name="7600"
-xq2_name="7800"
-xq3_name="8000"
-xq4_name="8200"
+xq1_name="1840"
+xq2_name="1920"
+xq3_name="2000"
 
 err=1e-6
 max_cg_iterations=300
@@ -44,15 +42,15 @@ action=hisq
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=5 # N/A WHEN icer IS SELECTED
-sbatch_ntasks=200
-sbatch_jobname="tun_xi8"
+sbatch_nodes=4 # N/A WHEN icer IS SELECTED
+sbatch_ntasks=128
+sbatch_jobname="tunz"
 
 prefix="tun"
 build_prefix="tun"
 
-n_of_sub=5
-n_of_lat=200
+n_of_sub=4
+n_of_lat=100
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
