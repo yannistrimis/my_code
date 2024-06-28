@@ -5,7 +5,7 @@ vol=20320
 beta=726025
 xg=689327
 src="cw"
-prefix="str"
+prefix="tun"
 taste="PION_5"
 to_print_state="n"
 to_print_nr=0
@@ -30,9 +30,9 @@ sn="1.0"
 so="-1.0"
 binsize=1
 
-xq="7870"
+xq="7800"
 mom="p000"
-mass="0.05"
+mass="0.07"
 
 # yesno="prior"
 yesno="free"
