@@ -16,14 +16,14 @@ beta_name="704115"
 xi_0_arr=(1.81411)
 xi_0_name_arr=("181411")
 
-stream="z"
+stream="a"
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("ga02z")
+sbatch_jobname_arr=("ga02")
 
-n_of_sub=1
+n_of_sub=2
 n_of_lat=500
 
 
