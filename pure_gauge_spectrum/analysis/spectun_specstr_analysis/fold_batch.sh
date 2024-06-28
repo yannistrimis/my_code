@@ -2,17 +2,18 @@
 nt=320 # DON'T FORGET TO CHANGE !!!
 
 ens_name="20320b726025x689327"
-masses=("0.05" "0.06" "0.07" "0.08")
+masses=("0.07")
 mas_len=${#masses[@]}
 
-prefix="str"
+prefix="tun"
 
-xq_arr=("7870")
+xq_arr=("7800")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
 
-src_label="cw"
+src_label="rcw"
+
 
 for mom in ${mom_arr[@]}
 do
