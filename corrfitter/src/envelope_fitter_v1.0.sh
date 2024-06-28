@@ -5,7 +5,7 @@ vol=20320
 beta=726025
 xg=689327
 src="cw"
-prefix="tun"
+prefix="str"
 taste="PION_5"
 to_print_state="n"
 to_print_nr=0
@@ -25,14 +25,14 @@ dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}a" # LAPTOP
 tdata=161
 tp=320
 n_states=1
-m_states=1
+m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
 
-xq="8200"
-mom="p110"
-mass="0.07"
+xq="7870"
+mom="p000"
+mass="0.05"
 
 # yesno="prior"
 yesno="free"
@@ -45,8 +45,8 @@ tmax_min=70
 tmax_max=70
 tmax_step=10
 
-tmin_one=57
-tmax_one=70
+tmin_one=0
+tmax_one=161
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
