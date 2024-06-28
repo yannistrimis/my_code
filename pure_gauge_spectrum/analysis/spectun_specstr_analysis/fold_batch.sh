@@ -12,7 +12,7 @@ sinks_arr=("PION_5")
 
 mom_arr=("p000")
 
-src_label="rcw"
+src_label="cw"
 
 
 for mom in ${mom_arr[@]}
@@ -23,7 +23,7 @@ for sinks in ${sinks_arr[@]}
 do
 echo "${sinks}"
 
-for i_file in {101..400..1}
+for i_file in {101..110..1}
 do
 echo "    ${i_file}"
 

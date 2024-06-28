@@ -15,10 +15,10 @@ for mom in ${mom_arr[@]}
 do
 echo "${mom}"
 
-source1="random_color_wall"
-source2="random_color_wall"
+source1="CORNER"
+source2="CORNER"
 
-src_label="rcw"
+src_label="cw"
 
 sinkop1="identity"
 sinkop2="identity"
@@ -27,7 +27,7 @@ for sinks in "${sinks_arr[@]}"
 do
 echo "${sinks}"
 
-for i_file in {101..400..1}
+for i_file in {101..110..1}
 do
 
 echo "    ${i_file}"
