@@ -15,7 +15,7 @@ set_seed=78324
 
 beta_name="704115"
 xi_0_name="181411"
-stream="z"
+stream="a"
 
 u0=1
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 source ${4}/params.sh
 
-inlat="${directory}/${lat_name}_rot.${1}"
+inlat="${directory}/${lat_name}.${1}"
 
 source_start=$(python3 -c "a=int(   ${set_source_start} + (  (${1}-${set_i_lat})*${source_prec}  ) % int(${nt}/2)   );print(a)")
 echo "source start = ${source_start}"
@@ -18,7 +18,7 @@ jobid=none
 inlat=${inlat}
 u0=${u0}
 
-ani_dir="x"
+ani_dir="t"
 ani_xiq=$3
 
 source_start=${source_start}

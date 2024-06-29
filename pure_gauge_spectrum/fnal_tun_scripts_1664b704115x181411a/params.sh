@@ -14,7 +14,7 @@ ny=16
 nz=16
 nt=64
 
-lat_name="l1664b704115x181411z"
+lat_name="l1664b704115x181411a"
 out_name="spectun1664b704115x181411"
 
 nmasses=1
@@ -39,11 +39,11 @@ precision=2
 build_script=build_input_tun.sh
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l1664b704115x181411z"
-out_dir="/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec/l1664b704115x181411z"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l1664b704115x181411a"
+out_dir="/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec/l1664b704115x181411a"
 path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/runspectunl1664b704115x181411z"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subspectunl1664b704115x181411z"
+run_dir="/project/ahisq/yannis_puregauge/runs/runspectunl1664b704115x181411a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subspectunl1664b704115x181411a"
 
 executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20240507"
 
