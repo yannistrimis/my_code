@@ -5,7 +5,7 @@ vol=20320
 beta=726025
 xg=689327
 src="cw"
-prefix="tun"
+prefix="str"
 taste="PION_5"
 to_print_state="n"
 to_print_nr=0
@@ -30,23 +30,23 @@ sn="1.0"
 so="-1.0"
 binsize=1
 
-xq="7800"
+xq="7870"
 mom="p000"
-mass="0.07"
+mass="0.08"
 
 # yesno="prior"
 yesno="free"
 
-tmin_min=30
-tmin_max=60
+tmin_min=10
+tmin_max=70
 tmin_step=3
 
-tmax_min=70
-tmax_max=70
-tmax_step=10
+tmax_min=80
+tmax_max=80
+tmax_step=5
 
-tmin_one=0
-tmax_one=161
+tmin_one=55
+tmax_one=80
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
