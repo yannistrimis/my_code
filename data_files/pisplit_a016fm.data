@@ -28,7 +28,7 @@ PION_ij		0.07861		0.00027		[15,50]{1.063,0.371} 1+1 o0
 PION_i0
 PION_i
 
-### xi = 8; ENSEMBLE: l20320b726025x689327a (FNAL); a = 0.16 fm
+### xi = 8; ENSEMBLE: l20320b726025x689327a (FNAL); a = 0.16 fm; m_l = 0.01416
 PION_5          -               -               [?,?]{?,?} ?+? n0
 PION_05
 PION_i5

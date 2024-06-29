@@ -7,34 +7,30 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=16
-nt=64
+nx=20
+nt=320
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="704115"
-xi_0_name="181411"
+beta_name="726025"
+xi_0_name="689327"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=32 # CHANGE ACCORDING TO nt
-source_prec=18 # CHANGE ACCORDING TO nt
+source_inc=160 # CHANGE ACCORDING TO nt
+source_prec=82 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass3=0.07
+mass1=0.01416
 
-nxq=3
-xq1=1.84
-xq2=1.92
-xq3=2.00
+nxq=1
+xq1=7.87
 
-xq1_name="1840"
-xq2_name="1920"
-xq3_name="2000"
+xq1_name="7870"
 
 err=1e-6
 max_cg_iterations=300
@@ -42,12 +38,12 @@ action=hisq
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=4 # N/A WHEN icer IS SELECTED
-sbatch_ntasks=128
-sbatch_jobname="tunz"
+sbatch_nodes=5 # N/A WHEN icer IS SELECTED
+sbatch_ntasks=200
+sbatch_jobname="nlpi8"
 
-prefix="tun"
-build_prefix="tun"
+prefix="nlpi"
+build_prefix="nlpi"
 
 n_of_sub=4
 n_of_lat=100
