@@ -1,13 +1,14 @@
 #!/bin/bash
-nt=320 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="20320b726025x689327"
+ens_name="1664b704115x181411"
+stream="a"
 masses=("0.07")
 mas_len=${#masses[@]}
 
 prefix="tun"
 
-xq_arr=("7800")
+xq_arr=("1840" "1920" "2000")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
@@ -23,7 +24,7 @@ for sinks in ${sinks_arr[@]}
 do
 echo "${sinks}"
 
-for i_file in {101..110..1}
+for i_file in {101..500..1}
 do
 echo "    ${i_file}"
 
@@ -38,7 +39,7 @@ do
 
 python fold_one.py <<EOF
 ${nt}
-${ens_name}a
+${ens_name}${stream}
 averspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
 ${i_file}
 foldspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}

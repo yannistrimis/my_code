@@ -1,20 +1,21 @@
 #!/bin/bash
 
-ens_name="16128b719156x348992"
-masses=("0.01446")
+ens_name="20320b726025x689327"
+masses=("0.01416")
 mas_len=${#masses[@]}
 
 prefix="nlpi"
 
-xq_arr=("4000")
-sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
+xq_arr=("7870")
 mom_arr=("p000")
 
+src_label="eowfw"
+sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
 
 src_label="eowfw"
 
 first=101
-last=1100
+last=400
 
 for mom in ${mom_arr[@]}
 do
