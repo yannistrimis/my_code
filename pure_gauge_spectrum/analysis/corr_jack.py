@@ -1,29 +1,20 @@
 import numpy as np
 import sys
-sys.path.insert(0, '../..') # icer
+sys.path.insert(0, '../..')
 
 from python_funcs import *
 
-nx = 16
-lat_nt = 64
-vol = str(nx) + str(lat_nt)
-beta = '704115'
-x0 = '181411'
-stream = 'a'
-ens_name = vol+'b'+beta+'x'+x0+stream
-
-pre_name = input()
+filename = input()
+str_lat_nt = input()
 str_n_bins = input()
 
 n_bins = int(str_n_bins)
+lat_nt = int(str_lat_nt)
 
 nt = int(lat_nt/2)+1 # QUICK SOLUTION FOR FOLDED DATA
 
 
-# cur_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
-cur_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
-
-f_read = open('%s/l%s/%s.specdata'%(cur_dir,ens_name,pre_name),'r')
+f_read = open('%s'%(filename),'r')
 content = f_read.readlines()
 n_of_files = len(content)
 
@@ -36,8 +27,8 @@ for i in range(nt) :
 
 f_read.close()
 
-write_1_re = open('%s/l%s/%s.specdata.bin'%(cur_dir,ens_name,pre_name),'w')
-write_2_re = open('%s/l%s/%s.specdata.averr'%(cur_dir,ens_name,pre_name),'w')
+write_1_re = open('%s.bin'%(filename),'w')
+write_2_re = open('%s.averr'%(filename),'w')
 
 
 my_bin_array_re = np.zeros(( nt , n_bins ))
@@ -46,7 +37,7 @@ my_jackbin_array_re = np.zeros(( nt , n_bins ))
 
 my_array_re = np.zeros(( nt , n_of_files ))
 my_av_re = np.zeros(nt)
-my_err_re = np.zeros(nt) 
+my_err_re = np.zeros(nt)
 
 for j in range(n_of_files) :
     line = content[j].split(' ')
@@ -74,7 +65,7 @@ write_1_re.close()
 write_2_re.close()
 
 for i_bin in range(n_bins) :
-    write_jackbin = open('%s/l%s/%s.specdata.jackbin_%d'%(cur_dir,ens_name,pre_name,i_bin),'w')
+    write_jackbin = open('%s.jackbin_%d'%(filename,i_bin),'w')
     for i in range(nt) :
         write_jackbin.write('%.16f\n'%(my_jackbin_array_re[i,i_bin]))
     write_jackbin.close()
