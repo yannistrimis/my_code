@@ -14,10 +14,10 @@ str_last_file = input()
 first_file = int(str_first_file)
 last_file = int(str_last_file)
 
-f_write = open('%s/l%s/%s.nonfold.specdata'%(out_dir,ens_name,name),'w')
+f_write = open('%s/l%s/%s.specdata'%(out_dir,ens_name,name),'w')
 
 for i_file in range(first_file,last_file+1):
-    f_read = open('%s/l%s/averspec%s.%d'%(out_dir,ens_name,name,i_file),'r')
+    f_read = open('%s/l%s/foldspec%s.%d'%(out_dir,ens_name,name,i_file),'r')
     content = f_read.readlines()
     f_write.write( 'PROP' )
     for i_line in range(len(content)) :
