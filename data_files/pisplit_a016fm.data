@@ -1,3 +1,14 @@
+### GENERAL INFO:
+PION_5		non-osc
+PION_05		osc
+PION_i5		non-osc
+PION_ij		osc
+PION_i0		osc
+PION_i		osc		s=(1,1)		MTc 34
+PION_0		osc		s=(0,-1)	MTc 18
+PION_s		osc		s=(-1,-1)	MTc 38
+
+
 #TASTE          E               dE              [tmin,tmax]{chisq,Q}
 
 ### xi = 1; ENSEMBLE: l1632b681823x100000a (FNAL); a = 0.16 fm; m_l = 0.01524
@@ -27,8 +38,8 @@ PION_i5		0.07862		0.00017		[30,60]{1.006,0.455} 1+1 n0
 PION_ij		0.07861		0.00027		[15,50]{1.063,0.371} 1+1 o0
 PION_i0		0.09025		0.00031		[26,65]{1.062,0.368} 0+1 o0
 PION_i		0.09097		0.00079		[32,62]{1.304,0.130} 0+1 o0
-PION_0
-PION_s
+PION_0		0.10020		0.00045		[20,40]{1.065,0.381} 0+1 o0
+PION_s		0.0990		0.0013		[22,47]{1.199,0.247} 1+1 o0
 
 ### xi = 8; ENSEMBLE: l20320b726025x689327a (FNAL); a = 0.16 fm; m_l = 0.01416
 PION_5          -               -               [?,?]{?,?} ?+? n0

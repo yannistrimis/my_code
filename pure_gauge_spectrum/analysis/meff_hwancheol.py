@@ -15,8 +15,7 @@ def main() :
     meff = np.zeros( (int(nt/2)-3,n_bins) )
 
     for i_bin in range(n_bins):
-        print('i_bin=',i_bin)
-        f_read = open('%s/%s.specdata.jackbin_%d'%(filename),'r')
+        f_read = open('%s.jackbin_%d'%(filename,i_bin),'r')
         content = f_read.readlines()
         f_read.close()
 
@@ -30,21 +29,29 @@ def main() :
             c2p = y_av[t+4]
             c2m = y_av[t]
             c0 = y_av[t+2]
-            print('t=',t)
-            meff[t,i_bin] = 0.5*np.arccosh( (c2p+c2m)/(2*c0) )
+            quant = (c2p+c2m)/(2*c0)
+            if ( quant >= 1.0 ):
+                meff[t,i_bin] = 0.5*np.arccosh( quant )
+            else :
+                meff[t,i_bin] = -100
 
     meff_averr = np.zeros( (int(nt/2)-3,2) )
     for t in range(int(nt/2)-3):
-
+        flag = 0
         for i_bin in range(n_bins) :
+            if ( meff[t,i_bin] == -100 ):
+                flag = 1
             meff_averr[t,0] = meff_averr[t,0] + meff[t,i_bin]
         meff_averr[t,0] = meff_averr[t,0] / n_bins
+
+        if flag == 1 :
+            meff_averr[t,0] = -100
+            continue
 
         for i_bin in range(n_bins) :
             meff_averr[t,1] = meff_averr[t,1] + (meff[t,i_bin]-meff_averr[t,0])**2
         meff_averr[t,1] = meff_averr[t,1]*(n_bins-1)/n_bins
         meff_averr[t,1] = np.sqrt(meff_averr[t,1])
-
         f_write.write('%d %f %f\n'%(t, meff_averr[t,0],meff_averr[t,1]))
     f_write.close()
 
