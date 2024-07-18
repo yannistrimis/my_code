@@ -15,7 +15,7 @@ def main() :
     meff = np.zeros( (int(nt/2)-3,n_bins) )
 
     for i_bin in range(n_bins):
-        f_read = open('%s.jackbin_%d'%(filename,i_bin),'r')
+        f_read = open('%s.jackbinval_%d'%(filename,i_bin),'r')
         content = f_read.readlines()
         f_read.close()
 

@@ -65,7 +65,7 @@ write_1_re.close()
 write_2_re.close()
 
 for i_bin in range(n_bins) :
-    write_jackbin = open('%s.jackbin_%d'%(filename,i_bin),'w')
+    write_jackbin = open('%s.jackbinval_%d'%(filename,i_bin),'w')
     for i in range(nt) :
         write_jackbin.write('%.16f\n'%(my_jackbin_array_re[i,i_bin]))
     write_jackbin.close()

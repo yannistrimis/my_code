@@ -107,10 +107,8 @@ def main():
         print('[','GOODNESS OF FIT FROM MANUALLY CALCD CHI_2 (ONLY FOR INFINITELY WIDE PRIORS):',']','\n')
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
     elif fittype == 'scanfit' :
-        print("%d %d %.8f %d %.8f"%(tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points), end="")
         print_results_scan(fit,N,M)
         print("")
-
 
 
 
@@ -150,9 +148,7 @@ def print_results_scan(fit,N,M):
         ao = p['ao']
 
     for i_state in range(N) :
-        print(" an[%d]: %.4f %.4f En[%d]: %.4f %.4f"%(i_state,an[i_state].mean,an[i_state].sdev,i_state,En[i_state].mean,En[i_state].sdev), end="")
-    for j_state in range(M) :
-        print(" ao[%d]: %.4f %.4f Eo[%d]: %.4f %.4f"%(j_state,ao[j_state].mean,ao[j_state].sdev,j_state,Eo[j_state].mean,Eo[j_state].sdev), end="")
+        print("%.8f %.8f"%(En[i_state].mean,En[i_state].sdev), end="")
 
 
 
