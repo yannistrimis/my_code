@@ -13,5 +13,5 @@ set output "w0_and_xi_vs_beta.ps"
 #set xlabel "{/Symbol b}"
 #plot [6.85:7.35][]"beta_swc_xiR_4.data" u 1:4:5 w err
 
-plot "beta_swc_xiR_2.data" u 4:($2/$4/2):($3/$4/2) w err, "beta_swc_xiR_4.data" u 4:($2/$4/4):($3/$4/4) w err, "beta_swc_xiR_8.data" u 4:($2/$4/8):($3/$4/8) w err
+plot "beta_swc_xiR_2.data" u 4:($2*$4/2):($3*$4/2) w err, "beta_swc_xiR_4.data" u 4:($2*$4/4):($3*$4/4) w err, "beta_swc_xiR_8.data" u 4:($2*$4/8):($3*$4/8) w err
 

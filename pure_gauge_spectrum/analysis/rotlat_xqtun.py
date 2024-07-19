@@ -106,4 +106,4 @@ for i_bin in range(40) :
   x0_predicted_arr[i_bin] = np.roots(pmean)
 
 x0_predicted = jackknife_for_binned(x0_predicted_arr)
-print(x0_predicted)
+print("predicted x0: ", x0_predicted[0], " +- ", x0_predicted[1])

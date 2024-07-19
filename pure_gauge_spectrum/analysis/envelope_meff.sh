@@ -1,10 +1,10 @@
 #!/bin/bash
-nt=64
-ens_name="1664b704115x181411"
-stream="z"
+nt=320
+ens_name="20320b726025x689327"
+stream="a"
 cur_dir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
-file_name="tunp000cw1664b704115x181411xq1920_m0.07m0.07PION_5.specdata"
-nbins=40
+file_name="strp000cw20320b726025x689327xq7870_m0.05m0.05PION_5.specdata"
+nbins=30
 
 python3 corr_jack.py <<EOF
 ${cur_dir}/${file_name}

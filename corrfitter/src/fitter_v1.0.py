@@ -150,9 +150,9 @@ def print_results_scan(fit,N,M):
         ao = p['ao']
 
     for i_state in range(N) :
-        print(" an[%d]: %.4f %.4f En[%d]: %.4f %.4f"%(i_state,an[i_state].mean,an[i_state].sdev,i_state,En[i_state].mean,En[i_state].sdev), end="")
+        print(" an[%d]: %.4f %.4f En[%d]: %.6f %.6f"%(i_state,an[i_state].mean,an[i_state].sdev,i_state,En[i_state].mean,En[i_state].sdev), end="")
     for j_state in range(M) :
-        print(" ao[%d]: %.4f %.4f Eo[%d]: %.4f %.4f"%(j_state,ao[j_state].mean,ao[j_state].sdev,j_state,Eo[j_state].mean,Eo[j_state].sdev), end="")
+        print(" ao[%d]: %.4f %.4f Eo[%d]: %.6f %.6f"%(j_state,ao[j_state].mean,ao[j_state].sdev,j_state,Eo[j_state].mean,Eo[j_state].sdev), end="")
 
 
 
