@@ -6,7 +6,7 @@ xg=689327
 stream="a"
 src="eowfw"
 prefix="nlpi"
-taste="PION_05"
+taste="PION_5"
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
@@ -23,9 +23,9 @@ dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTO
 tdata=161
 tp=320
 n_states=1
-m_states=1
-sn="-1.0"
-so="1.0"
+m_states=0
+sn="1.0"
+so="0"
 binsize=1
 
 xq="7870"
@@ -43,8 +43,8 @@ tmax_min=150
 tmax_max=150
 tmax_step=10
 
-tmin_one=105
-tmax_one=150
+tmin_one=150
+tmax_one=160
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
