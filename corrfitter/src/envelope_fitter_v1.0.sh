@@ -43,8 +43,8 @@ tmax_min=150
 tmax_max=150
 tmax_step=10
 
-tmin_one=150
-tmax_one=160
+tmin_one=80
+tmax_one=90
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
