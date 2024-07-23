@@ -67,13 +67,13 @@ def jackknife_for_binned(arr):
 
 def chisq_by_dof(meas_array,fit_array,y_cov,dof):
     n = len(meas_array)
-    
+
     if len(meas_array) != len(fit_array) :
         print('UNMATCHING DIMENSIONS')
         return 0
 
     y_cov_inv = np.linalg.inv(y_cov)
-    
+
     res = 0.0
 
     for i in range(n):
@@ -83,6 +83,24 @@ def chisq_by_dof(meas_array,fit_array,y_cov,dof):
     res = res/dof
 
     return res
+
+def chisq_by_dof_uncorr(meas_array,fit_array,sigma_array,dof):
+    n = len(meas_array)
+
+    if len(meas_array) != len(fit_array) :
+        print('UNMATCHING DIMENSIONS')
+        return 0
+
+    res = 0.0
+
+    for i in range(n):
+        res = res + (meas_array[i]-fit_array[i])**2 / ( sigma_array[i]**2 )
+
+    res = res/dof
+
+    return res
+
+
 
 
 def q_value(chi2dof,dof) :
