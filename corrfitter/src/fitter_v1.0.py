@@ -58,7 +58,7 @@ def main():
         print('tmin = ',tmin,'   tmax = ',tmax,'\n')
 
     prior = make_prior(N,M)
-    fit = fitter.lsqfit( data=data, prior=prior, p0=p0 )
+    fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm', svdcut=0.005 )
     if fittype == 'onefit' :
         print(30 * '=', 'nterm =', N,M)
         print(fit)
