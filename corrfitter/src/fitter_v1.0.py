@@ -33,6 +33,7 @@ def main():
     str_sn = input()
     str_so = input()
     str_bin = input()
+    correlated = input()
     fittype = input()
 
     file_name = my_dir+'/'+file_name
@@ -58,7 +59,10 @@ def main():
         print('tmin = ',tmin,'   tmax = ',tmax,'\n')
 
     prior = make_prior(N,M)
-    fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm', svdcut=0.005 )
+    if correlated == "corr" :
+        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm' )
+    elif correlated == "uncorr" :
+        fit = fitter.lsqfit( udata=data, prior=prior, p0=p0, method='lm' )
     if fittype == 'onefit' :
         print(30 * '=', 'nterm =', N,M)
         print(fit)
@@ -79,6 +83,10 @@ def main():
     Q_real = 1-gammainc(0.5*dof_real,0.5*chi2_real)
     if fittype == 'onefit' :
         print('\n')
+        if correlated == "corr" :
+            print("CORRELATED FIT:\n")
+        elif correlated == "uncorr" :
+            print("UNCORRELATED FIT:\n")
         print_results(fit,N,M)
         print('[','GOODNESS OF FIT FROM corrfitter CHI_2:',']','\n',)
         print( 'augmented chi2/dof [dof]: %.3f [%d]\tQ = %.3f\ndeaugmented chi2/dof [dof]:  %.3f [%d]\tQ = %.3f\n'%(fit.chi2/fit.dof,fit.dof,Q_man,chi2_real/dof_real,dof_real,Q_real) )
@@ -99,8 +107,15 @@ def main():
             cov_matrix[i_shift,j_shift] = gv.evalcov(data)['PROP','PROP'][i,j]
         meas_arr[i_shift] = data['PROP'][i].mean
         fit_arr[i_shift] = my_models[0].fitfcn(p=fit.p,t=my_tfit)[i_shift].mean
+    if correlated == "corr" :
+        chi2bydof_from_points = chisq_by_dof(meas_arr,fit_arr,cov_matrix,dof_real)
+    elif correlated == "uncorr" :
+        chi2bydof_from_points = 0.0
+        for it in my_tfit :
+            it_shift = it - my_tfit[0]
+            chi2bydof_from_points = chi2bydof_from_points + ( data['PROP'][it].mean - my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].mean )**2 / ( data['PROP'][it].sdev**2 )
+        chi2bydof_from_points = chi2bydof_from_points / dof_real
 
-    chi2bydof_from_points = chisq_by_dof(meas_arr,fit_arr,cov_matrix,dof_real)
     Q_from_points = q_value(chi2bydof_from_points,dof_real)
     if fittype == 'onefit' :
         print('\n')

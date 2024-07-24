@@ -1,12 +1,12 @@
 #!/bin/bash
 
-vol=20320
-beta=726025
-xg=689327
+vol=1664
+beta=704115
+xg=181411
 stream="a"
 src="eowfw"
 prefix="nlpi"
-taste="PION_5"
+taste="PION_s"
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
@@ -20,47 +20,47 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LA
 dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 
-tdata=161
-tp=320
+tdata=33
+tp=64
 n_states=1
-m_states=0
-sn="1.0"
-so="0"
+m_states=1
+sn="-1.0"
+so="-1.0"
 binsize=1
 
-xq="7870"
+xq="1980"
 mom="p000"
-mass="0.01416"
+mass="0.0146"
 
-# yesno="prior"
-yesno="free"
+# correlated="corr"
+correlated="uncorr"
 
 tmin_min=20
-tmin_max=130
+tmin_max=60
 tmin_step=5
 
-tmax_min=150
-tmax_max=150
-tmax_step=10
+tmax_min=100
+tmax_max=100
+tmax_step=5
 
-tmin_one=85
-tmax_one=90
+tmin_one=10
+tmax_one=25
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
 if [ $1 == "scan" ]
 then
 
-if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${yesno}.scanfit ]
+if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit ]
 then
-rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${yesno}.scanfit
+rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
 fi
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin=${tmin}+${tmin_step}));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
 
 
-python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.${yesno}.scanfit
+python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
 ${dir}
 ${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
 ${tmin}
@@ -72,6 +72,7 @@ ${m_states}
 ${sn}
 ${so}
 ${binsize}
+${correlated}
 scanfit
 EOF
 
@@ -93,6 +94,7 @@ ${m_states}
 ${sn}
 ${so}
 ${binsize}
+${correlated}
 onefit
 EOF
 
