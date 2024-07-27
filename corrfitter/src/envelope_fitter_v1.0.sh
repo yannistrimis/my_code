@@ -1,12 +1,12 @@
 #!/bin/bash
 
-vol=1664
-beta=704115
-xg=181411
+vol=20320
+beta=726025
+xg=689327
 stream="a"
 src="eowfw"
 prefix="nlpi"
-taste="PION_s"
+taste="PION_5"
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
@@ -20,20 +20,20 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LA
 dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 
-tdata=33
-tp=64
+tdata=161
+tp=320
 n_states=1
-m_states=1
-sn="-1.0"
+m_states=0
+sn="1.0"
 so="-1.0"
 binsize=1
 
-xq="1980"
+xq="7870"
 mom="p000"
-mass="0.0146"
+mass="0.01416"
 
-# correlated="corr"
-correlated="uncorr"
+correlated="corr"
+#correlated="uncorr"
 
 tmin_min=20
 tmin_max=60
@@ -43,8 +43,8 @@ tmax_min=100
 tmax_max=100
 tmax_step=5
 
-tmin_one=10
-tmax_one=25
+tmin_one=50
+tmax_one=53
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
