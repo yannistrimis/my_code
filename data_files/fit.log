@@ -438,3 +438,40 @@ Final set of parameters
 c2b             = 0.000703037    
 c1b             = -0.00690067    
 c0b             = -0.0127773     
+
+
+*******************************************************************************
+Sun Jul 28 09:53:36 2024
+
+
+FIT:    data read from "beta_7200_w0_ratios.data" u 1:2:3
+        format = x:z:s
+        #datapoints = 8
+function used for fitting: f(x)
+	f(x)=c0+c1*x+c2*x**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   c0            c1            c2           
+   0 2.8207213379e+08   0.00e+00  2.61e+03    1.000000e+00   1.000000e+00   1.000000e+00
+   7 2.0605702001e+00  -7.64e-05  2.61e-04    2.005195e+00  -8.219812e-01   1.484319e-01
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 2.06057
+rel. change during last iteration : -7.64014e-10
+
+degrees of freedom    (FIT_NDF)                        : 5
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.641961
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.412114
+p-value of the Chisq distribution (FIT_P)              : 0.840702
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c0              = 2.0052           +/- 0.3574       (17.82%)
+c1              = -0.821981        +/- 0.391        (47.57%)
+c2              = 0.148432         +/- 0.1069       (72.01%)
+
+correlation matrix of the fit parameters:
+                c0     c1     c2     
+c0              1.000 
+c1             -1.000  1.000 
+c2              1.000 -1.000  1.000 
