@@ -1,8 +1,8 @@
 #!/bin/bash
 
-vol=1664
-beta=704115
-xg=181411
+vol=16128
+beta=719156
+xg=348992
 stream="a"
 src="eowfw"
 prefix="nlpi"
@@ -20,17 +20,17 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LA
 dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 
-tdata=33
-tp=64
+tdata=65
+tp=128
 n_states=1
 m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
 
-xq="1980"
+xq="4000"
 mom="p000"
-mass="0.0146"
+mass="0.01446"
 
 correlated="corr"
 #correlated="uncorr"
@@ -44,7 +44,7 @@ tmax_max=32
 tmax_step=1
 
 tmin_one=0
-tmax_one=32
+tmax_one=64
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
