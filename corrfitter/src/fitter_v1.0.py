@@ -121,6 +121,12 @@ def main():
         print('\n')
         print('[','GOODNESS OF FIT FROM MANUALLY CALCD CHI_2 (ONLY FOR INFINITELY WIDE PRIORS):',']','\n')
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
+
+        data_array =  gv.dataset.Dataset(file_name)
+#        print(data_array["PROP"])
+        svd = gv.dataset.svd_diagnosis(data_array["PROP"])
+        svd.plot_ratio(show=True)
+
     elif fittype == 'scanfit' :
         print("%d %d %.8f %d %.8f"%(tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points), end="")
         print_results_scan(fit,N,M)

@@ -6,7 +6,7 @@ xg=181411
 stream="a"
 src="eowfw"
 prefix="nlpi"
-taste="PION_0"
+taste="PION_5"
 
 # fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
@@ -22,8 +22,8 @@ dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTO
 
 tdata=33
 tp=64
-n_states=0
-m_states=1
+n_states=1
+m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -43,8 +43,8 @@ tmax_min=32
 tmax_max=32
 tmax_step=1
 
-tmin_one=10
-tmax_one=17
+tmin_one=0
+tmax_one=32
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
@@ -84,7 +84,7 @@ then
 
 python3 fitter_v1.0.py <<EOF
 ${dir}
-${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
+${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata_head100
 ${tmin_one}
 ${tmax_one}
 ${tdata}
