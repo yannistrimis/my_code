@@ -46,6 +46,7 @@ def main():
 
     my_tfit = range(tmin,tmax+1)
     my_tdata = range(0,tdatamax)
+
     my_models = make_models(my_tdata,my_tfit,my_tp,str_sn,str_so)
     fitter = cf.CorrFitter(models=my_models)
 
@@ -93,6 +94,7 @@ def main():
         print('\n')
         print('#DATA dDATA FIT dFIT REDUCED_DIST')
         for it in my_tfit :
+            it_shift = it
             it_shift = it - my_tfit[0]
             print(it, data['PROP'][it].mean, data['PROP'][it].sdev, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].mean, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].sdev,(data['PROP'][it].mean-my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].mean)/data['PROP'][it].sdev)
 
@@ -122,10 +124,10 @@ def main():
         print('[','GOODNESS OF FIT FROM MANUALLY CALCD CHI_2 (ONLY FOR INFINITELY WIDE PRIORS):',']','\n')
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
 
-        data_array =  gv.dataset.Dataset(file_name)
-#        print(data_array["PROP"])
-        svd = gv.dataset.svd_diagnosis(data_array["PROP"])
-        svd.plot_ratio(show=True)
+## THE FOLLOWING IS FOR CHECK OF COVARIANCE MATRIX EIGENVALUES
+#        data_array =  gv.dataset.Dataset(file_name)
+#        svd = gv.dataset.svd_diagnosis(data_array["PROP"])
+#        svd.plot_ratio(show=True)
 
     elif fittype == 'scanfit' :
         print("%d %d %.8f %d %.8f"%(tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points), end="")
