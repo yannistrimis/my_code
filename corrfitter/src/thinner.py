@@ -1,17 +1,17 @@
 import numpy as np
 
-tmin=30
-tmax=40
-tstep=1
+tmin=0
+tmax=64
+tstep=3
 
 confmin=0
-confmax=99
+confmax=999
 confstep=1
 
 t_range = range(tmin+1,tmax+2,tstep) # +1 BECAUSE 0th ELEMENT IS "PROP"
 conf_range = range(confmin,confmax+1,confstep)
 
-filename = "/home/yannis/Physics/LQCD/spec_data/l16128b719156x348992a/nlpip000eowfw16128b719156x348992xq4000_m0.01446m0.01446PION_5.specdata"
+filename = "/home/yannis/Physics/LQCD/spec_data/l16128b719156x348992a/nlpip000eowfw16128b719156x348992xq4000_m0.01446m0.01446PION_s.specdata"
 
 temp_filename = filename + ".temp"
 

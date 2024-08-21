@@ -26,7 +26,9 @@ def main():
     file_name = input()
     str_tmin = input()
     str_tmax = input()
+    str_tdatamin = input()
     str_tdatamax = input()
+    str_tstep = input() # tstep for tfit and tdata is the same
     str_tp = input()
     str_N = input()
     str_M = input()
@@ -39,13 +41,15 @@ def main():
     file_name = my_dir+'/'+file_name
     tmin = int(str_tmin)
     tmax = int(str_tmax)
+    tdatamin = int(str_tdatamin)
     tdatamax = int(str_tdatamax)
+    tstep = int(str_tstep)
     my_tp = int(str_tp)
 
     data = make_data(file_name,str_bin)
 
-    my_tfit = range(tmin,tmax+1)
-    my_tdata = range(0,tdatamax)
+    my_tfit = range(tmin,tmax+1,tstep)
+    my_tdata = range(tdatamin,tdatamax+1,tstep)
 
 
     my_models = make_models(my_tdata,my_tfit,my_tp,str_sn,str_so)
@@ -94,29 +98,36 @@ def main():
         print( 'augmented chi2/dof [dof]: %.3f [%d]\tQ = %.3f\ndeaugmented chi2/dof [dof]:  %.3f [%d]\tQ = %.3f\n'%(fit.chi2/fit.dof,fit.dof,Q_man,chi2_real/dof_real,dof_real,Q_real) )
         print('\n')
         print('#DATA dDATA FIT dFIT REDUCED_DIST')
-        for it in my_tfit :
-            it_shift = it
-            it_shift = it - my_tfit[0]
-            print(it, data['PROP'][it].mean, data['PROP'][it].sdev, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].mean, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].sdev,(data['PROP'][it].mean-my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].mean)/data['PROP'][it].sdev)
+        it = -1
+        for t in my_tfit :
+            it = it + 1
+            it_shift = it + int((tmin-tdatamin)/tstep)
+            print(t, data['PROP'][it_shift].mean, data['PROP'][it_shift].sdev, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].sdev,(data['PROP'][it_shift].mean-my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean)/data['PROP'][it_shift].sdev)
 
     cov_matrix = np.zeros((len(my_tfit),len(my_tfit)))
     meas_arr = np.zeros(len(my_tfit))
     fit_arr = np.zeros(len(my_tfit))
 
-    for i in my_tfit :
-        i_shift = i - my_tfit[0]
-        for j in my_tfit :
-            j_shift = j - my_tfit[0]
-            cov_matrix[i_shift,j_shift] = gv.evalcov(data)['PROP','PROP'][i,j]
-        meas_arr[i_shift] = data['PROP'][i].mean
-        fit_arr[i_shift] = my_models[0].fitfcn(p=fit.p,t=my_tfit)[i_shift].mean
+    it = -1
+    for t in my_tfit :
+        it = it + 1
+        it_shift = it + int((tmin-tdatamin)/tstep)
+        jt = -1
+        for u in my_tfit :
+            jt = jt + 1
+            jt_shift = jt + int((tmin-tdatamin)/tstep)
+            cov_matrix[it,jt] = gv.evalcov(data)['PROP','PROP'][it_shift,jt_shift]
+        meas_arr[it] = data['PROP'][it_shift].mean
+        fit_arr[it] = my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean
     if correlated == "corr" :
         chi2bydof_from_points = chisq_by_dof(meas_arr,fit_arr,cov_matrix,dof_real)
     elif correlated == "uncorr" :
         chi2bydof_from_points = 0.0
-        for it in my_tfit :
-            it_shift = it - my_tfit[0]
-            chi2bydof_from_points = chi2bydof_from_points + ( data['PROP'][it].mean - my_models[0].fitfcn(p=fit.p,t=my_tfit)[it_shift].mean )**2 / ( data['PROP'][it].sdev**2 )
+        it = -1
+        for t in my_tfit :
+            it = it + 1
+            it_shift = it + int((tmin-tdatamin)/tstep)
+            chi2bydof_from_points = chi2bydof_from_points + ( data['PROP'][it_shift].mean - my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean )**2 / ( data['PROP'][it_shift].sdev**2 )
         chi2bydof_from_points = chi2bydof_from_points / dof_real
 
     Q_from_points = q_value(chi2bydof_from_points,dof_real)

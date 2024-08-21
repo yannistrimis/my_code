@@ -20,7 +20,9 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LA
 dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 
-tdata=65
+tdatamin=0
+tdatamax=64
+tstep=3
 tp=128
 n_states=1
 m_states=1
@@ -43,8 +45,8 @@ tmax_min=30
 tmax_max=50
 tmax_step=1
 
-tmin_one=48
-tmax_one=62
+tmin_one=6
+tmax_one=48
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
@@ -60,12 +62,14 @@ for ((tmin=${tmin_min};tmin<=${tmin_max};tmin=${tmin}+${tmin_step}));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
 
 
-python3 fitter_v1.0.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
+python3 fitter_v1.1.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
 ${dir}
-${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
+${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata.temp
 ${tmin}
 ${tmax}
-${tdata}
+${tdatamin}
+${tdatamax}
+${tstep}
 ${tp}
 ${n_states}
 ${m_states}
@@ -82,12 +86,14 @@ done # tmin
 elif [ $1 == "one"  ]
 then
 
-python3 fitter_v1.0.py <<EOF
+python3 fitter_v1.1.py <<EOF
 ${dir}
 ${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata.temp
 ${tmin_one}
 ${tmax_one}
-${tdata}
+${tdatamin}
+${tdatamax}
+${tstep}
 ${tp}
 ${n_states}
 ${m_states}
