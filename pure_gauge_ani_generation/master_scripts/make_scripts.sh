@@ -10,8 +10,8 @@ n_of_ens=3
 nx=16
 nt=48
 
-beta=6.9
-beta_name="6900"
+beta=7.1
+beta_name="7100"
 
 xi_0_arr=(1.40 1.45 1.50)
 xi_0_name_arr=("1400" "1450" "1500")
@@ -21,7 +21,7 @@ stream="a"
 sbatch_time="16:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("t15_11" "t15_12" "t15_13")
+sbatch_jobname_arr=("t15_21" "t15_22" "t15_23")
 
 n_of_sub=2
 n_of_lat=300
