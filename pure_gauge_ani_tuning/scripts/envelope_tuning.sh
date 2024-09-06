@@ -9,7 +9,7 @@ for obs_type in ${obs_type_arr[@]}; do
 python3 tuning_wuppertal_new.py <<EOF
 ${flow_type}
 ${obs_type}
-yes
+no
 EOF
 
 done
