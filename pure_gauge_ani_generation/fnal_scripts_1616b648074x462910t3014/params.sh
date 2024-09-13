@@ -4,13 +4,13 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=300
+n_of_lat=200
 n_of_sub=2
 
 nx=16
 ny=16
 nz=16
-nt=48
+nt=16
 
 # MILC convention in the improved action is: beta=10/g^2
 # Here we use plaquette action and so that is not relevant.
@@ -21,11 +21,11 @@ nt=48
 # beta_s=beta/xi_0
 # beta_t=beta*xi_0
 
-beta_s=4.82759 #in the MILC colde this appears first
-beta_t=10.15000 #and this appears second
+beta_s=1.40000 #in the MILC colde this appears first
+beta_t=29.99999 #and this appears second
 
-beta_name="7000"
-xi_0_name="1450"
+beta_name="648074"
+xi_0_name="462910"
 
 warms=0
 trajecs=20
@@ -34,25 +34,25 @@ steps_per_trajectory=4
 u0=1.0 # THIS IS !=1 FOR 1-LOOP SYMANZIK
 qhb_steps=1
 
-stream="a"
+stream="t3014"
 
-ensemble="1648b7000x1450a"
-lat_name="l1648b7000x1450a"
-out_name="out1648b7000x1450a"
+ensemble="1616b648074x462910t3014"
+lat_name="l1616b648074x462910t3014"
+out_name="out1616b648074x462910t3014"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l1648b7000x1450a"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l1648b7000x1450a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l1616b648074x462910t3014"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l1616b648074x462910t3014"
 path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1648b7000x1450a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1648b7000x1450a"
+run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1616b648074x462910t3014"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1616b648074x462910t3014"
 
 executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
 sbatch_time="16:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="t15_12"
+sbatch_jobname="t3014"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

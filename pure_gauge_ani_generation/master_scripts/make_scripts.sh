@@ -5,35 +5,39 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=7
 
 nx=16
-nt=48
+nt=16
 
-beta=6.94635
-beta_name="694635"
+beta_arr=(7.74597 7.34847 6.92820 6.48074 6.00000 5.47723 4.89898)
+beta_name_arr=("774597" "734847" "692820" "648074" "600000" "547723" "489898")
 
-xi_0_arr=(1.39939)
-xi_0_name_arr=("139939")
+xi_0_arr=(3.87298 4.08248 4.33013 4.62910 5.00000 5.47723 6.12372)
+xi_0_name_arr=("387298" "408248" "433013" "462910" "500000" "547723" "612372")
 
-stream="a"
+stream_arr=("t3020" "t3018" "t3016" "t3014" "t3012" "t3010" "t3008")
 
 sbatch_time="16:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("gen15")
+sbatch_jobname_arr=("t3020" "t3018" "t3016" "t3014" "t3012" "t3010" "t3008")
 
 n_of_sub=2
-n_of_lat=300
+n_of_lat=200
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
+beta=${beta_arr[${i_ens}]}
+beta_name=${beta_name_arr[${i_ens}]}
+
 xi_0=${xi_0_arr[${i_ens}]}
 xi_0_name=${xi_0_name_arr[${i_ens}]}
 
+stream=${stream_arr[${i_ens}]}
 sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 #
