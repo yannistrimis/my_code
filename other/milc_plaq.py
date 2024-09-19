@@ -26,8 +26,8 @@ for i_file in range(101,401):
         flag = 0
         i_arr = i_arr + 1
 #        print(i_arr,i_file)
-        plaq_st[i_arr] = split_line[2]
-        plaq_ss[i_arr] = split_line[3]
+        plaq_ss[i_arr] = split_line[2]
+        plaq_st[i_arr] = split_line[3]
 
 plaq_st_av = jackknife(plaq_st,30,"average")
 plaq_st_sdev = jackknife(plaq_st,30,"error")
@@ -35,4 +35,4 @@ plaq_st_sdev = jackknife(plaq_st,30,"error")
 plaq_ss_av = jackknife(plaq_ss,30,"average")
 plaq_ss_sdev = jackknife(plaq_ss,30,"error")
 
-print(plaq_st_av,plaq_st_sdev,plaq_ss_av,plaq_ss_sdev)
+print(plaq_ss_av,plaq_ss_sdev,plaq_st_av,plaq_st_sdev)
