@@ -21,11 +21,11 @@ nt=16
 # beta_s=beta/xi_0
 # beta_t=beta*xi_0
 
-beta_s=1.40000 #in the MILC colde this appears first
-beta_t=29.99999 #and this appears second
+beta_s=1.30000 #in the MILC colde this appears first
+beta_t=50.00004 #and this appears second
 
-beta_name="648074"
-xi_0_name="462910"
+beta_name="806226"
+xi_0_name="620174"
 
 warms=0
 trajecs=20
@@ -34,25 +34,25 @@ steps_per_trajectory=4
 u0=1.0 # THIS IS !=1 FOR 1-LOOP SYMANZIK
 qhb_steps=1
 
-stream="t3014"
+stream="t5013"
 
-ensemble="1616b648074x462910t3014"
-lat_name="l1616b648074x462910t3014"
-out_name="out1616b648074x462910t3014"
+ensemble="1616b806226x620174t5013"
+lat_name="l1616b806226x620174t5013"
+out_name="out1616b806226x620174t5013"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l1616b648074x462910t3014"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l1616b648074x462910t3014"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l1616b806226x620174t5013"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l1616b806226x620174t5013"
 path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1616b648074x462910t3014"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1616b648074x462910t3014"
+run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1616b806226x620174t5013"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1616b806226x620174t5013"
 
 executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
-sbatch_time="16:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="t3014"
+sbatch_jobname="t5013"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
