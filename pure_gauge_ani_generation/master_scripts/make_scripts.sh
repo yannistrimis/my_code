@@ -5,26 +5,26 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=8
+n_of_ens=1
 
-nx=16
-nt=16
+nx=20
+nt=40
 
-beta_arr=(8.36660 8.06226 7.74597 7.41620 7.07107 6.70820 6.32456 5.91608)
-beta_name_arr=("836660" "806226" "774597" "741620" "707107" "670820" "632456" "591608")
+beta_arr=(7.08567)
+beta_name_arr=("708567")
 
-xi_0_arr=(5.97614 6.20174 6.45497 6.74200 7.07107 7.45356 7.90569 8.45154)
-xi_0_name_arr=("597614" "620174" "645497" "674200" "707107" "745356" "790569" "845154")
+xi_0_arr=(1.81690)
+xi_0_name_arr=("181690")
 
-stream_arr=("t5014" "t5013" "t5012" "t5011" "t5010" "t5009" "t5008" "t5007")
+stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
-sbatch_ntasks=128
-sbatch_jobname_arr=("t5014" "t5013" "t5012" "t5011" "t5010" "t5009" "t5008" "t5007")
+sbatch_ntasks=100
+sbatch_jobname_arr=("Nt10tun")
 
-n_of_sub=2
-n_of_lat=200
+n_of_sub=10
+n_of_lat=500
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
