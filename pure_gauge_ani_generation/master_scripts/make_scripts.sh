@@ -10,11 +10,11 @@ n_of_ens=1
 nx=20
 nt=40
 
-beta_arr=(7.08567)
-beta_name_arr=("708567")
+beta_arr=(7.45569)
+beta_name_arr=("745569")
 
-xi_0_arr=(1.81690)
-xi_0_name_arr=("181690")
+xi_0_arr=(1.82670)
+xi_0_name_arr=("182670")
 
 stream_arr=("a")
 
@@ -23,7 +23,7 @@ sbatch_nodes=4
 sbatch_ntasks=100
 sbatch_jobname_arr=("Nt10tun")
 
-n_of_sub=10
+n_of_sub=4
 n_of_lat=500
 
 

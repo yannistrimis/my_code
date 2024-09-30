@@ -7,27 +7,27 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=16
-nt=48
+nx=20
+nt=40
 
-beta_name_arr=("694635")
-xi_0_name_arr=("139939")
+beta_name_arr=("708567")
+xi_0_name_arr=("181690")
 stream="a"
 
-xi_f=1.50
-xi_f_name="150"
+xi_f=2.00
+xi_f_name="200"
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
 stoptime="3.5"
 
-sbatch_time="16:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes=4 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=128
-sbatch_jobname_arr=("w15")
+sbatch_jobname_arr=("w2")
 
-n_of_sub=1
+n_of_sub=2
 n_of_lat=500
 first_lattice=101
 
