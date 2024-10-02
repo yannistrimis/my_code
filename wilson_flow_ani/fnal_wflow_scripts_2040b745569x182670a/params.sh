@@ -13,8 +13,8 @@ ny=20
 nz=20
 nt=40
 
-lat_name="l2040b708567x181690a"
-out_name="wflow2040b708567x181690xf200a_dt0.015625"
+lat_name="l2040b745569x182670a"
+out_name="wflow2040b745569x182670xf200a_dt0.015625"
 
 xi_f=2.00
 
@@ -24,11 +24,11 @@ dt="0.015625"
 stoptime="3.5"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l2040b708567x181690a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l2040b745569x182670a"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l2040b745569x182670a"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/runwflowl2040b708567x181690a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subwflowl2040b708567x181690a"
+run_dir="/project/ahisq/yannis_puregauge/runs/runwflowl2040b745569x182670a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subwflowl2040b745569x182670a"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 

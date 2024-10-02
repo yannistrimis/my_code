@@ -10,8 +10,8 @@ n_of_ens=1
 nx=20
 nt=40
 
-beta_name_arr=("708567")
-xi_0_name_arr=("181690")
+beta_name_arr=("745569")
+xi_0_name_arr=("182670")
 stream="a"
 
 xi_f=2.00

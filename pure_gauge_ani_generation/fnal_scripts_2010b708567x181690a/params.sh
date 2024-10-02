@@ -5,12 +5,12 @@ cluster=fnal
 
 init_seed=1158
 n_of_lat=500
-n_of_sub=2
+n_of_sub=5
 
 nx=20
 ny=20
 nz=20
-nt=40
+nt=10
 
 # MILC convention in the improved action is: beta=10/g^2
 # Here we use plaquette action and so that is not relevant.
@@ -36,23 +36,23 @@ qhb_steps=1
 
 stream="a"
 
-ensemble="2040b708567x181690a"
-lat_name="l2040b708567x181690a"
-out_name="out2040b708567x181690a"
+ensemble="2010b708567x181690a"
+lat_name="l2010b708567x181690a"
+out_name="out2010b708567x181690a"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l2040b708567x181690a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l2010b708567x181690a"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l2010b708567x181690a"
 path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/rungenl2040b708567x181690a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl2040b708567x181690a"
+run_dir="/project/ahisq/yannis_puregauge/runs/rungenl2010b708567x181690a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl2010b708567x181690a"
 
 executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
 sbatch_time="20:00:00"
-sbatch_nodes="3"
-sbatch_ntasks="100"
-sbatch_jobname="Nt10_tun"
+sbatch_nodes="2"
+sbatch_ntasks="50"
+sbatch_jobname="Nt10_Tc"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

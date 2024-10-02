@@ -3,7 +3,7 @@ import numpy as np
 # REMEMBER TO TWEAK xi_g_target, nof_betas AND ORDER OF FIT POLYNOMIAL
 
 w0_phys = 0.17355
-a = 0.073
+a = 0.0973
 
 w0_target = w0_phys/a
 xi_g_target = 2
