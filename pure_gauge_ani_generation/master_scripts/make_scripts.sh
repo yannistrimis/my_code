@@ -7,21 +7,21 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=16
-nt=16
+nx=12
+nt=96
 
 beta_arr=(5.75)
 beta_name_arr=("575")
 
-xi_0_arr=(1.00)
-xi_0_name_arr=("100")
+xi_0_arr=(3.136)
+xi_0_name_arr=("3136")
 
-stream_arr=("a")
+stream_arr=("p")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
-sbatch_ntasks=64
-sbatch_jobname_arr=("wils")
+sbatch_ntasks=48
+sbatch_jobname_arr=("nomcomp")
 
 n_of_sub=2
 n_of_lat=500

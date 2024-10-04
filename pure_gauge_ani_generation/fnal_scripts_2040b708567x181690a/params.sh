@@ -52,7 +52,7 @@ executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 sbatch_time="20:00:00"
 sbatch_nodes="3"
 sbatch_ntasks="100"
-sbatch_jobname="Nt10_tun"
+sbatch_jobname="tuntc"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

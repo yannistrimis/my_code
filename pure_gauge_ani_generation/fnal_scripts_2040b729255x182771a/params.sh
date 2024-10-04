@@ -4,8 +4,8 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=500
-n_of_sub=3
+n_of_lat=100
+n_of_sub=1
 
 nx=20
 ny=20
@@ -52,7 +52,7 @@ executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 sbatch_time="20:00:00"
 sbatch_nodes="3"
 sbatch_ntasks="100"
-sbatch_jobname="Nt10_tunb"
+sbatch_jobname="tun15tc"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
