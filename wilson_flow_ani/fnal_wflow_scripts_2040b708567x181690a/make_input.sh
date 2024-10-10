@@ -17,6 +17,6 @@ ${flow_action}
 exp_order ${exp_order}
 stepsize $2
 stoptime ${stoptime}
-forget
+save_serial ${directory}/wflowlat_nstep32_${lat_name}.${i_curr}
 EOF
 

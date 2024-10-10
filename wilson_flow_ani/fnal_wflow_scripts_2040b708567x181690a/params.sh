@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 cluster=fnal
@@ -14,14 +13,14 @@ nz=20
 nt=40
 
 lat_name="l2040b708567x181690a"
-out_name="wflow2040b708567x181690xf200a_dt0.015625"
+out_name="wflowlat_nstep32_2040b708567x181690xf200a_dt0.015625"
 
 xi_f=2.00
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime="3.5"
+stoptime="0.5"
 
 
 directory="/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a"
