@@ -41,7 +41,8 @@
 
 ! Configuration file name.
 !    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
-    cfgfile = "/home/yannis/Physics/l1632b6850x100a.1.trunc"
+!    cfgfile = "/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a/l2040b708567x181690a.trunc.101"
+    read *,cfgfile
 
 ! Stout smearing.
     nstoutsrc = 0

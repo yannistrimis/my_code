@@ -30,17 +30,17 @@
     integer, public, parameter :: np=2
 
 ! Define the number of lattice sites in each spatial direction.
-    integer, public, parameter :: nx=16, ny=16, nz=16
+    integer, public, parameter :: nx=20, ny=20, nz=20
 
 ! Define the total number of lattice sites in the time direction.
-    integer, public, parameter :: largeNt=32
+    integer, public, parameter :: largeNt=40
 
 ! Define the number of consecutive lattice sites in the time direction that
 ! will be used for any correlation function.
 ! NOTE: If nt<largeNt then correlation functions will only have nt-4 time steps
 !       because two initial time steps and two final time steps are needed
 !       for neighbours during the calculation of color-electric fields.
-    integer, public, parameter :: nt=32
+    integer, public, parameter :: nt=40
 
 ! ===============================================
 ! Abandon all hope, ye who tamper below this line.
