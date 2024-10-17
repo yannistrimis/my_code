@@ -15,8 +15,8 @@ for i_file in range(first_file,last_file+1):
     content = f_read.readlines()
     f_write.write( 'PROP' )
     for i_line in range(1,len(content)) :
-        split1 = content[i_line].split('     ')
-        split2 = split1.split('  ')
+        split1 = content[i_line].split('    ')
+        split2 = split1[1].split('  ')
         f_write.write( ' %s'%(split2[1]) )
     f_write.write('\n')
     f_read.close()

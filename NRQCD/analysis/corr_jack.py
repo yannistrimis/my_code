@@ -5,12 +5,10 @@ from python_funcs import *
 
 name = input()
 
-nt = 40
-n_bins = 20
+nt = 35
+n_bins = 10
 
-nt = int(nt/2)+1 # QUICK SOLUTION FOR FOLDED DATA
-
-f_read = open('%s'%(name),'r')
+f_read = open('%s.specdata'%(name),'r')
 content = f_read.readlines()
 n_of_files = len(content)
 
@@ -23,16 +21,19 @@ for i in range(nt) :
 
 f_read.close()
 
-write_1_re = open('%s.bins'%(name),'w')
-write_2_re = open('%s.averr'%(name),'w')
+write_1_re = open('%s.specdata.bins'%(name),'w')
+write_2_re = open('%s.specdata.averr'%(name),'w')
 
 my_bin_array_re = np.zeros(( nt , n_bins ))
 my_array_re = np.zeros(( nt , n_of_files ))
 my_av_re = np.zeros(nt)
 my_err_re = np.zeros(nt)
 
+print(n_of_files,nt)
+
 for j in range(n_of_files) :
     line = content[j].split(' ')
+    print(len(line))
     for i in range(nt) :
         my_array_re[i,j] =  float(line[i+1])
 
