@@ -168,6 +168,7 @@
      call Smeson(Gt,corr)
      write(unit=*,fmt="(a,i5,2es18.10)") "2pt: it, corr = ", it, corr
     enddo ! it
+    write(*,*) "RUNNING COMPLETED"
 
 ! Deallocate the large arrays.
     deallocate(Utad,stat=ierr)
