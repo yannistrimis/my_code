@@ -19,7 +19,7 @@
     use heavypropagators
     implicit none
 
-    character(len=99)                    :: cfgfile
+    character(len=1000)                    :: cfgfile
     logical                              :: cutboundaries, backward, imp, &
                                             newgaugefield
     integer(kind=KI)                     :: it, nstoutsnk, nstoutsrc, &

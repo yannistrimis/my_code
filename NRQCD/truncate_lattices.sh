@@ -1,7 +1,7 @@
 #!/bin/bash
 
 lat_dir="/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a"
-lat_name="l2040b708567x181690a"
+lat_name="wflowlat_nstep32_l2040b708567x181690a"
 
 vol=$(( 20*20*20*40 ))
 trunc_size=$(( ${vol}*4*18*4 ))
