@@ -153,7 +153,7 @@
 ! Compute the 2-point correlators at the source time step.
     call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
     call Smeson(Gt,corr)
-    write(unit=*,fmt="(a,i5,2es18.10)") "2pt: it, corr = ", it, corr
+    write(unit=*,fmt="(i5,2es18.10)") it, corr
 
 ! Compute the heavy quark propagators and meson 2-point correlators.
     newgaugefield = .true.
@@ -166,7 +166,7 @@
      newgaugefield = .false.
      call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
      call Smeson(Gt,corr)
-     write(unit=*,fmt="(a,i5,2es18.10)") "2pt: it, corr = ", it, corr
+     write(unit=*,fmt="(i5,2es18.10)") it, corr
     enddo ! it
     write(*,*) "RUNNING COMPLETED"
 
