@@ -47,7 +47,7 @@ path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1296b575x3136p"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1296b575x3136p"
 
-executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
+executable="su3_ora_plaq_a_dbl_gcc12openmpi4_20241002"
 
 sbatch_time="20:00:00"
 sbatch_nodes="3"

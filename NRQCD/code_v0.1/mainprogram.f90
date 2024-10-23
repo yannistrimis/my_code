@@ -150,6 +150,8 @@
     call fatfield(Utad,uzeros,it,nstoutsrc,astoutsrc,bwdnbr,fwdnbr,Ufat)
     call Ssource(isrc,Gt)
 
+
+    write(*,*) "^1S_0 STATE:"
 ! Compute the 2-point correlators at the source time step.
     call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
     call Smeson(Gt,corr)
