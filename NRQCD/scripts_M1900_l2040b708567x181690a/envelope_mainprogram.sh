@@ -5,8 +5,8 @@ lat_dir="/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a"
 out_dir="/project/ahisq/yannis_puregauge/outputs/l2040b708567x181690a"
 M=1900
 
-i_lat=101
-n_lat=400
+i_lat=303
+n_lat=500
 
 n_meas=0
 

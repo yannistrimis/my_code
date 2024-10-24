@@ -3,7 +3,7 @@
 
 cluster=fnal
 
-n_of_lat=10
+n_of_lat=400
 n_of_sub=1
 
 set_i_lat=101
