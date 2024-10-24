@@ -7,46 +7,48 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=20
-nt=320
+nx=12
+ny=12
+nz=24
+nt=96
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="726025"
-xi_0_name="689327"
-stream="a"
+beta_name="575"
+xi_0_name="3136"
+stream="p"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=160 # CHANGE ACCORDING TO nt
-source_prec=82 # CHANGE ACCORDING TO nt
+source_inc=48 # CHANGE ACCORDING TO nt
+source_prec=26 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.01416
+mass1=0.10
 
 nxq=1
-xq1=7.87
+xq1=2.83
 
-xq1_name="7870"
+xq1_name="283"
 
 err=1e-6
 max_cg_iterations=300
-action=hisq
+action=naive
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=5 # N/A WHEN icer IS SELECTED
-sbatch_ntasks=200
-sbatch_jobname="nlpi8"
+sbatch_nodes=3 # N/A WHEN icer IS SELECTED
+sbatch_ntasks=96
+sbatch_jobname="nl_nom"
 
 prefix="nlpi"
 build_prefix="nlpi"
 
-n_of_sub=4
-n_of_lat=100
+n_of_sub=1
+n_of_lat=10
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -80,8 +82,8 @@ set_i_lat=${set_i_lat}
 set_seed=${set_seed}
 
 nx=${nx}
-ny=${nx}
-nz=${nx}
+ny=${ny}
+nz=${nz}
 nt=${nt}
 
 lat_name="${lat_name}"

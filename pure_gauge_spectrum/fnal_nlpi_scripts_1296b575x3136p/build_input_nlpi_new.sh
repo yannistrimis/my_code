@@ -23,6 +23,9 @@ hisq)
 asqtad)
   naik_cmd[$i]=""
 ;;
+naive)
+  naik_cmd[$i]=""
+;;
 esac
 done
 
@@ -70,8 +73,6 @@ max_number_of_eigenpairs 0
 
 number_of_pbp_masses 0
 
-######################################################################
-
 ### DESCRIPTION OF BASE SOURCES
 
 number_of_base_sources 1
@@ -115,6 +116,8 @@ number_of_sets 3
 
 # PARAMETERS FOR SET 0
 
+set_type multimass
+inv_type UML
 max_cg_iterations ${max_cg_iterations}
 max_cg_restarts 5
 check yes
@@ -148,6 +151,8 @@ cat <<EOF
 
 # PARAMETERS FOR SET 1
 
+set_type multimass
+inv_type UML
 max_cg_iterations ${max_cg_iterations}
 max_cg_restarts 5
 check yes
@@ -181,6 +186,8 @@ cat <<EOF
 
 # PARAMETERS FOR SET 2
 
+set_type multimass
+inv_type UML
 max_cg_iterations ${max_cg_iterations}
 max_cg_restarts 5
 check yes
