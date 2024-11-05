@@ -55,23 +55,27 @@
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- subroutine Smeson(G1,corr0,corr1)
+ subroutine Smeson(G1,corr0,corr1x,corr1y,corr1z)
 ! Construct a meson correlator at one time step from given propagators.
 ! INPUT:
 !   G1() is the propagator for the quark.
 ! OUTPUT:
 !   corr0 is the correlation function for ^1S_0 (0-+).
-!   corr1 is the correlation function for ^3S_1 (1--).
+!   corr1x/y/z are the correlation functions for ^3S_1 (1--).
 
     complex(kind=KC), intent(in),  dimension(:,:,:,:,:,:) :: G1
     complex(kind=KC), intent(out)                         :: corr0
-    complex(kind=KC), intent(out)                         :: corr1
+    complex(kind=KC), intent(out)                         :: corr1x
+    complex(kind=KC), intent(out)                         :: corr1y
+    complex(kind=KC), intent(out)                         :: corr1z
+
 
     complex(kind=KC),  dimension(np,np) :: sig_x
     complex(kind=KC),  dimension(np,np) :: sig_y
     complex(kind=KC),  dimension(np,np) :: sig_z
 
     integer(kind=KI) :: ic, ip, ix, iy, iz, ixyz, jc, jp
+    integer(kind=KI) :: kp, lp
 
     sig_x(1,1) = (0.0_KR,0.0_KR)
     sig_x(1,2) = (1.0_KR,0.0_KR)
@@ -89,7 +93,9 @@
     sig_z(2,2) = (-1.0_KR,0.0_KR)
 
     corr0 = (0.0_KR,0.0_KR)
-    corr1 = (0.0_KR,0.0_KR)
+    corr1x = (0.0_KR,0.0_KR)
+    corr1y = (0.0_KR,0.0_KR)
+    corr1z = (0.0_KR,0.0_KR)
 
     ixyz = 0
     do iz = 1,nz
@@ -102,6 +108,13 @@
          do jp = 1,np
           do ip = 1,np
            corr0 = corr0 + conjg(G1(ic,ip,ixyz,jc,jp,1))*G1(ic,ip,ixyz,jc,jp,1)
+           do kp = 1,np          
+            do lp = 1,np
+             corr1x = corr1x + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_x(ip,lp)*sig_x(jp,kp)
+             corr1y = corr1y + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_y(ip,lp)*sig_y(jp,kp)
+             corr1z = corr1z + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_z(ip,lp)*sig_z(jp,kp)
+            enddo ! lp
+           enddo ! kp
           enddo ! ip
          enddo ! jp
         enddo ! ic

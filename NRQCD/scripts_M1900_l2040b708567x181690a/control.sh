@@ -2,6 +2,6 @@
 
 lat=$1
 
-../build/mainprogram <<EOF
+../build/mainprogram_v02 <<EOF
 "${lat}"
 EOF

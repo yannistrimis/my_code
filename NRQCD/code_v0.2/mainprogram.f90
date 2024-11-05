@@ -31,7 +31,7 @@
                                             astoutsnk, aspect, bareM, &
                                             unitaritycf, csetmin
     real(kind=KR),    dimension(2,14)    :: cset
-    complex(kind=KC)                     :: corr0,corr1
+    complex(kind=KC)                     :: corr0,corr1x,corr1y,corr1z
 
     complex(kind=KC), allocatable, dimension(:,:,:,:)     :: Utad, Ufat
     complex(kind=KC), allocatable, dimension(:,:,:,:,:,:) :: Gt
@@ -151,11 +151,11 @@
     call Ssource(isrc,Gt)
 
 
-    write(*,*) "^1S_0 STATE:"
+    write(*,*) "^1S_0 ^3S_1(x) ^3S_1(y) ^3S_1(z)"
 ! Compute the 2-point correlators at the source time step.
     call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
-    call Smeson(Gt,corr0,corr1)
-    write(unit=*,fmt="(i5,2es18.10)") it, corr0
+    call Smeson(Gt,corr0,corr1x,corr1y,corr1z)
+    write(unit=*,fmt="(i5,2es18.10,2es18.10,2es18.10,2es18.10)") it, corr0, corr1x, corr1y, corr1z
 
 ! Compute the heavy quark propagators and meson 2-point correlators.
     newgaugefield = .true.
@@ -167,8 +167,8 @@
                     newgaugefield,uzeros,uzerot)
      newgaugefield = .false.
      call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
-     call Smeson(Gt,corr0,corr1)
-     write(unit=*,fmt="(i5,2es18.10)") it, corr0
+     call Smeson(Gt,corr0,corr1x,corr1y,corr1z)
+     write(unit=*,fmt="(i5,2es18.10,2es18.10,2es18.10,2es18.10)") it, corr0, corr1x, corr1y, corr1z
     enddo ! it
     write(*,*) "RUNNING COMPLETED"
 
