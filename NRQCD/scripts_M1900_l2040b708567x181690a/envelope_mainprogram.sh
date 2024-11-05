@@ -6,7 +6,7 @@ out_dir="/project/ahisq/yannis_puregauge/outputs/l2040b708567x181690a"
 M=1900
 
 i_lat=101
-n_lat=1
+n_lat=400
 
 n_meas=0
 
@@ -15,7 +15,7 @@ while [ $i -le $n_lat ]
 do
 
 lat="${lat_dir}/${lat_name}.trunc.${i_lat}"
-out_name="${out_dir}/NRQCD_M${M}_${lat_name}.${i_lat}.test"
+out_name="${out_dir}/NRQCD_M${M}_${lat_name}.${i_lat}.twostate"
 
 if [ -f ${out_name} ]
 then
