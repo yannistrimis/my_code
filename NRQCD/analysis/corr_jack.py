@@ -5,8 +5,8 @@ from python_funcs import *
 
 name = input()
 
-nt = 35
-n_bins = 10
+nt = 36
+n_bins = 40
 
 f_read = open('%s.specdata'%(name),'r')
 content = f_read.readlines()
@@ -33,7 +33,6 @@ print(n_of_files,nt)
 
 for j in range(n_of_files) :
     line = content[j].split(' ')
-    print(len(line))
     for i in range(nt) :
         my_array_re[i,j] =  float(line[i+1])
 
