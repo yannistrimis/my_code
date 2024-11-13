@@ -1,5 +1,7 @@
 import numpy as np
 
+filename = input()
+
 tmin=0
 tmax=64
 tstep=3
@@ -10,8 +12,6 @@ confstep=1
 
 t_range = range(tmin+1,tmax+2,tstep) # +1 BECAUSE 0th ELEMENT IS "PROP"
 conf_range = range(confmin,confmax+1,confstep)
-
-filename = "/home/yannis/Physics/LQCD/spec_data/l16128b719156x348992a/nlpip000eowfw16128b719156x348992xq4000_m0.01446m0.01446PION_s.specdata"
 
 temp_filename = filename + ".temp"
 

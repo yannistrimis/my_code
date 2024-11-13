@@ -13,7 +13,7 @@ mom_arr=("p000")
 
 src_label="eowfw"
 # sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
-sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 
 src_label="eowfw"
 

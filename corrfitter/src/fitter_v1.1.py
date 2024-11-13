@@ -2,6 +2,12 @@ from __future__ import print_function   # makes this work for python2 and 3
 
 # RUN conda deactivate IF ON CMSE WORKSTATION
 
+# tdata CORRESPONDS TO THE DATA IN THE CORRELATOR FILE, WHETHER THIS HAS BEEN THINNED OR NOT.
+# THE COVARIANCE MATRIX IS CALCULATED TAKING THE WHOLE DATASET INTO CONSIDERATION-- THIS IS WHY
+# THINNING HAS TO BE DONE IN ADVANCE, BY THE WAY.
+# tfit IS THE POINTS USED FOR THE FIT. IF tfit IS NOT SPECIFIED THEN ALL POINTS IN tdata ARE
+# GOING TO BE USED FOR THE FIT.
+
 import collections
 import gvar as gv
 import numpy as np
@@ -22,7 +28,6 @@ def make_prior(N,M):
 
 def main():
 
-    my_dir = input()
     file_name = input()
     str_tmin = input()
     str_tmax = input()
@@ -38,7 +43,6 @@ def main():
     correlated = input()
     fittype = input()
 
-    file_name = my_dir+'/'+file_name
     tmin = int(str_tmin)
     tmax = int(str_tmax)
     tdatamin = int(str_tdatamin)

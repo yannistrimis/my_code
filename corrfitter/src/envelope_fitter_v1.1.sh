@@ -6,7 +6,11 @@ xg=3136
 stream="p"
 src="eowfw"
 prefix="nlpi"
-taste="PION_5"
+taste="PION_ij"
+
+xq="283"
+mom="p000"
+mass="0.1"
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 dir=${fitdir}
@@ -25,26 +29,21 @@ tdatamin=0
 tdatamax=48
 tstep=1
 tp=96
-n_states=1
-m_states=0
-sn="1.0"
-so="-1.0"
+n_states=2
+m_states=1
+sn="-1.0"
+so="1.0"
 binsize=1
 
-xq="283"
-mom="p000"
-mass="0.1"
-
-correlated="corr"
-#correlated="uncorr"
+correlated="corr" # "uncorr"
 
 tmin_min=10
 tmin_max=48
-tmin_step=4
+tmin_step=2
 
-tmax_min=40
+tmax_min=38
 tmax_max=48
-tmax_step=4
+tmax_step=2
 
 tmin_one=6
 tmax_one=48
@@ -64,8 +63,7 @@ for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
 
 
 python3 fitter_v1.1.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
-${dir}
-${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
+${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
 ${tmin}
 ${tmax}
 ${tdatamin}
@@ -88,8 +86,7 @@ elif [ $1 == "one"  ]
 then
 
 python3 fitter_v1.1.py <<EOF
-${dir}
-${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata.temp
+${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
 ${tmin_one}
 ${tmax_one}
 ${tdatamin}
