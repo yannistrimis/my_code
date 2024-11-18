@@ -10,49 +10,54 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=32
+nt=48
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="681823"
-xi_0_name="100000"
+beta_name="694635"
+xi_0_name="139939"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=16 # CHANGE ACCORDING TO nt
-source_prec=6 # CHANGE ACCORDING TO nt
+source_inc=24 # CHANGE ACCORDING TO nt
+source_prec=10 # CHANGE ACCORDING TO nt
 
-nmasses=5
-mass1=0.02
-mass2=0.04
-mass3=0.06
-mass4=0.08
-mass5=0.10
+nmasses=4
+mass1=0.03
+mass2=0.05
+mass3=0.07
+mass4=0.09
 
-nxq=1
-xq1=1.00
+nxq=4
+xq1=1.05
+xq2=1.25
+xq3=1.45
+xq4=1.65
 
-xq1_name="1000"
+xq1_name="1050"
+xq2_name="1250"
+xq3_name="1450"
+xq4_name="1650"
 
+action="naive"
 err=1e-6
 max_cg_iterations=300
-action=naive
 precision=2
 
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname="nl_nom"
+sbatch_jobname="naivtun"
 
-prefix="nlpi"
-build_prefix="nlpi"
+prefix="naivtun"
+build_prefix="tun"
 
-n_of_sub=1
-n_of_lat=10
+n_of_sub=2
+n_of_lat=300
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -65,7 +70,7 @@ lat_name="l${ensemble}"
 out_name="spec${prefix}${ensemble_nostream}"
 my_dir="${cluster}_${prefix}_scripts_${ensemble}"
 
-build_script="build_input_${build_prefix}.sh"
+build_script="build_input_${build_prefix}_new.sh"
 
 cd ..
 mkdir ${my_dir}
@@ -107,9 +112,9 @@ n_sources=${n_sources}
 source_inc=${source_inc}
 source_prec=${source_prec}
 
+action=${action}
 err=${err}
 max_cg_iterations=${max_cg_iterations}
-action=${action}
 precision=${precision}
 
 build_script=${build_script}
@@ -147,7 +152,8 @@ path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runspec${prefix}${lat_name}"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subspec${prefix}${lat_name}"
 
-executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20240507"
+# executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20241118"
+executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20241022"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
