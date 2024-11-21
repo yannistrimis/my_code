@@ -1,20 +1,19 @@
 #!/bin/bash
-nt=64 # DON'T FORGET TO CHANGE !!!
+nt=48 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1664b704115x181411"
+ens_name="1648b694635x139939"
 stream="a"
-masses=("0.07")
+masses=("0.03" "0.05" "0.07" "0.09")
 mas_len=${#masses[@]}
 
-prefix="tun"
+prefix="naivtun"
 
-xq_arr=("1840" "1920" "2000")
+xq_arr=("1050" "1250" "1450" "1650")
 sinks_arr=("PION_5")
 
-mom_arr=("p000")
+mom_arr=("p000" "p100" "p110")
 
 src_label="cw"
-
 
 for mom in ${mom_arr[@]}
 do
@@ -37,7 +36,7 @@ mass2=${mass1}
 for xq in "${xq_arr[@]}"
 do
 
-python fold_one.py <<EOF
+python3 fold_one.py <<EOF
 ${nt}
 ${ens_name}${stream}
 averspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
