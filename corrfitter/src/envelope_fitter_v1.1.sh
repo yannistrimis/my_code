@@ -12,8 +12,9 @@ xq="1450"
 mom="p100"
 mass="0.03"
 
-fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
-dir=${fitdir}
+# fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
+# dir=${fitdir} # CMSE
+
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
 # dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> FNAL
 
@@ -21,9 +22,8 @@ dir=${fitdir}
 # dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP -> iCER
 # dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP -> FNAL
 
-# fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
-# dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
-
+fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
+dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 tdatamin=0
 tdatamax=24
