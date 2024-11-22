@@ -1,16 +1,16 @@
 #!/bin/bash
 
-vol=1296
-beta=575
-xg=3136
-stream="p"
-src="eowfw"
-prefix="nlpi"
-taste="PION_ij"
+vol=1648
+beta=694635
+xg=139939
+stream="a"
+src="cw"
+prefix="naivtun"
+taste="PION_5"
 
-xq="283"
-mom="p000"
-mass="0.1"
+xq="1450"
+mom="p100"
+mass="0.03"
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 dir=${fitdir}
@@ -26,44 +26,49 @@ dir=${fitdir}
 
 
 tdatamin=0
-tdatamax=48
+tdatamax=24
 tstep=1
-tp=96
-n_states=2
+tp=48
+n_states=1
 m_states=1
-sn="-1.0"
-so="1.0"
+sn="1.0"
+so="-1.0"
 binsize=1
 
-correlated="corr" # "uncorr"
+correlated="corr"
 
-tmin_min=10
-tmin_max=48
+tmin_min=0
+tmin_max=24
 tmin_step=2
 
-tmax_min=38
-tmax_max=48
+tmax_min=0
+tmax_max=24
 tmax_step=2
 
-tmin_one=6
-tmax_one=48
+tmin_one=8
+tmax_one=18
+
+specdata_file="${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
 if [ $1 == "scan" ]
 then
 
-if [ -f ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit ]
+fit_file="${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit"
+
+
+if [ -f ${fit_file} ]
 then
-rm ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
+rm ${fit_file}
 fi
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin=${tmin}+${tmin_step}));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
 
 
-python3 fitter_v1.1.py <<EOF >> ${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit
-${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
+python3 fitter_v1.1.py <<EOF >> ${fit_file}
+${specdata_file}
 ${tmin}
 ${tmax}
 ${tdatamin}
@@ -86,7 +91,7 @@ elif [ $1 == "one"  ]
 then
 
 python3 fitter_v1.1.py <<EOF
-${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata
+${specdata_file}
 ${tmin_one}
 ${tmax_one}
 ${tdatamin}

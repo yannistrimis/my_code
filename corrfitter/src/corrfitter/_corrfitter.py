@@ -389,6 +389,7 @@ class Corr2(lsqfit.MultiFitterModel):
                         ),
                     axis=1,
                     )
+                print(p[ai],p[bi])
         return ans
 
 class Corr3(lsqfit.MultiFitterModel):
