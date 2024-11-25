@@ -8,12 +8,12 @@ src="cw"
 prefix="naivtun"
 taste="PION_5"
 
-xq="1450"
-mom="p100"
-mass="0.03"
+xq="1650"
+mom="p110"
+mass="0.07"
 
-# fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
-# dir=${fitdir} # CMSE
+fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
+dir=${fitdir} # CMSE
 
 # dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
 # dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> FNAL
@@ -22,8 +22,8 @@ mass="0.03"
 # dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP -> iCER
 # dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP -> FNAL
 
-fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
-dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
+# dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 tdatamin=0
 tdatamax=24
@@ -37,16 +37,16 @@ binsize=1
 
 correlated="corr"
 
-tmin_min=0
-tmin_max=24
-tmin_step=2
+tmin_min=8
+tmin_max=18
+tmin_step=1
 
-tmax_min=0
+tmax_min=20
 tmax_max=24
-tmax_step=2
+tmax_step=1
 
-tmin_one=8
-tmax_one=18
+tmin_one=13
+tmax_one=24
 
 specdata_file="${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
