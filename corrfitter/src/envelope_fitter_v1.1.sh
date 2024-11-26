@@ -10,7 +10,7 @@ taste="PION_5"
 
 xq="1650"
 mom="p110"
-mass="0.07"
+mass="0.05"
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 dir=${fitdir} # CMSE
@@ -37,16 +37,16 @@ binsize=1
 
 correlated="corr"
 
-tmin_min=8
-tmin_max=18
+tmin_min=6
+tmin_max=16
 tmin_step=1
 
-tmax_min=20
+tmax_min=18
 tmax_max=24
 tmax_step=1
 
-tmin_one=13
-tmax_one=24
+tmin_one=10
+tmax_one=23
 
 specdata_file="${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
