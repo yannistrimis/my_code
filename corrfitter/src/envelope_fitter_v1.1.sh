@@ -9,8 +9,8 @@ prefix="naivtun"
 taste="PION_5"
 
 xq="1650"
-mom="p110"
-mass="0.05"
+mom="p100"
+mass="0.03"
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 dir=${fitdir} # CMSE
