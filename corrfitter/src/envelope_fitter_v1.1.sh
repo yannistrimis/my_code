@@ -9,7 +9,7 @@ prefix="naivtun"
 taste="PION_5"
 
 xq="1650"
-mom="p100"
+mom="p110"
 mass="0.03"
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
@@ -37,11 +37,11 @@ binsize=1
 
 correlated="corr"
 
-tmin_min=6
+tmin_min=4
 tmin_max=16
 tmin_step=1
 
-tmax_min=18
+tmax_min=16
 tmax_max=24
 tmax_step=1
 
