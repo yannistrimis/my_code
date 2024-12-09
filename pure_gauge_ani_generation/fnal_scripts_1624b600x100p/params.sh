@@ -10,7 +10,7 @@ n_of_sub=2
 nx=16
 ny=16
 nz=16
-nt=16
+nt=24
 
 # MILC convention in the improved action is: beta=10/g^2
 # Here we use plaquette action and so that is not relevant.
@@ -21,10 +21,10 @@ nt=16
 # beta_s=beta/xi_0
 # beta_t=beta*xi_0
 
-beta_s=5.75000 #in the MILC colde this appears first
-beta_t=5.75000 #and this appears second
+beta_s=6.00000 #in the MILC colde this appears first
+beta_t=6.00000 #and this appears second
 
-beta_name="575"
+beta_name="600"
 xi_0_name="100"
 
 warms=0
@@ -36,24 +36,23 @@ qhb_steps=1
 
 stream="p"
 
-ensemble="1616b575x100p"
-lat_name="l1616b575x100p"
-out_name="out1616b575x100p"
+ensemble="1624b600x100p"
+lat_name="l1624b600x100p"
+out_name="out1624b600x100p"
 
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/l1616b575x100p"
-out_dir="/project/ahisq/yannis_puregauge/outputs/l1616b575x100p"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l1624b600x100p"
+out_dir="/project/ahisq/yannis_puregauge/outputs/l1624b600x100p"
 path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1616b575x100p"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1616b575x100p"
+run_dir="/project/ahisq/yannis_puregauge/runs/rungenl1624b600x100p"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl1624b600x100p"
 
-# executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 executable="su3_ora_plaq_a_dbl_gcc12openmpi4_20241002"
 
 sbatch_time="20:00:00"
 sbatch_nodes="2"
-sbatch_ntasks="64"
-sbatch_jobname="wils"
+sbatch_ntasks="48"
+sbatch_jobname="davcomp"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

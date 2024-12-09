@@ -26,22 +26,13 @@ n_sources=2
 source_inc=24 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
-nmasses=4
-mass1=0.03
-mass2=0.05
-mass3=0.07
-mass4=0.09
+nmasses=1
+mass1=0.01652
 
-nxq=4
-xq1=1.05
-xq2=1.25
-xq3=1.45
-xq4=1.65
+nxq=1
+xq1=1.220
 
-xq1_name="1050"
-xq2_name="1250"
-xq3_name="1450"
-xq4_name="1650"
+xq1_name="1220"
 
 action="naive"
 err=1e-6
@@ -51,10 +42,10 @@ precision=2
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname="naivtun"
+sbatch_jobname="naivnlpi"
 
-prefix="naivtun"
-build_prefix="tun"
+prefix="naivnlpi"
+build_prefix="nlpi"
 
 n_of_sub=2
 n_of_lat=300
