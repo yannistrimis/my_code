@@ -2,17 +2,17 @@
 
 ens_name="1648b694635x139939"
 stream="a"
-masses=("0.03" "0.05" "0.07" "0.09")
+masses=("0.07")
 mas_len=${#masses[@]}
 
-prefix="naivtun"
+prefix="hisqtun"
 
 xq_arr=("1050" "1250" "1450" "1650")
 sinks_arr=("PION_5")
 
-mom_arr=("p100" "p110")
+mom_arr=("p000")
 
-source1="CORNER/momentum"
+source1="CORNER"
 source2="CORNER"
 
 src_label="cw"
