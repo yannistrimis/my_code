@@ -19,10 +19,10 @@ from python_funcs import *
 
 def make_prior(N,M):
     prior = collections.OrderedDict()
-    prior['log(an)'] = gv.log(gv.gvar(N*['20.19(1000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.409(100.0)']))
-    prior['log(ao)'] = gv.log(gv.gvar(M*['10.00(1000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.72(100.0)']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['15.45(1000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.420(100.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(M*['7.00(1000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.59(100.0)']))
 
     return prior
 
