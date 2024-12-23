@@ -8,23 +8,23 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=24
+nt=16
 
-beta_arr=(6.00)
-beta_name_arr=("600")
+beta_arr=(8.577)
+beta_name_arr=("8577")
 
 xi_0_arr=(1.00)
 xi_0_name_arr=("100")
 
-stream_arr=("p")
+stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
-sbatch_ntasks=48
-sbatch_jobname_arr=("davcomp")
+sbatch_ntasks=64
+sbatch_jobname_arr=("top")
 
-n_of_sub=2
-n_of_lat=500
+n_of_sub=8
+n_of_lat=100
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
