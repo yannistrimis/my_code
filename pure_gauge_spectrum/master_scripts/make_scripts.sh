@@ -33,11 +33,11 @@ mass3=0.07
 mass4=0.09
 
 nxq=1
-xq1=1.497
+xq1=1.00
 
-xq1_name="1497"
+xq1_name="1000"
 
-action="hisq"
+action="naive"
 err=1e-6
 max_cg_iterations=300
 precision=2
@@ -45,9 +45,9 @@ precision=2
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname="hisqstr"
+sbatch_jobname="naivstr"
 
-prefix="hisqstr"
+prefix="naivstr"
 build_prefix="tun"
 
 n_of_sub=2

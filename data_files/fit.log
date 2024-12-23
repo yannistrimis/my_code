@@ -475,3 +475,40 @@ correlation matrix of the fit parameters:
 c0              1.000 
 c1             -1.000  1.000 
 c2              1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Mon Dec 23 06:44:27 2024
+
+
+FIT:    data read from "xiR_1.data" u 1:11:12
+        format = x:z:s
+        #datapoints = 4
+function used for fitting: f(x)
+	f(x)= a0 + a1*x + a2*x**2
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a0            a1            a2           
+   0 7.6368911408e+08   0.00e+00  7.25e+03    1.000000e+00   1.000000e+00   1.000000e+00
+   8 1.6072041012e-01  -1.55e-02  7.25e-05    1.434474e+01  -4.979585e+00   4.445507e-01
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 0.16072
+rel. change during last iteration : -1.5464e-07
+
+degrees of freedom    (FIT_NDF)                        : 1
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.4009
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.16072
+p-value of the Chisq distribution (FIT_P)              : 0.688494
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a0              = 14.3447          +/- 1.413        (9.85%)
+a1              = -4.97959         +/- 0.3787       (7.605%)
+a2              = 0.444551         +/- 0.02536      (5.704%)
+
+correlation matrix of the fit parameters:
+                a0     a1     a2     
+a0              1.000 
+a1             -1.000  1.000 
+a2              1.000 -1.000  1.000 

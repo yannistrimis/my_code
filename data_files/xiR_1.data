@@ -1,0 +1,6 @@
+# beta  xi0     Ns      Nt      N_conf  w0_SSC  dw0     xiR_SSC dxiR    N_SSC   w0_SWC  dw0     xiR_SWC dxiR    N_SWC   Notes
+7.167   1       20      20      400     1.4837  0.0018  0.9953  0.0025  400     1.4904  0.0059  1.0003  0.0084  40      Wuppertal, SWC tuning
+7.433   1       24      24      400     1.8832  0.0044  1.0021  0.0037  400     1.8955  0.0084  1.0082  0.0100  60      Wuppertal, SWC tuning
+7.667   1       28      28      400     2.2948  0.0030  1.0031  0.0031  400     2.2978  0.0029  1.0032  0.0033  400     Wuppertal, SWC tuning
+7.833   1       32      32      400     2.6137  0.0064  0.9979  0.0049  400     2.6164  0.0065  0.9978  0.0051  400     Wuppertal, SWC tuning
+
