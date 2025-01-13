@@ -11,6 +11,7 @@ mss_phys = 685.8 # MeV
 hc = 197.327 # MeV * fm
 
 a = 0.16 # fm
+xi_g = 1.50
 
 mss_lat = a * mss_phys / hc
 
@@ -32,8 +33,8 @@ my_arr_weig = np.zeros((N_of_mass,N_of_x0))
 
 for i_mass in range(N_of_mass) :
   for i_x0 in range(N_of_x0) :
-    my_arr_mean[i_mass,i_x0] = my_arr[i_mass,i_x0*2]
-    my_arr_sdev[i_mass,i_x0] = my_arr[i_mass,i_x0*2+1]
+    my_arr_mean[i_mass,i_x0] = xi_g * my_arr[i_mass,i_x0*2]
+    my_arr_sdev[i_mass,i_x0] = xi_g * my_arr[i_mass,i_x0*2+1]
     my_arr_weig[i_mass,i_x0] = 1 / my_arr_sdev[i_mass,i_x0]
 
 ss_per_mass = np.zeros(N_of_mass)

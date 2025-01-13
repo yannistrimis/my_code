@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ens_name="1296b575x3136"
+ens_name="1632b681823x100000a"
 masses=("0.1")
 mas_len=${#masses[@]}
 

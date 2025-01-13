@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ens_name="1648b694635x139939"
+ens_name="1632b681823x100000"
 stream="a"
-masses=("0.07")
+masses=("0.03" "0.05" "0.07" "0.09")
 mas_len=${#masses[@]}
 
-prefix="hisqtun"
+prefix="naivtun"
 
-xq_arr=("1050" "1250" "1450" "1650")
+xq_arr=("1000")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
