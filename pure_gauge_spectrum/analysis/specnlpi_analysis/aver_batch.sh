@@ -1,17 +1,18 @@
 #!/bin/bash
-ens_name="1296b575x3136"
-masses=("0.1")
+
+ens_name="1648b694635x139939"
+stream="a"
+masses=("0.01494")
 mas_len=${#masses[@]}
 
-prefix="nlpi"
+prefix="hisqnlpi"
 
-xq_arr=("283")
+xq_arr=("14972")
 mom_arr=("p000")
 
 src_label="eowfw"
 
-#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
-sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
+sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
 
 for mom in ${mom_arr[@]}
 do
@@ -22,7 +23,7 @@ do
 
 echo "${sinks}"
 
-for i_file in {101..500..1}
+for i_file in {101..600..1}
 do
 
 echo "    ${i_file}"
@@ -37,7 +38,7 @@ for xq in "${xq_arr[@]}"
 do
 
 python3 aver_one.py <<EOF
-${ens_name}p
+${ens_name}${stream}
 cleanspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
 ${i_file}
 averspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}

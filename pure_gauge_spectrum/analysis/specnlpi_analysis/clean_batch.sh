@@ -1,12 +1,13 @@
 #!/bin/bash
 
-ens_name="1632b681823x100000a"
-masses=("0.1")
+ens_name="1648b694635x139939"
+stream="a"
+masses=("0.01494")
 mas_len=${#masses[@]}
 
-prefix="nlpi"
+prefix="hisqnlpi"
 
-xq_arr=("283")
+xq_arr=("14972")
 #sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
 sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
@@ -28,7 +29,7 @@ for sinks in "${sinks_arr[@]}"
 do
 echo "${sinks}"
 
-for i_file in {101..500..1}
+for i_file in {101..600..1}
 do
 
 echo "    ${i_file}"
@@ -43,7 +44,7 @@ for xq in "${xq_arr[@]}"
 do
 
 python3 clean_one.py <<EOF
-${ens_name}p
+${ens_name}${stream}
 spec${prefix}${ens_name}xq${xq}
 ${i_file}
 ${mom}
