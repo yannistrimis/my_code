@@ -1,16 +1,16 @@
 #!/bin/bash
 
-vol=1632
-beta=681823
-xg=100000
+vol=1648
+beta=694635
+xg=139939
 stream="a"
-src="cw"
-prefix="naivtun"
-taste="PION_5"
+src="eowfw"
+prefix="hisqnlpi"
+taste="PION_05"
 
-xq="1000"
+xq="14972"
 mom="p000"
-mass="0.09"
+mass="0.01494"
 
 fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
 dir=${fitdir} # CMSE
@@ -26,23 +26,23 @@ dir=${fitdir} # CMSE
 # dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
 
 tdatamin=0
-tdatamax=16
+tdatamax=24
 tstep=1
-tp=32
+tp=48
 n_states=1
-m_states=0
-sn="1.0"
-so="-1.0"
+m_states=1
+sn="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
 
-tmin_min=2
-tmin_max=11
+tmin_min=1
+tmin_max=24
 tmin_step=1
 
-tmax_min=5
-tmax_max=16
+tmax_min=1
+tmax_max=24
 tmax_step=1
 
 tmin_one=6
