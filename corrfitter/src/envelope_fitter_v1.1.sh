@@ -5,8 +5,8 @@ beta=681823
 xg=100000
 stream="a"
 src="eowfw"
-prefix="naivnlpi"
-taste="PION_ij"
+prefix="hisqnlpi"
+taste="PION_i5"
 
 xq="1000"
 mom="p000"
@@ -29,10 +29,10 @@ tdatamin=0
 tdatamax=16
 tstep=1
 tp=32
-n_states=1
-m_states=1
-sn="-1.0"
-so="1.0"
+n_states=0
+m_states=2
+sn="1.0"
+so="-1.0"
 binsize=1
 
 correlated="corr"
@@ -45,7 +45,7 @@ tmax_min=1
 tmax_max=16
 tmax_step=1
 
-tmin_one=3
+tmin_one=4
 tmax_one=16
 
 specdata_file="${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata"
