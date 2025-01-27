@@ -8,23 +8,23 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=16
+nt=32
 
-beta_arr=(8.577)
-beta_name_arr=("8577")
+beta_arr=(6.81823)
+beta_name_arr=("681823")
 
 xi_0_arr=(1.00)
-xi_0_name_arr=("100")
+xi_0_name_arr=("100000")
 
 stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks=64
-sbatch_jobname_arr=("top")
+sbatch_jobname_arr=("1632")
 
-n_of_sub=8
-n_of_lat=100
+n_of_sub=5
+n_of_lat=1000
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
