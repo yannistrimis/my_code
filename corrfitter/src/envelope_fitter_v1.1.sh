@@ -5,8 +5,8 @@ beta=681823
 xg=100000
 stream="a"
 src="eowfw"
-prefix="hisqnlpi"
-taste="PION_i5"
+prefix="naivnlpi"
+taste="PION_i0"
 
 xq="1000"
 mom="p000"
@@ -30,9 +30,9 @@ tdatamax=16
 tstep=1
 tp=32
 n_states=0
-m_states=2
+m_states=1
 sn="1.0"
-so="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"

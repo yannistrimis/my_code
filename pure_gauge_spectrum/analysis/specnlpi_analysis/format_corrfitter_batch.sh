@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ens_name="1648b694635x139939"
+ens_name="1632b681823x100000"
 stream="a"
-masses=("0.01494")
+masses=("0.00855")
 mas_len=${#masses[@]}
 
-prefix="hisqnlpi"
+prefix="naivnlpi"
 
-xq_arr=("14972")
+xq_arr=("1000")
 mom_arr=("p000")
 
 src_label="eowfw"
@@ -15,7 +15,7 @@ src_label="eowfw"
 sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s" "PION_05" "PION_ij" "PION_i0" "PION_0")
 
 first=101
-last=600
+last=2100
 
 for mom in ${mom_arr[@]}
 do

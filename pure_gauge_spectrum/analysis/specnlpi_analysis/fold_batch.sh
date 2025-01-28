@@ -1,14 +1,14 @@
 #!/bin/bash
-nt=48 # DON'T FORGET TO CHANGE !!!
+nt=32 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1648b694635x139939"
+ens_name="1632b681823x100000"
 stream="a"
-masses=("0.01494")
+masses=("0.00855")
 mas_len=${#masses[@]}
 
-prefix="hisqnlpi"
+prefix="naivnlpi"
 
-xq_arr=("14972")
+xq_arr=("1000")
 mom_arr=("p000")
 
 src_label="eowfw"
@@ -23,7 +23,7 @@ for sinks in ${sinks_arr[@]}
 do
 echo "${sinks}"
 
-for i_file in {101..600..1}
+for i_file in {101..2100..1}
 do
 echo "    ${i_file}"
 
