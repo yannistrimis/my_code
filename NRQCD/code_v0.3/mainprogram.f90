@@ -40,8 +40,6 @@
     iaction = 4
 
 ! Configuration file name.
-!    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
-!    cfgfile = "/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a/l2040b708567x181690a.trunc.101"
     read *,cfgfile
 
 ! Correlator files.
@@ -156,15 +154,14 @@
 
 ! Open correlator files for ^1S_0, ^3S_1, ^1P_1, ^3P_0 states.
 
-    open(unit=11, file=corrfile_1s0, form="formatted", status="new")
-    open(unit=12, file=corrfile_3s1, form ="formatted", status="new")
-!    open(unit=13, file=corrfile_1p1, form="formatted", status="new")
-!    open(unit=14, file=corrfile_3p0, form="formatted", status="new")
+    open(unit=11, file=corrfile_1s0, form="formatted", status="replace")
+    open(unit=12, file=corrfile_3s1, form ="formatted", status="replace")
+!    open(unit=13, file=corrfile_1p1, form="formatted", status="replace")
+!    open(unit=14, file=corrfile_3p0, form="formatted", status="replace")
 
 ! Compute the 2-point correlators at the source time step.
     call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
     call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)
-!    call Pmeson()
     write(unit=11,fmt="(i5,2es18.10)") it, corr1s0
     write(unit=12,fmt="(i5,2es18.10,2es18.10,2es18.10)") it, corr3s1x, corr3s1y, corr3s1z
 
@@ -179,7 +176,6 @@
      newgaugefield = .false.
      call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
      call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)
-!     call Pmeson()
      write(unit=11,fmt="(i5,2es18.10)") it, corr1s0
      write(unit=12,fmt="(i5,2es18.10,2es18.10,2es18.10)") it, corr3s1x, corr3s1y, corr3s1z
     enddo ! it

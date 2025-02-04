@@ -96,13 +96,12 @@
     corr3s1x = (0.0_KR,0.0_KR)
     corr3s1y = (0.0_KR,0.0_KR)
     corr3s1z = (0.0_KR,0.0_KR)
-
+    
     ixyz = 0
     do iz = 1,nz
      do iy = 1,ny
       do ix = 1,nx
-       ixyz = ixyz + 1       
-       
+       ixyz = ixyz + 1
        do jc = 1,nc
         do ic = 1,nc
          do jp = 1,np
@@ -122,15 +121,10 @@
       enddo ! ix
      enddo ! iy
     enddo ! iz
-      
-
 
  end subroutine Smeson
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-! subroutine Pmeson()
-! end subroutine Pmeson()
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
