@@ -5,41 +5,41 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=6
+n_of_ens=1
 
 nx=16
-nt=16
+nt=32
 
-beta=6.8
-beta_name="6800"
+beta=6.396
+beta_name="6396"
 
-xig=1.10
-xig_name="1100"
+xig=1.00
+xig_name="1000"
 
-xiq=1.10
-xiq_name="1100"
+xiq=1.00
+xiq_name="1000"
 
-dyn_mass_1=0.004
-dyn_mass_1_name="0040"
+dyn_mass_1=0.014
+dyn_mass_1_name="014"
 
-dyn_mass_2=0.02
-dyn_mass_2_name="0200"
+dyn_mass_2=0.07
+dyn_mass_2_name="070"
 
 warms=0
-trajecs=100
+trajecs=5
 traj_between_meas=1
-microcanonical_time_step_arr=(0.05 0.04 0.02 0.01 0.005 0.0025)
-steps_per_trajectory_arr=(20 25 50 100 200 400)
+microcanonical_time_step_arr=(0.05)
+steps_per_trajectory_arr=(20)
 
-stream_arr=("a" "b" "c" "d" "e" "f")
+stream_arr=("b")
 
-sbatch_time="22:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks=64
-sbatch_jobname_arr=("rhmc_a" "rhmc_b" "rhmc_c" "rhmc_d" "rhmc_e" "rhmc_f")
+sbatch_jobname_arr=("rhmc_b")
 
 n_of_sub=1
-n_of_lat=1
+n_of_lat=100
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do

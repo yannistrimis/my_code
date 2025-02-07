@@ -27,14 +27,14 @@ source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.00855
+mass1=0.01524
 
 nxq=1
 xq1=1.000
 
 xq1_name="1000"
 
-action="naive"
+action="hisq"
 err=1e-6
 max_cg_iterations=300
 precision=2
@@ -42,13 +42,13 @@ precision=2
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname="naive1"
+sbatch_jobname="hisq1pg"
 
-prefix="naivnlpi"
+prefix="hisqnlpi"
 build_prefix="nlpi"
 
-n_of_sub=2
-n_of_lat=300
+n_of_sub=10
+n_of_lat=1000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
