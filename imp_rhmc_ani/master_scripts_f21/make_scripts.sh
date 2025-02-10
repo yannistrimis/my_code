@@ -26,20 +26,21 @@ dyn_mass_2=0.07
 dyn_mass_2_name="070"
 
 warms=0
-trajecs=5
+trajecs=200
 traj_between_meas=1
 microcanonical_time_step_arr=(0.05)
 steps_per_trajectory_arr=(20)
+rationals_file="rationals.m014m070"
 
-stream_arr=("b")
+stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks=64
-sbatch_jobname_arr=("rhmc_b")
+sbatch_jobname_arr=("rhmd")
 
 n_of_sub=1
-n_of_lat=100
+n_of_lat=1
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -89,6 +90,7 @@ xiq=${xiq}
 
 dyn_mass_1=${dyn_mass_1}
 dyn_mass_2=${dyn_mass_2}
+rationals_file="${rationals_file}"
 
 warms=${warms}
 trajecs=${trajecs}
@@ -118,7 +120,8 @@ path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungen${lat_name}"
 submit_dir="/project/ahisq/yannis_dyn/submits/subgen${lat_name}"
 
-executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250127"
+# executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250127"
+executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250204"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
@@ -140,6 +143,5 @@ cp is_complete.sh ../${my_dir}/is_complete.sh
 cp make_input.sh ../${my_dir}/make_input.sh
 cp make_submit.sh ../${my_dir}/make_submit.sh
 cp envelope_script.sh ../${my_dir}/envelope_script.sh
-cp rationals.sample.su3_rhmc_hisq ../${my_dir}/rationals.sample.su3_rhmc_hisq
 
 done # i_ens

@@ -36,7 +36,7 @@ for (( i_xq=0; i_xq<${nxq}; i_xq++ )); do
 xiq=${xq_arr[$i_xq]}
 xiq_name=${xq_name_arr[$i_xq]}
 
-file_name="${out_dir}/${out_name}xq${xiq_name}${stream}.${i_lat}"
+file_name="${out_dir}/${out_name}xq${xiq_name}.${i_lat}"
 
 if [ -f "${file_name}" ] # PRECAUTION ABOUT THE OUTPUT
 then

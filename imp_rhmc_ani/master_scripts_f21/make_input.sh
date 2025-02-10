@@ -15,7 +15,7 @@ nt $nt
 iseed ${seed}
 
 n_pseudo 4
-load_rhmc_params ${3}/rationals.sample.su3_rhmc_hisq
+load_rhmc_params ${3}/${rationals_file}
 beta ${beta_s} ${beta_t}
 n_dyn_masses 2
 dyn_mass ${dyn_mass_1} ${dyn_mass_2}
