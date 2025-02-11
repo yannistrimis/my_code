@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 cluster=fnal
@@ -7,10 +6,10 @@ init_seed=1158
 n_of_lat=1
 n_of_sub=1
 
-nx=20
+nx=10
 ny=20
 nz=20
-nt=10
+nt=20
 
 # MILC convention in the improved action is: beta=10/g^2
 # Here we use plaquette action and so that is not relevant.
@@ -51,7 +50,7 @@ executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
 sbatch_time="01:00:00"
 sbatch_nodes="1"
-sbatch_ntasks="1"
+sbatch_ntasks="15"
 sbatch_jobname="tc1nt10"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
