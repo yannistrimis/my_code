@@ -51,6 +51,11 @@
 !   iform=1 : G_(t+1) = (1-H/(2n))^n*Udag*(1-H/(2n))^n*G_t
 !   iform=2 : G_(t+1) = (1-Hbit/2)*(1-H/(2n))^n*Udag*(1-H/(2n))^n*(1-Hbit/2)*G_t
 !   iform=3 : G_(t+1) = (1-H/(2n))^n*Udag*(1-H/(2n))^n*(1-Hbit)*G_t
+
+!   YT20250212: iform=4 is added to compare against [Nucl. Phys. B405 (1993) 593-622]
+
+!   iform=4 : G_(t+1) = Udag*[(1-H/2)^2-Hbit]*G_t
+
 !   bwdnbr(mu,i) is the neighbour of site i in the -mu direction.
 !   fwdnbr(mu,i) is the neighbour of site i in the +mu direction.
 !   newgaugefield=.true. if new color electric&magnetic fields must be computed.

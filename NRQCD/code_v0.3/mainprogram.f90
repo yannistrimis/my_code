@@ -120,6 +120,11 @@
      case(6)
       iform = 3
       imp = .true.
+
+     case(7)
+       iform = 4      ! YT20250212
+       imp = .false.  ! YT20250212
+
      case default ! never get here
       write(*,*) "mainprogram: invalid case(iaction)", iaction
       stop
