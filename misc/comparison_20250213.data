@@ -1,0 +1,24 @@
+
+trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
+/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/pbpm014.data.2009
+0.0394895201 +/- 0.0004628123350553894
+
+trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
+/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/pbpm070.data.2009
+0.09395255379999999 +/- 0.0003070274274451509
+
+trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
+/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/pbpm014.data
+0.037228366549999996 +/- 0.0017045785857924844
+
+trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
+/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/pbpm070.data
+0.09148876400000003 +/- 0.0016487250866045842
+
+trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
+/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/plaq.data.2009
+1.63795292 +/- 0.00020743851360418582
+
+trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
+/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/plaq.data     
+1.6527885904849409 +/- 0.013563781295405338
