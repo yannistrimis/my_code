@@ -13,11 +13,11 @@ nt=32
 beta=6.396
 beta_name="6396"
 
-xig=1.00
-xig_name="1000"
+xig=1.10
+xig_name="1100"
 
-xiq=1.00
-xiq_name="1000"
+xiq=1.10
+xiq_name="1100"
 
 dyn_mass_1=0.014
 dyn_mass_1_name="014"
@@ -28,16 +28,16 @@ dyn_mass_2_name="070"
 warms=0
 trajecs=200
 traj_between_meas=1
-microcanonical_time_step_arr=(0.05)
-steps_per_trajectory_arr=(20)
+microcanonical_time_step_arr=(0.04167)
+steps_per_trajectory_arr=(24)
 rationals_file="rationals.m014m070"
 
-stream_arr=("a")
+stream_arr=("c")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks=64
-sbatch_jobname_arr=("rhmd")
+sbatch_jobname_arr=("x1.1c")
 
 n_of_sub=1
 n_of_lat=1

@@ -8,14 +8,14 @@ cluster="fnal"
 n_of_ens=2
 
 nx=20
-nt=40
+nt=80
 
-beta_name_arr=("708567" "729255")
-xi_0_name_arr=("181690" "182771")
+beta_name_arr=("723728" "763361")
+xi_0_name_arr=("350246" "351107")
 stream="a"
 
-xi_f=2.00
-xi_f_name="200"
+xi_f=4.00
+xi_f_name="400"
 
 flow_action="wilson"
 exp_order="16"
@@ -23,11 +23,11 @@ dt="0.015625"
 stoptime="3.5"
 
 sbatch_time="20:00:00"
-sbatch_nodes=4 # N/A WHEN icer IS SELECTED
-sbatch_ntasks=128
-sbatch_jobname_arr=("w1.0tc" "w1.5tc")
+sbatch_nodes=2 # N/A WHEN icer IS SELECTED
+sbatch_ntasks=64
+sbatch_jobname_arr=("w1.0tc" "w2.0tc")
 
-n_of_sub=2
+n_of_sub=4
 n_of_lat=500
 first_lattice=101
 
