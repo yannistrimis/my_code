@@ -28,8 +28,8 @@ dyn_mass_2_name="070"
 warms=0
 trajecs=200
 traj_between_meas=1
-microcanonical_time_step_arr=(0.025)
-steps_per_trajectory_arr=(40)
+microcanonical_time_step_arr=(0.10)
+steps_per_trajectory_arr=(10)
 rationals_file="rationals.m014m070"
 
 stream_arr=("d")
