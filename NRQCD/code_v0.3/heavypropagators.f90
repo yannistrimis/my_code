@@ -83,13 +83,14 @@
 
     complex(kind=KC), dimension(nc,nc,ndir-1,nxyzt), save :: colE
     complex(kind=KC), dimension(nc,nc,ndir-1,nxyz),  save :: colB
-    complex(kind=KC), dimension(nc,np,nxyz)               :: Gtot, G1
+    complex(kind=KC), dimension(nc,np,nxyz)               :: Gtot, G1, Ghelp ! YT20250218 Ghelp added for Davies 1993
     complex(kind=KC), dimension(nc,nc)                    :: amat
-    real(kind=KR)                                         :: factor
+    real(kind=KR)                                         :: factor, zfactor
     integer(kind=KI)                                      :: it, iprop, jp, &
                                                              jc, iset, imode, &
                                                              ixyz, ixyzt, ip
 
+    zfactor = 1.0_KR ! YT20250218 For Davies 1993
     factor = 1.0_KR/(2.0_KR*real(mode,KR))
     if (backward) then
      it = itnbr - 1
@@ -106,10 +107,12 @@
      do jp = 1,np
       do jc = 1,nc
        Gtot = Gt(:,:,:,jc,jp,iprop)
+       Ghelp = Gt(:,:,:,jc,jp,iprop)
 
 ! --- first factor of ( 1 - "deltaH"/2. ) or ( 1 - "deltaH" ).
        select case (iform)
         case(1) ! no factor required if iform=1
+        case(4) ! ...or if iform=4
         case(2)
          iset = 2
          call hamilt(Gtot,Utad,bareM,itnbr,mode,cset,iset,csetmin,imp,aspect, &
@@ -130,8 +133,23 @@
        do imode = 1,mode
         call hamilt(Gtot,Utad,bareM,itnbr,mode,cset,iset,csetmin,imp,aspect, &
                     unitaritycf,bwdnbr,fwdnbr,colE,colB,G1)
-        Gtot = Gtot - factor*G1
+
+        if (iform==4) then 
+         Gtot = Gtot - 2.0_KR*factor*G1 ! Because we need ( 1 + DD/(4Ma) )^2
+        else
+         Gtot = Gtot - factor*G1
+        endif
+        
        enddo ! imode
+
+! --- Ghelp for Davies 1993.
+
+       if (iform==4) then
+        iset = 2
+        call hamilt(Ghelp,Utad,bareM,itnbr,mode,cset,iset,csetmin,imp,aspect, &
+                     unitaritycf,bwdnbr,fwdnbr,colE,colB,Ghelp)
+        Gtot = Gtot - zfactor*Ghelp
+       endif
 
 ! --- the temporal link.
        do ixyz = 1,nxyz
@@ -162,12 +180,14 @@
        Gtot = Gt(:,:,:,jc,jp,iprop)
     
 ! --- second exponential of Hamiltonian.
-       iset = 1
-       do imode = 1,mode
-        call hamilt(Gtot,Utad,bareM,it,mode,cset,iset,csetmin,imp,aspect, &
+       if (iform/=4) then
+        iset = 1
+        do imode = 1,mode
+         call hamilt(Gtot,Utad,bareM,it,mode,cset,iset,csetmin,imp,aspect, &
                     unitaritycf,bwdnbr,fwdnbr,colE,colB,G1)
-        Gtot = Gtot - factor*G1 
-       enddo ! imode
+         Gtot = Gtot - factor*G1 
+        enddo ! imode
+       endif
 
 ! --- second factor of ( 1 - "deltaH"/2. ).
        if (iform==2) then

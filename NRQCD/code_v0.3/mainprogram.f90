@@ -37,7 +37,7 @@
     complex(kind=KC), allocatable, dimension(:,:,:,:,:,:) :: Gt
 
 ! An integer that defines which NRQCD Lagrangian is used.
-    iaction = 4
+    iaction = 7 ! Default is 4
 
 ! Configuration file name.
     read *,cfgfile
@@ -67,13 +67,15 @@
     cset(1,1) = 1.0_KR
 
 ! Coefficients of the NRQCD action that are outside of mode.
+! YT20250218 Just cset(2,4) for Davies 1993
     cset(2,:) = 0.0_KR
-    cset(2,2) = 1.0_KR
-    cset(2,3) = 1.0_KR
-    cset(2,4) = 1.0_KR
+
+!    cset(2,2) = 1.0_KR
+!    cset(2,3) = 1.0_KR
+!    cset(2,4) = 1.0_KR
     cset(2,5) = 1.0_KR
-    cset(2,6) = 1.0_KR
-    cset(2,7) = 1.0_KR
+!    cset(2,6) = 1.0_KR
+!    cset(2,7) = 1.0_KR
 
 ! Source position.
     srcx = 1
