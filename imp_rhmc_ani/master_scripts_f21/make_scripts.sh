@@ -28,16 +28,16 @@ dyn_mass_2_name="070"
 warms=0
 trajecs=200
 traj_between_meas=1
-microcanonical_time_step_arr=(0.04167)
-steps_per_trajectory_arr=(24)
+microcanonical_time_step_arr=(0.025)
+steps_per_trajectory_arr=(40)
 rationals_file="rationals.m014m070"
 
-stream_arr=("c")
+stream_arr=("d")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks=64
-sbatch_jobname_arr=("x1.1c")
+sbatch_jobname_arr=("x1.1d")
 
 n_of_sub=1
 n_of_lat=1
