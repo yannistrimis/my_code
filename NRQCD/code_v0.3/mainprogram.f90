@@ -31,7 +31,7 @@
                                             astoutsnk, aspect, bareM, &
                                             unitaritycf, csetmin
     real(kind=KR),    dimension(2,14)    :: cset
-    complex(kind=KC)                     :: corr1s0,corr3s1x,corr3s1y,corr3s1z
+    complex(kind=KC)                     :: corr1s0,corr3s1x,corr3s1y,corr3s1z, corr1p1x,corr1p1y,corr1p1z
 
     complex(kind=KC), allocatable, dimension(:,:,:,:)     :: Utad, Ufat
     complex(kind=KC), allocatable, dimension(:,:,:,:,:,:) :: Gt
@@ -67,7 +67,8 @@
     cset(1,1) = 1.0_KR
 
 ! Coefficients of the NRQCD action that are outside of mode.
-! YT20250218 Just cset(2,4) for Davies 1993
+! YT20250218 Just cset(2,5) for Davies 1993; This corresponds to sigma.B.
+    
     cset(2,:) = 0.0_KR
 
 !    cset(2,2) = 1.0_KR
@@ -83,7 +84,7 @@
     srcz = 1
 
 ! Bare heavy quark mass.
-    bareM = 1.9_KR
+    bareM = 2.3_KR
 
 ! Allocate large arrays. 
     allocate(Utad(nc,nc,ndir,nxyzt),stat=ierr)

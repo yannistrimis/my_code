@@ -18,7 +18,7 @@
     private
 
 ! Define access to subroutines.
-    public :: Ssource, Smeson
+    public :: Ssource, Smeson, Pmeson
 
  contains
 
@@ -125,6 +125,53 @@
  end subroutine Smeson
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ subroutine Pmeson(G1,corr1p1x,corr1p1y,corr1p1z,bwdnbr,fwdnbr)
+! Construct a meson correlator at one time step from given propagators.
+! INPUT:
+!   G1() is the propagator for the quark.
+! OUTPUT:
+!   corr1p1x/y/z are the correlation functions for ^1P_1 (1+-).
+
+    complex(kind=KC), intent(in),  dimension(:,:,:,:,:,:) :: G1
+    integer(kind=KI), intent(in),  dimension(4,nxyzt)     :: bwdnbr, fwdnbr
+
+    complex(kind=KC), intent(out)                         :: corr1p1x
+    complex(kind=KC), intent(out)                         :: corr1p1y
+    complex(kind=KC), intent(out)                         :: corr1p1z
+
+
+    complex(kind=KC),  dimension(np,np) :: sig_x
+    complex(kind=KC),  dimension(np,np) :: sig_y
+    complex(kind=KC),  dimension(np,np) :: sig_z
+
+    integer(kind=KI) :: ic, ip, ix, iy, iz, ixyz, jc, jp
+    integer(kind=KI) :: kp, lp
+
+    sig_x(1,1) = (0.0_KR,0.0_KR)
+    sig_x(1,2) = (1.0_KR,0.0_KR)
+    sig_x(2,1) = (1.0_KR,0.0_KR)
+    sig_x(2,2) = (0.0_KR,0.0_KR)
+
+    sig_y(1,1) = (0.0_KR,0.0_KR)
+    sig_y(1,2) = (0.0_KR,-1.0_KR)
+    sig_y(2,1) = (0.0_KR,1.0_KR)
+    sig_y(2,2) = (0.0_KR,0.0_KR)
+
+    sig_z(1,1) = (1.0_KR,0.0_KR)
+    sig_z(1,2) = (0.0_KR,0.0_KR)
+    sig_z(2,1) = (0.0_KR,0.0_KR)
+    sig_z(2,2) = (-1.0_KR,0.0_KR)
+
+    corr1p1x = (0.0_KR,0.0_KR)
+    corr1p1y = (0.0_KR,0.0_KR)
+    corr1p1z = (0.0_KR,0.0_KR)
+
+! LOOP HERE
+
+ end subroutine Pmeson
+
+
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
