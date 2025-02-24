@@ -5,7 +5,7 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=5
+n_of_ens=
 
 nx=20
 nt=80
