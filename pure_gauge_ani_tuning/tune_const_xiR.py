@@ -3,10 +3,10 @@ import numpy as np
 # REMEMBER TO TWEAK xi_g_target, nof_betas AND ORDER OF FIT POLYNOMIAL
 
 w0_phys = 0.17355
-a = 0.073
+a = 0.061
 
 w0_target = w0_phys/a
-xi_g_target = 4
+xi_g_target = 2
 
 nof_betas = 5
 f1 = open("../data_files/beta_swc_xiR_%d.data"%(xi_g_target),"r")

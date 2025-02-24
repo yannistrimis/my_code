@@ -19,6 +19,6 @@ trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py
 /home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/plaq.data.2009
 1.63795292 +/- 0.00020743851360418582
 
-trimis@ytdevice:~/my_code/misc$ python3 comparison_20250213.py 
-/home/trimis/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/plaq.data     
-1.6527885904849409 +/- 0.013563781295405338
+yannis@r2d2:~/Physics/LQCD/my_code/misc$ python3 comparison_20250213.py
+/home/yannis/Physics/LQCD/my_code/data_files/l1632f21b6396m014m070xig1000xiq1000a/plaq.data.tail100
+1.6380608837298598 +/- 0.0002224112343742126
