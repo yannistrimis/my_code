@@ -51,7 +51,7 @@ executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
 sbatch_time="20:00:00"
 sbatch_nodes="4"
-sbatch_ntasks="160"
+sbatch_ntasks="125"
 sbatch_jobname="175tc"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
