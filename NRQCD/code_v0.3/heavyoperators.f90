@@ -167,7 +167,24 @@
     corr1p1y = (0.0_KR,0.0_KR)
     corr1p1z = (0.0_KR,0.0_KR)
 
-! LOOP HERE
+    ixyz = 0
+    do iz = 1,nz
+     do iy = 1,ny
+      do ix = 1,nx
+       ixyz = ixyz + 1
+       do jc = 1,nc
+        do ic = 1,nc
+         do jp = 1,np
+          do ip = 1,np
+           corr1p1x = corr1p1x + 0.25_KR*conjg(G1(ic,ip,ixyz,jc,jp,1))*G1(ic,ip,ixyz,jc,jp,1)
+          enddo ! ip
+         enddo ! jp
+        enddo ! ic
+       enddo ! jc
+      enddo ! ix
+     enddo ! iy
+    enddo ! iz
+
 
  end subroutine Pmeson
 
