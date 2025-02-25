@@ -1,4 +1,5 @@
 #!/bin/bash
+start_time=$(date +%s.%N)
 
 lat_name="l2040b708567x181690a"
 lat_dir="/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a"
@@ -38,3 +39,8 @@ i=$(($i+1))
 done # i
 
 echo "measured ${n_meas} out of ${n_lat} requested"
+end_time=$(date +%s.%N)
+
+elapsed_time=$(python3 -c "res=${end_time}-${start_time};print(res)")
+echo "elapsed time = ${elapsed_time} sec"
+
