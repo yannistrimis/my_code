@@ -5,13 +5,13 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=2
+n_of_ens=3
 
 nx=20
 nt=80
 
-beta_name_arr=("723728" "763361")
-xi_0_name_arr=("350246" "351107")
+beta_name_arr=("735365" "745904" "754499")
+xi_0_name_arr=("351690" "352143" "351911")
 stream="a"
 
 xi_f=4.00
@@ -25,7 +25,7 @@ stoptime="3.5"
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname_arr=("w1.0tc" "w2.0tc")
+sbatch_jobname_arr=("w1.25tc" "w1.50tc" "w1.75tc")
 
 n_of_sub=4
 n_of_lat=500
