@@ -126,19 +126,18 @@
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- subroutine Pmeson(G1,corr1p1x,corr1p1y,corr1p1z,bwdnbr,fwdnbr)
+ subroutine Pmeson(Gbundle,corr1p1x,corr1p1y,corr1p1z)
 ! Construct a meson correlator at one time step from given propagators.
 ! INPUT:
 !   G1() is the propagator for the quark.
 ! OUTPUT:
 !   corr1p1x/y/z are the correlation functions for ^1P_1 (1+-).
 
-    complex(kind=KC), intent(in),  dimension(:,:,:,:,:,:) :: G1
-    integer(kind=KI), intent(in),  dimension(4,nxyzt)     :: bwdnbr, fwdnbr
+    complex(kind=KC), intent(in),  dimension(:,:,:,:,:,:,7) :: Gbundle
 
-    complex(kind=KC), intent(out)                         :: corr1p1x
-    complex(kind=KC), intent(out)                         :: corr1p1y
-    complex(kind=KC), intent(out)                         :: corr1p1z
+    complex(kind=KC), intent(out)                           :: corr1p1x
+    complex(kind=KC), intent(out)                           :: corr1p1y
+    complex(kind=KC), intent(out)                           :: corr1p1z
 
 
     complex(kind=KC),  dimension(np,np) :: sig_x
@@ -176,7 +175,6 @@
         do ic = 1,nc
          do jp = 1,np
           do ip = 1,np
-           corr1p1x = corr1p1x + 0.25_KR*conjg(G1(ic,ip,ixyz,jc,jp,1))*G1(ic,ip,ixyz,jc,jp,1)
           enddo ! ip
          enddo ! jp
         enddo ! ic

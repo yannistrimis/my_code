@@ -35,6 +35,7 @@
 
     complex(kind=KC), allocatable, dimension(:,:,:,:)     :: Utad, Ufat
     complex(kind=KC), allocatable, dimension(:,:,:,:,:,:) :: Gt
+    complex(kind=KC), allocatable, dimension(:,:,:,:,:,:,7) :: Gbundle
 
 ! An integer that defines which NRQCD Lagrangian is used.
     iaction = 7 ! Default is 4
@@ -159,6 +160,15 @@
     isrc = srcx + nx*(srcy-1) + nx*ny*(srcz-1)
     call fatfield(Utad,uzeros,it,nstoutsrc,astoutsrc,bwdnbr,fwdnbr,Ufat)
     call Ssource(isrc,Gt)
+
+    Gbundle(:,:,:,:,:,:,1) = Gt
+
+    call Ssource( fwdnbr(isrc,1), Gbundle(:,:,:,:,:,:,2) )
+    call Ssource( bwdnbr(isrc,1), Gbundle(:,:,:,:,:,:,3) )
+    call Ssource( fwdnbr(isrc,2), Gbundle(:,:,:,:,:,:,4) )
+    call Ssource( bwdnbr(isrc,2), Gbundle(:,:,:,:,:,:,5) )
+    call Ssource( fwdnbr(isrc,3), Gbundle(:,:,:,:,:,:,6) )
+    call Ssource( bwdnbr(isrc,3), Gbundle(:,:,:,:,:,:,7) )
 
 ! Open correlator files for ^1S_0, ^3S_1, ^1P_1, ^3P_0 states.
 

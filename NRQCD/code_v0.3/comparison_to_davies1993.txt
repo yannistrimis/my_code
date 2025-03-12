@@ -1,0 +1,35 @@
+In order to carry out the comparison we need:
+
+1. A pure-gauge ensemble of 240 configurations, with plaquette action, 16^3*24, beta=6.0.
+   Coulomb gauge has to be fixed on the configurations.
+
+2. To implement the evolution equation:
+
+   G_[x,t+1] = U4_[dag;x,t] * { ( 1 + DD/4M )^2 * G_[x,t] + 
+               z * sigma.B/2M * G_[x,t] + delta_[t,0] * delta_[x,0] }
+
+   and
+
+   G_[x,t] = 0 , t <= 0
+
+
+   To this end, we have proceeded to the following changes:
+
+   2.1  In mainprogram.f90 we have requested iaction = 7, which will lead to unimproved derivatives
+        and fields ( imp = .false. ) and to the desired evolution equation ( iform = 4 ).
+
+   2.2  In mainprogram.f90 we have set all cset(2,:) = 0 except cset(2,5), as this one corresponds
+        to the sigma.B term which we want to retain.
+
+   2.3  In heavypropagators.f90 we have defined zfactor with obvious meaning.
+
+   2.4  In heavypropagators.f90 we have defined iform = 4 to implement our evolution equation
+        without messing up the existing ones. This works as follows:
+
+        Gtot will accumulate  : ( 1 + DD/4M ) * ( 1 + DD/4M ) * G_[x,t]
+        
+        Ghelp will accumulate : sigma.B/2M * G_[x,t]
+
+        Then we add them: Gtot = Gtot - z * Ghelp
+
+        And we multiply the result by the temporal link U4_[dag;x,t]
