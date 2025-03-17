@@ -5,25 +5,25 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=5
+n_of_ens=1
 
-nx=24
-nt=48
+nx=16
+nt=64
 
-beta_arr=(7.17451 7.28868 7.39470 7.48098 7.56689)
-beta_name_arr=("717451" "728868" "739470" "748098" "756689")
+beta_arr=(6.93563)
+beta_name_arr=("693563")
 
-xi_0_arr=(1.82320 1.82764 1.82806 1.82579 1.82118)
-xi_0_name_arr=("182320" "182764" "182806" "182579" "182118")
+xi_0_arr=(1.80060)
+xi_0_name_arr=("180060")
 
 stream="a"
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("nt12_100" "nt12_125" "nt12_150" "nt12_175" "nt12_200")
+sbatch_jobname_arr=("g016x2")
 
-n_of_sub=5
+n_of_sub=3
 n_of_lat=1000
 
 
