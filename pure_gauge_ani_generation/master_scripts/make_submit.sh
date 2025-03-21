@@ -14,7 +14,8 @@ cat <<EOF > ${submit_dir}/submit_script.sb
 #SBATCH --job-name=${sbatch_jobname}
 
 module purge
-module load ${sbatch_module}
+module load ${sbatch_module1}
+module load ${sbatch_module2}
 
 bash ${1}/control_script.sh ${1}
 

@@ -4,27 +4,27 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="icer"
 n_of_ens=1
 
-nx=16
-nt=64
+nx=20
+nt=320
 
-beta_arr=(6.93563)
-beta_name_arr=("693563")
+beta_arr=(7.26025)
+beta_name_arr=("726025")
 
-xi_0_arr=(1.80060)
-xi_0_name_arr=("180060")
+xi_0_arr=(6.89327)
+xi_0_name_arr=("689327")
 
 stream="a"
 
-sbatch_time="20:00:00"
-sbatch_nodes=4
-sbatch_ntasks=128
-sbatch_jobname_arr=("g016x2")
+sbatch_time="01:00:00"
+sbatch_nodes=1
+sbatch_ntasks=1
+sbatch_jobname_arr=("g016x8")
 
-n_of_sub=3
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=1
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -112,12 +112,13 @@ path_build="/mnt/home/trimisio/my_code/pure_gauge_ani_generation/build"
 run_dir="/mnt/scratch/trimisio/runs/rungen${lat_name}"
 submit_dir="/mnt/home/trimisio/submits/subgen${lat_name}"
 
-executable="su3_ora_symzk0_a_dbl_intel_ICER_20230828"
+executable="su3_ora_symzk0_a_dbl_GCC12OpenMPI4_20250321"
 
 sbatch_time="${sbatch_time}"
 sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
-sbatch_module="intel/2020b"
+sbatch_module1="GCC/12"
+sbatch_module2="OpenMPI/4"
 
 EOF
 
