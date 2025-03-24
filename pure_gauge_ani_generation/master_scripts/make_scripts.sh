@@ -8,22 +8,22 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=64
+nt=32
 
-beta_arr=(7.04115)
-beta_name_arr=("704115")
+beta_arr=(6.71789)
+beta_name_arr=("671789")
 
-xi_0_arr=(1.81411)
-xi_0_name_arr=("181411")
+xi_0_arr=(1.00000)
+xi_0_name_arr=("100000")
 
 stream="a"
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("g016x2")
+sbatch_jobname_arr=("g020x1")
 
-n_of_sub=3
+n_of_sub=1
 n_of_lat=1000
 
 
