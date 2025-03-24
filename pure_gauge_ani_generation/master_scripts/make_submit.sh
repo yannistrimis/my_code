@@ -6,11 +6,12 @@ if [ ${cluster} == "icer" ]
 then
 
 cat <<EOF > ${submit_dir}/submit_script.sb
-#!/bin/bash
+#!/bin/bash --login
 
 #SBATCH --time=${sbatch_time}
-#SBATCH --ntasks=${sbatch_ntasks}
-#SBATCH --exclude=lac-[084-124]
+#SBATCH --nodes=${sbatch_nodes}
+#SBATCH --ntasks-per-node=${sbatch_ntasks_per_node}
+#SBATCH --constraint=intel18
 #SBATCH --job-name=${sbatch_jobname}
 
 module purge

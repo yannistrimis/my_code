@@ -20,6 +20,7 @@ stream="a"
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
+sbatch_ntasks_per_node=1 # Only relevant for iCER.
 sbatch_ntasks=128
 sbatch_jobname_arr=("g020x1")
 
@@ -115,6 +116,8 @@ submit_dir="/mnt/home/trimisio/submits/subgen${lat_name}"
 executable="su3_ora_symzk0_a_dbl_GCC12OpenMPI4_20250321"
 
 sbatch_time="${sbatch_time}"
+sbatch_nodes="${sbatch_nodes}"
+sbatch_ntasks_per_node="${sbatch_ntasks_per_node}"
 sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
 sbatch_module1="GCC/12"
