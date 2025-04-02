@@ -4,7 +4,7 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="nersc"
 n_of_ens=1
 
 nx=16
@@ -18,14 +18,14 @@ xi_0_name_arr=("100000")
 
 stream="a"
 
-sbatch_time="20:00:00"
-sbatch_nodes=4
-sbatch_ntasks_per_node=1 # Only relevant for iCER.
-sbatch_ntasks=128
+sbatch_time="04:00:00"
+sbatch_nodes=2
+sbatch_ntasks_per_node=32 # Only relevant for iCER.
+sbatch_ntasks=64
 sbatch_jobname_arr=("g020x1")
 
 n_of_sub=1
-n_of_lat=1000
+n_of_lat=4
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -144,6 +144,27 @@ sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
+
+EOF
+
+elif [ ${cluster} == "nersc" ]
+then
+
+cat <<EOF >> ../${my_dir}/params.sh
+
+directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/${lat_name}"
+out_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/outputs/${lat_name}"
+path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
+run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungen${lat_name}"
+submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgen${lat_name}"
+
+executable="su3_ora_symzk0_a"
+
+sbatch_time="${sbatch_time}"
+sbatch_nodes="${sbatch_nodes}"
+sbatch_ntasks_per_node="${sbatch_ntasks_per_node}"
+sbatch_ntasks="${sbatch_ntasks}"
+sbatch_jobname="${sbatch_jobname}"
 
 EOF
 
