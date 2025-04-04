@@ -10,29 +10,29 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=48
+nt=128
 
-set_i_lat=101
+set_i_lat=1101
 set_seed=78324
 
-beta_name="694635"
-xi_0_name="139939"
+beta_name="719156"
+xi_0_name="348992"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=24 # CHANGE ACCORDING TO nt
-source_prec=10 # CHANGE ACCORDING TO nt
+source_inc=64 # CHANGE ACCORDING TO nt
+source_prec=62 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.01494
+mass1=0.01446
 
 nxq=1
-xq1=1.4972
+xq1=4.0
 
-xq1_name="14972"
+xq1_name="4000"
 
 action="hisq"
 err=1e-6
@@ -42,12 +42,12 @@ precision=2
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname="hisq15pg"
+sbatch_jobname="hisq4pg"
 
 prefix="hisqnlpi"
 build_prefix="nlpi"
 
-n_of_sub=5
+n_of_sub=2
 n_of_lat=1000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -143,8 +143,8 @@ path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runspec${prefix}${lat_name}"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subspec${prefix}${lat_name}"
 
-# executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20241118"
-executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20241022"
+executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20241118"
+# executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20241022"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
