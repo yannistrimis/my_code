@@ -11,20 +11,17 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/mnt/home/trimisio/outputs'
-# write_dir = '/mnt/home/trimisio/flow_data'
-
-# cur_dir = '/project/ahisq/yannis_puregauge/outputs'
-# write_dir = '/project/ahisq/yannis_puregauge/flow_data'
-
-cur_dir = '/home/trimis/fnal/all/outputs'
-write_dir = '/home/trimis/fnal/all/flow_data'
+# cur_dir = '/home/trimis/fnal/all/outputs'
+# write_dir = '/home/trimis/fnal/all/flow_data'
 
 # cur_dir = '/home/trimis/hpcc/outputs'
 # write_dir = '/home/trimis/hpcc/flow_data'
 
-vol = '1632'
-beta = '671789'
+cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
+write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
+
+vol = '2448'
+beta = '717451'
 xf = '100'
 xf_float = 1.0
 stream = 'a'
