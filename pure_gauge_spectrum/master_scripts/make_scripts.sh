@@ -10,29 +10,35 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=128
+nt=64
 
-set_i_lat=1101
+set_i_lat=101
 set_seed=78324
 
-beta_name="719156"
-xi_0_name="348992"
+beta_name="693563"
+xi_0_name="180060"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=64 # CHANGE ACCORDING TO nt
-source_prec=62 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=18 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.01446
+mass1=0.09
 
-nxq=1
-xq1=4.0
+nxq=4
+xq1=1.85
+xq2=1.90
+xq3=1.95
+xq4=2.00
 
-xq1_name="4000"
+xq1_name="1850"
+xq2_name="1900"
+xq3_name="1950"
+xq4_name="2000"
 
 action="hisq"
 err=1e-6
@@ -40,12 +46,13 @@ max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=2 # N/A WHEN icer IS SELECTED
+sbatch_nodes=2
+sbatch_ntasks_per_node=32 # N/A for LQ FNAL
 sbatch_ntasks=64
-sbatch_jobname="hisq4pg"
+sbatch_jobname="2tun"
 
-prefix="hisqnlpi"
-build_prefix="nlpi"
+prefix="hisqtun"
+build_prefix="tun"
 
 n_of_sub=2
 n_of_lat=1000
@@ -126,9 +133,12 @@ submit_dir="/mnt/home/trimisio/submits/subspec${prefix}${lat_name}"
 executable="ks_spectrum_ani_hisq_icc_dbl_20230619"
 
 sbatch_time="${sbatch_time}"
+sbatch_nodes="${sbatch_nodes}"
+sbatch_ntasks_per_node="${sbatch_ntasks_per_node}"
 sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
-sbatch_module="intel/2020b"
+sbatch_module1="GCC/12"
+sbatch_module2="OpenMPI/4"
 
 EOF
 
