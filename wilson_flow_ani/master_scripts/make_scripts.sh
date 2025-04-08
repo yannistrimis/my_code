@@ -5,30 +5,30 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=5
 
-nx=16
-nt=128
+nx=24
+nt=48
 
-beta_name_arr=("719156")
-xi_0_name_arr=("348992")
+beta_name_arr=("717451" "728868" "739470" "748098" "756689")
+xi_0_name_arr=("182320" "182764" "182806" "182579" "182118")
 stream="a"
 
-xi_f=4.00
-xi_f_name="400"
+xi_f=2.00
+xi_f_name="200"
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime="3.5"
+stoptime_arr=("3.5" "4.5" "5.5" "7.5" "9.5") # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname_arr=("w016x40")
+sbatch_jobname_arr=("t100w12" "t125w12" "t150w12" "t175w12" "t200w12")
 
 n_of_sub=2
-n_of_lat=500
+n_of_lat=200
 first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -37,6 +37,7 @@ for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 beta_name=${beta_name_arr[${i_ens}]}
 xi_0_name=${xi_0_name_arr[${i_ens}]}
+stoptime=${stoptime_arr[${i_ens}]}
 sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
