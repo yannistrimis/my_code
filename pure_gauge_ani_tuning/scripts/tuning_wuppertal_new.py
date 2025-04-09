@@ -11,27 +11,27 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/home/trimis/fnal/all/outputs'
-# write_dir = '/home/trimis/fnal/all/flow_data'
+cur_dir = '/home/trimis/fnal/all/outputs'
+write_dir = '/home/trimis/fnal/all/flow_data'
 
 # cur_dir = '/home/trimis/hpcc/outputs'
 # write_dir = '/home/trimis/hpcc/flow_data'
 
-cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
-write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
+# cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
+# write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-vol = '2448'
-beta = '717451'
-xf = '100'
-xf_float = 1.0
+vol = '2080'
+beta = '754499'
+xf = '400'
+xf_float = 4.0
 stream = 'a'
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ['100000']
-x0_float_vec = [1.0]
+x0_vec = ['351911']
+x0_float_vec = [3.51911]
 dt = '0.015625'
 n_files = 200
 first_file =101
