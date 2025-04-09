@@ -4,28 +4,28 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="nersc"
-n_of_ens=1
+cluster="icer"
+n_of_ens=4
 
-nx=16
-nt=32
+nx=20
+nt=80
 
-beta_arr=(6.71789)
-beta_name_arr=("671789")
+beta_arr=(7.58 7.58 7.58 7.58)
+beta_name_arr=("7580" "7580" "7580" "7580")
 
-xi_0_arr=(1.00000)
-xi_0_name_arr=("100000")
+xi_0_arr=(3.505 3.515 3.525 3.535)
+xi_0_name_arr=("3505" "3515" "3525" "3535")
 
 stream="a"
 
-sbatch_time="04:00:00"
-sbatch_nodes=2
-sbatch_ntasks_per_node=32 # Only relevant for iCER.
-sbatch_ntasks=64
-sbatch_jobname_arr=("g020x1")
+sbatch_time="20:00:00"
+sbatch_nodes=3
+sbatch_ntasks_per_node=25 # Only relevant for iCER.
+sbatch_ntasks=100
+sbatch_jobname_arr=("tun4_1" "tun4_2" "tun4_3" "tun4_4")
 
-n_of_sub=1
-n_of_lat=4
+n_of_sub=2
+n_of_lat=1000
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
