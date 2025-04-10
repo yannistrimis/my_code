@@ -13,11 +13,11 @@ nt=32
 beta=6.396
 beta_name="6396"
 
-xig=1.10
-xig_name="1100"
+xig=1.50
+xig_name="1500"
 
-xiq=1.10
-xiq_name="1100"
+xiq=1.50
+xiq_name="1500"
 
 dyn_mass_1=0.014
 dyn_mass_1_name="014"
@@ -28,16 +28,16 @@ dyn_mass_2_name="070"
 warms=0
 trajecs=200
 traj_between_meas=1
-microcanonical_time_step_arr=(0.10)
-steps_per_trajectory_arr=(10)
+microcanonical_time_step_arr=(0.05)
+steps_per_trajectory_arr=(20)
 rationals_file="rationals.m014m070"
 
-stream_arr=("d")
+stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks=64
-sbatch_jobname_arr=("x1.1d")
+sbatch_jobname_arr=("x15dyn")
 
 n_of_sub=1
 n_of_lat=1
@@ -120,8 +120,7 @@ path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungen${lat_name}"
 submit_dir="/project/ahisq/yannis_dyn/submits/subgen${lat_name}"
 
-# executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250127"
-executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250204"
+executable="su3_rhmd_naive_a_dbl_gcc12openmpi4_20250410"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
