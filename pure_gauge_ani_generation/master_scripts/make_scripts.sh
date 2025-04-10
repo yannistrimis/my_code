@@ -4,25 +4,25 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
-n_of_ens=4
+cluster="fnal"
+n_of_ens=1
 
-nx=20
-nt=80
+nx=24
+nt=48
 
-beta_arr=(7.58 7.58 7.58 7.58)
-beta_name_arr=("7580" "7580" "7580" "7580")
+beta_arr=(7.47112)
+beta_name_arr=("747112")
 
-xi_0_arr=(3.505 3.515 3.525 3.535)
-xi_0_name_arr=("3505" "3515" "3525" "3535")
+xi_0_arr=(1.83629)
+xi_0_name_arr=("183629")
 
 stream="a"
 
 sbatch_time="20:00:00"
-sbatch_nodes=3
+sbatch_nodes=4
 sbatch_ntasks_per_node=25 # Only relevant for iCER.
-sbatch_ntasks=100
-sbatch_jobname_arr=("tun4_1" "tun4_2" "tun4_3" "tun4_4")
+sbatch_ntasks=128
+sbatch_jobname_arr=("175tc12nt")
 
 n_of_sub=2
 n_of_lat=1000
