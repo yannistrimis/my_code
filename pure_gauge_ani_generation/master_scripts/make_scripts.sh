@@ -5,16 +5,16 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=2
 
 nx=24
-nt=48
+nt=96
 
-beta_arr=(7.47112)
-beta_name_arr=("747112")
+beta_arr=(7.32880 7.55933)
+beta_name_arr=("732880" "755933")
 
-xi_0_arr=(1.83629)
-xi_0_name_arr=("183629")
+xi_0_arr=(3.54094 3.65295)
+xi_0_name_arr=("354094" "365295")
 
 stream="a"
 
@@ -22,9 +22,9 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=25 # Only relevant for iCER.
 sbatch_ntasks=128
-sbatch_jobname_arr=("175tc12nt")
+sbatch_jobname_arr=("100tc24nt" "150tc24nt")
 
-n_of_sub=2
+n_of_sub=3
 n_of_lat=1000
 
 
