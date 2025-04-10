@@ -2,14 +2,16 @@ import numpy as np
 
 # REMEMBER TO TWEAK xi_g_target, nof_betas AND ORDER OF FIT POLYNOMIAL
 
+filename = input()
+
 w0_phys = 0.17355
-a = 0.061
+a = 0.070
 
 w0_target = w0_phys/a
-xi_g_target = 2
+xi_g_target = 2.0
 
-nof_betas = 5
-f1 = open("../data_files/beta_swc_xiR_%d.data"%(xi_g_target),"r")
+nof_betas = 3
+f1 = open("%s"%(filename),"r")
 
 f1_content = f1.readlines()
 
