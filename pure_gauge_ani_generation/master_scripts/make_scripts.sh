@@ -4,28 +4,28 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
-n_of_ens=2
+cluster="nersc"
+n_of_ens=1
 
 nx=24
-nt=96
+nt=12
 
-beta_arr=(7.32880 7.55933)
-beta_name_arr=("732880" "755933")
+beta_arr=(7.17451)
+beta_name_arr=("717451")
 
-xi_0_arr=(3.54094 3.65295)
-xi_0_name_arr=("354094" "365295")
+xi_0_arr=(1.82320)
+xi_0_name_arr=("182320")
 
 stream="a"
 
-sbatch_time="20:00:00"
-sbatch_nodes=4
-sbatch_ntasks_per_node=25 # Only relevant for iCER.
+sbatch_time="01:00:00"
+sbatch_nodes=2
+sbatch_ntasks_per_node=64 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=128
-sbatch_jobname_arr=("100tc24nt" "150tc24nt")
+sbatch_jobname_arr=("100tc12nt")
 
-n_of_sub=3
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=2
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -158,7 +158,7 @@ path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
 run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungen${lat_name}"
 submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgen${lat_name}"
 
-executable="su3_ora_symzk0_a"
+executable="su3_ora_symzk0_a_dbl_crayintel_20250404"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
