@@ -4,8 +4,8 @@
 cluster=nersc
 
 init_seed=1158
-n_of_lat=2
-n_of_sub=1
+n_of_lat=10000
+n_of_sub=4
 
 nx=24
 ny=24
@@ -49,9 +49,9 @@ submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl2412b7
 
 executable="su3_ora_symzk0_a_dbl_crayintel_20250404"
 
-sbatch_time="01:00:00"
-sbatch_nodes="2"
+sbatch_time="20:00:00"
+sbatch_nodes="1"
 sbatch_ntasks_per_node="64"
-sbatch_ntasks="128"
+sbatch_ntasks="64"
 sbatch_jobname="100tc12nt"
 
