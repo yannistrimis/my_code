@@ -5,7 +5,7 @@ cluster=icer
 
 init_seed=1158
 n_of_lat=1000
-n_of_sub=2
+n_of_sub=4
 
 nx=24
 ny=24
