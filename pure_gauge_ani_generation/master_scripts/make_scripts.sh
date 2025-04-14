@@ -7,25 +7,25 @@
 cluster="nersc"
 n_of_ens=1
 
-nx=24
-nt=12
+nx=20
+nt=20
 
-beta_arr=(7.17451)
-beta_name_arr=("717451")
+beta_arr=(7.45904)
+beta_name_arr=("745904")
 
-xi_0_arr=(1.82320)
-xi_0_name_arr=("182320")
+xi_0_arr=(3.52143)
+xi_0_name_arr=("352143")
 
 stream="a"
 
-sbatch_time="01:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes=2
-sbatch_ntasks_per_node=64 # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=128
-sbatch_jobname_arr=("100tc12nt")
+sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
+sbatch_ntasks=125 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("150tc20nt")
 
-n_of_sub=1
-n_of_lat=2
+n_of_sub=4
+n_of_lat=10000
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -162,7 +162,6 @@ executable="su3_ora_symzk0_a_dbl_crayintel_20250404"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
-sbatch_ntasks_per_node="${sbatch_ntasks_per_node}"
 sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
 
