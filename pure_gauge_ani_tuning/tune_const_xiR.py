@@ -5,12 +5,12 @@ import numpy as np
 filename = input()
 
 w0_phys = 0.17355
-a = 0.070
+a = 0.081
 
 w0_target = w0_phys/a
-xi_g_target = 2.0
+xi_g_target = 4.0
 
-nof_betas = 3
+nof_betas = 4
 f1 = open("%s"%(filename),"r")
 
 f1_content = f1.readlines()
