@@ -4,41 +4,35 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="icer"
 n_of_ens=1
 
-nx=16
-ny=16
-nz=16
-nt=64
+nx=20
+ny=20
+nz=20
+nt=320
 
-set_i_lat=101
+set_i_lat=406
 set_seed=78324
 
-beta_name="693563"
-xi_0_name="180060"
+beta_name="726025"
+xi_0_name="689327"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=32 # CHANGE ACCORDING TO nt
-source_prec=18 # CHANGE ACCORDING TO nt
+source_inc=160 # CHANGE ACCORDING TO nt
+source_prec=70 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.09
+mass1=0.01416
 
-nxq=4
-xq1=1.85
-xq2=1.90
-xq3=1.95
-xq4=2.00
+nxq=1
+xq1=7.870
 
-xq1_name="1850"
-xq2_name="1900"
-xq3_name="1950"
-xq4_name="2000"
+xq1_name="7870"
 
 action="hisq"
 err=1e-6
@@ -46,13 +40,13 @@ max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=2
-sbatch_ntasks_per_node=32 # N/A for LQ FNAL
-sbatch_ntasks=64
-sbatch_jobname="2tun"
+sbatch_nodes=3
+sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
+sbatch_ntasks=100
+sbatch_jobname="8nlpi"
 
-prefix="hisqtun"
-build_prefix="tun"
+prefix="hisqnlpi"
+build_prefix="nlpi"
 
 n_of_sub=2
 n_of_lat=1000
@@ -130,7 +124,7 @@ path_build="/mnt/home/trimisio/my_code/pure_gauge_spectrum/build"
 run_dir="/mnt/scratch/trimisio/runs/runspec${prefix}${lat_name}"
 submit_dir="/mnt/home/trimisio/submits/subspec${prefix}${lat_name}"
 
-executable="ks_spectrum_ani_hisq_icc_dbl_20230619"
+executable="ks_spectrum_ani_hisq_dbl_GCC12OpenMPI4_20250417"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
