@@ -7,7 +7,7 @@ n_of_lat=1000
 n_of_sub=1
 
 set_i_lat=404
-set_seed=78324
+set_seed=78627
 
 nx=20
 ny=20
