@@ -26,7 +26,7 @@ xq_name_arr=( 7870      )
 
 u0=1
 
-set_source_start=0
+set_source_start=46
 n_sources=2
 source_inc=160
 source_prec=70
