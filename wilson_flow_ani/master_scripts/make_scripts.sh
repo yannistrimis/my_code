@@ -5,30 +5,30 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=5
+n_of_ens=1
 
-nx=24
-nt=48
+nx=16
+nt=32
 
-beta_name_arr=("717451" "728868" "739470" "748098" "756689")
-xi_0_name_arr=("182320" "182764" "182806" "182579" "182118")
+beta_name_arr=("684652")
+xi_0_name_arr=("107865")
 stream="a"
 
-xi_f=2.00
-xi_f_name="200"
+xi_f=1.10
+xi_f_name="110"
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime_arr=("3.5" "4.5" "5.5" "7.5" "9.5") # CAREFUL!!!
+stoptime_arr=("3.5") # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=2 # N/A WHEN icer IS SELECTED
 sbatch_ntasks=64
-sbatch_jobname_arr=("t100w12" "t125w12" "t150w12" "t175w12" "t200w12")
+sbatch_jobname_arr=("x11tun")
 
-n_of_sub=2
-n_of_lat=200
+n_of_sub=1
+n_of_lat=300
 first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
