@@ -4,31 +4,32 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
-n_of_ens=1
+cluster="icer"
+n_of_ens=4
 
-nx=16
-nt=32
+nx=20
+nt=80
 
-beta_name_arr=("684652")
-xi_0_name_arr=("107865")
+beta_name_arr=("7580" "7580" "7580" "7580")
+xi_0_name_arr=("3505" "3515" "3525" "3535")
 stream="a"
 
-xi_f=1.10
-xi_f_name="110"
+xi_f=4.00
+xi_f_name="400"
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime_arr=("3.5") # CAREFUL!!!
+stoptime_arr=("12.0" "12.0" "12.0" "12.0") # CAREFUL!!!
 
 sbatch_time="20:00:00"
-sbatch_nodes=2 # N/A WHEN icer IS SELECTED
-sbatch_ntasks=64
-sbatch_jobname_arr=("x11tun")
+sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
+sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
+sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("2tun1w" "2tun2w" "2tun3w" "2tun4w")
 
-n_of_sub=1
-n_of_lat=300
+n_of_sub=2
+n_of_lat=1000
 first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -106,12 +107,15 @@ path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
 run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}"
 submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}"
 
-executable="region_flow_bbb_a_dbl_gompi2020b_20240213"
+executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
 
 sbatch_time="${sbatch_time}"
+sbatch_nodes="${sbatch_nodes}"
+sbatch_ntasks_per_node="${sbatch_ntasks_per_node}"
 sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
-sbatch_module="gompi/2020b"
+sbatch_module1="GCC/12"
+sbatch_module2="OpenMPI/4"
 
 EOF
 
@@ -134,6 +138,26 @@ sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
+
+EOF
+
+elif [ ${cluster} == "nersc" ]
+then
+
+cat <<EOF >> ../${my_dir}/params.sh
+
+directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/${lat_name}"
+out_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/outputs/${lat_name}"
+path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
+run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungen${lat_name}"
+submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgen${lat_name}"
+
+executable=""
+
+sbatch_time="${sbatch_time}"
+sbatch_nodes="${sbatch_nodes}"
+sbatch_ntasks="${sbatch_ntasks}"
+sbatch_jobname="${sbatch_jobname}"
 
 EOF
 
