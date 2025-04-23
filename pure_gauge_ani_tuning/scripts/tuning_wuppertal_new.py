@@ -20,22 +20,22 @@ write_dir = '/home/trimis/fnal/all/flow_data'
 # cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
 # write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-vol = '2080'
-beta = '754499'
-xf = '400'
-xf_float = 4.0
+vol = '1632'
+beta = '684652'
+xf = '110'
+xf_float = 1.1
 stream = 'a'
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ['351911']
-x0_float_vec = [3.51911]
+x0_vec = ['107865']
+x0_float_vec = [1.07865]
 dt = '0.015625'
-n_files = 200
+n_files = 300
 first_file =101
-n_bins = 20
+n_bins = 30
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
