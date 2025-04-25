@@ -4,58 +4,62 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
+cluster="fnal"
 n_of_ens=1
 
-nx=20
-ny=20
-nz=20
-nt=320
+nx=16
+ny=16
+nz=16
+nt=32
 
-set_i_lat=406
+set_i_lat=10
 set_seed=78324
 
-beta_name="726025"
-xi_0_name="689327"
+flavors="f21"
+beta_name="6396"
+masses="m014m070"
+xig="1500"
+xiq="1500"
+
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=160 # CHANGE ACCORDING TO nt
-source_prec=70 # CHANGE ACCORDING TO nt
+source_inc=16 # CHANGE ACCORDING TO nt
+source_prec=10 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.01416
+mass1=0.014
 
 nxq=1
-xq1=7.870
+xq1=1.500
 
-xq1_name="7870"
+xq1_name="1500"
 
-action="hisq"
+action="naive"
 err=1e-6
 max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=3
+sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
-sbatch_ntasks=100
-sbatch_jobname="8nlpi"
+sbatch_ntasks=128
+sbatch_jobname="naivtun"
 
-prefix="hisqnlpi"
-build_prefix="nlpi"
+prefix="naivtun"
+build_prefix="tun"
 
-n_of_sub=2
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=1
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
-ensemble_nostream="${nx}${nt}b${beta_name}x${xi_0_name}"
+ensemble_nostream="${nx}${nt}${flavors}b${beta_name}${masses}xig${xig}xiq${xiq}"
 ensemble="${ensemble_nostream}${stream}"
 lat_name="l${ensemble}"
 
@@ -119,7 +123,7 @@ then
 cat <<EOF >> ../${my_dir}/params.sh
 
 directory="/mnt/scratch/trimisio/lattices/${lat_name}"
-out_dir="/mnt/home/trimisio/outputs/pure_gauge_spec/${lat_name}"
+out_dir="/mnt/home/trimisio/outputs/spec/${lat_name}"
 path_build="/mnt/home/trimisio/my_code/pure_gauge_spectrum/build"
 run_dir="/mnt/scratch/trimisio/runs/runspec${prefix}${lat_name}"
 submit_dir="/mnt/home/trimisio/submits/subspec${prefix}${lat_name}"
@@ -141,11 +145,11 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
-out_dir="/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec/${lat_name}"
+directory="/lustre1/ahisq/yannis_dyn/lattices/${lat_name}"
+out_dir="/project/ahisq/yannis_dyn/outputs/spec/${lat_name}"
 path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/runspec${prefix}${lat_name}"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subspec${prefix}${lat_name}"
+run_dir="/project/ahisq/yannis_dyn/runs/runspec${prefix}${lat_name}"
+submit_dir="/project/ahisq/yannis_dyn/submits/subspec${prefix}${lat_name}"
 
 # executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20250423"
 # executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20250423"

@@ -3,11 +3,11 @@
 
 cluster=fnal
 
-n_of_lat=1000
-n_of_sub=5
+n_of_lat=1
+n_of_sub=1
 
-set_i_lat=101
-set_seed=78324
+set_i_lat=1000
+set_seed=79223
 
 nx=16
 ny=16
@@ -15,7 +15,7 @@ nz=16
 nt=48
 
 lat_name="l1648b694635x139939a"
-out_name="specnaivnlpi1648b694635x139939"
+out_name="specnaivnlpi1648b694635x139939new"
 
 nmasses=1
 mass_arr=( 0.00734      )
@@ -26,7 +26,7 @@ xq_name_arr=( 12348      )
 
 u0=1
 
-set_source_start=0
+set_source_start=14
 n_sources=2
 source_inc=24
 source_prec=10
@@ -45,9 +45,9 @@ path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runspecnaivnlpil1648b694635x139939a"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subspecnaivnlpil1648b694635x139939a"
 
-executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20241022"
+executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20250423"
 
-sbatch_time="20:00:00"
+sbatch_time="02:00:00"
 sbatch_nodes="2"
 sbatch_ntasks="64"
 sbatch_jobname="naiv15pg"
