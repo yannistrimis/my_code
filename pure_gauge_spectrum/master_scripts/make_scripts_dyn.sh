@@ -12,14 +12,14 @@ ny=16
 nz=16
 nt=32
 
-set_i_lat=10
+set_i_lat=23
 set_seed=78324
 
 flavors="f21"
 beta_name="6396"
 masses="m014m070"
-xig="1500"
-xiq="1500"
+xig="3000"
+xiq="3000"
 
 stream="a"
 
@@ -34,9 +34,9 @@ nmasses=1
 mass1=0.014
 
 nxq=1
-xq1=1.500
+xq1=3.000
 
-xq1_name="1500"
+xq1_name="3000"
 
 action="naive"
 err=1e-6
