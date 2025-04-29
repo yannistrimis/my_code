@@ -2,10 +2,10 @@
 
 cluster=icer
 
-n_of_lat=1000
-n_of_sub=1
+n_of_lat=200
+n_of_sub=2
 
-set_i_lat=405
+set_i_lat=101
 set_seed=78628
 
 nx=20
@@ -25,7 +25,7 @@ xq_name_arr=( 7870      )
 
 u0=1
 
-set_source_start=128
+set_source_start=0
 n_sources=2
 source_inc=160
 source_prec=70
