@@ -45,6 +45,7 @@ max_cg_prop_restarts 5
 npbp_reps 1
 prec_pbp 1
 mass ${dyn_mass}
+naik_term_epsilon 0
 error_for_propagator 1e-6
 rel_error_for_propagator 0
 EOF

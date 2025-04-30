@@ -26,16 +26,16 @@ dyn_mass_name="024"
 warms=0
 trajecs=100
 traj_between_meas=1
-microcanonical_time_step_arr=(0.03571)
-steps_per_trajectory_arr=(28)
+microcanonical_time_step_arr=(0.03846)
+steps_per_trajectory_arr=(26)
 rationals_file="rationals.m024"
 
-stream_arr=("c")
+stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("naivdyn1")
+sbatch_jobname_arr=("comp")
 
 n_of_sub=1
 n_of_lat=1
