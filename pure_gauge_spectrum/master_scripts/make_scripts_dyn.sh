@@ -10,16 +10,16 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=32
+nt=48
 
-set_i_lat=23
+set_i_lat=201
 set_seed=78324
 
 flavors="f21"
 beta_name="6396"
 masses="m014m070"
-xig="3000"
-xiq="3000"
+xig="1500"
+xiq="1500"
 
 stream="a"
 
@@ -31,12 +31,12 @@ source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.014
+mass2=0.070
 
 nxq=1
-xq1=3.000
+xq1=1.500
 
-xq1_name="3000"
+xq1_name="1500"
 
 action="naive"
 err=1e-6
@@ -47,13 +47,13 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="naivtun"
+sbatch_jobname="sptun15"
 
 prefix="naivtun"
 build_prefix="tun"
 
 n_of_sub=1
-n_of_lat=1
+n_of_lat=500
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 

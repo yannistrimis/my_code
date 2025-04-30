@@ -8,19 +8,19 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=32
+nt=48
 
 beta_name="6396"
 flavors="f21"
 masses="m014m070"
-xig="1000"
-xiq="1000"
+xig="1500"
+xiq="1500"
 
 
 stream="a"
 
-xi_f=1.00
-xi_f_name="100"
+xi_f=1.50
+xi_f_name="150"
 
 flow_action="wilson"
 exp_order="16"
@@ -31,7 +31,7 @@ sbatch_time="20:00:00"
 sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=64 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname="10dywfl"
+sbatch_jobname="15dywfl"
 
 n_of_sub=1
 n_of_lat=200

@@ -45,5 +45,23 @@ bash ${1}/control_script.sh ${1}
 
 EOF
 
+elif [ ${cluster} == "nersc" ]
+then
+
+cat <<EOF > ${submit_dir}/submit_script.sb
+#!/bin/bash
+
+#SBATCH -A m1416
+#SBATCH --qos=regular
+#SBATCH --time=${sbatch_time}
+#SBATCH --nodes=${sbatch_nodes}
+#SBATCH --ntasks=${sbatch_ntasks}
+#SBATCH --constraint=cpu
+#SBATCH --job-name=${sbatch_jobname}
+
+bash ${1}/control_script.sh ${1}
+
+EOF
+
+
 fi
- 
