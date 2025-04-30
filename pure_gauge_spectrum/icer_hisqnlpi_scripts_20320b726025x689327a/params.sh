@@ -45,7 +45,7 @@ submit_dir="/mnt/home/trimisio/submits/subspechisqnlpil20320b726025x689327a"
 
 executable="ks_spectrum_ani_hisq_dbl_GCC12OpenMPI4_20250428"
 
-sbatch_time="20:00:00"
+sbatch_time="22:00:00"
 sbatch_nodes="5"
 sbatch_ntasks_per_node="NA"
 sbatch_ntasks="200"
