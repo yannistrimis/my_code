@@ -3,14 +3,13 @@ import numpy as np
 # REMEMBER TO TWEAK xi_g_target, nof_betas AND ORDER OF FIT POLYNOMIAL
 
 filename = input()
+a = 0.04
+xi_g_target = 1.0
+nof_betas = 6
+
 
 w0_phys = 0.17355
-a = 0.081
-
 w0_target = w0_phys/a
-xi_g_target = 4.0
-
-nof_betas = 4
 f1 = open("%s"%(filename),"r")
 
 f1_content = f1.readlines()
@@ -19,7 +18,7 @@ arr = np.zeros((nof_betas,5))
 
 for i in range(nof_betas):
 
-    line = f1_content[i].split('\t')
+    line = f1_content[i].split('    ')
     rest_of_line = line[1].split(' ')
 
     beta_str = line[0]
