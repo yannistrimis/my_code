@@ -1,11 +1,11 @@
 #!/bin/bash
 
-ens_name="1632b681823x100000"
+ens_name="1632b671789x100000"
 stream="a"
-masses=("0.03" "0.05" "0.07" "0.09")
+masses=("0.1")
 mas_len=${#masses[@]}
 
-prefix="naivtun"
+prefix="hisqtun"
 
 xq_arr=("1000")
 sinks_arr=("PION_5")

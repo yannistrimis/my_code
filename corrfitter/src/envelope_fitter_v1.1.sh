@@ -4,9 +4,9 @@ vol=1632
 beta=681823
 xg=100000
 stream="a"
-src="eowfw"
-prefix="naivnlpi"
-taste="PION_i0"
+src="cw"
+prefix="hisqtun"
+taste="PION_5"
 
 xq="1000"
 mom="p000"
