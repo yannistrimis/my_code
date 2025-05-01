@@ -4,35 +4,41 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
+cluster="fnal"
 n_of_ens=1
 
-nx=20
-ny=20
-nz=20
-nt=320
+nx=16
+ny=16
+nz=16
+nt=32
 
-set_i_lat=406
+set_i_lat=101
 set_seed=78324
 
-beta_name="726025"
-xi_0_name="689327"
+beta_name="684652"
+xi_0_name="107865"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=160 # CHANGE ACCORDING TO nt
-source_prec=70 # CHANGE ACCORDING TO nt
+source_inc=16 # CHANGE ACCORDING TO nt
+source_prec=10 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.01416
+mass1=0.06
 
-nxq=1
-xq1=7.870
+nxq=4
+xq1=1.00
+xq2=1.05
+xq3=1.10
+xq4=1.15
 
-xq1_name="7870"
+xq1_name="1000"
+xq2_name="1050"
+xq3_name="1100"
+xq4_name="1150"
 
 action="hisq"
 err=1e-6
@@ -40,16 +46,16 @@ max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=3
+sbatch_nodes=2
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
-sbatch_ntasks=100
-sbatch_jobname="8nlpi"
+sbatch_ntasks=64
+sbatch_jobname="11tun"
 
-prefix="hisqnlpi"
-build_prefix="nlpi"
+prefix="hisqtun"
+build_prefix="tun"
 
-n_of_sub=2
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=400
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
