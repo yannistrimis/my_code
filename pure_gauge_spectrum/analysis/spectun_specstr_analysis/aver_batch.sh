@@ -1,16 +1,17 @@
 #!/bin/bash
 
-ens_name="1632b671789x100000"
+
+ens_name="1632b684652x107865"
 stream="a"
-masses=("0.1")
+masses=("0.06")
 mas_len=${#masses[@]}
 
 prefix="hisqtun"
 
-xq_arr=("1000")
+xq_arr=("1000" "1050" "1100" "1150")
 sinks_arr=("PION_5")
 
-mom_arr=("p000")
+mom_arr=("p000" "p100" "p110")
 
 src_label="cw"
 
