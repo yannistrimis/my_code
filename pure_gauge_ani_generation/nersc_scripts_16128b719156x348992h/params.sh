@@ -47,7 +47,8 @@ path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
 run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungenl16128b719156x348992h"
 submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl16128b719156x348992h"
 
-executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
+# executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
+executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
 
 sbatch_time="20:00:00"
 sbatch_nodes="4"
