@@ -2,8 +2,8 @@
 
 cluster=icer
 
-n_of_lat=200
-n_of_sub=2
+n_of_lat=300
+n_of_sub=3
 
 set_i_lat=101
 set_seed=78628
