@@ -19,7 +19,7 @@ out_name = input()
 # cur_dir = '/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec' # FNAL
 # out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
-cur_dir = '/home/trimis/spec_data' # CMSE
+cur_dir = '/home/trimis/fnal/all/outputs/pure_gauge_spec' # CMSE --> FNAL
 out_dir = '/home/trimis/spec_data' # CMSE
 
 
