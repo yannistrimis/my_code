@@ -9,17 +9,17 @@ n_of_ens=1
 
 nx=16
 ny=16
-nz=16
-nt=48
+nz=24
+nt=64
 
 set_i_lat=201
 set_seed=78324
 
-flavors="f21"
-beta_name="6396"
-masses="m014m070"
-xig="1500"
-xiq="1500"
+flavors="f2"
+beta_name="5300"
+masses="m024"
+xig="30"
+xiq="30"
 
 stream="a"
 
@@ -27,16 +27,16 @@ u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=16 # CHANGE ACCORDING TO nt
-source_prec=10 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=14 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass2=0.070
+mass1=0.024
 
 nxq=1
-xq1=1.500
+xq1=3.0
 
-xq1_name="1500"
+xq1_name="30"
 
 action="naive"
 err=1e-6
@@ -47,10 +47,10 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="sptun15"
+sbatch_jobname="comp"
 
-prefix="naivtun"
-build_prefix="tun"
+prefix="naivnlpi"
+build_prefix="nlpi"
 
 n_of_sub=1
 n_of_lat=500
