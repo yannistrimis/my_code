@@ -30,8 +30,8 @@ xi_0_name="348992"
 warms=0
 trajecs=100
 traj_between_meas=1
-steps_per_trajectory=40
-microcanonical_time_step=0.025
+steps_per_trajectory=64
+microcanonical_time_step=0.015625
 u0=1.0 # THIS IS !=1 FOR 1-LOOP SYMANZIK
 
 stream="h"
