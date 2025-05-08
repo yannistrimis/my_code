@@ -1,61 +1,60 @@
 #!/bin/bash
 
-vol=1632
-beta=681823
-xg=100000
+ens_name="1664f2b5300m024xig30xiq30"
+
 stream="a"
-src="cw"
-prefix="hisqtun"
+src="eowfw"
+prefix="naivnlpi"
 taste="PION_5"
 
-xq="1000"
+xq="30"
 mom="p000"
-mass="0.00855"
+mass="0.024"
 
-fitdir="/home/trimis/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE
+fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 dir=${fitdir} # CMSE
 
-# dir="/home/trimis/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> iCER
-# dir="/home/trimis/fnal/all/spec_data/l${vol}b${beta}x${xg}${stream}" # CMSE -> FNAL
+# dir="/home/trimis/hpcc/plot_data/spec_data/l${ens_name}${stream}" # CMSE -> iCER
+# dir="/home/trimis/fnal/all/spec_data/l${ens_name}${stream}" # CMSE -> FNAL
 
-# fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
-# dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP -> iCER
-# dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP -> FNAL
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
+# dir="/home/yannis/Physics/LQCD/hpcc/plot_data/spec_data/l${ens_name}${stream}" # LAPTOP -> iCER
+# dir="/home/yannis/Physics/LQCD/fnal/all/spec_data/l${ens_name}${stream}" # LAPTOP -> FNAL
 
-# fitdir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
-# dir="/home/yannis/Physics/LQCD/spec_data/l${vol}b${beta}x${xg}${stream}" # LAPTOP
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
+# dir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 
 tdatamin=0
-tdatamax=16
+tdatamax=32
 tstep=1
-tp=32
-n_states=0
-m_states=1
+tp=64
+n_states=1
+m_states=0
 sn="1.0"
 so="1.0"
 binsize=1
 
 correlated="corr"
 
-tmin_min=1
-tmin_max=16
+tmin_min=0
+tmin_max=21
 tmin_step=1
 
-tmax_min=1
-tmax_max=16
+tmax_min=21
+tmax_max=21
 tmax_step=1
 
-tmin_one=4
-tmax_one=16
+tmin_one=16
+tmax_one=32
 
-specdata_file="${dir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.specdata"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
 if [ $1 == "scan" ]
 then
 
-fit_file="${fitdir}/${prefix}${mom}${src}${vol}b${beta}x${xg}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit"
+fit_file="${fitdir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit"
 
 
 if [ -f ${fit_file} ]
