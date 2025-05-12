@@ -23,8 +23,8 @@ rationals_file="rationals.m014m070"
 warms=0
 trajecs=100
 traj_between_meas=1
-microcanonical_time_step=0.04167
-steps_per_trajectory=24
+microcanonical_time_step=0.05
+steps_per_trajectory=20
 
 ensemble="16128f21b6747m014m070xig3500xiq3500a"
 lat_name="l16128f21b6747m014m070xig3500xiq3500a"
@@ -38,7 +38,6 @@ run_dir="/project/ahisq/yannis_dyn/runs/rungenl16128f21b6747m014m070xig3500xiq35
 submit_dir="/project/ahisq/yannis_dyn/submits/subgenl16128f21b6747m014m070xig3500xiq3500a"
 
 executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250508"
-# executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250508"
 
 sbatch_time="20:00:00"
 sbatch_nodes="4"
