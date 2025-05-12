@@ -20,25 +20,28 @@ write_dir = '/home/trimis/fnal/all/flow_data'
 # cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
 # write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-vol = '1632'
-beta = '684652'
-xf = '110'
-xf_float = 1.1
-stream = 'a'
+ens_pre="1632f21b6396m014m070xig"
+
+x0_vec = ['1000']
+x0_float_vec = [1.0]
+
+ens_post="xiq1000a"
+
+xf = '100'
+xf_float = 1.0
+
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-x0_vec = ['107865']
-x0_float_vec = [1.07865]
 dt = '0.015625'
-n_files = 300
-first_file =101
-n_bins = 30
+n_files = 200
+first_file =201
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
-f_write = open( '%s/data_wupnew_%sflow%sb%sx%sxf%sdt%sobs_%s'%(write_dir,flow_type,vol,beta,x0_vec[i_x0_rec],xf,dt,obs_type) , 'w' )
+f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
 f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
 i_x0 = -1
@@ -46,7 +49,7 @@ for x0 in x0_vec :
     i_x0 += 1
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%sb%sx%s%s/%sflow%sb%sx%sxf%s%s_dt%s.%d'%(cur_dir,vol,beta,x0,stream,flow_type,vol,beta,x0,xf,stream,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
