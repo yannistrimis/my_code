@@ -117,7 +117,9 @@ path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungen${lat_name}"
 submit_dir="/project/ahisq/yannis_dyn/submits/subgen${lat_name}"
 
-# executable=""
+# executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250508"
+# executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250508"
+
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"
