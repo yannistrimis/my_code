@@ -7,20 +7,20 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=8
+nx=16
 nt=32
 
-beta=5.35
-beta_name="5350"
+beta=5.425
+beta_name="5425"
 
-xig=3.5
-xig_name="35"
+xig=1.5
+xig_name="15"
 
-xiq=3.5
-xiq_name="35"
+xiq=1.5
+xiq_name="15"
 
-dyn_mass=0.021
-dyn_mass_name="021"
+dyn_mass=0.0375
+dyn_mass_name="0375"
 
 
 warms=0
@@ -28,14 +28,14 @@ trajecs=100
 traj_between_meas=1
 microcanonical_time_step_arr=(0.03846)
 steps_per_trajectory_arr=(26)
-rationals_file="rationals.m021"
+rationals_file="rationals.m0375"
 
 stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("pbpcomp")
+sbatch_jobname_arr=("run1")
 
 n_of_sub=1
 n_of_lat=1
