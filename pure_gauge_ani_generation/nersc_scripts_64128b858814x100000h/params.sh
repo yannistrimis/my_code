@@ -29,8 +29,8 @@ xi_0_name="100000"
 warms=0
 trajecs=100
 traj_between_meas=1
-steps_per_trajectory=20
-microcanonical_time_step=0.05
+steps_per_trajectory=128
+microcanonical_time_step=0.0078125
 u0=1.0 # THIS IS !=1 FOR 1-LOOP SYMANZIK
 
 stream="h"
@@ -46,7 +46,8 @@ path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
 run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungenl64128b858814x100000h"
 submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl64128b858814x100000h"
 
-executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
+# executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
+executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
 
 sbatch_time="20:00:00"
 sbatch_nodes="4"
