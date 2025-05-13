@@ -23,8 +23,8 @@ rationals_file="rationals.m014m070"
 warms=0
 trajecs=100
 traj_between_meas=1
-microcanonical_time_step=0.05
-steps_per_trajectory=20
+microcanonical_time_step=0.035714
+steps_per_trajectory=28
 
 ensemble="16128f21b6747m014m070xig3500xiq3500a"
 lat_name="l16128f21b6747m014m070xig3500xiq3500a"
