@@ -5,7 +5,7 @@ ens_name="1664f2b5300m024xig30xiq30"
 stream="a"
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_5"
+taste="PION_05"
 
 xq="30"
 mom="p000"
@@ -29,8 +29,8 @@ tdatamax=32
 tstep=1
 tp=64
 n_states=1
-m_states=0
-sn="1.0"
+m_states=1
+sn="-1.0"
 so="1.0"
 binsize=1
 
@@ -44,8 +44,8 @@ tmax_min=21
 tmax_max=21
 tmax_step=1
 
-tmin_one=16
-tmax_one=32
+tmin_one=11
+tmax_one=21
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
