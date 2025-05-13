@@ -3,7 +3,7 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=1
+n_of_lat=1000
 n_of_sub=1
 
 nx=16
@@ -19,10 +19,10 @@ dyn_mass=0.024
 rationals_file="rationals.m024"
 
 warms=0
-trajecs=100
+trajecs=5
 traj_between_meas=1
-microcanonical_time_step=0.03846
-steps_per_trajectory=26
+microcanonical_time_step=0.0416667
+steps_per_trajectory=24
 
 ensemble="1624f2b5300m024xig30xiq30a"
 lat_name="l1624f2b5300m024xig30xiq30a"
