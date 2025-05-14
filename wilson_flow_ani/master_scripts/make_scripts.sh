@@ -59,7 +59,7 @@ then
 prefix="zflow"
 fi
 
-out_name="${prefix}${ensemble_nostream}xf${xi_f_name}${stream}_dt${dt}"
+out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}"
 my_dir="${cluster}_${prefix}_scripts_${ensemble}"
 
 cd ..
