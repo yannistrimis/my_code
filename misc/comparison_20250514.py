@@ -4,8 +4,8 @@ sys.path.insert(0, '..')
 
 from python_funcs import *
 
-f1 = open("/project/ahisq/yannis_dyn/outputs/l832f2b5350m021xig35xiq35a/misc.pbp.rescaled.20250514.temp","r")
-f2 = open("/project/ahisq/yannis_dyn/outputs/l1624f2b5300m024xig30xiq30a/misc.pbp.rescaled.20250514.temp","r")
+f1 = open("/home/trimis/fnal/all/outputs/l832f2b5350m021xig35xiq35a/misc.pbp.rescaled.20250514.temp","r")
+f2 = open("/home/trimis/fnal/all/outputs/l1624f2b5300m024xig30xiq30a/misc.pbp.rescaled.20250514.temp","r")
 
 cont1 = f1.readlines()
 cont2 = f2.readlines()
