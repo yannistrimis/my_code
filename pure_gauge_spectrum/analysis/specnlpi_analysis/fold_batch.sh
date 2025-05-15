@@ -2,16 +2,16 @@
 
 # ΠΡΟΣΠΑΘΗΣΕ ΝΑ ΜΗΝ ΕΙΣΑΙ ΒΛΑΞ.
 
-nt=64 # DON'T FORGET TO CHANGE !!!
+nt=32 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1664f2b5300m024xig30xiq30"
+ens_name="1632f2b5425m0375xig15xiq15"
 stream="a"
-masses=("0.024")
+masses=("0.0375")
 mas_len=${#masses[@]}
 
 prefix="naivnlpi"
 
-xq_arr=("30")
+xq_arr=("15")
 mom_arr=("p000")
 
 src_label="eowfw"

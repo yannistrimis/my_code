@@ -1,15 +1,15 @@
 #!/bin/bash
 
-ens_name="1664f2b5300m024xig30xiq30"
+ens_name="1632f2b5425m0375xig15xiq15"
 
 stream="a"
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_05"
+taste="PION_5"
 
-xq="30"
+xq="15"
 mom="p000"
-mass="0.024"
+mass="0.0375"
 
 fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 dir=${fitdir} # CMSE
@@ -25,27 +25,27 @@ dir=${fitdir} # CMSE
 # dir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 
 tdatamin=0
-tdatamax=32
+tdatamax=16
 tstep=1
-tp=64
+tp=32
 n_states=1
-m_states=1
-sn="-1.0"
+m_states=0
+sn="1.0"
 so="1.0"
 binsize=1
 
 correlated="corr"
 
 tmin_min=0
-tmin_max=21
+tmin_max=16
 tmin_step=1
 
-tmax_min=21
-tmax_max=21
+tmax_min=0
+tmax_max=16
 tmax_step=1
 
 tmin_one=11
-tmax_one=21
+tmax_one=16
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
