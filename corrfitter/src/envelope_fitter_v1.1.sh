@@ -1,15 +1,15 @@
 #!/bin/bash
 
-ens_name="1632f2b5425m0375xig15xiq15"
+ens_name="1632b684652x107865"
 
 stream="a"
-src="eowfw"
-prefix="naivnlpi"
+src="cw"
+prefix="hisqtun"
 taste="PION_5"
 
-xq="15"
-mom="p000"
-mass="0.0375"
+xq="1150"
+mom="p110"
+mass="0.06"
 
 fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 dir=${fitdir} # CMSE
@@ -29,9 +29,9 @@ tdatamax=16
 tstep=1
 tp=32
 n_states=1
-m_states=0
+m_states=1
 sn="1.0"
-so="1.0"
+so="-1.0"
 binsize=1
 
 correlated="corr"
