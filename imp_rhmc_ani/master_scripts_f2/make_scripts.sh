@@ -8,7 +8,7 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=24
+nt=8
 
 beta=5.3
 beta_name="5300"
