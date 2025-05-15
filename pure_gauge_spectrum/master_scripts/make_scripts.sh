@@ -26,19 +26,16 @@ n_sources=2
 source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
-nmasses=1
-mass1=0.06
+nmasses=4
+mass1=0.04
+mass2=0.06
+mass3=0.08
+mass4=0.10
 
-nxq=4
-xq1=1.00
-xq2=1.05
-xq3=1.10
-xq4=1.15
+nxq=1
+xq1=1.08
 
-xq1_name="1000"
-xq2_name="1050"
-xq3_name="1100"
-xq4_name="1150"
+xq1_name="1080"
 
 action="hisq"
 err=1e-6
@@ -49,9 +46,9 @@ sbatch_time="20:00:00"
 sbatch_nodes=2
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=64
-sbatch_jobname="11tun"
+sbatch_jobname="11str"
 
-prefix="hisqtun"
+prefix="hisqstr"
 build_prefix="tun"
 
 n_of_sub=1
