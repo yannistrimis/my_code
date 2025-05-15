@@ -1,0 +1,3 @@
+1. cat out16128b719156x348992a.[5-9]?? | awk 'BEGIN {p1=0; p2=0; n=0; } /^GMES/ {p1+=$5; p2+=$6; n+=1; } END {print p1/n, p2/n, n}'
+
+2. tail -n 200 plaq.l16128f21b6747m014m070xig3500xiq3500a.data | awk 'BEGIN {p1=0; p2=0; n=0; } {p1+=$2; p2+=$3; n+=1; } END {print p1/n, p2/n}'
