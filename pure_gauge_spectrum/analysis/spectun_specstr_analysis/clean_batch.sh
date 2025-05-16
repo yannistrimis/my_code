@@ -2,12 +2,12 @@
 
 ens_name="1632b684652x107865"
 stream="a"
-masses=("0.06")
+masses=("0.04" "0.06" "0.08" "0.1")
 mas_len=${#masses[@]}
 
-prefix="hisqtun"
+prefix="hisqstr"
 
-xq_arr=("1000" "1050" "1100" "1150")
+xq_arr=("1080")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
