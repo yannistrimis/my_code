@@ -4,8 +4,8 @@
 cluster=nersc
 
 init_seed=1158
-n_of_lat=400
-n_of_sub=2
+n_of_lat=1
+n_of_sub=1
 
 nx=16
 ny=16
@@ -28,7 +28,7 @@ beta_name="719156"
 xi_0_name="348992"
 
 warms=0
-trajecs=5
+trajecs=100
 traj_between_meas=1
 steps_per_trajectory=128
 microcanonical_time_step=0.0078125

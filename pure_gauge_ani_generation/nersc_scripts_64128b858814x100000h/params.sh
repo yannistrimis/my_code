@@ -3,8 +3,8 @@
 cluster=nersc
 
 init_seed=1158
-n_of_lat=1
-n_of_sub=1
+n_of_lat=500
+n_of_sub=3
 
 nx=64
 ny=64
@@ -27,10 +27,10 @@ beta_name="858814"
 xi_0_name="100000"
 
 warms=0
-trajecs=100
+trajecs=5
 traj_between_meas=1
-steps_per_trajectory=156
-microcanonical_time_step=0.00641025641025641
+steps_per_trajectory=164
+microcanonical_time_step=0.006097560975609756
 u0=1.0 # THIS IS !=1 FOR 1-LOOP SYMANZIK
 
 stream="h"
@@ -46,8 +46,8 @@ path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
 run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungenl64128b858814x100000h"
 submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl64128b858814x100000h"
 
-# executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
-executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
+executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
+# executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
 
 sbatch_time="47:00:00"
 sbatch_nodes="4"
