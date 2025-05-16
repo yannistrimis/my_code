@@ -8,24 +8,24 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=128
+nt=32
 
 beta_name="6396"
 flavors="f21"
 masses="m014m070"
-xig="3500"
-xiq="3500"
+xig="1100"
+xiq="1100"
 
 
 stream="a"
 
-xi_f=3.50
-xi_f_name="350"
+xi_f=1.12285
+xi_f_name="112285"
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime=("12.0") # CAREFUL!!!
+stoptime=("5.0") # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT

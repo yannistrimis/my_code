@@ -14,14 +14,14 @@ nz=16
 nt=32
 
 lat_name="l1632f21b6396m014m070xig1100xiq1100a"
-out_name="wflow1632f21b6396m014m070xig1100xiq1100a_xf110_dt0.015625"
+out_name="wflow1632f21b6396m014m070xig1100xiq1100a_xf112285_dt0.015625"
 
-xi_f=1.10
+xi_f=1.12285
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime="12.0"
+stoptime="5.0"
 
 
 directory="/lustre1/ahisq/yannis_dyn/lattices/l1632f21b6396m014m070xig1100xiq1100a"
