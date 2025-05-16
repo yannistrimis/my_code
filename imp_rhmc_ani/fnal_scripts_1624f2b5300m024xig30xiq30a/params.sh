@@ -3,7 +3,7 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=1000
+n_of_lat=1
 n_of_sub=1
 
 nx=16
@@ -19,7 +19,7 @@ dyn_mass=0.024
 rationals_file="rationals.m024"
 
 warms=0
-trajecs=5
+trajecs=100
 traj_between_meas=1
 microcanonical_time_step=0.0416667
 steps_per_trajectory=24
@@ -41,7 +41,7 @@ executable="su3_rhmd_naive_plaq_a_dbl_gcc12openmpi4_20250430"
 sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="pbp"
+sbatch_jobname="pbp24"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

@@ -72,6 +72,7 @@ cd master_scripts_f21
 cat <<EOF > ../${my_dir}/params.sh
 
 #!/bin/bash
+#DON'T FORGET TO CHANGE EXE FROM HMD TO HMC U DUMBASS
 
 cluster=${cluster}
 
