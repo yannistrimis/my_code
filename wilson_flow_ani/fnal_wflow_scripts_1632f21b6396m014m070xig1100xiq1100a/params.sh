@@ -5,7 +5,7 @@ cluster=fnal
 
 first_lattice=101
 
-n_of_lat=200
+n_of_lat=300
 n_of_sub=1
 
 nx=16
@@ -14,9 +14,9 @@ nz=16
 nt=32
 
 lat_name="l1632f21b6396m014m070xig1100xiq1100a"
-out_name="wflow1632f21b6396m014m070xig1100xiq1100a_xf112285_dt0.015625"
+out_name="wflow1632f21b6396m014m070xig1100xiq1100a_xf113335_dt0.015625"
 
-xi_f=1.12285
+xi_f=1.13335
 
 flow_action="wilson"
 exp_order="16"

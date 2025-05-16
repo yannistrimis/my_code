@@ -19,8 +19,8 @@ xiq="1100"
 
 stream="a"
 
-xi_f=1.12285
-xi_f_name="112285"
+xi_f=1.13335
+xi_f_name="113335"
 
 flow_action="wilson"
 exp_order="16"
