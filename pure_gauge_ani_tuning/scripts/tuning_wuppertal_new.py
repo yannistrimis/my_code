@@ -22,13 +22,13 @@ write_dir = '/home/trimis/fnal/all/flow_data'
 
 ens_pre="1632f21b6396m014m070xig"
 
-x0_vec = ['1000']
-x0_float_vec = [1.0]
+x0_vec = ['1100']
+x0_float_vec = [1.1]
 
-ens_post="xiq1000a"
+ens_post="xiq1100a"
 
-xf = '100'
-xf_float = 1.0
+xf = '112285'
+xf_float = 1.12285
 
 flow_type = input()
 obs_type = input()
@@ -37,8 +37,8 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
 n_files = 200
-first_file = 101
-n_bins = 20
+first_file = 437
+n_bins = 25
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
