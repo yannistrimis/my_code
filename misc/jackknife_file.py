@@ -5,8 +5,9 @@ sys.path.insert(0, '..')
 from python_funcs import *
 
 filename = input()
-nbins = input()
+str_nbins = input()
 
+nbins = int( str_nbins )
 f1 = open("%s"%(filename),"r")
 
 cont1 = f1.readlines()
