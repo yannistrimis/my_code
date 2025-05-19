@@ -5,33 +5,33 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=5
 
 nx=16
-nt=32
+nt=128
 
-beta_name="6396"
+beta_name="6747"
 flavors="f21"
 masses="m014m070"
-xig="1100"
-xiq="1100"
+xig="3500"
+xiq="3500"
 
 
 stream="a"
 
-xi_f=1.13335
-xi_f_name="113335"
+xi_f_arr=(3.5 3.65 3.80 3.95 4.10)
+xi_f_name_arr=("350" "365" "380" "395" "410")
 
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime=("5.0") # CAREFUL!!!
+stoptime="6.0" # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname="11dynfl"
+sbatch_jobname_arr=("35fl1" "35fl2" "35fl3" "35fl4" "35fl5")
 
 n_of_sub=1
 n_of_lat=200
@@ -41,6 +41,9 @@ for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
+xi_f=${xi_f_arr[${i_ens}]}
+xi_f_name=${xi_f_name_arr[${i_ens}]}
+sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
@@ -60,7 +63,7 @@ prefix="zflow"
 fi
 
 out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}"
-my_dir="${cluster}_${prefix}_scripts_${ensemble}"
+my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}"
 
 cd ..
 mkdir ${my_dir}

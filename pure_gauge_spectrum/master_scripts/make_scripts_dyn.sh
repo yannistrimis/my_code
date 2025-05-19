@@ -12,14 +12,14 @@ ny=16
 nz=16
 nt=32
 
-set_i_lat=201
+set_i_lat=101
 set_seed=78324
 
-flavors="f2"
-beta_name="5425"
-masses="m0375"
-xig="15"
-xiq="15"
+flavors="f21"
+beta_name="6396"
+masses="m014m070"
+xig="1100"
+xiq="1100"
 
 stream="a"
 
@@ -31,14 +31,14 @@ source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.0375
+mass1=0.014
 
 nxq=1
-xq1=1.5
+xq1=1.1
 
-xq1_name="15"
+xq1_name="1100"
 
-action="naive"
+action="hisq"
 err=1e-6
 max_cg_iterations=300
 precision=2
@@ -47,13 +47,13 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="comp"
+sbatch_jobname="ahnl"
 
-prefix="naivnlpi"
+prefix="hisqnlpi"
 build_prefix="nlpi"
 
-n_of_sub=1
-n_of_lat=400
+n_of_sub=2
+n_of_lat=1000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 

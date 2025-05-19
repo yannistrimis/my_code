@@ -60,7 +60,7 @@ prefix="zflow"
 fi
 
 out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}"
-my_dir="${cluster}_${prefix}_scripts_${ensemble}"
+my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}"
 
 cd ..
 mkdir ${my_dir}
