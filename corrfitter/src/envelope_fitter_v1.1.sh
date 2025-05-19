@@ -1,15 +1,15 @@
 #!/bin/bash
 
-ens_name="1632b684652x107865"
+ens_name="1664b693563x180060"
 
 stream="a"
 src="cw"
-prefix="hisqstr"
+prefix="hisqtun"
 taste="PION_5"
 
-xq="1080"
-mom="p000"
-mass="0.1"
+xq="2000"
+mom="p110"
+mass="0.09"
 
 fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 dir=${fitdir} # CMSE
@@ -25,24 +25,24 @@ dir=${fitdir} # CMSE
 # dir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 
 tdatamin=0
-tdatamax=16
+tdatamax=32
 tstep=1
-tp=32
+tp=64
 n_states=1
-m_states=0
+m_states=1
 sn="1.0"
 so="-1.0"
 binsize=1
 
 correlated="corr"
 
-tmin_min=0
+tmin_min=6
 tmin_max=16
-tmin_step=1
+tmin_step=2
 
-tmax_min=10
-tmax_max=16
-tmax_step=1
+tmax_min=20
+tmax_max=32
+tmax_step=2
 
 tmin_one=0
 tmax_one=16
