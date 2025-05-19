@@ -10,29 +10,32 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=32
+nt=64
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="684652"
-xi_0_name="107865"
+beta_name="693563"
+xi_0_name="180060"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=16 # CHANGE ACCORDING TO nt
-source_prec=10 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=20 # CHANGE ACCORDING TO nt
 
-nmasses=1
-mass1=0.01497
+nmasses=4
+mass1=0.08
+mass2=0.09
+mass3=0.10
+mass4=0.11
 
 nxq=1
-xq1=1.08
+xq1=1.985
 
-xq1_name="1080"
+xq1_name="1985"
 
 action="hisq"
 err=1e-6
@@ -40,13 +43,13 @@ max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=2
+sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
-sbatch_ntasks=64
-sbatch_jobname="11nlpi"
+sbatch_ntasks=128
+sbatch_jobname="20tun"
 
-prefix="hisqnlpi"
-build_prefix="nlpi"
+prefix="hisqstr"
+build_prefix="tun"
 
 n_of_sub=2
 n_of_lat=1000
