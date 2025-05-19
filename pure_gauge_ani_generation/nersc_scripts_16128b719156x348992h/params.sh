@@ -50,7 +50,7 @@ submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl16128b
 # executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
 executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
 
-sbatch_time="40:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="256"
 sbatch_jobname="hmcxg4"
