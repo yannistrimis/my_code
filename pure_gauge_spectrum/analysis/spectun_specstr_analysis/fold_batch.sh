@@ -1,19 +1,21 @@
 #!/bin/bash
-nt=32 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1632b684652x107865"
+ens_name="1664b693563x180060"
 stream="a"
-masses=("0.04" "0.06" "0.08" "0.1")
+masses=("0.08" "0.09" "0.1" "0.11")
 mas_len=${#masses[@]}
 
 prefix="hisqstr"
 
-xq_arr=("1080")
+xq_arr=("1985")
 sinks_arr=("PION_5")
 
 mom_arr=("p000")
 
+
 src_label="cw"
+
 
 for mom in ${mom_arr[@]}
 do

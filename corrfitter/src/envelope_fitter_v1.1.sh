@@ -4,12 +4,12 @@ ens_name="1664b693563x180060"
 
 stream="a"
 src="cw"
-prefix="hisqtun"
+prefix="hisqstr"
 taste="PION_5"
 
-xq="2000"
-mom="p110"
-mass="0.09"
+xq="1985"
+mom="p000"
+mass="0.11"
 
 fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 dir=${fitdir} # CMSE
@@ -29,18 +29,18 @@ tdatamax=32
 tstep=1
 tp=64
 n_states=1
-m_states=1
+m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
 
 correlated="corr"
 
-tmin_min=6
-tmin_max=16
+tmin_min=0
+tmin_max=32
 tmin_step=2
 
-tmax_min=20
+tmax_min=0
 tmax_max=32
 tmax_step=2
 
