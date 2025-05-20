@@ -107,8 +107,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/mnt/scratch/trimisio/lattices/${lat_name}"
 out_dir="/mnt/home/trimisio/outputs/${lat_name}"
 path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
-run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}"
-submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}"
+run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}"
+submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
 
 executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
 
@@ -130,8 +130,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/lustre1/ahisq/yannis_dyn/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_dyn/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_dyn/runs/run${prefix}${lat_name}"
-submit_dir="/project/ahisq/yannis_dyn/submits/sub${prefix}${lat_name}"
+run_dir="/project/ahisq/yannis_dyn/runs/run${prefix}${lat_name}_xf${xi_f_name}"
+submit_dir="/project/ahisq/yannis_dyn/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
@@ -141,26 +141,6 @@ sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
-
-EOF
-
-elif [ ${cluster} == "nersc" ]
-then
-
-cat <<EOF >> ../${my_dir}/params.sh
-
-directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/${lat_name}"
-out_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/outputs/${lat_name}"
-path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
-run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungen${lat_name}"
-submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgen${lat_name}"
-
-executable=""
-
-sbatch_time="${sbatch_time}"
-sbatch_nodes="${sbatch_nodes}"
-sbatch_ntasks="${sbatch_ntasks}"
-sbatch_jobname="${sbatch_jobname}"
 
 EOF
 

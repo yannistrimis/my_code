@@ -4,15 +4,15 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
-n_of_ens=4
+cluster="nersc"
+n_of_ens=1
 
-nx=20
-nt=80
+nx=16
+nt=128
 
-beta_name_arr=("7580" "7580" "7580" "7580")
-xi_0_name_arr=("3505" "3515" "3525" "3535")
-stream="a"
+beta_name_arr=("719156")
+xi_0_name_arr=("348992")
+stream="h"
 
 xi_f=4.00
 xi_f_name="400"
@@ -20,13 +20,13 @@ xi_f_name="400"
 flow_action="wilson"
 exp_order="16"
 dt="0.015625"
-stoptime_arr=("12.0" "12.0" "12.0" "12.0") # CAREFUL!!!
+stoptime_arr=("3.0") # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("2tun1w" "2tun2w" "2tun3w" "2tun4w")
+sbatch_ntasks=256 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("fl40")
 
 n_of_sub=2
 n_of_lat=1000
@@ -104,8 +104,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/mnt/scratch/trimisio/lattices/${lat_name}"
 out_dir="/mnt/home/trimisio/outputs/${lat_name}"
 path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
-run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}"
-submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}"
+run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}"
+submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
 
 executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
 
@@ -127,8 +127,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_puregauge/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/run${prefix}${lat_name}"
-submit_dir="/project/ahisq/yannis_puregauge/submits/sub${prefix}${lat_name}"
+run_dir="/project/ahisq/yannis_puregauge/runs/run${prefix}${lat_name}_xf${xi_f_name}"
+submit_dir="/project/ahisq/yannis_puregauge/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
@@ -148,11 +148,11 @@ cat <<EOF >> ../${my_dir}/params.sh
 
 directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/${lat_name}"
 out_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/outputs/${lat_name}"
-path_build="/global/homes/t/trimisio/my_code/pure_gauge_ani_generation/build"
-run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/rungen${lat_name}"
-submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgen${lat_name}"
+path_build="/global/homes/t/trimisio/my_code/wilson_flow_ani/build"
+run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/run${prefix}${lat_name}_xf${xi_f_name}"
+submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
 
-executable=""
+executable="wilson_flow_bbb_a_dbl_cray_20250520"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"

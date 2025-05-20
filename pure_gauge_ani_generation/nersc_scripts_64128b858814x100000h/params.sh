@@ -4,7 +4,7 @@ cluster=nersc
 
 init_seed=1158
 n_of_lat=500
-n_of_sub=3
+n_of_sub=10
 
 nx=64
 ny=64
@@ -49,7 +49,7 @@ submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl64128b
 executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
 # executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
 
-sbatch_time="47:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="256"
 sbatch_jobname="hmcxg1"
