@@ -63,5 +63,4 @@ bash ${1}/control_script.sh ${1}
 
 EOF
 
-
 fi

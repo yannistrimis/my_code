@@ -27,8 +27,8 @@ stoptime="6.0"
 directory="/lustre1/ahisq/yannis_dyn/lattices/l16128f21b6747m014m070xig3500xiq3500a"
 out_dir="/project/ahisq/yannis_dyn/outputs/l16128f21b6747m014m070xig3500xiq3500a"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_dyn/runs/runwflowl16128f21b6747m014m070xig3500xiq3500a"
-submit_dir="/project/ahisq/yannis_dyn/submits/subwflowl16128f21b6747m014m070xig3500xiq3500a"
+run_dir="/project/ahisq/yannis_dyn/runs/runwflowl16128f21b6747m014m070xig3500xiq3500a_xf365"
+submit_dir="/project/ahisq/yannis_dyn/submits/subwflowl16128f21b6747m014m070xig3500xiq3500a_xf365"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
