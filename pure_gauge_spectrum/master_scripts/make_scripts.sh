@@ -26,11 +26,8 @@ n_sources=2
 source_inc=32 # CHANGE ACCORDING TO nt
 source_prec=20 # CHANGE ACCORDING TO nt
 
-nmasses=4
-mass1=0.08
-mass2=0.09
-mass3=0.10
-mass4=0.11
+nmasses=1
+mass1=0.02086
 
 nxq=1
 xq1=1.985
@@ -48,10 +45,10 @@ sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
 sbatch_jobname="20tun"
 
-prefix="hisqstr"
-build_prefix="tun"
+prefix="hisqnlpi"
+build_prefix="nlpi"
 
-n_of_sub=2
+n_of_sub=3
 n_of_lat=1000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
