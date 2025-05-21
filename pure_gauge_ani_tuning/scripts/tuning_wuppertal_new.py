@@ -20,15 +20,15 @@ write_dir = '/home/trimis/fnal/all/flow_data'
 # cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
 # write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-ens_pre="1632f21b6396m014m070xig"
+ens_pre="16128f21b6747m014m070xig"
 
-x0_vec = ['1100']
-x0_float_vec = [1.1]
+x0_vec = ["3500"]
+x0_float_vec = [3.5]
 
-ens_post="xiq1100a"
+ens_post="xiq3500a"
 
-xf = '112285'
-xf_float = 1.12285
+xf = "410"
+xf_float = 4.10
 
 flow_type = input()
 obs_type = input()
@@ -36,8 +36,8 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 200
-first_file = 437
+n_files = 150
+first_file = 101
 n_bins = 25
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
