@@ -1,20 +1,20 @@
 #!/bin/bash
 
-ens_name="1632f2b5425m0375xig15xiq15"
+ens_name="1632b681823x100000"
 stream="a"
-masses=("0.0375")
+masses=("0.01524")
 mas_len=${#masses[@]}
 
-prefix="naivnlpi"
+prefix="hisqnlpi"
 
-xq_arr=("15")
-#sinks_arr=("PION_5") # "PION_i5" "PION_i" "PION_s")
-sinks_arr=("PION_05") # "PION_ij" "PION_i0" "PION_0")
+xq_arr=("1000")
+sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+#sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
 source1="even_and_odd_wall"
-#source2="even_and_odd_wall/FUNNYWALL1"
-source2="even_and_odd_wall/FUNNYWALL2"
+source2="even_and_odd_wall/FUNNYWALL1"
+#source2="even_and_odd_wall/FUNNYWALL2"
 
 src_label="eowfw"
 
@@ -29,7 +29,7 @@ for sinks in "${sinks_arr[@]}"
 do
 echo "${sinks}"
 
-for i_file in {201..600..1}
+for i_file in {1100..1100..1}
 do
 
 echo "    ${i_file}"
