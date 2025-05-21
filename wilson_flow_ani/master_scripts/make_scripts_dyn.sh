@@ -5,7 +5,7 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=5
+n_of_ens=1
 
 nx=16
 nt=128
@@ -19,8 +19,8 @@ xiq="3500"
 
 stream="a"
 
-xi_f_arr=(3.5 3.65 3.80 3.95 4.10)
-xi_f_name_arr=("350" "365" "380" "395" "410")
+xi_f_arr=(4.30647)
+xi_f_name_arr=("430647")
 
 flow_action="wilson"
 exp_order="16"
@@ -31,7 +31,7 @@ sbatch_time="20:00:00"
 sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("35fl1" "35fl2" "35fl3" "35fl4" "35fl5")
+sbatch_jobname_arr=("35fl")
 
 n_of_sub=1
 n_of_lat=200
