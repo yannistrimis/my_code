@@ -16,8 +16,8 @@ beta_name="6747"
 xig=3.5
 xig_name="3500"
 
-xiq=3.5
-xiq_name="3500"
+xiq=4.3
+xiq_name="4300"
 
 dyn_mass_1=0.014
 dyn_mass_1_name="014"
