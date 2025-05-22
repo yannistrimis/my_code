@@ -4,28 +4,28 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="nersc"
+cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=128
+nt=32
 
-beta_arr=(7.19156)
-beta_name_arr=("719156")
+beta_arr=(6.81823)
+beta_name_arr=("681823")
 
-xi_0_arr=(3.48992)
-xi_0_name_arr=("348992")
+xi_0_arr=(1.0)
+xi_0_name_arr=("100000")
 
-stream="h"
+stream="a"
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=64 # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=256 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("hmcxg4")
+sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("a16pg10")
 
-n_of_sub=1
-n_of_lat=1
+n_of_sub=2
+n_of_lat=1000
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
