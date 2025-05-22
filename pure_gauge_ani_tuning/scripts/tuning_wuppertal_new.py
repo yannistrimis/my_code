@@ -27,8 +27,8 @@ x0_float_vec = [3.5]
 
 ens_post="xiq3500a"
 
-xf = "410"
-xf_float = 4.10
+xf = "430647"
+xf_float = 4.30647
 
 flow_type = input()
 obs_type = input()
@@ -36,9 +36,9 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 150
+n_files = 180
 first_file = 101
-n_bins = 25
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
