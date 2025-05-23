@@ -51,7 +51,7 @@ executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20250423"
 sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="20nlpi"
+sbatch_jobname="a20nl20"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

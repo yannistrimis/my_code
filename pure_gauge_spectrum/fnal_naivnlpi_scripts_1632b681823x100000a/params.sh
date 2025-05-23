@@ -3,7 +3,7 @@
 
 cluster=fnal
 
-n_of_lat=500
+n_of_lat=1000
 n_of_sub=3
 
 set_i_lat=101
@@ -51,7 +51,7 @@ executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20241022"
 sbatch_time="20:00:00"
 sbatch_nodes="2"
 sbatch_ntasks="64"
-sbatch_jobname="naive1"
+sbatch_jobname="naive10"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
