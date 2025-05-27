@@ -11,24 +11,24 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/home/trimis/fnal/all/outputs'
-write_dir = '/home/trimis/fnal/all/flow_data'
+# cur_dir = '/home/trimis/fnal/all/outputs'
+# write_dir = '/home/trimis/fnal/all/flow_data'
 
 # cur_dir = '/home/trimis/hpcc/outputs'
 # write_dir = '/home/trimis/hpcc/flow_data'
 
-# cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
-# write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
+cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
+write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-ens_pre="16128f21b6747m014m070xig"
+ens_pre="2448b748098x"
 
-x0_vec = ["3500"]
-x0_float_vec = [3.5]
+x0_vec = ["182579"]
+x0_float_vec = [1.82579]
 
-ens_post="xiq3500a"
+ens_post="a"
 
-xf = "430647"
-xf_float = 4.30647
+xf = "200"
+xf_float = 2.0
 
 flow_type = input()
 obs_type = input()
@@ -36,7 +36,7 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 180
+n_files = 200
 first_file = 101
 n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
