@@ -10,7 +10,6 @@ cat <<EOF > ${submit_dir}/submit_script.sb
 
 #SBATCH --time=${sbatch_time}
 #SBATCH --nodes=${sbatch_nodes}
-##SBATCH --ntasks-per-node=${sbatch_ntasks_per_node}
 #SBATCH --constraint=intel18
 #SBATCH --job-name=${sbatch_jobname}
 
