@@ -29,7 +29,7 @@ for sinks in "${sinks_arr[@]}"
 do
 echo "${sinks}"
 
-for i_file in {1100..1100..1}
+for i_file in {101..4100..1}
 do
 
 echo "    ${i_file}"

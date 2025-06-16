@@ -19,8 +19,11 @@ out_name = input()
 # cur_dir = '/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec' # FNAL
 # out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
-cur_dir = '/home/trimis/fnal/all/outputs/pure_gauge_spec' # CMSE --> FNAL
-out_dir = '/home/trimis/spec_data' # CMSE
+# cur_dir = '/home/trimis/fnal/all/outputs/pure_gauge_spec' # CMSE --> FNAL
+# out_dir = '/home/trimis/spec_data' # CMSE
+
+cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs/pure_gauge_spec' # LAPTOP --> FNAL
+out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 
 
 f_read = open('%s/l%s/%s.%s'%(cur_dir,ens_name,pre_name,i_file),'r')
