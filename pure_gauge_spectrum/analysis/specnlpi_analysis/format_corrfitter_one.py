@@ -5,7 +5,9 @@ import numpy as np
 
 # out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
-out_dir = '/home/trimis/spec_data' # CMSE
+# out_dir = '/home/trimis/spec_data' # CMSE
+
+out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 
 ens_name = input()
 name = input()

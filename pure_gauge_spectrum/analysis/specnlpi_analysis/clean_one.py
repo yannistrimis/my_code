@@ -22,7 +22,7 @@ out_name = input()
 # cur_dir = '/home/trimis/fnal/all/outputs/pure_gauge_spec' # CMSE --> FNAL
 # out_dir = '/home/trimis/spec_data' # CMSE
 
-cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs/pure_gauge_spec' # LAPTOP --> FNAL
+cur_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 
 
