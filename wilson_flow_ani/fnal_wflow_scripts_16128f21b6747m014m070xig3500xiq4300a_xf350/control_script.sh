@@ -52,6 +52,11 @@ then
 
 srun -n ${sbatch_ntasks} --mpi=pmix ${path_build}/${executable} ${submit_dir}/input ${file_name}
 
+elif [ ${cluster} == "nersc" ]
+then
+
+srun -n ${sbatch_ntasks} ${path_build}/${executable} ${submit_dir}/input ${file_name}
+
 fi
 
 cd ${submit_dir}
