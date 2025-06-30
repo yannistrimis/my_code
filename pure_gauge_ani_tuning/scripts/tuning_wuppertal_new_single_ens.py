@@ -1,5 +1,4 @@
 import numpy as np
-from matplotlib import pyplot as plt
 import sys
 sys.path.insert(0, '../..') # icer
 
@@ -16,18 +15,20 @@ w0phys = 0.17355
 # cur_dir = '/home/trimis/hpcc/outputs'
 # write_dir = '/home/trimis/hpcc/flow_data'
 
-cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
-write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
+# cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
+# write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-ens_pre = ""
+cur_dir = "/home/trimisio/all/outputs"
 
-x0 = "0.0"
-x0_float = 0.0
+ens_pre = "1632b687348x"
 
-ens_post = ""
+x0 = "115792"
+x0_float = 1.15792
 
-xf_vec = ["0.0"]
-xf_float_vec = [0.0]
+ens_post = "a"
+
+xf_vec = ["115", "120", "125"]
+xf_float_vec = [1.15, 1.20, 1.25]
 
 flow_type = input()
 obs_type = input()
