@@ -18,7 +18,7 @@ w0phys = 0.17355
 # cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
 # write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-cur_dir = "/home/trimisio/all/outputs"
+cur_dir = "/home/yannis/Physics/LQCD/outputs"
 
 ens_pre = "1632b687348x"
 
@@ -37,9 +37,6 @@ dt = '0.015625'
 n_files = 200
 first_file = 101
 n_bins = 20
-
-f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
-f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
 i_xf = -1
 for xf in xf_vec :
@@ -89,10 +86,11 @@ for xf in xf_vec :
         dEs_arr[:,i,i_xf] = deriv( Es_arr[:,i,i_xf] , float(dt) )
 
         for i_time in range(0,n_steps) :
-            dEt_arr[i_time,i,i_xf] = xf_float**2 * dEt_arr[i_time,i,i_xf] * tau_arr[i_time]
+            dEt_arr[i_time,i,i_xf] = xf_float_vec[i_xf]**2 * dEt_arr[i_time,i,i_xf] * tau_arr[i_time]
             dEs_arr[i_time,i,i_xf] = dEs_arr[i_time,i,i_xf] * tau_arr[i_time]
             if i_time>0 :
                 ratio_arr[i_time,i,i_xf] = (dEs_arr[i_time,i,i_xf])/(dEt_arr[i_time,i,i_xf]) # WE OMIT THE FIRST ELEMENT; DIVISION BY ZERO
+
 
 
 ### AT THIS STAGE dES AND dEt MEASUREMENT POINTS HAVE BEEN FORMED
@@ -190,7 +188,7 @@ for i_bins in range(n_bins):
     xpoints = np.zeros(3)
     ypoints = np.zeros(3)
     wpoints = np.zeros(3)
-    if clos_i == len(x0_vec)-1:
+    if clos_i == len(xf_vec)-1:
         point_list = [clos_i-2,clos_i-1,clos_i]
     elif clos_i == 0:
         point_list = [clos_i,clos_i+1,clos_i+2]

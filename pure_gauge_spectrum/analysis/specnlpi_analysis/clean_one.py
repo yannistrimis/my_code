@@ -12,6 +12,8 @@ sinkop1 = input()
 sinkop2 = input()
 sinks = input()
 out_name = input()
+cur_dir = input()
+out_dir = input()
 
 # cur_dir = '/mnt/home/trimisio/outputs/pure_gauge_spec' # ICER
 # out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
@@ -22,11 +24,7 @@ out_name = input()
 # cur_dir = '/home/trimis/fnal/all/outputs/pure_gauge_spec' # CMSE --> FNAL
 # out_dir = '/home/trimis/spec_data' # CMSE
 
-cur_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
-out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
-
-
-f_read = open('%s/l%s/%s.%s'%(cur_dir,ens_name,pre_name,i_file),'r')
+f_read = open('%s/l%s_outputs/%s.%s'%(cur_dir,ens_name,pre_name,i_file),'r')
 
 content = f_read.readlines()
 

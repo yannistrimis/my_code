@@ -7,12 +7,11 @@ import numpy as np
 
 # out_dir = '/home/trimis/spec_data' # CMSE
 
-out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
-
 ens_name = input()
 name = input()
 str_first_file = input()
 str_last_file = input()
+out_dir = input()
 
 first_file = int(str_first_file)
 last_file = int(str_last_file)

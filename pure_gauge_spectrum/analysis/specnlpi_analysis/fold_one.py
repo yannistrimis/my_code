@@ -6,6 +6,7 @@ ens_name = input()
 pre_name = input()
 i_file = input()
 out_name = input()
+out_dir = input()
 
 nt = int(str_nt)
 
@@ -13,7 +14,6 @@ nt = int(str_nt)
 
 # out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
-out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 
 f_write = open('%s/l%s/%s.%s'%(out_dir,ens_name,out_name,i_file),'w')
 f_read = open('%s/l%s/%s.%s'%(out_dir,ens_name,pre_name,i_file),'r')

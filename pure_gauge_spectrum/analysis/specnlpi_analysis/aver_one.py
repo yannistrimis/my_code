@@ -5,14 +5,13 @@ ens_name = input()
 pre_name = input()
 i_file = input()
 out_name = input()
+out_dir = input()
 
 # out_dir = '/mnt/home/trimisio/plot_data/spec_data' # ICER
 
 # out_dir = '/project/ahisq/yannis_puregauge/spec_data' # FNAL
 
 # out_dir = '/home/trimis/spec_data' # CMSE
-
-out_dir = '/home/yannis/Physics/LQCD/spec_data' # LAPTOP
 
 f_write = open('%s/l%s/%s.%s'%(out_dir,ens_name,out_name,i_file),'w')
 f_read_a = open('%s/l%s/%s.%sa'%(out_dir,ens_name,pre_name,i_file),'r')

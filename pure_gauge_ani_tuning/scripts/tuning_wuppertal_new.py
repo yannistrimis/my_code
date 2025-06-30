@@ -17,18 +17,21 @@ w0phys = 0.17355
 # cur_dir = '/home/trimis/hpcc/outputs'
 # write_dir = '/home/trimis/hpcc/flow_data'
 
-cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
-write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
+# cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
+# write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-ens_pre="2448b748098x"
+cur_dir = "/home/yannis/Physics/LQCD/outputs" 
+write_dir = "/home/yannis/Physics/LQCD/flow_data"
 
-x0_vec = ["182579"]
-x0_float_vec = [1.82579]
+ens_pre = "1632b687348x"
+
+x0_vec = ["115792"]
+x0_float_vec = [1.15792]
 
 ens_post="a"
 
-xf = "200"
-xf_float = 2.0
+xf = "120"
+xf_float = 1.2
 
 flow_type = input()
 obs_type = input()
