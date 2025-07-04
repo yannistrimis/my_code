@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#SBATCH --time=20:00:00
+#SBATCH --partition=lq1_cpu
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH -A ahisq
+#SBATCH --qos=normal
+
+#SBATCH --job-name=analysis
+
+module load mambaforge/23.1.0-4
+
+bash do_all.sh
