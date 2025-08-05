@@ -1,0 +1,17 @@
+# Relative signs for corrfitter:
+
+PION_5  (  1 ,  0 )
+PION_05 ( -1 ,  1 )
+PION_i5 (  1 ,  0 )
+PION_ij ( -1 ,  1 )
+PION_i0 (  0 ,  1 )
+PION_i  (  1 ,  1 )
+PION_0  (  0 , -1 )
+PION_s  ( -1 , -1 )
+
+# xi_g = 1.0 NAIV - l1632b681823x100000a 
+
+# xi_g = 1.5 NAIV - l1632b687348x115792a
+
+# xi_g = 1.5 NAIV - l1648b694635x139939a
+
