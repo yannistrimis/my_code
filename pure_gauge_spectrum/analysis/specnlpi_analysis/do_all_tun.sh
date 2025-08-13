@@ -12,7 +12,7 @@ prefix="naivtun"
 xq_arr=("100" "120" "140")
 sinks_arr=("PION_5")
 #mom_arr=("p000")
-mom_arr=("p100" "p200")
+mom_arr=("p110")
 
 #source1="CORNER"
 source1="CORNER/momentum"
