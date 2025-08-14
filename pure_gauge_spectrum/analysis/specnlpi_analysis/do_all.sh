@@ -4,10 +4,10 @@ nt=32 # DON'T FORGET TO CHANGE !!!
 
 ens_name="1632b681823x100000"
 stream="a"
-masses=("0.01524")
+masses=("0.00855")
 mas_len=${#masses[@]}
 
-prefix="hisqnlpi"
+prefix="naivnlpi"
 
 xq_arr=("1000")
 #sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
@@ -24,7 +24,7 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=4300
+last=4500
 
 output_dir="/home/trimisio/all/spec_data"
 data_dir="/home/trimisio/all/spec_data"

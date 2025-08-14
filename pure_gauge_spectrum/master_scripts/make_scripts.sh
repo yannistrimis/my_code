@@ -26,20 +26,13 @@ n_sources=2
 source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
-nmasses=3
-mass1=0.05
-mass2=0.07
-mass3=0.09
+nmasses=1
+mass1=0.00748
 
-nxq=3
-xq1=1.0
-xq2=1.2
-xq3=1.4
+nxq=1
+xq1=1.058
 
-
-xq1_name="100"
-xq2_name="120"
-xq3_name="140"
+xq1_name="1058"
 
 action="naive"
 err=1e-6
@@ -50,13 +43,13 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="12naivtun"
+sbatch_jobname="12naivnlpi"
 
-prefix="naivtun"
-build_prefix="tun"
+prefix="naivnlpi"
+build_prefix="nlpi"
 
-n_of_sub=3
-n_of_lat=1000
+n_of_sub=5
+n_of_lat=5000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
