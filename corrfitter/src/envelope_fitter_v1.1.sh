@@ -7,9 +7,9 @@ src="cw"
 prefix="naivtun"
 taste="PION_5"
 
-xq="100"
-mom="p200"
-mass="0.02"
+xq="140"
+mom="p110"
+mass="0.06"
 
 # fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 # dir=${fitdir} # CMSE
