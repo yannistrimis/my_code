@@ -1,15 +1,15 @@
 #!/bin/bash
 
-nt=32 # DON'T FORGET TO CHANGE !!!
+nt=48 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1632b681823x100000"
+ens_name="1648b694635x139939"
 stream="a"
-masses=("0.00855")
+masses=("0.00734")
 mas_len=${#masses[@]}
 
 prefix="naivnlpi"
 
-xq_arr=("1000")
+xq_arr=("12348")
 #sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
 sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
