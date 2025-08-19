@@ -1,15 +1,24 @@
 #!/bin/bash
 
+#ens_name="1632b681823x100000"
 ens_name="1632b687348x115792"
+#ens_name="1648b694635x139939"
 
 stream="a"
-src="cw"
-prefix="naivtun"
-taste="PION_5"
+src="eowfw"
+prefix="naivnlpi"
+taste="PION_i0"
 
-xq="140"
-mom="p110"
-mass="0.06"
+#xq="1000"
+#mass="0.00855"
+
+xq="1058"
+mass="0.00748"
+
+#xq="12348"
+#mass="0.00734"
+
+mom="p000"
 
 # fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 # dir=${fitdir} # CMSE
@@ -28,24 +37,24 @@ tdatamin=0
 tdatamax=16
 tstep=1
 tp=32
-n_states=1
+n_states=0
 m_states=1
-sn="1.0"
-so="-1.0"
+sn="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
 
-tmin_min=2
-tmin_max=14
+tmin_min=1
+tmin_max=9
 tmin_step=1
 
-tmax_min=8
-tmax_max=16
+tmax_min=11
+tmax_max=11
 tmax_step=1
 
-tmin_one=3
-tmax_one=16
+tmin_one=6
+tmax_one=11
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
