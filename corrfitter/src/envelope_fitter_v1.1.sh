@@ -1,22 +1,22 @@
 #!/bin/bash
 
 #ens_name="1632b681823x100000"
-ens_name="1632b687348x115792"
-#ens_name="1648b694635x139939"
+#ens_name="1632b687348x115792"
+ens_name="1648b694635x139939"
 
 stream="a"
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_i0"
+taste="PION_ij"
 
 #xq="1000"
 #mass="0.00855"
 
-xq="1058"
-mass="0.00748"
+#xq="1058"
+#mass="0.00748"
 
-#xq="12348"
-#mass="0.00734"
+xq="12348"
+mass="0.00734"
 
 mom="p000"
 
@@ -34,10 +34,10 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 dir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 
 tdatamin=0
-tdatamax=16
+tdatamax=24
 tstep=1
-tp=32
-n_states=0
+tp=48
+n_states=1
 m_states=1
 sn="-1.0"
 so="1.0"
@@ -49,12 +49,12 @@ tmin_min=1
 tmin_max=9
 tmin_step=1
 
-tmax_min=11
-tmax_max=11
+tmax_min=24
+tmax_max=24
 tmax_step=1
 
-tmin_one=6
-tmax_one=11
+tmin_one=0
+tmax_one=16
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
