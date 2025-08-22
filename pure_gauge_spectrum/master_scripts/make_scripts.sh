@@ -10,29 +10,35 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=32
+nt=64
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="687348"
-xi_0_name="115792"
+beta_name="704115"
+xi_0_name="181411"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=16 # CHANGE ACCORDING TO nt
-source_prec=10 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=20 # CHANGE ACCORDING TO nt
 
-nmasses=1
-mass1=0.00748
+nmasses=3
+mass1=0.025
+mass2=0.035
+mass3=0.045
 
-nxq=1
-xq1=1.058
+nxq=3
+xq1=1.2
+xq2=1.6
+xq3=2.0
 
-xq1_name="1058"
+xq1_name="120"
+xq2_name="160"
+xq3_name="200"
 
 action="naive"
 err=1e-6
@@ -43,13 +49,13 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="12naivnlpi"
+sbatch_jobname="20naivun"
 
-prefix="naivnlpi"
-build_prefix="nlpi"
+prefix="naivtun"
+build_prefix="tun"
 
 n_of_sub=5
-n_of_lat=5000
+n_of_lat=500
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
