@@ -1,21 +1,21 @@
 #!/bin/bash
 
-nt=32 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1632b687348x115792"
+ens_name="1664b704115x181411"
 stream="a"
-masses=("0.02" "0.04" "0.06")
+masses=("0.025" "0.035" "0.045")
 mas_len=${#masses[@]}
 
 prefix="naivtun"
 
-xq_arr=("100" "120" "140")
+xq_arr=("120" "160" "200")
 sinks_arr=("PION_5")
-#mom_arr=("p000")
-mom_arr=("p110")
+mom_arr=("p000")
+#mom_arr=("p100" "p110")
 
-#source1="CORNER"
-source1="CORNER/momentum"
+source1="CORNER"
+#source1="CORNER/momentum"
 source2="CORNER"
 
 src_label="cw"
@@ -26,12 +26,12 @@ sinkop2="identity"
 first=101
 last=600
 
-output_dir="/home/trimisio/all/spec_data"
-data_dir="/home/trimisio/all/spec_data"
+# output_dir="/home/trimisio/all/spec_data"
+# data_dir="/home/trimisio/all/spec_data"
 
 
-# output_dir="/home/yannis/Physics/LQCD/spec_data"
-# data_dir="/home/yannis/Physics/LQCD/spec_data"
+output_dir="/home/yannis/Physics/LQCD/spec_data"
+data_dir="/home/yannis/Physics/LQCD/spec_data"
 
 for mom in ${mom_arr[@]}
 do
