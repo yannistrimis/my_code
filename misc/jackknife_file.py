@@ -22,4 +22,4 @@ for i in range(len(cont1)):
 aver1 = jackknife(arr1, nbins, "average")
 stdv1 = jackknife(arr1, nbins, "error")
 
-print(aver1,"+/-",stdv1)
+print( "%.6f\t%.6f"%(aver1, stdv1) )
