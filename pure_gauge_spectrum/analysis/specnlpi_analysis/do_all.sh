@@ -1,22 +1,22 @@
 #!/bin/bash
 
-nt=48 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1648b694635x139939"
+ens_name="1664b704115x181411"
 stream="a"
-masses=("0.00734")
+masses=("0.00725")
 mas_len=${#masses[@]}
 
 prefix="naivnlpi"
 
-xq_arr=("12348")
-#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
-sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
+xq_arr=("154707")
+sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+#sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
 source1="even_and_odd_wall"
-#source2="even_and_odd_wall/FUNNYWALL1"
-source2="even_and_odd_wall/FUNNYWALL2"
+source2="even_and_odd_wall/FUNNYWALL1"
+#source2="even_and_odd_wall/FUNNYWALL2"
 
 src_label="eowfw"
 
@@ -24,14 +24,14 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=4500
+last=2300
 
-output_dir="/home/trimisio/all/spec_data"
-data_dir="/home/trimisio/all/spec_data"
+# output_dir="/home/trimisio/all/spec_data"
+# data_dir="/home/trimisio/all/spec_data"
 
 
-# output_dir="/home/yannis/Physics/LQCD/spec_data"
-# data_dir="/home/yannis/Physics/LQCD/spec_data"
+output_dir="/home/yannis/Physics/LQCD/spec_data"
+data_dir="/home/yannis/Physics/LQCD/spec_data"
 
 for mom in ${mom_arr[@]}
 do
