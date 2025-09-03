@@ -3,14 +3,14 @@
 ens_name="1664b704115x181411"
 
 stream="a"
-src="cw"
-prefix="naivtun"
-taste="PION_5"
+src="eowfw"
+prefix="naivnlpi"
+taste="PION_ij"
 
-xq="200"
-mass="0.045"
+xq="154707"
+mass="0.00725"
 
-mom="p110"
+mom="p000"
 
 # fitdir="/home/trimis/spec_data/l${ens_name}${stream}" # CMSE
 # dir=${fitdir} # CMSE
@@ -31,19 +31,19 @@ tstep=1
 tp=64
 n_states=1
 m_states=1
-sn="1.0"
-so="-1.0"
+sn="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
 
 tmin_min=0
-tmin_max=18
+tmin_max=20
 tmin_step=1
 
-tmax_min=26
+tmax_min=32
 tmax_max=32
-tmax_step=1
+tmax_step=2
 
 tmin_one=0
 tmax_one=16
