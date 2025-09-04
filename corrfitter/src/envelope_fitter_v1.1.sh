@@ -1,14 +1,14 @@
 #!/bin/bash
 
-ens_name="1664b704115x181411"
+ens_name="1632b681823x100000"
 
 stream="a"
 src="eowfw"
 prefix="naivnlpi"
 taste="PION_s"
 
-xq="154707"
-mass="0.00725"
+xq="1000"
+mass="0.00855"
 
 mom="p000"
 
@@ -26,9 +26,9 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 dir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}${stream}" # LAPTOP
 
 tdatamin=0
-tdatamax=32
+tdatamax=16
 tstep=1
-tp=64
+tp=32
 n_states=1
 m_states=1
 sn="1.0"
@@ -41,8 +41,8 @@ tmin_min=0
 tmin_max=10
 tmin_step=1
 
-tmax_min=26
-tmax_max=26
+tmax_min=14
+tmax_max=14
 tmax_step=1
 
 tmin_one=0
