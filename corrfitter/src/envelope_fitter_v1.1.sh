@@ -5,7 +5,7 @@ ens_name="1664b704115x181411"
 stream="a"
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_ij"
+taste="PION_s"
 
 xq="154707"
 mass="0.00725"
@@ -31,19 +31,19 @@ tstep=1
 tp=64
 n_states=1
 m_states=1
-sn="-1.0"
-so="1.0"
+sn="1.0"
+so="-1.0"
 binsize=1
 
 correlated="corr"
 
 tmin_min=0
-tmin_max=20
+tmin_max=10
 tmin_step=1
 
-tmax_min=32
-tmax_max=32
-tmax_step=2
+tmax_min=26
+tmax_max=26
+tmax_step=1
 
 tmin_one=0
 tmax_one=16
