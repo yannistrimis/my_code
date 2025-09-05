@@ -15,7 +15,7 @@ nz=16
 nt=32
 
 lat_name="l1632b681823x100000a"
-out_name="specnaivnlpi1632b681823x100000"
+out_name="specnaivnlpi_CW_1632b681823x100000"
 
 nmasses=1
 mass_arr=( 0.00855      )

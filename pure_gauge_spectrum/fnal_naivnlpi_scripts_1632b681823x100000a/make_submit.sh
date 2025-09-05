@@ -6,15 +6,17 @@ if [ ${cluster} == "icer" ]
 then
 
 cat <<EOF > ${submit_dir}/submit_script.sb
-#!/bin/bash
+#!/bin/bash --login
 
 #SBATCH --time=${sbatch_time}
-#SBATCH --ntasks=${sbatch_ntasks}
-#SBATCH --exclude=lac-[084-124]
+#SBATCH --nodes=${sbatch_nodes}
+#SBATCH --ntasks-per-node=${sbatch_ntasks_per_node}
+#SBATCH --constraint=intel18
 #SBATCH --job-name=${sbatch_jobname}
 
 module purge
-module load ${sbatch_module}
+module load ${sbatch_module1}
+module load ${sbatch_module2}
 
 bash ${1}/control_script.sh ${1}
 
@@ -30,7 +32,7 @@ cat <<EOF > ${submit_dir}/submit_script.sb
 #SBATCH --partition=lq1_cpu
 #SBATCH --nodes=${sbatch_nodes}
 #SBATCH --ntasks=${sbatch_ntasks}
-#SBATCH -A ahisq
+#SBATCH -A ahisq.lq1_cpu
 #SBATCH --qos=normal
 
 #SBATCH --job-name=${sbatch_jobname}
@@ -44,4 +46,4 @@ bash ${1}/control_script.sh ${1}
 EOF
 
 fi
- 
+

@@ -79,7 +79,7 @@ number_of_base_sources 1
 
 # BASE, SOURCE 0
 
-evenandodd_wall
+corner_wall
 field_type KS
 subset full
 t0 ${t0}
@@ -88,23 +88,7 @@ forget_source
 
 # DESCRIPTION OF MODIFIED SOURCES'
 
-number_of_modified_sources 2
-
-# MODIFIED, SOURCE 1
-
-source 0
-
-funnywall1
-op_label f1
-forget_source
-
-# MODIFIED, SOURCE 2
-
-source 0
-
-funnywall2
-op_label f2
-forget_source
+number_of_modified_sources 0
 
 ######################################################################
 
@@ -112,7 +96,7 @@ forget_source
 
 # DESCRIPTION OF PROPAGATORS
 
-number_of_sets 3
+number_of_sets 1
 
 # PARAMETERS FOR SET 0
 
@@ -149,84 +133,14 @@ done # m
 
 cat <<EOF
 
-# PARAMETERS FOR SET 1
-
-set_type multimass
-inv_type UML
-max_cg_iterations ${max_cg_iterations}
-max_cg_restarts 5
-check yes
-momentum_twist 0 0 0
-precision ${precision}
-source 1
-number_of_propagators ${nmasses}
-
-# PROPAGATORS FOR SET 1
-
-EOF
-
-for ((m=0; m<${nmasses}; m++)); do
-
-cat  <<EOF
-
-# PROPAGATOR $[${nmasses}+${m}]
-
-mass ${mass[$m]}
-${naik_cmd[$m]}
-error_for_propagator ${error_for_propagator[$m]}
-rel_error_for_propagator 0
-fresh_ksprop
-forget_ksprop
-
-EOF
-
-done # m
-
-cat <<EOF
-
-# PARAMETERS FOR SET 2
-
-set_type multimass
-inv_type UML
-max_cg_iterations ${max_cg_iterations}
-max_cg_restarts 5
-check yes
-momentum_twist 0 0 0
-precision ${precision}
-source 2
-number_of_propagators ${nmasses}
-
-# PROPAGATORS FOR SET 2
-
-EOF
-
-for ((m=0; m<${nmasses}; m++)); do
-
-cat  <<EOF
-
-# PROPAGATOR $[2*${nmasses}+${m}]
-
-mass ${mass[$m]}
-${naik_cmd[$m]}
-error_for_propagator ${error_for_propagator[$m]}
-rel_error_for_propagator 0
-fresh_ksprop
-forget_ksprop
-
-EOF
-
-done # m
-
-cat <<EOF
-
 ######################################################################
 ### QUARKS
 
 # DESCRIPTION OF QUARKS
 
-number_of_quarks $[3*${nmasses}]
+number_of_quarks 1
 
-# QUARKS FOR evenandodd_wall SOURCE
+# QUARKS FOR corner_wall SOURCE
 
 EOF
 
@@ -245,40 +159,6 @@ EOF
 
 done # m
 
-# QUARKS WITH funnywall1 SOURCE
-
-for ((m=0; m<${nmasses}; m++)); do
-
-cat  <<EOF
-
-# MASS ${m}
-
-propagator $[${nmasses}+${m}]
-identity
-op_label d
-forget_ksprop
-
-EOF
-
-done # m
-
-# QUARKS WITH funnywall2 SOURCE
-
-for ((m=0; m<${nmasses}; m++)); do
-
-cat  <<EOF
-
-# MASS ${m}
-
-propagator $[2*${nmasses}+${m}]
-identity
-op_label d
-forget_ksprop
-
-EOF
-
-done # m
-
 cat <<EOF
 
 ######################################################################
@@ -286,7 +166,7 @@ cat <<EOF
 
 # DESCRIPTION OF MESONS
 
-number_of_mesons $[2*${nmasses}]
+number_of_mesons 1
 
 EOF
 
@@ -297,41 +177,19 @@ n2=$[2*${nmasses}+${m}]
 
 cat  <<EOF
 
-# evenandodd_wall WITH funnywall1
+# corner_wall
 
-pair ${m} ${n1}
+pair 0 0
 spectrum_request meson
 
 forget_corr
 r_offset 0 0 0 ${t0}
 
-number_of_correlators 6
+number_of_correlators 2
 
 # Normalization is 1/vol3
-correlator PION_5  p000  1 * ${norm} pion5  0 0 0 E E E
-correlator PION_i5 p000  1 * ${norm} pioni5 0 0 0 E E E
-correlator PION_i  p000  1 * ${norm} pioni  0 0 0 E E E
-correlator PION_s  p000  1 * ${norm} pions  0 0 0 E E E
-correlator RHO_i   p000  1 * ${norm} rhoi   0 0 0 E E E
-correlator RHO_s   p000  1 * ${norm} rhois  0 0 0 E E E
-
-# evenandodd_wall WITH funnywall2
-
-pair ${m} ${n2}
-spectrum_request meson
-
-forget_corr
-r_offset 0 0 0 ${t0}
-
-number_of_correlators 6
-
-# Normalization is 1/vol3
-correlator PION_05 p000  1 * ${norm} pion05 0 0 0 E E E
-correlator PION_ij p000  1 * ${norm} pionij 0 0 0 E E E
-correlator PION_i0 p000  1 * ${norm} pioni0 0 0 0 E E E
-correlator PION_0  p000  1 * ${norm} pion0  0 0 0 E E E
-correlator RHO_i0  p000  1 * ${norm} rhoi0  0 0 0 E E E
-correlator RHO_0   p000  1 * ${norm} rho0   0 0 0 E E E
+correlator PION_5  p000  1 * ${norm} pion5  0 0 0 EO EO EO
+correlator PION_s  p000  1 * ${norm} pions  0 0 0 EO EO EO
 
 EOF
 
