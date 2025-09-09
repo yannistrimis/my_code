@@ -40,7 +40,7 @@
 ! NOTE: If nt<largeNt then correlation functions will only have nt-4 time steps
 !       because two initial time steps and two final time steps are needed
 !       for neighbours during the calculation of color-electric fields.
-    integer, public, parameter :: nt=8
+    integer, public, parameter :: nt=32
 
 ! ===============================================
 ! Abandon all hope, ye who tamper below this line.

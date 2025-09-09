@@ -109,9 +109,9 @@
            corr1s0 = corr1s0 + conjg(G1(ic,ip,ixyz,jc,jp,1))*G1(ic,ip,ixyz,jc,jp,1)
            do kp = 1,np          
             do lp = 1,np
-             corr3s1x = corr3s1x + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_x(ip,lp)*sig_x(jp,kp)
-             corr3s1y = corr3s1y + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_y(ip,lp)*sig_y(jp,kp)
-             corr3s1z = corr3s1z + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_z(ip,lp)*sig_z(jp,kp)
+             corr3s1x = corr3s1x + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_x(ip,lp)*sig_x(kp,jp)
+             corr3s1y = corr3s1y + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_y(ip,lp)*sig_y(kp,jp)
+             corr3s1z = corr3s1z + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_z(ip,lp)*sig_z(kp,jp)
             enddo ! lp
            enddo ! kp
           enddo ! ip

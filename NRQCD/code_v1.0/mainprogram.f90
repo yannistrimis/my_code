@@ -19,7 +19,7 @@
     use heavypropagators
     implicit none
 
-    character(len=99)                    :: cfgfile, corrfile_3s1
+    character(len=1000)                    :: cfgfile, corrfile_1s0 ,corrfile_3s1
     logical                              :: cutboundaries, backward, imp, &
                                             newgaugefield
     integer(kind=KI)                     :: it, nstoutsnk, nstoutsrc, &
@@ -31,7 +31,8 @@
                                             astoutsnk, aspect, bareM, &
                                             unitaritycf, csetmin
     real(kind=KR),    dimension(2,14)    :: cset
-    complex(kind=KC)                     :: corr
+    complex(kind=KC)                     :: corr1s0, corr3s1x, corr3s1y, corr3s1z
+
 
     complex(kind=KC), allocatable, dimension(:,:,:,:)     :: Utad, Ufat
     complex(kind=KC), allocatable, dimension(:,:,:,:,:,:) :: Gt
@@ -43,6 +44,7 @@
     read *,cfgfile
 
 ! Correlator files.
+    read *,corrfile_1s0
     read *,corrfile_3s1
 
 ! Stout smearing.
@@ -149,10 +151,17 @@
     call fatfield(Utad,uzeros,it,nstoutsrc,astoutsrc,bwdnbr,fwdnbr,Ufat)
     call Ssource(isrc,Gt)
 
+! Open correlator files for ^1S_0, ^3S_1 states.
+
+    open(unit=11, file=corrfile_1s0, form="formatted", status="replace")
+    open(unit=12, file=corrfile_3s1, form ="formatted", status="replace")
+
+
 ! Compute the 2-point correlators at the source time step.
     call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
-    call Smeson(Gt,corr)
-    write(unit=*,fmt="(a,i5,2es18.10)") "2pt: it, corr = ", it, corr
+    call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)
+    write(unit=11,fmt="(i5,2es18.10)") it, corr1s0
+    write(unit=12,fmt="(i5,2es18.10,2es18.10,2es18.10)") it, corr3s1x, corr3s1y, corr3s1z
 
 ! Compute the heavy quark propagators and meson 2-point correlators.
     newgaugefield = .true.
@@ -164,9 +173,13 @@
                     newgaugefield,uzeros,uzerot)
      newgaugefield = .false.
      call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
-     call Smeson(Gt,corr)
-     write(unit=*,fmt="(a,i5,2es18.10)") "2pt: it, corr = ", it, corr
+     call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)
+     write(unit=11,fmt="(i5,2es18.10)") it, corr1s0
+     write(unit=12,fmt="(i5,2es18.10,2es18.10,2es18.10)") it, corr3s1x, corr3s1y, corr3s1z
+
     enddo ! it
+    write(*,*) "RUNNING COMPLETED"
+
 
 ! Deallocate the large arrays.
     deallocate(Utad,stat=ierr)
@@ -174,6 +187,11 @@
     deallocate(Ufat,stat=ierr)
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+! Close correlator files
+    close(unit=11)
+    close(unit=12)
+
 
  end program mainprogram
 
