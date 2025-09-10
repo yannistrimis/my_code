@@ -132,13 +132,12 @@
     call nbhd(bwdnbr,fwdnbr)
 
 ! Read the configuration file and compute the average plaquette.
-    call configreadshift(cfgfile,0,Utad)
+    call configreadshift(cfgfile,0_KI,Utad)
     if (nt<largeNt) then
      cutboundaries = .true.
     else
      cutboundaries = .false.
     endif
-    cutboundaries = .false. ! YT20250908 Always call it with false
     call aveplaq(Utad,cutboundaries,bwdnbr,fwdnbr,plaq)
     write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
 
@@ -168,7 +167,7 @@
     backward = .false.
     do it = 2,nt-4
      itnbr = it - 1
-     call heavyprop(Gt,Utad,1,backward,bareM,itnbr,mode,cset,csetmin, &
+     call heavyprop(Gt,Utad,1_KI,backward,bareM,itnbr,mode,cset,csetmin, &
                     imp,aspect,unitaritycf,iform,bwdnbr,fwdnbr, &
                     newgaugefield,uzeros,uzerot)
      newgaugefield = .false.

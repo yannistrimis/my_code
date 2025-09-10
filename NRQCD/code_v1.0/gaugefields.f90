@@ -53,9 +53,11 @@
     integer(kind=KI), intent(in)                      :: istep
     complex(kind=KC), intent(out), dimension(:,:,:,:) :: Uraw
 
-    logical          :: isfile
-    integer(kind=KI) :: ixyz, ixyzt, idir, ic, jc, it, jt, iread
-    complex(kind=KC) :: junk1, junk2, junk3
+    logical                 :: isfile
+    integer(kind=KI)        :: ixyz, ixyzt, idir, ic, jc, it, jt, iread
+    complex(kind=KC)        :: junk1, junk2, junk3
+
+    complex(kind=8)         :: temp
 
 ! Open the extracted configuration file for reading.
     open(unit=10,file=trim(userfilename),status="old",form="unformatted", &
@@ -139,6 +141,11 @@
 
 ! Close the extracted configuration file.
     close(unit=10,status="keep")
+
+
+    temp = cmplx( Uraw(1,1,1,13) , kind=8 )
+    print *, Uraw(1,1,1,13)
+    print *, temp
 
  end subroutine configreadshift
 

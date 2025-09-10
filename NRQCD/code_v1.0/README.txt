@@ -11,5 +11,7 @@ gaugefields.f90 :
 	Remove endianness flag from open() function
 
 mainprogram.f90 :
-	Set cutboundaries = .false. before calling aveplaq() function
+	Call corrfile_<state> to write the meson correlators
 
+heavyoperators.f90 :
+	Added ^3S_1 state for x,y,z pauli matrices.
