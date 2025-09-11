@@ -17,6 +17,8 @@
 ! Define the complex precision, KC=4 for single and KC=8 for double.
     integer, public, parameter :: KC=4
 
+    integer, public, parameter :: KC_CONFIG=4
+
 ! Define the number of space-time dimensions.
 ! NOTE: At present the code will only work with ndir=4.
     integer, public, parameter :: ndir=4

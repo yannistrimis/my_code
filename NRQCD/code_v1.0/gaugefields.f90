@@ -53,11 +53,13 @@
     integer(kind=KI), intent(in)                      :: istep
     complex(kind=KC), intent(out), dimension(:,:,:,:) :: Uraw
 
-    logical                 :: isfile
-    integer(kind=KI)        :: ixyz, ixyzt, idir, ic, jc, it, jt, iread
-    complex(kind=KC)        :: junk1, junk2, junk3
+    complex(kind=KC_CONFIG), allocatable, dimension(:,:,:,:) :: Uraw_temp
 
-    complex(kind=8)         :: temp
+    logical                 :: isfile
+    integer(kind=KI)        :: ixyz, ixyzt, idir, ic, jc, it, jt, iread, ierr
+    complex(kind=KC_CONFIG)        :: junk1, junk2, junk3
+
+    allocate( Uraw_temp(nc,nc,ndir,nxyzt), stat=ierr )
 
 ! Open the extracted configuration file for reading.
     open(unit=10,file=trim(userfilename),status="old",form="unformatted", &
@@ -72,7 +74,10 @@
        ixyzt = ixyz + (jt-1)*nxyz
        do idir = 1,ndir
         do ic = 1,nc
-         read(unit=10) (Uraw(ic,jc,idir,ixyzt),jc=1,3)
+         read(unit=10) (Uraw_temp(ic,jc,idir,ixyzt),jc=1,3)
+         do jc = 1,nc
+          Uraw(ic,jc,idir,ixyzt) = cmplx( Uraw_temp(ic,jc,idir,ixyzt) , kind=KC )
+         enddo ! jc
         enddo ! ic
        enddo ! idir
       enddo ! ixyz
@@ -96,7 +101,10 @@
        ixyzt = ixyz + (jt-1)*nxyz
        do idir = 1,ndir
         do ic = 1,nc
-         read(unit=10) (Uraw(ic,jc,idir,ixyzt),jc=1,3)
+         read(unit=10) (Uraw_temp(ic,jc,idir,ixyzt),jc=1,3)
+         do jc = 1,nc
+          Uraw(ic,jc,idir,ixyzt) = cmplx( Uraw_temp(ic,jc,idir,ixyzt) , kind=KC )
+         enddo ! jc
         enddo ! ic
        enddo ! idir
       enddo ! ixyz
@@ -109,7 +117,10 @@
        ixyzt = ixyz + (jt-1)*nxyz
        do idir = 1,ndir
         do ic = 1,nc
-         read(unit=10) (Uraw(ic,jc,idir,ixyzt),jc=1,3)
+         read(unit=10) (Uraw_temp(ic,jc,idir,ixyzt),jc=1,3)
+         do jc = 1,nc
+          Uraw(ic,jc,idir,ixyzt) = cmplx( Uraw_temp(ic,jc,idir,ixyzt) , kind=KC )
+         enddo ! jc
         enddo ! ic
        enddo ! idir
       enddo ! ixyz
@@ -133,7 +144,10 @@
        ixyzt = ixyz + (jt-1)*nxyz
        do idir = 1,ndir
         do ic = 1,nc
-         read(unit=10) (Uraw(ic,jc,idir,ixyzt),jc=1,3)
+         read(unit=10) (Uraw_temp(ic,jc,idir,ixyzt),jc=1,3)
+         do jc = 1,nc
+          Uraw(ic,jc,idir,ixyzt) = cmplx( Uraw_temp(ic,jc,idir,ixyzt) , kind=KC )
+         enddo ! jc
         enddo ! ic
        enddo ! idir
       enddo ! ixyz
@@ -142,10 +156,7 @@
 ! Close the extracted configuration file.
     close(unit=10,status="keep")
 
-
-    temp = cmplx( Uraw(1,1,1,13) , kind=8 )
-    print *, Uraw(1,1,1,13)
-    print *, temp
+ deallocate( Uraw_temp, stat=ierr )
 
  end subroutine configreadshift
 
