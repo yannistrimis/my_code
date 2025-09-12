@@ -121,6 +121,9 @@
      case(6)
       iform = 3
       imp = .true.
+     case(7) ! This is for comparison to Petreczky, Kim, Rothkopf PRD 91 054511 (2015)
+      iform = 3
+      imp = .false.
      case default ! never get here
       write(*,*) "mainprogram: invalid case(iaction)", iaction
       stop
@@ -167,9 +170,17 @@
     backward = .false.
     do it = 2,nt-4
      itnbr = it - 1
-     call heavyprop(Gt,Utad,1_KI,backward,bareM,itnbr,mode,cset,csetmin, &
+     
+     if ( it == 2 .and. iaction == 7 ) then
+      call heavyprop(Gt,Utad,1_KI,backward,bareM,itnbr,mode,cset,csetmin, &
+                    imp,aspect,unitaritycf,1_KI,bwdnbr,fwdnbr, &
+                    newgaugefield,uzeros,uzerot)
+     else
+      call heavyprop(Gt,Utad,1_KI,backward,bareM,itnbr,mode,cset,csetmin, &
                     imp,aspect,unitaritycf,iform,bwdnbr,fwdnbr, &
                     newgaugefield,uzeros,uzerot)
+     endif
+     
      newgaugefield = .false.
      call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
      call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)

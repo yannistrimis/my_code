@@ -9,13 +9,13 @@
     implicit none
 
 ! Define the integer precision, KI=4 for single and KI=8 for double.
-    integer, public, parameter :: KI=4
+    integer, public, parameter :: KI=8
 
 ! Define the real precision, KR=4 for single and KR=8 for double.
-    integer, public, parameter :: KR=4
+    integer, public, parameter :: KR=8
 
 ! Define the complex precision, KC=4 for single and KC=8 for double.
-    integer, public, parameter :: KC=4
+    integer, public, parameter :: KC=8
 
     integer, public, parameter :: KC_CONFIG=4
 
