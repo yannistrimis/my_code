@@ -9,7 +9,7 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/home/trimis/fnal/all/outputs'
+cur_dir = '/home/trimis/fnal/all/outputs'
 # write_dir = '/home/trimis/fnal/all/flow_data'
 
 # cur_dir = '/home/trimis/hpcc/outputs'
@@ -18,23 +18,23 @@ w0phys = 0.17355
 # cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
 # write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
 
-cur_dir = "/home/yannis/Physics/LQCD/outputs"
+# cur_dir = "/home/yannis/Physics/LQCD/outputs"
 
-ens_pre = "1632b687348x"
+ens_pre = "16128f21b6747m014m070xig"
 
-x0 = "115792"
-x0_float = 1.15792
+x0 = "3500"
+x0_float = 3.500
 
-ens_post = "a"
+ens_post = "xiq3500a"
 
-xf_vec = ["115", "120", "125"]
-xf_float_vec = [1.15, 1.20, 1.25]
+xf_vec = ["350", "370", "390", "410", "430"]
+xf_float_vec = [3.5, 3.7, 3.9, 4.1, 4.3]
 
 flow_type = input()
 obs_type = input()
 
 dt = '0.015625'
-n_files = 200
+n_files = 160
 first_file = 101
 n_bins = 20
 
