@@ -25,16 +25,16 @@ ens_pre = "16128f21b6747m014m070xig"
 x0 = "3500"
 x0_float = 3.500
 
-ens_post = "xiq3500a"
+ens_post = "xiq3900a"
 
-xf_vec = ["350", "370", "390", "410", "430"]
-xf_float_vec = [3.5, 3.7, 3.9, 4.1, 4.3]
+xf_vec = ["430", "440", "450", "460"]
+xf_float_vec = [4.3, 4.4, 4.5, 4.6]
 
 flow_type = input()
 obs_type = input()
 
 dt = '0.015625'
-n_files = 160
+n_files = 120
 first_file = 101
 n_bins = 20
 
