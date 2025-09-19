@@ -142,7 +142,7 @@ fi
 cp control_script.sh ../${my_dir}/control_script.sh
 cp is_complete.sh ../${my_dir}/is_complete.sh
 cp make_input.sh ../${my_dir}/make_input.sh
-cp make_submit.sh ../${my_dir}/make_submit.sh
+cp ../../make_submit.sh ../${my_dir}/make_submit.sh
 cp envelope_script.sh ../${my_dir}/envelope_script.sh
 
 done # i_ens
