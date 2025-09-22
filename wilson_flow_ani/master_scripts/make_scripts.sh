@@ -4,18 +4,18 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="icer"
 n_of_ens=1
 
-nx=16
-nt=128
+nx=20
+nt=160
 
-beta_name_arr=("719156")
-xi_0_name_arr=("348992")
+beta_name_arr=("7147")
+xi_0_name_arr=("682")
 stream="a"
 
-xi_f_arr=(4.0)
-xi_f_name_arr=("400")
+xi_f_arr=(8.0)
+xi_f_name_arr=("800")
 
 flow_action="zeuthen"
 exp_order="16"
@@ -23,10 +23,10 @@ dt="0.0078125"
 stoptime_arr=("6") # CAREFUL!!!
 
 sbatch_time="20:00:00"
-sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
+sbatch_nodes=5 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("128sfl4")
+sbatch_ntasks=200 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("a20wfl8")
 
 n_of_sub=4
 n_of_lat=1000
