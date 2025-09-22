@@ -17,7 +17,7 @@ stream="a"
 xi_f_arr=(8.0)
 xi_f_name_arr=("800")
 
-flow_action="wilson"
+flow_action="zeuthen"
 exp_order="16"
 dt="0.0078125"
 stoptime_arr=("6") # CAREFUL!!!
