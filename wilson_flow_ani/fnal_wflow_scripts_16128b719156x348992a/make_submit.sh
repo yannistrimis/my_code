@@ -30,7 +30,7 @@ cat <<EOF > ${submit_dir}/submit_script.sb
 #SBATCH --partition=lq1_cpu
 #SBATCH --nodes=${sbatch_nodes}
 #SBATCH --ntasks=${sbatch_ntasks}
-#SBATCH -A ahisq
+#SBATCH -A ahisq.lq1_cpu
 #SBATCH --qos=normal
 
 #SBATCH --job-name=${sbatch_jobname}
