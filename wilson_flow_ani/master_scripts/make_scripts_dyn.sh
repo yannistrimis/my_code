@@ -63,7 +63,7 @@ prefix="zflow"
 fi
 
 out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}"
-my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}"
+my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}_dt${dt}"
 
 cd ..
 mkdir ${my_dir}
@@ -107,8 +107,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/mnt/scratch/trimisio/lattices/${lat_name}"
 out_dir="/mnt/home/trimisio/outputs/${lat_name}"
 path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
-run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}"
-submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
+run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
+submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
 
 executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
 

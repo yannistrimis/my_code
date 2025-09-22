@@ -19,18 +19,18 @@ xi_f_name_arr=("800")
 
 flow_action="wilson"
 exp_order="16"
-dt="0.015625"
+dt="0.0078125"
 stoptime_arr=("6") # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=5 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=200 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("wfl8old")
+sbatch_jobname_arr=("128wfl8")
 
-n_of_sub=1
-n_of_lat=2
-first_lattice=300
+n_of_sub=4
+n_of_lat=1000
+first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -65,7 +65,7 @@ prefix="zflow"
 fi
 
 out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}"
-my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}"
+my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}_dt${dt}"
 
 cd ..
 mkdir ${my_dir}
@@ -109,8 +109,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/mnt/scratch/trimisio/lattices/${lat_name}"
 out_dir="/mnt/home/trimisio/outputs/${lat_name}"
 path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
-run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}"
-submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
+run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
+submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
 
 executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
 
