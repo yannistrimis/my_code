@@ -30,13 +30,13 @@ path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
 run_dir="/mnt/scratch/trimisio/runs/runzflowl20320b726025x689327a_xf800_dt0.0078125"
 submit_dir="/mnt/home/trimisio/submits/subzflowl20320b726025x689327a_xf800_dt0.0078125"
 
-executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
+executable="region_flow_bbb_a_dbl_GCC12OpenMPI4_20250924"
 
 sbatch_time="20:00:00"
 sbatch_nodes="5"
 sbatch_ntasks_per_node="NA"
 sbatch_ntasks="200"
-sbatch_jobname="128zfl8"
+sbatch_jobname="a16zfl8"
 sbatch_module1="GCC/12"
 sbatch_module2="OpenMPI/4"
 

@@ -112,7 +112,7 @@ path_build="/mnt/home/trimisio/my_code/wilson_flow_ani/build"
 run_dir="/mnt/scratch/trimisio/runs/run${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
 submit_dir="/mnt/home/trimisio/submits/sub${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
 
-executable="wilson_flow_bbb_a_dbl_GCC12OpenMPI4_20250422"
+executable="region_flow_bbb_a_dbl_GCC12OpenMPI4_20250924"
 
 sbatch_time="${sbatch_time}"
 sbatch_nodes="${sbatch_nodes}"

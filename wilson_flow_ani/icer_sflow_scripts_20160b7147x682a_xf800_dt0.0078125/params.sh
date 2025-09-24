@@ -36,7 +36,7 @@ sbatch_time="20:00:00"
 sbatch_nodes="5"
 sbatch_ntasks_per_node="NA"
 sbatch_ntasks="200"
-sbatch_jobname="a20wfl8"
+sbatch_jobname="a20sfl8"
 sbatch_module1="GCC/12"
 sbatch_module2="OpenMPI/4"
 
