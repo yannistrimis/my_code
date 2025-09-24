@@ -62,7 +62,9 @@ def jackknife_for_binned(arr):
         er = er*(n_bins-1)/n_bins
         er = np.sqrt(er)
 
-        return av, er
+                return av
+        elif fl=='error':
+                return er
 
 
 

@@ -27,7 +27,6 @@ if binned == "no" :
 
 elif binned == "yes" :
 
-  aver1 = jackknife_for_binned(arr1, "average")
-  stdv1 = jackknife_for_binned(arr1, "error")
+  answer = jackknife_for_binned(arr1)
 
-print( "%.6f\t%.6f"%(aver1, stdv1) )
+print( "%.6f\t%.6f"%(answer[0], answer[1]) )
