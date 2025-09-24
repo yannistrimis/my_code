@@ -12,7 +12,7 @@ def jackknife(arr,nbins,fl):
         for i in range(nbins) :
                 for j in range(i*ninbin,(i+1)*ninbin):
                         normal_bins[i] = normal_bins[i] + arr[j]
-        
+
         total = 0
         for j in range(n) :
                 total = total + arr[j]
@@ -21,19 +21,19 @@ def jackknife(arr,nbins,fl):
                 jack_bins[i] = jack_bins[i]/(ninbin*(nbins-1))
                 normal_bins[i] = normal_bins[i]/ninbin
         av = 0
-        
+
         for i in range(nbins) :
                 av = av + jack_bins[i]
         av = av / nbins
-        
+
         er = 0
-        
+
         for i in range(nbins) :
                 er = er + (jack_bins[i]-av)**2
-                
+
         er = er*(nbins-1)/nbins
         er = np.sqrt(er)
-        
+
         if fl=='bins':
                 return jack_bins
         elif fl=='normal_bins':
@@ -44,25 +44,29 @@ def jackknife(arr,nbins,fl):
                 return er
 
 
-def jackknife_for_binned(arr):
+def jackknife_for_binned(arr, fl):
 
-        avg = 0.0
-        err = 0.0
+        av = 0.0
+        er = 0.0
         n_bins = len(arr)
 
         for i in range(n_bins) :
-                avg = avg + arr[i] 
-        
-        avg = avg / n_bins
+                av = av + arr[i] 
 
-        err = 0
+        av = av / n_bins
+
+        er = 0
         for i in range(n_bins) :
-                err = err + (arr[i]-avg)**2
+                er = er + (arr[i]-av)**2
 
-        err = err*(n_bins-1)/n_bins
-        err = np.sqrt(err)
+        er = er*(n_bins-1)/n_bins
+        er = np.sqrt(er)
 
-        return avg, err
+        if fl=='average':
+                return av
+        elif fl=='error':
+                return er
+
 
 
 def chisq_by_dof(meas_array,fit_array,y_cov,dof):
@@ -117,11 +121,11 @@ def closest( arr , num ) :
                 if abs( arr[i] - num ) < dist :
                         index = i
                         dist = abs( arr[i] - num )
-                        
+
         return index
 
 
-def deriv( arr, dt ) : #O(dt^4) 
+def deriv( arr, dt ) : #O(dt^4)
         n = len( arr )
         der = np.zeros( n )
 
