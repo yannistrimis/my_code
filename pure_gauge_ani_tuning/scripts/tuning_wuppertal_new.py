@@ -23,10 +23,10 @@ write_dir = '/home/trimis/fnal/all/flow_data'
 # cur_dir = "/home/yannis/Physics/LQCD/outputs"
 # write_dir = "/home/yannis/Physics/LQCD/flow_data"
 
-ens_pre = "1632b6900x"
+ens_pre = "1632b7100x"
 
-x0_vec = ["180"]
-x0_float_vec = [1.80]
+x0_vec = ["182"]
+x0_float_vec = [1.82]
 
 ens_post="a"
 
