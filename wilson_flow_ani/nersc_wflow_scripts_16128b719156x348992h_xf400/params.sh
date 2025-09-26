@@ -14,14 +14,14 @@ nz=16
 nt=128
 
 lat_name="l16128b719156x348992h"
-out_name="wflow16128b719156x348992h_xf400_dt0.015625"
+out_name="wflow16128b719156x348992h_xf400_dt0.0078125"
 
 xi_f=4.00
 
 flow_action="wilson"
 exp_order="16"
-dt="0.015625"
-stoptime="3.0"
+dt="0.0078125"
+stoptime="1.0"
 
 
 directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/l16128b719156x348992h"
@@ -35,5 +35,5 @@ executable="wilson_flow_bbb_a_dbl_cray_20250520"
 sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="256"
-sbatch_jobname="fl40"
+sbatch_jobname="a16fl"
 
