@@ -4,25 +4,25 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="icer"
+cluster="fnal"
 n_of_ens=1
 
-nx=20
-nt=160
+nx=16
+nt=8
 
-beta_arr=(7.147)
-beta_name_arr=("7147")
+beta_arr=(5.800)
+beta_name_arr=("5800")
 
-xi_0_arr=(6.82)
-xi_0_name_arr=("682")
+xi_0_arr=(1.67401280)
+xi_0_name_arr=("167401280")
 
-stream="a"
+stream="p"
 
 sbatch_time="20:00:00"
-sbatch_nodes=5
+sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=200 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("8gen")
+sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("plaqNt8")
 
 n_of_sub=8
 n_of_lat=1000
@@ -130,7 +130,7 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
+directory="/lustre2/ahisq/yannis_puregauge/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_puregauge/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/pure_gauge_ani_generation/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/rungen${lat_name}"
