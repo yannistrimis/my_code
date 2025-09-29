@@ -3,7 +3,7 @@
 
 cluster=nersc
 
-first_lattice=101
+first_lattice=1
 
 n_of_lat=1000
 n_of_sub=10
@@ -21,7 +21,7 @@ xi_f=1.0
 flow_action="wilson"
 exp_order="16"
 dt="0.0078125"
-stoptime="1.1"
+stoptime="1.0"
 
 
 directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/l64128b858814x100000h"
