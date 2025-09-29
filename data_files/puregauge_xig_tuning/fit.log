@@ -72,3 +72,744 @@ correlation matrix of the fit parameters:
 a0              1.000 
 a1             -1.000  1.000 
 a2              1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:28:21 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 5/3 * x/(2*Nc*b0) ) + 5/3 * x/(4*Nc*b0) - s1 - 1/( -s2 + 5/3*s3*x ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 8.1877591194e+11   0.00e+00  2.39e+05    1.000000e+00   1.000000e+00   1.000000e+00
+  13 2.2009267889e+00  -3.51e-03  2.39e-08    4.744867e+00   7.101555e-01   1.598743e-01
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 2.20093
+rel. change during last iteration : -3.50557e-08
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.04903
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.10046
+p-value of the Chisq distribution (FIT_P)              : 0.332717
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = 4.74487          +/- 0.2206       (4.65%)
+s2              = 0.710155         +/- 0.1741       (24.51%)
+s3              = 0.159874         +/- 0.03011      (18.84%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:29:46 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 4.74487        
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 4.74487        
+s2              = 0.710155       
+s3              = 0.159874       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:30:57 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:31:33 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:32:28 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:33:11 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 3.51           
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 3.51           
+s2              = 8.096          
+s3              = 2.367          
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:34:14 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 5/3 * x/(2*Nc*b0) ) + 5/3 * x/(4*Nc*b0) - s1 - 1/( -s2 + 5/3*s3*x ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 5.6460468105e+09   0.00e+00  7.02e+04    3.510000e+00   8.096000e+00   2.367000e+00
+ 135 2.2011247518e+00  -9.26e-01  7.02e+00    4.747585e+00   7.122682e-01   1.602413e-01
+
+After 135 iterations the fit converged.
+final sum of squares of residuals : 2.20112
+rel. change during last iteration : -9.25625e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.04908
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.10056
+p-value of the Chisq distribution (FIT_P)              : 0.332684
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = 4.74758          +/- 0.2202       (4.637%)
+s2              = 0.712268         +/- 0.1744       (24.48%)
+s3              = 0.160241         +/- 0.03015      (18.82%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:34:24 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 4.74758        
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 4.74758        
+s2              = 0.712268       
+s3              = 0.160241       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:35:59 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:36:15 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:37:50 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Mon Sep 29 12:38:59 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Mon Sep 29 12:39:10 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Mon Sep 29 12:39:14 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: w(x)
+	w(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:39:41 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/(2*b0**2) * log( 3/5 * x/(2*Nc*b0) ) + 3/5 * x/(4*Nc*b0) - s1 - 1/( -s2 + 3/5*s3*x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:40:30 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3/5 * x/( 2 * Nc * b0 ) ) + 3/5 * x/(4 * Nc * b0 ) - s1 - 1/( -s2 + 3/5 *s3 * x ) )
+fitted parameters initialized with current variable values
+
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = 1              
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = 1              
+s2              = 1              
+s3              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:40:52 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 1 * x/( 2 * Nc * b0 ) ) + 1 * x/(4 * Nc * b0 ) - s1 - 1/( -s2 + 1 *s3 * x ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 8.1877591194e+11   0.00e+00  2.39e+05    1.000000e+00   1.000000e+00   1.000000e+00
+  13 2.2009267889e+00  -3.51e-03  2.39e-08    4.744867e+00   7.101555e-01   1.598743e-01
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 2.20093
+rel. change during last iteration : -3.50557e-08
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.04903
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.10046
+p-value of the Chisq distribution (FIT_P)              : 0.332717
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = 4.74487          +/- 0.2206       (4.65%)
+s2              = 0.710155         +/- 0.1741       (24.51%)
+s3              = 0.159874         +/- 0.03011      (18.84%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:42:45 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3.0/5.0 * x/( 2 * Nc * b0 ) ) + 3.0/5.0 * x/(4 * Nc * b0 ) - s1 - 1/( -s2 + 1 *s3 * x ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 4.7709659394e+06   0.00e+00  2.27e+02    4.744867e+00   7.101555e-01   1.598743e-01
+
+Current data point
+=========================
+#               = 5 out of 5
+x               = 0.844806       
+z               = 1.81168        
+
+Current set of parameters
+=========================
+s1              = 0.844806       
+s2              = 0.921616       
+s3              = 0.126112       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:43:40 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 3 *s3 * x /5 ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 4.8694480261e+11   0.00e+00  1.28e+06    8.448058e-01   9.216161e-01   1.261120e-01
+  14 2.2846869208e+05  -2.73e-01  1.28e-07    4.031544e+00  -2.832750e+04   2.569911e+04
+
+After 14 iterations the fit converged.
+final sum of squares of residuals : 228469
+rel. change during last iteration : -2.7262e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 337.986
+variance of residuals (reduced chisquare) = WSSR/ndf   : 114234
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = 4.03154          +/- 883.5        (2.191e+04%)
+s2              = -28327.5         +/- 9.782e+12    (3.453e+10%)
+s3              = 25699.1          +/- 6.232e+12    (2.425e+10%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:44:33 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 3 *s3 * x /5 ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 1.3116797807e+05   0.00e+00  2.92e+03    3.513078e+00   8.096394e+00   2.367010e+00
+ 900 2.1935679180e+00  -9.69e-01  2.92e+00   -1.656390e+00   1.327600e-01   7.329138e-02
+
+After 900 iterations the fit converged.
+final sum of squares of residuals : 2.19357
+rel. change during last iteration : -9.68892e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.04727
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.09678
+p-value of the Chisq distribution (FIT_P)              : 0.333943
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = -1.65639         +/- 0.5084       (30.69%)
+s2              = 0.13276          +/- 0.0413       (31.11%)
+s3              = 0.0732914        +/- 0.01349      (18.41%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:46:36 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 5 *s3 / (3*x) ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 4.4179919491e+06   0.00e+00  3.88e+03    3.513078e+00   8.096394e+00   2.367010e+00
+7470 1.2835595000e+02  -7.15e-02  3.88e+00    1.494945e+01   1.034177e-02  -3.423091e-01
+
+After 7470 iterations the fit converged.
+final sum of squares of residuals : 128.356
+rel. change during last iteration : -7.14611e-07
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 8.01112
+variance of residuals (reduced chisquare) = WSSR/ndf   : 64.178
+p-value of the Chisq distribution (FIT_P)              : 0
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = 14.9494          +/- 14.48        (96.85%)
+s2              = 0.0103418        +/- 0.09104      (880.3%)
+s3              = -0.342309        +/- 0.8964       (261.9%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:47:16 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 3 *s3 * x /5 ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 5.1999148447e+06   0.00e+00  3.09e-01    1.494945e+01   1.034177e-02  -3.423091e-01
+
+Current data point
+=========================
+#               = 1 out of 5
+x               = -25975.3       
+z               = 0.805166       
+
+Current set of parameters
+=========================
+s1              = -25975.3       
+s2              = 0.00521044     
+s3              = 25.1688        
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Mon Sep 29 12:47:31 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 3 *s3 * x /5 ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 1.3116797807e+05   0.00e+00  2.92e+03    3.513078e+00   8.096394e+00   2.367010e+00
+ 900 2.1935679180e+00  -9.69e-01  2.92e+00   -1.656390e+00   1.327600e-01   7.329138e-02
+
+After 900 iterations the fit converged.
+final sum of squares of residuals : 2.19357
+rel. change during last iteration : -9.68892e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.04727
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.09678
+p-value of the Chisq distribution (FIT_P)              : 0.333943
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = -1.65639         +/- 0.5084       (30.69%)
+s2              = 0.13276          +/- 0.0413       (31.11%)
+s3              = 0.0732914        +/- 0.01349      (18.41%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:53:47 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 3 *s3 * x /5 ) )
+fitted parameters initialized with current variable values
+
+Warning: Initial value of parameter 's1' is zero.
+Warning: Initial value of parameter 's2' is zero.
+Warning: Initial value of parameter 's3' is zero.
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 5.2002733111e+06   0.00e+00  0.00e+00    1.000000e-30   1.000000e-30   1.000000e-30
+BREAK: Singular matrix in Givens()
+
+*******************************************************************************
+Mon Sep 29 12:54:13 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u 1:4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log( 3 * x/( 5* 2 * Nc * b0 ) ) + 3 * x/( 5 * 4 * Nc * b0 ) - s1 - 1/( -s2 + 3 *s3 * x /5 ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 5.2002733111e+06   0.00e+00  0.00e+00    1.000000e-04   1.000000e-04   1.000000e-04
+BREAK: Singular matrix in Givens()
+
+*******************************************************************************
+Mon Sep 29 12:57:19 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u ($1*5/3):4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log(  x/( 2 * Nc * b0 ) ) +  x/( 4 * Nc * b0 ) - s1 - 1/( -s2 + s3 * x  ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 3.4647181208e+14   0.00e+00  1.68e+07    3.500000e+00   8.100000e+00   2.400000e+00
+2186 1.6344286016e+01  -1.00e+00  1.68e+00    1.251758e+01   5.562447e+02   4.982919e+01
+
+After 21864 iterations the fit converged.
+final sum of squares of residuals : 16.3443
+rel. change during last iteration : -9.99976e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 2.8587
+variance of residuals (reduced chisquare) = WSSR/ndf   : 8.17214
+p-value of the Chisq distribution (FIT_P)              : 0.000282412
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = 12.5176          +/- 0.007542     (0.06025%)
+s2              = 556.245          +/- 119          (21.39%)
+s3              = 49.8292          +/- 11.22        (22.51%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              0.960  1.000 
+s3              0.962  1.000  1.000 
+
+
+*******************************************************************************
+Mon Sep 29 12:59:13 2025
+
+
+FIT:    data read from "beta_swc_xiR_2.data" u ($1*3/5):4:5
+        format = x:z:s
+        #datapoints = 5
+function used for fitting: f(x)
+	f(x) = exp( -b1/( 2 * b0**2 ) * log(  x/( 2 * Nc * b0 ) ) +  x/( 4 * Nc * b0 ) - s1 - 1/( -s2 + s3 * x  ) )
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   s1            s2            s3           
+   0 1.3116797807e+05   0.00e+00  2.92e+03    3.513078e+00   8.096394e+00   2.367010e+00
+ 900 2.1935679180e+00  -9.69e-01  2.92e+00   -1.656390e+00   1.327600e-01   7.329138e-02
+
+After 900 iterations the fit converged.
+final sum of squares of residuals : 2.19357
+rel. change during last iteration : -9.68892e-06
+
+degrees of freedom    (FIT_NDF)                        : 2
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 1.04727
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.09678
+p-value of the Chisq distribution (FIT_P)              : 0.333943
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+s1              = -1.65639         +/- 0.5084       (30.69%)
+s2              = 0.13276          +/- 0.0413       (31.11%)
+s3              = 0.0732914        +/- 0.01349      (18.41%)
+
+correlation matrix of the fit parameters:
+                s1     s2     s3     
+s1              1.000 
+s2              1.000  1.000 
+s3              1.000  1.000  1.000 
