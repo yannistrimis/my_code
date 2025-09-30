@@ -11,11 +11,11 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/home/trimis/fnal/all/outputs'
-# write_dir = '/home/trimis/fnal/all/flow_data'
+cur_dir = '/home/trimis/fnal/all/outputs'
+write_dir = '/home/trimis/fnal/all/flow_data'
 
-cur_dir = '/home/trimis/hpcc/outputs'
-write_dir = '/home/trimis/hpcc/flow_data'
+# cur_dir = '/home/trimis/hpcc/outputs'
+# write_dir = '/home/trimis/hpcc/flow_data'
 
 # cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
 # write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
@@ -23,25 +23,25 @@ write_dir = '/home/trimis/hpcc/flow_data'
 # cur_dir = "/home/yannis/Physics/LQCD/outputs"
 # write_dir = "/home/yannis/Physics/LQCD/flow_data"
 
-ens_pre = "20320b726025x"
+ens_pre = "1632b7100x"
 
-x0_vec = ["689327"]
-x0_float_vec = [6.89327]
+x0_vec = ["182"]
+x0_float_vec = [1.82]
 
 ens_post="a"
 
-xf = "800"
-xf_float = 8.0
+xf = "200"
+xf_float = 2.0
 
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-dt = '0.0078125'
-n_files = 300
+dt = '0.015625'
+n_files = 200
 first_file = 101
-n_bins = 30
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
@@ -167,7 +167,7 @@ for i_x0 in range(len(x0_vec)):
         solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
-                w0s_arr[i_bins,i_x0] = np.sqrt( np.real(solutions[ii]) )
+                w0s_arr[i_bins,i_x0] = np.real(solutions[ii])
                 break
     w0s_weight[i_x0] = 1 / ( jackknife_for_binned(w0s_arr[:,i_x0])[1] )
 
@@ -188,7 +188,7 @@ for i_x0 in range(len(x0_vec)):
         solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
-                w0t_arr[i_bins,i_x0] = np.sqrt( np.real(solutions[ii]) )
+                w0t_arr[i_bins,i_x0] = np.real(solutions[ii])
                 break
 
 ### START DEBUGGING
