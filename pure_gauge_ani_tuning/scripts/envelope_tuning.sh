@@ -1,8 +1,8 @@
 
 #!/bin/bash
 
-flow_type_arr=("w" "s" "z")
-obs_type_arr=("clover" "wilson" "symanzik" "i_clover")
+flow_type_arr=("w")
+obs_type_arr=("clover")
 
 for flow_type in ${flow_type_arr[@]}; do
 for obs_type in ${obs_type_arr[@]}; do

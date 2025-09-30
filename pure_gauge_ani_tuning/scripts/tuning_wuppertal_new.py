@@ -11,37 +11,31 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/home/trimis/fnal/all/outputs'
-# write_dir = '/home/trimis/fnal/all/flow_data'
+cur_dir = '/home/trimis/fnal/all/outputs'
+write_dir = '/home/trimis/fnal/all/flow_data'
 
-cur_dir = '/home/trimis/hpcc/outputs'
-write_dir = '/home/trimis/hpcc/flow_data'
+# cur_dir = '/home/trimis/hpcc/outputs'
+# write_dir = '/home/trimis/hpcc/flow_data'
 
-# cur_dir = '/home/yannis/Physics/LQCD/fnal/all/outputs'
-# write_dir = '/home/yannis/Physics/LQCD/fnal/all/flow_data'
+ens_pre = "1632b6900x"
 
-# cur_dir = "/home/yannis/Physics/LQCD/outputs"
-# write_dir = "/home/yannis/Physics/LQCD/flow_data"
+x0_vec = ["178", "180", "182", "184", "186", "188"]
+x0_float_vec = [1.78, 1.80, 1.82, 1.84, 1.86, 1.88]
 
-ens_pre = "20320b726025x"
+ens_post=""
 
-x0_vec = ["689327"]
-x0_float_vec = [6.89327]
-
-ens_post="a"
-
-xf = "800"
-xf_float = 8.0
+xf = "200"
+xf_float = 2.0
 
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-dt = '0.0078125'
-n_files = 300
+dt = '0.015625'
+n_files = 400
 first_file = 101
-n_bins = 30
+n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
@@ -52,7 +46,7 @@ for x0 in x0_vec :
     i_x0 += 1
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
@@ -162,8 +156,8 @@ for i_x0 in range(len(x0_vec)):
             x_points[j] = tau_arr[clos_i+k]
             w_points[j] = dEs_weight[clos_i+k,i_x0]
 
-        coeffs = np.polyfit(x_points,y_points,2,w=w_points)
-        coeffs[2] = coeffs[2] - 0.15
+        coeffs = np.polyfit(x_points,y_points,4,w=w_points)
+        coeffs[4] = coeffs[4] - 0.15
         solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
@@ -183,19 +177,13 @@ for i_x0 in range(len(x0_vec)):
             x_points[j] = tau_arr[clos_i+k]
             w_points[j] = dEt_weight[clos_i+k,i_x0]
 
-        coeffs = np.polyfit(x_points,y_points,2,w=w_points)
-        coeffs[2] = coeffs[2] - 0.15
+        coeffs = np.polyfit(x_points,y_points,4,w=w_points)
+        coeffs[4] = coeffs[4] - 0.15
         solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
                 w0t_arr[i_bins,i_x0] = np.sqrt( np.real(solutions[ii]) )
                 break
-
-### START DEBUGGING
-# for i_bins in range(n_bins):
-#     print(w0s_arr[i_bins,1],w0t_arr[i_bins,1])
-### END DEBUGGING
-
 
 ### AT THIS STAGE WE HAVE w0s AND w0t POINTS PER x0 PER BIN
 
@@ -207,11 +195,7 @@ for i_x0 in range(len(x0_vec)):
         ratios[i_bins,i_x0] = w0s_arr[i_bins,i_x0]/w0t_arr[i_bins,i_x0]
     ratio_weights[i_x0] = 1.0 / jackknife_for_binned(ratios[:,i_x0])[1]
 
-### START DEBUGGING
-# for i_bins in range(n_bins):
-#     print(ratios[i_bins,1],ratio_weights[1])
-### END DEBUGGING
-
+print(ratios[0,:])
 
 ### AT THIS STAGE WE HAVE RATIO POINTS AND WEIGHTS PER x0 PER BIN
 
@@ -251,10 +235,8 @@ for i_bins in range(n_bins):
         wpoints[k] = ratio_weights[point]
         k = k + 1
 
-    coeffs = np.polyfit(xpoints,ypoints,1,w=wpoints)
-    coeffs[1] = coeffs[1] - 1.0
-#    coeffs = np.polyfit(x0_float_vec,ratios[i_bins,:],3,w=ratio_weights)
-#    coeffs[3] = coeffs[3] - 1.0
+    coeffs = np.polyfit(x0_float_vec,ratios[i_bins,:],4,w=ratio_weights)
+    coeffs[4] = coeffs[4] - 1.0
     solutions = np.roots(coeffs)
     for ii in range( len(solutions) ): # FOR SECURITY
         if solutions[ii] < ( x0_float_vec[len(x0_float_vec)-1] + 0.5 ) and solutions[ii] > ( x0_float_vec[0] - 0.5 ) :
@@ -265,8 +247,7 @@ for i_bins in range(n_bins):
         ypoints[k] = w0s_arr[i_bins,point]
         wpoints[k] = w0s_weight[point]
         k = k + 1
-    coeffs = np.polyfit(xpoints,ypoints,1,w=wpoints)
-#    coeffs = np.polyfit(x0_float_vec,w0s_arr[i_bins,:],3,w=w0s_weight)
+    coeffs = np.polyfit(x0_float_vec,w0s_arr[i_bins,:],4,w=w0s_weight)
 
     predicted_w0s_binned[i_bins] = np.polyval(coeffs,predicted_x0_binned[i_bins])
 
@@ -278,20 +259,3 @@ predicted_w0s = jackknife_for_binned(predicted_w0s_binned)
 
 print( flow_type,obs_type,'x_0 = ',predicted_x0[0],' +- ',predicted_x0[1],'  w_0s = ',predicted_w0s[0],' +- ',predicted_w0s[1] )
 
-
-### START DEBUGGING
-# for i_x0 in range(len(x0_vec)) :
-#     rat = jackknife_for_binned( ratios[:,i_x0] )
-#     print(rat)
-### END DEBUGGING
-
-
-f_rec = open('%s%s%s_fitstudy.data'%(flow_type,obs_type,beta),'w')
-w0s_rec = np.zeros(2)
-ratio_rec = np.zeros(2)
-for i_x0 in range(len(x0_vec)):
-    w0s_rec = jackknife_for_binned(w0s_arr[:,i_x0])
-    ratio_rec = jackknife_for_binned(ratios[:,i_x0])
-    f_rec.write( '%f %f %f %f %f\n'%(x0_float_vec[i_x0],w0s_rec[0],w0s_rec[1],ratio_rec[0],ratio_rec[1]) )    
-
-f_rec.close()
