@@ -4,20 +4,20 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="fnal"
+cluster="nersc"
 n_of_ens=1
 
 nx=16
-nt=32
+nt=64
 
 beta=6.747
 beta_name="6747"
 
-xig=1.0
-xig_name="1000"
+xig=1.5
+xig_name="1500"
 
-xiq=1.0
-xiq_name="1000"
+xiq=1.5
+xiq_name="1500"
 
 dyn_mass_1=0.014
 dyn_mass_1_name="014"
@@ -37,7 +37,7 @@ stream_arr=("a")
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("ahisq10")
+sbatch_jobname_arr=("ahisq15")
 
 n_of_sub=1
 n_of_lat=1
@@ -130,6 +130,27 @@ sbatch_ntasks="${sbatch_ntasks}"
 sbatch_jobname="${sbatch_jobname}"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
+
+EOF
+
+elif [ ${cluster} == "nersc" ]
+then
+
+cat <<EOF >> ../${my_dir}/params.sh
+
+directory="/global/cfs/projectdirs/m1416/yannis_dyn/lattices/${lat_name}"
+out_dir="/global/cfs/projectdirs/m1416/yannis_dyn/outputs/${lat_name}"
+path_build="/global/homes/t/trimisio/my_code/imp_rhmc_ani/build"
+run_dir="/global/cfs/projectdirs/m1416/yannis_dyn/runs/rungen${lat_name}"
+submit_dir="/global/cfs/projectdirs/m1416/yannis_dyn/submits/subgen${lat_name}"
+
+# executable="su3_rhmd_hisq_a_dbl_crayintel_20250930"
+# executable="su3_rhmc_hisq_a_dbl_crayintel_20250930"
+
+sbatch_time="${sbatch_time}"
+sbatch_nodes="${sbatch_nodes}"
+sbatch_ntasks="${sbatch_ntasks}"
+sbatch_jobname="${sbatch_jobname}"
 
 EOF
 
