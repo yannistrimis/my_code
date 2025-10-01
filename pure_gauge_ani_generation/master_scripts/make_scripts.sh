@@ -5,35 +5,32 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=1
+n_of_ens=5
 
 nx=16
-nt=8
+nt=64
 
-beta_arr=(5.800)
-beta_name_arr=("5800")
+beta=6.900
+beta_name="6900"
 
-xi_0_arr=(1.67401280)
-xi_0_name_arr=("167401280")
+xi_0_arr=(3.1 3.3 3.5 3.7 3.9)
+xi_0_name_arr=("3100" "3300" "3500" "3700" "3900")
 
-stream="p"
+stream="a"
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("plaqNt8")
+sbatch_jobname_arr=("pg31" "pg33" "pg35" "pg37" "pg39")
 
-n_of_sub=8
+n_of_sub=4
 n_of_lat=1000
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
-
-beta=${beta_arr[${i_ens}]}
-beta_name=${beta_name_arr[${i_ens}]}
 
 xi_0=${xi_0_arr[${i_ens}]}
 xi_0_name=${xi_0_name_arr[${i_ens}]}
