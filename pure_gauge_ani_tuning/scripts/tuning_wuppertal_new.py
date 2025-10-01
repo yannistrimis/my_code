@@ -44,9 +44,12 @@ i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
 f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
+print("data from:")
+
 i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
+    print('%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
         f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
@@ -260,13 +263,13 @@ predicted_w0s = jackknife_for_binned(predicted_w0s_binned)
 
 f1 = plt.figure(1)
 for i_bins in range(n_bins):
-    plt.errorbar(x0_float_vec,ratios[i_bins,:],yerr=ratio_errors)
+    plt.errorbar(x0_float_vec,ratios[i_bins,:],yerr=ratio_errors, fmt='.')
     plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
 
 
 f2 = plt.figure(2)
 for i_bins in range(n_bins):
-    plt.errorbar(x0_float_vec,w0s_arr[i_bins,:],yerr=w0s_error)
+    plt.errorbar(x0_float_vec,w0s_arr[i_bins,:],yerr=w0s_error,fmt='.')
     plt.axhline(y=predicted_w0s_binned[i_bins], linestyle='-')
     plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
 plt.show()
