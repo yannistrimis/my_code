@@ -11,19 +11,13 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/home/trimis/fnal/all/outputs'
-# write_dir = '/home/trimis/fnal/all/flow_data'
+cur_dir = '/home/trimis/outputs'
+write_dir = '/home/trimis/flow_data'
 
-cur_dir = '/home/yannis/Physics/LQCD/outputs'
-write_dir = '/home/yannis/Physics/LQCD/flow_data'
+ens_pre = "2448b7300x"
 
-# cur_dir = '/home/trimis/hpcc/outputs'
-# write_dir = '/home/trimis/hpcc/flow_data'
-
-ens_pre = "1632b6900x"
-
-x0_vec = ["178", "180", "182", "184", "186", "188"]
-x0_float_vec = [1.78, 1.80, 1.82, 1.84, 1.86, 1.88]
+x0_vec = ["1760", "1780", "1800", "1820", "1840", "1860", "1880", "1900", "1920"]
+x0_float_vec = [1.76, 1.78, 1.80, 1.82, 1.84, 1.86, 1.88, 1.90, 1.92]
 
 ens_post=""
 
@@ -44,12 +38,12 @@ i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
 f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
-print("data from:")
+#print("data from:")
 
 i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
-    print('%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
+#    print('%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
         f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
@@ -79,11 +73,11 @@ for x0 in x0_vec :
                     Et_arr[i_time,i,i_x0] = float( my_line[2] )
                     Es_arr[i_time,i,i_x0] = float( my_line[3] )
                 elif obs_type == 'wilson' :
-                    Et_arr[i_time,i,i_x0] = 6*( 3-float(my_line[6]) )
-                    Es_arr[i_time,i,i_x0] = 6*( 3-float(my_line[7]) )
+                    Et_arr[i_time,i,i_x0] = 6*( 3-float(my_line[4]) )
+                    Es_arr[i_time,i,i_x0] = 6*( 3-float(my_line[5]) )
                 elif obs_type == 'symanzik' :
-                    Et_arr[i_time,i,i_x0] = 10*( 3-float(my_line[6]) )-( 3-float(my_line[8]) )
-                    Es_arr[i_time,i,i_x0] = 10*( 3-float(my_line[7]) )-( 3-float(my_line[9]) )
+                    Et_arr[i_time,i,i_x0] = 10*( 3-float(my_line[4]) )-( 3-float(my_line[6]) )
+                    Es_arr[i_time,i,i_x0] = 10*( 3-float(my_line[5]) )-( 3-float(my_line[7]) )
                 elif obs_type == 'i_clover' :
                     Et_arr[i_time,i,i_x0] = float( my_line[4] )
                     Es_arr[i_time,i,i_x0] = float( my_line[5] )
@@ -261,20 +255,20 @@ for i_bins in range(n_bins):
 predicted_x0 = jackknife_for_binned(predicted_x0_binned)
 predicted_w0s = jackknife_for_binned(predicted_w0s_binned)
 
-f1 = plt.figure(1)
-for i_bins in range(n_bins):
-    plt.errorbar(x0_float_vec,ratios[i_bins,:],yerr=ratio_errors, fmt='.')
-    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
+#f1 = plt.figure(1)
+#for i_bins in range(n_bins):
+#    plt.errorbar(x0_float_vec,ratios[i_bins,:],yerr=ratio_errors, fmt='.')
+#    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
 
 
-f2 = plt.figure(2)
-for i_bins in range(n_bins):
-    plt.errorbar(x0_float_vec,w0s_arr[i_bins,:],yerr=w0s_error,fmt='.')
-    plt.axhline(y=predicted_w0s_binned[i_bins], linestyle='-')
-    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
-plt.show()
+#f2 = plt.figure(2)
+#for i_bins in range(n_bins):
+#    plt.errorbar(x0_float_vec,w0s_arr[i_bins,:],yerr=w0s_error,fmt='.')
+#    plt.axhline(y=predicted_w0s_binned[i_bins], linestyle='-')
+#    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
+#plt.show()
 
-input()
+#input()
 
 print( flow_type,obs_type,'x_0 = ',predicted_x0[0],' +- ',predicted_x0[1],'  w_0s = ',predicted_w0s[0],' +- ',predicted_w0s[1] )
 
