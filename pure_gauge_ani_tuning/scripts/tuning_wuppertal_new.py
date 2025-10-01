@@ -11,8 +11,11 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/home/trimis/fnal/all/outputs'
-write_dir = '/home/trimis/fnal/all/flow_data'
+# cur_dir = '/home/trimis/fnal/all/outputs'
+# write_dir = '/home/trimis/fnal/all/flow_data'
+
+cur_dir = '/home/yannis/Physics/LQCD/outputs'
+write_dir = '/home/yannis/Physics/LQCD/flow_data'
 
 # cur_dir = '/home/trimis/hpcc/outputs'
 # write_dir = '/home/trimis/hpcc/flow_data'
@@ -94,7 +97,6 @@ for x0 in x0_vec :
             if i_time>0 :
                 ratio_arr[i_time,i,i_x0] = (dEs_arr[i_time,i,i_x0])/(dEt_arr[i_time,i,i_x0]) # WE OMIT THE FIRST ELEMENT; DIVISION BY ZERO
 
-
 ### AT THIS STAGE dES AND dEt MEASUREMENT POINTS HAVE BEEN FORMED
 
 dEs_binned = np.zeros( ( n_steps , n_bins , len(x0_vec) ) )
@@ -113,6 +115,7 @@ for i_x0 in range(len(x0_vec)):
         if i_time > 0: # the first elements are not going to be needed anyways
             dEs_weight[i_time,i_x0] = 1/(dEs_error)
             dEt_weight[i_time,i_x0] = 1/(dEt_error)
+
 
 ### AT THIS STAGE dES AND dEt HAVE BEEN BINNED SO THAT JACKKNIFE PROCESS
 ### CAN BE APPLIED ON THEM. THE WEIGHTS (JACKKNIFE ERRORS APPLIED EQUIVALENTLY
@@ -143,6 +146,7 @@ w0s_arr = np.zeros( ( n_bins , len(x0_vec) ) )
 w0t_arr = np.zeros( ( n_bins , len(x0_vec) ) )
 
 w0s_weight = np.zeros( len(x0_vec) )
+w0s_error = np.zeros( len(x0_vec) )
 
 for i_x0 in range(len(x0_vec)):
     for i_bins in range(n_bins):
@@ -164,6 +168,7 @@ for i_x0 in range(len(x0_vec)):
                 w0s_arr[i_bins,i_x0] = np.sqrt( np.real(solutions[ii]) )
                 break
     w0s_weight[i_x0] = 1 / ( jackknife_for_binned(w0s_arr[:,i_x0])[1] )
+    w0s_error[i_x0] = 1 /  w0s_weight[i_x0]
 
 for i_x0 in range(len(x0_vec)):
     for i_bins in range(n_bins):
@@ -189,14 +194,13 @@ for i_x0 in range(len(x0_vec)):
 
 ratios = np.zeros(( n_bins, len(x0_vec) ))
 ratio_weights = np.zeros( len(x0_vec) )
+ratio_errors = np.zeros( len(x0_vec) )
 
 for i_x0 in range(len(x0_vec)):
     for i_bins in range(n_bins):
         ratios[i_bins,i_x0] = w0s_arr[i_bins,i_x0]/w0t_arr[i_bins,i_x0]
     ratio_weights[i_x0] = 1.0 / jackknife_for_binned(ratios[:,i_x0])[1]
-
-print(ratios[0,:])
-
+    ratio_errors[i_x0] = 1.0 / ratio_weights[i_x0]
 ### AT THIS STAGE WE HAVE RATIO POINTS AND WEIGHTS PER x0 PER BIN
 
 if check_single_ens == 'yes' :
@@ -235,27 +239,39 @@ for i_bins in range(n_bins):
         wpoints[k] = ratio_weights[point]
         k = k + 1
 
-    coeffs = np.polyfit(x0_float_vec,ratios[i_bins,:],4,w=ratio_weights)
-    coeffs[4] = coeffs[4] - 1.0
-    solutions = np.roots(coeffs)
+    coeffs1 = np.polyfit(x0_float_vec,ratios[i_bins,:],1,w=ratio_weights)
+    coeffs1[1] = coeffs1[1] - 1.0
+    solutions = np.roots(coeffs1)
     for ii in range( len(solutions) ): # FOR SECURITY
         if solutions[ii] < ( x0_float_vec[len(x0_float_vec)-1] + 0.5 ) and solutions[ii] > ( x0_float_vec[0] - 0.5 ) :
             predicted_x0_binned[i_bins] = np.real(solutions[ii])
             break
+
     k = 0
     for point in point_list:
         ypoints[k] = w0s_arr[i_bins,point]
         wpoints[k] = w0s_weight[point]
         k = k + 1
-    coeffs = np.polyfit(x0_float_vec,w0s_arr[i_bins,:],4,w=w0s_weight)
-
-    predicted_w0s_binned[i_bins] = np.polyval(coeffs,predicted_x0_binned[i_bins])
-
+    coeffs2 = np.polyfit(x0_float_vec,w0s_arr[i_bins,:],1,w=w0s_weight)
+    predicted_w0s_binned[i_bins] = np.polyval(coeffs2,predicted_x0_binned[i_bins])
 
 predicted_x0 = jackknife_for_binned(predicted_x0_binned)
 predicted_w0s = jackknife_for_binned(predicted_w0s_binned)
 
+f1 = plt.figure(1)
+for i_bins in range(n_bins):
+    plt.errorbar(x0_float_vec,ratios[i_bins,:],yerr=ratio_errors)
+    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
 
+
+f2 = plt.figure(2)
+for i_bins in range(n_bins):
+    plt.errorbar(x0_float_vec,w0s_arr[i_bins,:],yerr=w0s_error)
+    plt.axhline(y=predicted_w0s_binned[i_bins], linestyle='-')
+    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
+plt.show()
+
+input()
 
 print( flow_type,obs_type,'x_0 = ',predicted_x0[0],' +- ',predicted_x0[1],'  w_0s = ',predicted_w0s[0],' +- ',predicted_w0s[1] )
 
