@@ -7,17 +7,17 @@
 cluster="nersc"
 n_of_ens=1
 
-nx=16
-nt=64
+nx=20
+nt=320
 
-beta=6.747
-beta_name="6747"
+beta=7.26025
+beta_name="726025"
 
-xig=1.5
-xig_name="1500"
+xig=6.89327
+xig_name="689327"
 
-xiq=1.5
-xiq_name="1500"
+xiq=8.0
+xiq_name="8000"
 
 dyn_mass_1=0.014
 dyn_mass_1_name="014"
@@ -37,7 +37,7 @@ stream_arr=("a")
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("ahisq15")
+sbatch_jobname_arr=("ahisq8")
 
 n_of_sub=1
 n_of_lat=1
