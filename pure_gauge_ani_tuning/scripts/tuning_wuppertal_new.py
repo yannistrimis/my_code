@@ -14,28 +14,28 @@ w0phys = 0.17355
 cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "2448b7300x"
+ens_pre = "20160b7147x"
 
-x0_vec = ["1760", "1780", "1800", "1820", "1840", "1860", "1880", "1900", "1920"]
-x0_float_vec = [1.76, 1.78, 1.80, 1.82, 1.84, 1.86, 1.88, 1.90, 1.92]
+x0_vec = ["682"]
+x0_float_vec = [6.82]
 
-ens_post=""
+ens_post="a"
 
-xf = "200"
-xf_float = 2.0
+xf = "800"
+xf_float = 8.0
 
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-dt = '0.015625'
-n_files = 400
+dt = '0.0078125'
+n_files = 100
 first_file = 101
 n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
-f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
+f_write = open( '%s/data_%sflow%s%s%sa_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
 f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
 #print("data from:")
@@ -43,10 +43,10 @@ f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio 
 i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
-#    print('%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
+    print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
