@@ -4,32 +4,32 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="nersc"
-n_of_ens=1
+cluster="fnal"
+n_of_ens=3
 
-nx=64
+nx=16
 nt=128
 
-beta_name_arr=("858814")
-xi_0_name_arr=("100000")
-stream="h"
+beta_name_arr=("719156" "719156" "719156")
+xi_0_name_arr=("348992" "348992" "348992")
+stream="a"
 
-xi_f_arr=(1.0)
-xi_f_name_arr=("100")
+xi_f=4.0
+xi_f_name="400"
 
 flow_action="wilson"
-exp_order="16"
-dt="0.0078125"
-stoptime_arr=("1.1") # CAREFUL!!!
+exp_order_arr=("8" "16" "32")
+dt="0.00390625"
+stoptime="3.5" # CAREFUL!!!
 
-sbatch_time="20:00:00"
-sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
+sbatch_time="02:00:00"
+sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("a04wfl1")
+sbatch_ntasks=64 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("c20" "c21" "c22")
 
-n_of_sub=10
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=1
 first_lattice=101
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -39,11 +39,8 @@ for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 beta_name=${beta_name_arr[${i_ens}]}
 xi_0_name=${xi_0_name_arr[${i_ens}]}
 
-xi_f=${xi_f_arr[${i_ens}]}
-xi_f_name=${xi_f_name_arr[${i_ens}]}
+exp_order=${exp_order_arr[${i_ens}]}
 
-
-stoptime=${stoptime_arr[${i_ens}]}
 sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
@@ -64,8 +61,8 @@ then
 prefix="zflow"
 fi
 
-out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}"
-my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}_dt${dt}"
+out_name="${prefix}${ensemble}_xf${xi_f_name}_dt${dt}_exp${exp_order}"
+my_dir="${cluster}_${prefix}_scripts_${ensemble}_xf${xi_f_name}_dt${dt}_exp${exp_order}"
 
 cd ..
 mkdir ${my_dir}
@@ -132,8 +129,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_puregauge/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/run${prefix}${lat_name}_xf${xi_f_name}"
-submit_dir="/project/ahisq/yannis_puregauge/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
+run_dir="/project/ahisq/yannis_puregauge/runs/run${prefix}${lat_name}_xf${xi_f_name}_dt${dt}_exp${exp_order}"
+submit_dir="/project/ahisq/yannis_puregauge/submits/sub${prefix}${lat_name}_xf${xi_f_name}_dt${dt}_exp${exp_order}"
 
 executable="region_flow_bbb_a_dbl_gcc12openmpi4_20240212"
 
@@ -154,8 +151,8 @@ cat <<EOF >> ../${my_dir}/params.sh
 directory="/global/cfs/projectdirs/m1416/yannis_puregauge/lattices/${lat_name}"
 out_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/outputs/${lat_name}"
 path_build="/global/homes/t/trimisio/my_code/wilson_flow_ani/build"
-run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/run${prefix}${lat_name}_xf${xi_f_name}"
-submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/sub${prefix}${lat_name}_xf${xi_f_name}"
+run_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/runs/run${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
+submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/sub${prefix}${lat_name}_xf${xi_f_name}_dt${dt}"
 
 executable="wilson_flow_bbb_a_dbl_cray_20250520"
 
