@@ -14,10 +14,10 @@ w0phys = 0.17355
 cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "20160b7147x"
+ens_pre = "20320b726025x"
 
-x0_vec = ["682"]
-x0_float_vec = [6.82]
+x0_vec = ["689327"]
+x0_float_vec = [6.89327]
 
 ens_post="a"
 
@@ -35,7 +35,7 @@ first_file = 101
 n_bins = 20
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
-f_write = open( '%s/data_%sflow%s%s%sa_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
+f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
 f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
 #print("data from:")
@@ -73,11 +73,11 @@ for x0 in x0_vec :
                     Et_arr[i_time,i,i_x0] = float( my_line[2] )
                     Es_arr[i_time,i,i_x0] = float( my_line[3] )
                 elif obs_type == 'wilson' :
-                    Et_arr[i_time,i,i_x0] = 6*( 3-float(my_line[4]) )
-                    Es_arr[i_time,i,i_x0] = 6*( 3-float(my_line[5]) )
+                    Et_arr[i_time,i,i_x0] = 6*( 3-float(my_line[6]) )
+                    Es_arr[i_time,i,i_x0] = 6*( 3-float(my_line[7]) )
                 elif obs_type == 'symanzik' :
-                    Et_arr[i_time,i,i_x0] = 10*( 3-float(my_line[4]) )-( 3-float(my_line[6]) )
-                    Es_arr[i_time,i,i_x0] = 10*( 3-float(my_line[5]) )-( 3-float(my_line[7]) )
+                    Et_arr[i_time,i,i_x0] = 10*( 3-float(my_line[6]) )-( 3-float(my_line[8]) )
+                    Es_arr[i_time,i,i_x0] = 10*( 3-float(my_line[7]) )-( 3-float(my_line[9]) )
                 elif obs_type == 'i_clover' :
                     Et_arr[i_time,i,i_x0] = float( my_line[4] )
                     Es_arr[i_time,i,i_x0] = float( my_line[5] )
