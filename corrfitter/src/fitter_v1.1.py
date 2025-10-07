@@ -22,13 +22,13 @@ def make_prior(N,M):
 
 #    prior['log(an)'] = gv.log(gv.gvar(['0.386(1000.0)', '0.727(1000.0)']))
 #    prior['log(dEn)'] = gv.log(gv.gvar(['0.30(1000.0)', '0.50(1000.0)']))
-    prior['log(an)'] = gv.log(gv.gvar(N*['0.66(1000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.40(1000.0)']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['0.35(1000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['1.10(1000.0)']))
 
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.35(1000.0)', '0.05(1000.0)']))
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.18(0.2)', '1.00(1000.0)']))
     prior['log(ao)'] = gv.log(gv.gvar(M*['0.28(1000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.18(1000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.36(1000.0)']))
 
     return prior
 

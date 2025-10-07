@@ -2,20 +2,20 @@
 
 nt=32 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1632b681823x100000a"
-masses=("0.01524")
+ens_name="1632b684652x107865a"
+masses=("0.01497")
 mas_len=${#masses[@]}
 
 prefix="hisqnlpi"
 
-xq_arr=("1000")
-#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
-sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
+xq_arr=("1080")
+sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+#sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
 source1="even_and_odd_wall"
-#source2="even_and_odd_wall/FUNNYWALL1"
-source2="even_and_odd_wall/FUNNYWALL2"
+source2="even_and_odd_wall/FUNNYWALL1"
+#source2="even_and_odd_wall/FUNNYWALL2"
 
 src_label="eowfw"
 
@@ -23,7 +23,7 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=4500
+last=4300
 
 output_dir="/home/trimisio/all/spec_data"
 data_dir="/home/trimisio/all/spec_data"
