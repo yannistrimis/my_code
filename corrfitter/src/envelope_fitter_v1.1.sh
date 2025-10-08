@@ -33,7 +33,7 @@ tmin_min=0
 tmin_max=16
 tmin_step=1
 
-tmax_min=0
+tmax_min=16
 tmax_max=16
 tmax_step=1
 
