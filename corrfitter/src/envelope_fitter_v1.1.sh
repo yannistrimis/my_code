@@ -23,7 +23,7 @@ tstep=1
 tp=32
 n_states=1
 m_states=1
-sn="-1.0"
+sn="1.0"
 so="1.0"
 binsize=1
 
@@ -33,7 +33,7 @@ tmin_min=0
 tmin_max=11
 tmin_step=1
 
-tmax_min=16
+tmax_min=11
 tmax_max=16
 tmax_step=1
 
