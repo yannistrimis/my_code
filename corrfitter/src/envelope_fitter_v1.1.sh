@@ -1,21 +1,21 @@
 #!/bin/bash
 
-ens_name="1632b681823x100000"
+ens_name="1632b681823x100000a"
 
 src="eowfw"
-prefix="naivnlpi"
-taste="PION_i"
+prefix="hisqnlpi"
+taste="PION_s"
 
 xq="1000"
-mass="0.00855"
+mass="0.01524"
 
 mom="p000"
 
-# fitdir="/home/trimis/spec_data/l${ens_name}a" # CMSE
-# dir=${fitdir} # CMSE
+fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
+dir=${fitdir} # CMSE
 
-fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}a" # LAPTOP
-dir=${fitdir} # LAPTOP
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
+# dir=${fitdir} # LAPTOP
 
 tdatamin=0
 tdatamax=16
@@ -23,8 +23,8 @@ tstep=1
 tp=32
 n_states=1
 m_states=1
-sn="-1.0"
-so="1.0"
+sn="1.0"
+so="-1.0"
 binsize=1
 
 correlated="corr"
@@ -40,7 +40,7 @@ tmax_step=1
 tmin_one=0
 tmax_one=16
 
-specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
