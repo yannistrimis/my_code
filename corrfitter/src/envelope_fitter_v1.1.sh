@@ -22,8 +22,8 @@ tdatamax=16
 tstep=1
 tp=32
 n_states=1
-m_states=1
-sn="1.0"
+m_states=2
+sn="-1.0"
 so="-1.0"
 binsize=1
 
@@ -33,12 +33,12 @@ tmin_min=0
 tmin_max=12
 tmin_step=1
 
-tmax_min=14
+tmax_min=10
 tmax_max=16
 tmax_step=1
 
-tmin_one=6
-tmax_one=14
+tmin_one=8
+tmax_one=15
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
 
