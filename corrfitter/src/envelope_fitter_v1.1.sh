@@ -1,46 +1,47 @@
 #!/bin/bash
 
-ens_name="1632b681823x100000"
+ens_name="1632b681823x100000a"
 
 src="eowfw"
-prefix="naivnlpi"
+prefix="hisqnlpi"
 taste="PION_s"
 
 xq="1000"
-mass="0.00855"
+mass="0.01524"
 
 mom="p000"
 
-#fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
-#dir=${fitdir} # CMSE
+fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
+dir=${fitdir} # CMSE
 
-fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}a" # LAPTOP
-dir=${fitdir} # LAPTOP
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}a" # LAPTOP
+# dir=${fitdir} # LAPTOP
 
 tdatamin=0
 tdatamax=16
 tstep=1
 tp=32
-n_states=1
+n_states=0
 m_states=2
-sn="-1.0"
+sn="1.0"
 so="-1.0"
 binsize=1
 
 correlated="corr"
+priors="no_priors"
 
 tmin_min=0
-tmin_max=12
+tmin_max=13
 tmin_step=1
 
-tmax_min=10
+tmax_min=8
 tmax_max=16
 tmax_step=1
 
 tmin_one=8
-tmax_one=15
+tmax_one=16
 
-specdata_file="${dir}/${prefix}${mom}${src}${ens_name}xq${xq}_m${mass}m${mass}${taste}.specdata"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
@@ -73,6 +74,7 @@ ${sn}
 ${so}
 ${binsize}
 ${correlated}
+${priors}
 scanfit
 EOF
 
@@ -96,6 +98,7 @@ ${sn}
 ${so}
 ${binsize}
 ${correlated}
+${priors}
 onefit
 EOF
 
