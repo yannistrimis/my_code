@@ -23,19 +23,19 @@ def make_prior(N,M):
 #    prior['log(an)'] = gv.log(gv.gvar(['0.5(10000.0)', '0.5(10000.0)']))
 #    prior['log(dEn)'] = gv.log(gv.gvar(['0.9(0.1)', '0.3(0.1)']))
     prior['log(an)'] = gv.log(gv.gvar(N*['0.5(10000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['1.01(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['1.1(0.2)']))
 
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.30(0.1)', '1.0(0.4)'])) #PION_0
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.66(10000.0)', '0.2(0.1)']))
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.30(0.1)', '1.0(0.4)'])) #PION_s
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.50(10000.0)', '0.4(0.2)']))
 
-#    prior['log(ao)'] = gv.log(gv.gvar(['0.237(0.5)', '0.5(1.0)']))
-#    prior['log(dEo)'] = gv.log(gv.gvar(['0.345(0.1)', '0.2(0.1)']))
+    prior['log(ao)'] = gv.log(gv.gvar(['0.237(0.5)', '0.5(1.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(['0.37(0.1)', '0.2(0.1)']))
 
 
-    prior['log(ao)'] = gv.log(gv.gvar(M*['0.3(10000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.35(10000.0)']))
+#    prior['log(ao)'] = gv.log(gv.gvar(M*['0.3(10000.0)']))
+#    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.35(10000.0)']))
 
     return prior
 
