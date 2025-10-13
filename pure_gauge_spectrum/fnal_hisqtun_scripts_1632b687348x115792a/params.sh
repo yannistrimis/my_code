@@ -3,8 +3,8 @@
 
 cluster=fnal
 
-n_of_lat=1000
-n_of_sub=3
+n_of_lat=500
+n_of_sub=4
 
 set_i_lat=101
 set_seed=78324
@@ -18,11 +18,11 @@ lat_name="l1632b687348x115792a"
 out_name="spechisqtun1632b687348x115792"
 
 nmasses=3
-mass_arr=( 0.05 0.07 0.09    )
+mass_arr=( 0.069 0.073 0.077    )
 
 nxq=3
-xq_arr=( 1.0 1.2 1.4    )
-xq_name_arr=( 100 120 140    )
+xq_arr=( 1.12 1.16 1.20    )
+xq_name_arr=( 1120 1160 1200    )
 
 u0=1
 
@@ -45,13 +45,13 @@ path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runspechisqtunl1632b687348x115792a"
 submit_dir="/project/ahisq/yannis_puregauge/submits/subspechisqtunl1632b687348x115792a"
 
-executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20250423"
+# executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20250423"
 # executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20250423"
 
-sbatch_time="20:00:00"
+sbatch_time="10:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="12hisqtun"
+sbatch_jobname="12tun"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
