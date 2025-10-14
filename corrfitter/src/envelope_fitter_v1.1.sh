@@ -1,21 +1,21 @@
 #!/bin/bash
 
-ens_name="1632b684652x107865a"
+ens_name="1632b687348x115792a"
 
-src="eowfw"
-prefix="hisqnlpi"
-taste="PION_s"
+src="cw"
+prefix="hisqtun"
+taste="PION_5"
 
-xq="1080"
-mass="0.01497"
+xq="140"
+mass="0.09"
 
-mom="p000"
+mom="p110"
 
-# fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
-# dir=${fitdir} # CMSE
+fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
+dir=${fitdir} # CMSE
 
-fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
-dir=${fitdir} # LAPTOP
+# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
+# dir=${fitdir} # LAPTOP
 
 tdatamin=0
 tdatamax=16
@@ -31,10 +31,10 @@ correlated="corr"
 priors="no_priors"
 
 tmin_min=0
-tmin_max=14
+tmin_max=12
 tmin_step=1
 
-tmax_min=6
+tmax_min=16
 tmax_max=16
 tmax_step=2
 
