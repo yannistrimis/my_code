@@ -1,15 +1,14 @@
 #!/bin/bash
 
-nt=64 # DON'T FORGET TO CHANGE !!!
+nt=32 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1664b704115x181411"
-stream="a"
-masses=("0.025" "0.035" "0.045")
+ens_name="1632b687348x115792a"
+masses=("0.05" "0.07" "0.09")
 mas_len=${#masses[@]}
 
-prefix="naivtun"
+prefix="hisqtun"
 
-xq_arr=("120" "160" "200")
+xq_arr=("100" "120" "140")
 sinks_arr=("PION_5")
 mom_arr=("p000")
 #mom_arr=("p100" "p110")
@@ -30,8 +29,8 @@ last=600
 # data_dir="/home/trimisio/all/spec_data"
 
 
-output_dir="/home/yannis/Physics/LQCD/spec_data"
-data_dir="/home/yannis/Physics/LQCD/spec_data"
+output_dir="/home/trimis/spec_data"
+data_dir="/home/trimis/spec_data"
 
 for mom in ${mom_arr[@]}
 do
@@ -56,8 +55,8 @@ do
 echo "    ${i_file}"
 
 python3 clean_one.py <<EOF
-${ens_name}${stream}
-spec${prefix}${ens_name}xq${xq}
+${ens_name}
+spec${prefix}${ens_name}_xq${xq}
 ${i_file}
 ${mom}
 ${mass1}
@@ -67,7 +66,7 @@ ${source2}
 ${sinkop1}
 ${sinkop2}
 ${sinks}
-cleanspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
+cleanspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
 ${output_dir}
 ${data_dir}
 EOF
@@ -75,40 +74,40 @@ EOF
 
 
 python3 aver_one.py <<EOF
-${ens_name}${stream}
-cleanspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
+${ens_name}
+cleanspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
 ${i_file}
-averspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
+averspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
 ${data_dir}
 EOF
 
-rm ${data_dir}/l${ens_name}${stream}/cleanspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}.${i_file}a
-rm ${data_dir}/l${ens_name}${stream}/cleanspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}.${i_file}b
+rm ${data_dir}/l${ens_name}/cleanspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}.${i_file}a
+rm ${data_dir}/l${ens_name}/cleanspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}.${i_file}b
 
 
 python3 fold_one.py <<EOF
 ${nt}
-${ens_name}${stream}
-averspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
+${ens_name}
+averspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
 ${i_file}
-foldspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
+foldspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
 ${data_dir}
 EOF
 
-rm ${data_dir}/l${ens_name}${stream}/averspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}.${i_file}
+rm ${data_dir}/l${ens_name}/averspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}.${i_file}
 
 
 done #i_file
 
 python3 format_corrfitter_one.py <<EOF
-${ens_name}${stream}
-${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}
+${ens_name}
+${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
 ${first}
 ${last}
 ${data_dir}
 EOF
 
-rm ${data_dir}/l${ens_name}${stream}/foldspec${prefix}${mom}${src_label}${ens_name}xq${xq}_m${mass1}m${mass2}${sinks}.*
+rm ${data_dir}/l${ens_name}/foldspec${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}.*
 
 done #xq
 
