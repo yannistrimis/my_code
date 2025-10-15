@@ -32,7 +32,7 @@ lat_name="l16128f21b6747m014m070xig3500xiq4300a"
 out_name="out16128f21b6747m014m070xig3500xiq4300a"
 
 
-directory="/lustre1/ahisq/yannis_dyn/lattices/l16128f21b6747m014m070xig3500xiq4300a"
+directory="/lustre2/ahisq/yannis_dyn/lattices/l16128f21b6747m014m070xig3500xiq4300a"
 out_dir="/project/ahisq/yannis_dyn/outputs/l16128f21b6747m014m070xig3500xiq4300a"
 path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungenl16128f21b6747m014m070xig3500xiq4300a"
@@ -44,7 +44,7 @@ executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250508"
 sbatch_time="20:00:00"
 sbatch_nodes="4"
 sbatch_ntasks="128"
-sbatch_jobname="xf43"
+sbatch_jobname="dy3543"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 

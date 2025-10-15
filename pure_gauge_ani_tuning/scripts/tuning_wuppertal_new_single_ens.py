@@ -143,7 +143,7 @@ for i_xf in range(len(xf_vec)):
         solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
-                w0s_arr[i_bins,i_xf] = np.real(solutions[ii])
+                w0s_arr[i_bins,i_xf] = np.sqrt( np.real(solutions[ii]) )
                 break
     w0s_weight[i_xf] = 1 / ( jackknife_for_binned(w0s_arr[:,i_xf])[1] )
 
@@ -164,7 +164,7 @@ for i_xf in range(len(xf_vec)):
         solutions = np.roots(coeffs)
         for ii in range( len(solutions) ): # FOR SECURITY
             if solutions[ii] < tau_arr[clos_i+1] and solutions[ii] > tau_arr[clos_i-1] :
-                w0t_arr[i_bins,i_xf] = np.real(solutions[ii])
+                w0t_arr[i_bins,i_xf] = np.sqrt( np.real(solutions[ii]) )
                 break
 
 ### AT THIS STAGE WE HAVE w0s AND w0t POINTS PER xf PER BIN
