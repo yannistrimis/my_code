@@ -4,40 +4,40 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="nersc"
-n_of_ens=1
+cluster="fnal"
+n_of_ens=3
 
-nx=20
-nt=320
+nx=16
+nt=64
 
-beta=7.26025
-beta_name="726025"
+beta=6.747
+beta_name="6747"
 
-xig=6.89327
-xig_name="689327"
+xig=1.70
+xig_name="1700"
 
-xiq=8.0
-xiq_name="8000"
+xiq=1.70
+xiq_name="1700"
 
-dyn_mass_1=0.014
-dyn_mass_1_name="014"
+dyn_mass_1=0.010
+dyn_mass_1_name="010"
 
-dyn_mass_2=0.07
-dyn_mass_2_name="070"
+dyn_mass_2=0.050
+dyn_mass_2_name="050"
 
 warms=0
 trajecs=100
 traj_between_meas=1
-microcanonical_time_step_arr=(0.04167)
-steps_per_trajectory_arr=(24)
-rationals_file="rationals.m014m070"
+microcanonical_time_step_arr=(0.041666666666666664 0.038461538461538464 0.03571428571428571)
+steps_per_trajectory_arr=(24 26 28)
+rationals_file="rationals.m010m050"
 
-stream_arr=("a")
+stream_arr=("a" "b" "c")
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("ahisq8")
+sbatch_jobname_arr=("5m1717a" "5m1717b" "5m1717c")
 
 n_of_sub=1
 n_of_lat=1
@@ -51,6 +51,8 @@ microcanonical_time_step=${microcanonical_time_step_arr[${i_ens}]}
 steps_per_trajectory=${steps_per_trajectory_arr[${i_ens}]}
 stream=${stream_arr[${i_ens}]}
 sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
+
+# var=${var_arr[${i_ens}]}
 
 #
 
@@ -115,7 +117,7 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/yannis_dyn/lattices/${lat_name}"
+directory="/lustre2/ahisq/yannis_dyn/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_dyn/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungen${lat_name}"
