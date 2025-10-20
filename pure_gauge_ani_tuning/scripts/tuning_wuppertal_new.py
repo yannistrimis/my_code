@@ -14,15 +14,15 @@ w0phys = 0.17355
 cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "2080b7580x"
+ens_pre = "1664b693563x"
 
-x0_vec = ["3505", "3515", "3525", "3535", "3565", "3595", "3625"]
-x0_float_vec = [3.505, 3.515, 3.525, 3.535, 3.565, 3.595, 3.625]
+x0_vec = ["180060"]
+x0_float_vec = [1.80060]
 
-ens_post=""
+ens_post="a"
 
-xf = "400"
-xf_float = 4.0
+xf = "200"
+xf_float = 2.0
 
 flow_type = input()
 obs_type = input()
@@ -30,7 +30,7 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 100
+n_files = 300
 first_file = 101
 n_bins = 25
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
@@ -43,10 +43,10 @@ f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio 
 i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
-#    print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
+    print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
