@@ -14,12 +14,12 @@ w0phys = 0.17355
 cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "1664b693563x"
+ens_pre = "1632b6900x"
 
-x0_vec = ["180060"]
-x0_float_vec = [1.80060]
+x0_vec = ["180"]
+x0_float_vec = [1.80]
 
-ens_post="a"
+ens_post=""
 
 xf = "200"
 xf_float = 2.0
@@ -43,10 +43,10 @@ f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio 
 i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
-    print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
+    print('%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
