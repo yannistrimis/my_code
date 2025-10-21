@@ -14,15 +14,15 @@ w0phys = 0.17355
 cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "1632b6900x"
+ens_pre = "1664b7000x"
 
-x0_vec = ["180"]
-x0_float_vec = [1.80]
+x0_vec = ["3200", "3300", "3400", "3500", "3600", "3700"]
+x0_float_vec = [ 3.2, 3.3, 3.4, 3.5, 3.6, 3.7 ]
 
 ens_post=""
 
-xf = "200"
-xf_float = 2.0
+xf = "400"
+xf_float = 4.0
 
 flow_type = input()
 obs_type = input()
@@ -199,6 +199,9 @@ for i_x0 in range(len(x0_vec)):
     ratio_weights[i_x0] = 1.0 / jackknife_for_binned(ratios[:,i_x0])[1]
     ratio_errors[i_x0] = 1.0 / ratio_weights[i_x0]
 ### AT THIS STAGE WE HAVE RATIO POINTS AND WEIGHTS PER x0 PER BIN
+
+    ratio_single_ens = jackknife_for_binned(ratios[:,i_x0])
+    print('xi_0 = %.4f    w_0s/w_0t = %.6f +- %.6f'%(x0_float_vec[i_x0], ratio_single_ens[0], ratio_single_ens[1]))
 
 if check_single_ens == 'yes' :
     w0_single_ens = np.zeros(2)
