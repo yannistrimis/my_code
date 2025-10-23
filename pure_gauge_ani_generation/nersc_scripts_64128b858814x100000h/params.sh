@@ -50,7 +50,7 @@ executable="su3_hmc_symzk0_a_dbl_crayintel_20250501"
 # executable="su3_hmd_symzk0_a_dbl_crayintel_20250502"
 
 sbatch_time="20:00:00"
-sbatch_nodes="4"
+sbatch_nodes="2"
 sbatch_ntasks="256"
 sbatch_jobname="hmcxg1"
 
