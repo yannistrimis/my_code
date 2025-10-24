@@ -5,7 +5,7 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="fnal"
-n_of_ens=3
+n_of_ens=1
 
 nx=16
 nt=64
@@ -16,8 +16,8 @@ beta_name="6747"
 xig=1.70
 xig_name="1700"
 
-xiq=1.70
-xiq_name="1700"
+xiq=2.30
+xiq_name="2300"
 
 dyn_mass_1=0.010
 dyn_mass_1_name="010"
@@ -26,21 +26,21 @@ dyn_mass_2=0.050
 dyn_mass_2_name="050"
 
 warms=0
-trajecs=100
+trajecs=5
 traj_between_meas=1
-microcanonical_time_step_arr=(0.041666666666666664 0.038461538461538464 0.03571428571428571)
-steps_per_trajectory_arr=(24 26 28)
+microcanonical_time_step_arr=(0.041666666666666664)
+steps_per_trajectory_arr=(24)
 rationals_file="rationals.m010m050"
 
-stream_arr=("a" "b" "c")
+stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("5m1717a" "5m1717b" "5m1717c")
+sbatch_jobname_arr=("5m1723a")
 
-n_of_sub=1
-n_of_lat=1
+n_of_sub=5
+n_of_lat=1000
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
