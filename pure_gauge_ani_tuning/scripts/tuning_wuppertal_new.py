@@ -11,18 +11,18 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/home/trimis/outputs'
+cur_dir = '/home/trimis/fnal/all/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "1664b7000x"
+ens_pre = "1632f21b6396m014m070xig"
 
-x0_vec = ["3200", "3300", "3400", "3500", "3600", "3700"]
-x0_float_vec = [ 3.2, 3.3, 3.4, 3.5, 3.6, 3.7 ]
+x0_vec = ["1000"]
+x0_float_vec = [ 1.0 ]
 
-ens_post=""
+ens_post="xiq1000a"
 
-xf = "400"
-xf_float = 4.0
+xf = "100"
+xf_float = 1.0
 
 flow_type = input()
 obs_type = input()
@@ -30,7 +30,7 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 300
+n_files = 700
 first_file = 101
 n_bins = 25
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
@@ -38,15 +38,15 @@ i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
 f_write.write( '#tau #Et #Et_err #Es #Es_err #dEt #dEt_err #dEs #dEs_err #ratio #ratio_err\n' )
 
-#print("data from:")
+print( "observable: %s	data from:"%(obs_type) )
 
 i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
-    print('%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
+    print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
@@ -200,8 +200,11 @@ for i_x0 in range(len(x0_vec)):
     ratio_errors[i_x0] = 1.0 / ratio_weights[i_x0]
 ### AT THIS STAGE WE HAVE RATIO POINTS AND WEIGHTS PER x0 PER BIN
 
-    ratio_single_ens = jackknife_for_binned(ratios[:,i_x0])
-    print('xi_0 = %.4f    w_0s/w_0t = %.6f +- %.6f'%(x0_float_vec[i_x0], ratio_single_ens[0], ratio_single_ens[1]))
+
+## The next two lines should be uncommented if one needs w_0 or ratio per x0.
+## The first tuning stage plot in the aHISQ paper needed that, for example.
+#    ratio_single_ens = jackknife_for_binned(ratios[:,i_x0])
+#    print('xi_0 = %.4f    w_0s/w_0t = %.6f +- %.6f'%(x0_float_vec[i_x0], ratio_single_ens[0], ratio_single_ens[1]))
 
 if check_single_ens == 'yes' :
     w0_single_ens = np.zeros(2)
