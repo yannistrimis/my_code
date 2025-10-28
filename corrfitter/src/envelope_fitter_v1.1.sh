@@ -4,18 +4,18 @@ ens_name="1632b684652x107865a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_ij"
+taste="PION_s"
 
 xq="1080"
 mass="0.01497"
 
 mom="p000"
 
-fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
-dir=${fitdir} # CMSE
+# fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
+# dir=${fitdir} # CMSE
 
-# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
-# dir=${fitdir} # LAPTOP
+fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
+dir=${fitdir} # LAPTOP
 
 tdatamin=0
 tdatamax=16
@@ -23,8 +23,8 @@ tstep=1
 tp=32
 n_states=1
 m_states=1
-sn="1.0"
-so="1.0"
+sn="-1.0"
+so="-1.0"
 binsize=1
 
 correlated="corr"
