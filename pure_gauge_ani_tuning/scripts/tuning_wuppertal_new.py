@@ -11,18 +11,18 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-cur_dir = '/home/trimis/fnal/all/outputs'
+cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "1632f21b6396m014m070xig"
+ens_pre = "1664b6900x"
 
-x0_vec = ["1000"]
-x0_float_vec = [ 1.0 ]
+x0_vec = ["3000", "3100", "3200", "3300", "3400", "3500", "3600", "3700", "3800", "3900"]
+x0_float_vec = [ 3.000, 3.100, 3.200, 3.300, 3.400, 3.500, 3.600, 3.700, 3.800, 3.900 ]
 
-ens_post="xiq1000a"
+ens_post=""
 
-xf = "100"
-xf_float = 1.0
+xf = "400"
+xf_float = 4.0
 
 flow_type = input()
 obs_type = input()
@@ -30,7 +30,7 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 700
+n_files = 200
 first_file = 101
 n_bins = 25
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
@@ -46,7 +46,7 @@ for x0 in x0_vec :
     print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
     for i_file in range(first_file,n_files+first_file):
         i = i_file - first_file
-        f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
+        f_read = open( '%s/l%s%s%sa/%sflow%s%s%sxf%sa_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
         if i_file == first_file and i_x0 == 0 : ### WE DECLARE THE ARRAYS ONLY ONCE
@@ -203,8 +203,8 @@ for i_x0 in range(len(x0_vec)):
 
 ## The next two lines should be uncommented if one needs w_0 or ratio per x0.
 ## The first tuning stage plot in the aHISQ paper needed that, for example.
-#    ratio_single_ens = jackknife_for_binned(ratios[:,i_x0])
-#    print('xi_0 = %.4f    w_0s/w_0t = %.6f +- %.6f'%(x0_float_vec[i_x0], ratio_single_ens[0], ratio_single_ens[1]))
+    ratio_single_ens = jackknife_for_binned(ratios[:,i_x0])
+    print('xi_0 = %.4f    w_0s/w_0t = %.6f +- %.6f'%(x0_float_vec[i_x0], ratio_single_ens[0], ratio_single_ens[1]))
 
 if check_single_ens == 'yes' :
     w0_single_ens = np.zeros(2)
