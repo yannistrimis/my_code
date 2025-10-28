@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ens_name="1648b694635x139939a"
+ens_name="1632b684652x107865a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_s"
+taste="PION_ij"
 
-xq="14972"
-mass="0.01494"
+xq="1080"
+mass="0.01497"
 
 mom="p000"
 
@@ -18,25 +18,25 @@ dir=${fitdir} # CMSE
 # dir=${fitdir} # LAPTOP
 
 tdatamin=0
-tdatamax=24
+tdatamax=16
 tstep=1
-tp=48
+tp=32
 n_states=1
 m_states=1
 sn="1.0"
-so="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
 priors="no_priors"
 
 tmin_min=0
-tmin_max=20
+tmin_max=12
 tmin_step=1
 
-tmax_min=24
-tmax_max=24
-tmax_step=2
+tmax_min=16
+tmax_max=16
+tmax_step=1
 
 tmin_one=8
 tmax_one=16
