@@ -26,19 +26,13 @@ n_sources=2
 source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
-nmasses=3
-mass1=0.069
-mass2=0.073
-mass3=0.077
+nmasses=1
+mass1=0.01521
 
-nxq=3
-xq1=1.12
-xq2=1.16
-xq3=1.20
+nxq=1
+xq1=1.195
 
-xq1_name="1120"
-xq2_name="1160"
-xq3_name="1200"
+xq1_name="1195"
 
 
 action="hisq"
@@ -46,17 +40,17 @@ err=1e-6
 max_cg_iterations=300
 precision=2
 
-sbatch_time="10:00:00"
+sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="12tun"
+sbatch_jobname="12nlpi"
 
-prefix="hisqtun"
-build_prefix="tun"
+prefix="hisqnlpi"
+build_prefix="nlpi"
 
 n_of_sub=4
-n_of_lat=500
+n_of_lat=1000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 

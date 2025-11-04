@@ -10,32 +10,32 @@ n_of_ens=1
 nx=16
 nt=12
 
-beta=5.3
-beta_name="5300"
+beta=5.29
+beta_name="5290"
 
-xig=3.0
-xig_name="30"
+xig=3.4
+xig_name="34"
 
-xiq=3.0
-xiq_name="30"
+xiq=3.4
+xiq_name="34"
 
-dyn_mass=0.024
-dyn_mass_name="024"
+dyn_mass=0.02210
+dyn_mass_name="02210"
 
 
 warms=0
 trajecs=100
 traj_between_meas=1
-microcanonical_time_step_arr=(0.03846)
-steps_per_trajectory_arr=(26)
-rationals_file="rationals.m024"
+microcanonical_time_step_arr=(0.045454545)
+steps_per_trajectory_arr=(22)
+rationals_file="rationals.m02210"
 
 stream_arr=("a")
 
 sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("pbp")
+sbatch_jobname_arr=("run4")
 
 n_of_sub=1
 n_of_lat=1
