@@ -50,7 +50,7 @@ submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subgenl2040b7
 executable="su3_ora_symzk0_a_dbl_crayintel_20250404"
 
 sbatch_time="20:00:00"
-sbatch_nodes="1"
-sbatch_ntasks="128"
+sbatch_nodes="2"
+sbatch_ntasks="250"
 sbatch_jobname="184b72"
 
