@@ -5,19 +5,19 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="nersc"
-n_of_ens=9
+n_of_ens=10
 
-nx=16
-nt=32
+nx=20
+nt=40
 
-beta_name="7000"
-xi_0_name_arr=("178" "180" "182" "184" "186" "188" "190" "192" "194")
+beta_name="7200"
+xi_0_name_arr=("176" "178" "180" "182" "184" "186" "188" "190" "192" "194")
 stream="a"
 
 xi_f=2.0
 xi_f_name="200"
 
-flow_action="zeuthen"
+flow_action="symanzik"
 exp_order="16"
 dt="0.015625"
 stoptime="4.0" # CAREFUL!!!
@@ -26,7 +26,7 @@ sbatch_time="20:00:00"
 sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=256 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("7z178" "7z180" "7z182" "7z184" "7z186" "7z188" "7z190" "7z192" "7z194")
+sbatch_jobname_arr=("72s176" "72s178" "72s180" "72s182" "72s184" "72s186" "72s188" "72s190" "72s192" "72s194")
 
 n_of_sub=1
 n_of_lat=500
