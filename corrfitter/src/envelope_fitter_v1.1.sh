@@ -4,7 +4,7 @@ ens_name="1648b694635x139939a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_s"
+taste="PION_5"
 
 xq="14972"
 mass="0.01494"
@@ -21,9 +21,9 @@ tdatamin=0
 tdatamax=24
 tstep=1
 tp=48
-n_states=1
-m_states=1
-sn="-1.0"
+n_states=2
+m_states=0
+sn="1.0"
 so="-1.0"
 binsize=1
 
