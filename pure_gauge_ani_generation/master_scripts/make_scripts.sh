@@ -7,14 +7,14 @@
 cluster="nersc"
 n_of_ens=10
 
-nx=20
-nt=40
+nx=16
+nt=64
 
-beta=7.200
-beta_name="7200"
+beta=6.900
+beta_name="6900"
 
-xi_0_arr=(1.76 1.78 1.80 1.82 1.84 1.86 1.88 1.90 1.92 1.94)
-xi_0_name_arr=("176" "178" "180" "182" "184" "186" "188" "190" "192" "194")
+xi_0_arr=(3.0 3.1 3.2 3.3 3.4 3.5 3.6 3.7 3.8 3.9)
+xi_0_name_arr=("3000" "3100" "3200" "3300" "3400" "3500" "3600" "3700" "3800" "3900")
 
 stream="a"
 
@@ -22,10 +22,10 @@ sbatch_time="20:00:00"
 sbatch_nodes=1
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("178b72" "180b72" "182b72" "184b72" "186b72" "188b72" "190b72" "192b72" "194b72")
+sbatch_jobname_arr=("g3000" "g3100" "g3200" "g3300" "g3400" "g3500" "g3600" "g3700" "g3800" "g3900")
 
-n_of_sub=2
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=600
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
