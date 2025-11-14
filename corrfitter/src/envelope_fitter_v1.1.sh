@@ -28,13 +28,13 @@ so="-1.0"
 binsize=1
 
 correlated="corr"
-priors="no_priors"
+priors="yes_priors"
 
-tmin_min=0
-tmin_max=20
+tmin_min=5
+tmin_max=24
 tmin_step=1
 
-tmax_min=24
+tmax_min=10
 tmax_max=24
 tmax_step=1
 
