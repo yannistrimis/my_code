@@ -14,10 +14,10 @@ w0phys = 0.17355
 cur_dir = '/home/trimis/outputs'
 write_dir = '/home/trimis/flow_data'
 
-ens_pre = "1664b693563x"
+ens_pre = "2448b7300x"
 
-x0_vec = ["180060"]
-x0_float_vec = [1.80060]
+x0_vec = ["1760", "1780", "1800", "1820", "1840", "1860", "1880", "1900", "1920"]
+x0_float_vec = [1.76, 1.78, 1.80, 1.82, 1.84, 1.86, 1.88, 1.90, 1.92]
 
 ens_post="a"
 
@@ -30,7 +30,7 @@ check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
 dt = '0.015625'
-n_files = 300
+n_files = 400
 first_file = 101
 n_bins = 25
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
