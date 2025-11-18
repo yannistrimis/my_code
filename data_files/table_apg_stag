@@ -1,28 +1,38 @@
 Table for measurements with unimproved (naive) staggered fermions on anisotropic pure gauge ensembles.
 
 Notes:
-1.Notation: xi0 - bare gauge anisotropy, xiT - target renormalized anisotropy, xiq0 - bare fermion anisotropy, xiq - renormalized fermion anisotropy (as measured from ???explain???), ms - strange quark mass, Mss - eta_ss mass. The mass quantities are in lattice units. a0s - spatial lattice spacing in fermi.
-2.Nspec - number of spectrum measurements. If non-zero momenta are measured, indicated as e.g., 300/300/0 for [0,0,0], [1,0,0] and [1,1,0] units of momenta, respectively.
+1.Notation: xi0 - bare gauge anisotropy, xiT - target renormalized anisotropy, xiq0 - bare fermion anisotropy, xiq - renormalized fermion anisotropy (as measured from fit to the dispersion relation), 
+ms - strange quark mass, Mss - eta_ss mass. The mass quantities are in temporal lattice units. That is, M_phys = M_table * xiT * 197/a0s, where a0s is the spatial lattice spacing in fermi.
+2.Nspec - number of spectrum measurements. If non-zero momenta are measured, indicated as e.g., 300* for [0,0,0], [1,0,0] and [1,1,0] units of momenta, respectively.
 3.Corner wall source is used for all tuning measurements.
 TODO: update below
 2) For most hisq cases xiq tuning was done separately from ms tuning. For naive the two were done simultaneously.
 3) If there are several 3-momenta or several ms values per ensemble, these are in the same output file. But different xiq are in different output files.
 
-beta      xi0      xiT  Ns  Nt   a0s     xiq0    ms       Nspec   xiq     dxiq     Mss     dMss      tape               Naming
-6.81823   1        1    16  32   ?.???   1       0.03     601                                        TODO: to NERSC
-                   1    16  32   ?.???   1       0.05     601                  "specnaivtun"
-                   1    16  32   ?.???   1       0.07     601                  "specnaivtun"
-                   1    16  32   ?.???   1       0.09     601                  "specnaivtun"
-                                                                               "specnaivtun"
 
-6.84652   1.07865  1.1  16  32   -         -        -                        1.000      0.06      400/400/400                LQ ("spechisqtun")
-                                                                             1.050      0.06      400/400/400                LQ ("spechisqtun")
-                                                                             1.100      0.06      400/400/400                LQ ("spechisqtun")
-                                                                             1.150      0.06      400/400/400                LQ ("spechisqtun")
-                                                                             1.080      0.04      400/0/0                    LQ ("spechisqstr")
-                                                                             1.080      0.06      400/0/0                    LQ ("spechisqstr")
-                                                                             1.080      0.08      400/0/0                    LQ ("spechisqstr")
-                                                                             1.080      0.10      400/0/0                    LQ ("spechisqstr")
+beta      xi0      xiT  Ns  Nt   a0s     xiq0    ms       Nspec    xiq     dxiq     Mss        dMss        tape             Naming
+6.81823   1        1    16  32   ?.???   1       0.03     601      1       0        0.474418   0.000244    TODO: to NERSC   "specnaivtun"
+6.81823   1        1    16  32   ?.???   1       0.05     601      1       0        0.600481   0.000234    TODO: to NERSC   "specnaivtun" 
+6.81823   1        1    16  32   ?.???   1       0.07     601      1       0        0.699719   0.000203    TODO: to NERSC   "specnaivtun"
+6.81823   1        1    16  32   ?.???   1       0.09     601      1       0        0.783438   0.000179    TODO: to NERSC   "specnaivtun"
+                   Note: Prediction for ms: 0.04273                                                            
+
+6.87348   1.15792  1.2  16  32   ?.???   1       0.02     929*     1.14764 0.01055  0.358196   0.000442    TODO: to NERSC   "specnaivtun"
+6.87348   1.15792  1.2  16  32   ?.???   1.2     0.02     929*     1.30404 0.00650  0.315668   0.000414    TODO: to NERSC   "specnaivtun"
+6.87348   1.15792  1.2  16  32   ?.???   1.4     0.02     929*     1.46997 0.00447  0.283860   0.000387    TODO: to NERSC   "specnaivtun"
+                   Note: Mss, xiq0 = 0.34246, 1.06833
+
+6.87348   1.15792  1.2  16  32   ?.???   1       0.04     929*     1.15032 0.00329  0.498545   0.000247    TODO: to NERSC   "specnaivtun"
+6.87348   1.15792  1.2  16  32   ?.???   1.2     0.04     929*     1.32633 0.00352  0.436800   0.000257    TODO: to NERSC   "specnaivtun"
+6.87348   1.15792  1.2  16  32   ?.???   1.4     0.04     929*     1.50293 0.00532  0.390631   0.000234    TODO: to NERSC   "specnaivtun"
+                   Note: Mss, xiq0 = 0.47952, 1.05652 
+
+6.87348   1.15792  1.2  16  32   ?.???   1       0.06     929*     1.16221 0.00308  0.603992   0.000218    TODO: to NERSC   "specnaivtun"
+6.87348   1.15792  1.2  16  32   ?.???   1.2     0.06     929*     1.34660 0.00262  0.526787   0.000210    TODO: to NERSC   "specnaivtun"
+6.87348   1.15792  1.2  16  32   ?.???   1.4     0.06     929*     1.53153 0.00380  0.468990   0.000178    TODO: to NERSC   "specnaivtun"
+                   Note: Mss, xiq0 = 0.58657, 1.04104
+                   Note: Prediction for ms, xiq0 = 0.03740, 1.05826
+
 
 
 
