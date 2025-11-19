@@ -5,7 +5,7 @@ cluster=nersc
 
 first_lattice=101
 
-n_of_lat=500
+n_of_lat=2
 n_of_sub=1
 
 nx=16
@@ -32,7 +32,7 @@ submit_dir="/global/cfs/projectdirs/m1416/yannis_puregauge/submits/subzflowl1664
 
 executable="region_flow_bbb_a_dbl_crayintel_20251110"
 
-sbatch_time="20:00:00"
+sbatch_time="02:00:00"
 sbatch_nodes="2"
 sbatch_ntasks="256"
 sbatch_jobname="z3500"
