@@ -5,7 +5,7 @@ cluster=fnal
 
 init_seed=1158
 n_of_lat=600
-n_of_sub=4
+n_of_sub=8
 
 nx=16
 ny=16
@@ -50,8 +50,8 @@ submit_dir="/project/ahisq/yannis_puregauge/submits/subgenl16128b719156x348992zl
 executable="su3_ora_symzk0_a_dbl_gcc12openmpi4_20231201"
 
 sbatch_time="20:00:00"
-sbatch_nodes="4"
-sbatch_ntasks="128"
+sbatch_nodes="7"
+sbatch_ntasks="256"
 sbatch_jobname="4gzl"
 #sbatch_module1="gcc/12"
 #sbatch_module2="openmpi/4"
