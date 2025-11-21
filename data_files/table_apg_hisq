@@ -1,0 +1,203 @@
+Table for measurements with unimproved (naive) staggered fermions on anisotropic pure gauge ensembles.
+
+Notes:
+1.Notation: xi0 - bare gauge anisotropy, xiT - target renormalized anisotropy, xiq0 - bare fermion anisotropy, xiq - renormalized fermion anisotropy (as measured from fit to the dispersion relation), 
+ms - strange quark mass, Mss - eta_ss mass. The mass quantities are in temporal lattice units. That is, M_phys = M_table * xiT * 197/a0s, where a0s is the spatial lattice spacing in fermi.
+2.Nspec - number of spectrum measurements. If non-zero momenta are measured, indicated as e.g., 300* for [0,0,0], [1,0,0] and [1,1,0] units of momenta, respectively.
+3.Corner wall source is used for all tuning measurements.
+TODO: update below
+2) For most hisq cases xiq tuning was done separately from ms tuning. For naive the two were done simultaneously.
+3) If there are several 3-momenta or several ms values per ensemble, these are in the same output file. But different xiq are in different output files.
+
+
+beta      xi0      xiT  Ns  Nt   a0s     xiq0    ms       Nspec    xiq     dxiq     Mss        dMss        tape             Naming
+6.81823   1        1    16  32   ?.???   1       0.03     500      1       0                                                "specstr"          
+6.81823   1        1    16  32   ?.???   1       0.05     500      1       0                                                "specstr"
+6.81823   1        1    16  32   ?.???   1       0.07     500      1       0                                                "specstr"
+6.81823   1        1    16  32   ?.???   1       0.09     500      1       0                                                "specstr"
+6.81823   1        1    16  32   ?.???   1       0.11     500      1       0                                                "specstr"
+
+
+6.84652   1.07865  1.1  16  32   ?.???
+
+6.87348   1.15792  1.2  16  32   ?.???
+
+6.94635   1.39939  1.5  16  48   ?.???   
+
+7.04115   1.81411  2.0  16  64   ?.???   
+
+7.19156   3.48992  4.0  16  128  ?.???
+
+7.26025   6.89327  8.0  20  320  ?.???   7.6     0.07     305*                                                               "spectun"
+7.26025   6.89327  8.0  20  320  ?.???   7.8     0.07     305*                                                               "spectun"
+7.26025   6.89327  8.0  20  320  ?.???   8.0     0.07     305*                                                               "spectun"
+7.26025   6.89327  8.0  20  320  ?.???   8.2     0.07     305*                                                               "spectun"
+
+7.26025   6.89327  8.0  20  320  ?.???   7.87    0.05     305                                                                "specstr"
+7.26025   6.89327  8.0  20  320  ?.???   7.87    0.06     305                                                                "specstr"
+7.26025   6.89327  8.0  20  320  ?.???   7.87    0.07     305                                                                "specstr"
+7.26025   6.89327  8.0  20  320  ?.???   7.87    0.08     305                                                                "specstr"
+
+
+
+1. PURE GAUGE ANI ENSEMBLES AT 0.166 and 0.186 fm
+
+1.1 l1632b681823x100000a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b681823x100000a/wflow1632b681823x100000xf100a_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.041473 +- 0.000551    w_0s/w_0t = 0.999691 +- 0.000312
+SPATIAL LATTICE SPACING:
+a_s = 0.166639 +- 0.000088
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.2 l1632b671789x100000a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b671789x100000a/wflow1632b671789x100000xf100a_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 0.931142 +- 0.000389    w_0s/w_0t = 1.000341 +- 0.000198
+SPATIAL LATTICE SPACING:
+a_s = 0.186384 +- 0.000078
+
+QUARKS: N/A
+
+1.3 l1632b684652x107865a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b684652x107865a/wflow1632b684652x107865xf110a_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.043927 +- 0.000872    w_0s/w_0t = 0.999442 +- 0.000260
+SPATIAL LATTICE SPACING:
+a_s = 0.166247 +- 0.000139
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.4 l1632b687348x115792a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b687348x115792a/wflow1632b687348x115792a_xf120_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.044396 +- 0.000505    w_0s/w_0t = 0.999407 +- 0.000328
+SPATIAL LATTICE SPACING:
+a_s = 0.166173 +- 0.000080
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.5 l1648b694635x139939a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1648b694635x139939a/wflow1648b694635x139939a_xf150_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.040904 +- 0.000555    w_0s/w_0t = 1.000797 +- 0.000430
+SPATIAL LATTICE SPACING:
+a_s = 0.166730 +- 0.000089
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.6 l1664b704115x181411a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1664b704115x181411a/wflow1664b704115x181411a_xf200_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.041307 +- 0.000722    w_0s/w_0t = 0.999701 +- 0.000422
+SPATIAL LATTICE SPACING:
+a_s = 0.166666 +- 0.000116
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.7 l1664b693563x180060a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1664b693563x180060a/wflow1664b693563x180060a_xf200_dt0.015625
+xi_0 = 1.8006    w_0s/w_0t = 0.999599 +- 0.000354
+FOR THIS ENSEMBLE:
+w_0s = 0.931824 +- 0.000635    w_0s/w_0t = 0.999599 +- 0.000354
+SPATIAL LATTICE SPACING:
+a_s = 0.186248 +- 0.000127
+
+QUARKS: N/A
+
+1.8 l16128b719156x348992a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l16128b719156x348992a/wflow16128b719156x348992a_xf400_dt0.0078125
+FOR THIS ENSEMBLE:
+w_0s = 1.041900 +- 0.000597    w_0s/w_0t = 1.000801 +- 0.000277
+SPATIAL LATTICE SPACING:
+a_s = 0.166571 +- 0.000095
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.9 l20320b726025x689327a LQ-/lustre2/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l20320b726025x689327a/wflow20320b726025x689327a_xf800_dt0.0078125
+FOR THIS ENSEMBLE:
+w_0s = 1.038610 +- 0.000845    w_0s/w_0t = 0.998927 +- 0.000289
+SPATIAL LATTICE SPACING:
+a_s = 0.167098 +- 0.000136
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.10 l20160b7147x682a LQ-/lustre2/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l20160b7147x682a/wflow20160b7147x682a_xf800_dt0.0078125
+FOR THIS ENSEMBLE:
+w_0s = 0.925460 +- 0.001049    w_0s/w_0t = 1.000080 +- 0.000444
+SPATIAL LATTICE SPACING:
+a_s = 0.187528 +- 0.000213
+
+QUARKS: N/A
+
+
+2. PURE GAUGE ANI ENSEMBLES FOR COMPARISON AGAINST NAMEKAWA ET AL
+
+2.1 l168b5800x167401280p LQ-/lustre2/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+2.2 l2040b651881026x175986308p LQ-/lustre2/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+
+3. PURE GAUGE ANI ENSEMBLES FOR COMPARISON AGAINST NOMURA ET AL
+
+3.1 l1296b575x3136p LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+
+4. PURE GAUGE ANI ENSEMBLES FOR SCHEMES AND PADE AT XI=2 AND XI=4
+
+4.1 l1632b6900x[178-194]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.2 l1632b7000x[1780-1940]a LOST, LQ-ahisq/yannis_puregauge/outputs/
+
+4.3 l1632b7100x[178-194]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.4 l2040b7200x[1760-1940]a LOST, iCER-/mnt/home/trimisio/outputs
+
+4.5 l2448b7300x[1760-1920]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.6 l1664b6900x[3000-3900]a LOST, iCER-/mnt/home/trimisio/outputs *regenerated for some x on LQ-/lustre2
+
+4.7 l1664b7000x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.8 l1664b7100x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.9 l1664b7200x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.10 l1664b7300x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+
+5. PURE GAUGE ANI HMC ENSEMBLES FOR TOPOLOGY
+
+5.1 l64128b858814x100000h PERLMUTTER-/global/cfs/projectdirs/m1416/yannis_puregauge/[lattices,outputs]
+
+5.2 l16128b719156x348992h PERLMUTTER-/global/cfs/projectdirs/m1416/yannis_puregauge/[lattices,outputs]
+
+
+6. 2-FLAVOR ANI NAIVE DYN ENSEMBLES FOR COMPARISON AGAINST LEVKOVA ET AL
+
+6.1 l1624f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+6.2 l1612f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+ 
+6.3 l168f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+6.4 l1632f2b5425m0375xig15xiq15a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+NLPI: LQ-/project/ahisq/yannis_dyn/outputs/spec
+
+6.4 l1664f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+NLPI: LQ-/project/ahisq/yannis_dyn/outputs/spec
