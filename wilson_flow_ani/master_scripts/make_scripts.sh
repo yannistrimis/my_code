@@ -5,30 +5,30 @@
 # FOR THE CHANGING PARAMETERS.
 
 cluster="nersc"
-n_of_ens=10
+n_of_ens=5
 
-nx=16
-nt=64
+nx=20
+nt=160
 
-beta_name="6900"
-xi_0_name_arr=("3000" "3100" "3200" "3300" "3400" "3500" "3600" "3700" "3800" "3900")
+beta_name="7433"
+xi_0_name_arr=("68500" "68570" "69000" "70000" "71000")
 stream="a"
 
-xi_f=4.0
-xi_f_name="400"
+xi_f=8.0
+xi_f_name="800"
 
-flow_action="zeuthen"
+flow_action="wilson"
 exp_order="16"
-dt="0.015625"
-stoptime="4.0" # CAREFUL!!!
+dt="0.0078125"
+stoptime="6.0" # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=256 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("z3000" "z3100" "z3200" "z3300" "z3400" "z3500" "z3600" "z3700" "z3800" "z3900")
+sbatch_jobname_arr=("w68500" "w68570" "w69000" "w70000" "w71000")
 
-n_of_sub=1
+n_of_sub=4
 n_of_lat=500
 first_lattice=101
 
