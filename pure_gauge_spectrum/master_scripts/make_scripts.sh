@@ -9,30 +9,42 @@ n_of_ens=1
 
 nx=16
 ny=16
-nz=16
-nt=32
+nz=32
+nt=64
 
 set_i_lat=101
 set_seed=78324
 
-beta_name="687348"
-xi_0_name="115792"
-stream="a"
+beta_name="704115"
+xi_0_name="181411"
+stream="zl"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=16 # CHANGE ACCORDING TO nt
-source_prec=10 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=14 # CHANGE ACCORDING TO nt
 
-nmasses=1
-mass1=0.01521
+nmasses=5
+mass1=0.0146
+mass2=0.0073
+mass3=0.0292
+mass4=0.0730
+mass5=0.1022
 
-nxq=1
-xq1=1.195
+nxq=5
+xq1=1.980
+xq2=1.60
+xq3=1.80
+xq4=2.00
+xq5=2.20
 
-xq1_name="1195"
+xq1_name="1980"
+xq2_name="1600"
+xq3_name="1800"
+xq4_name="2000"
+xq5_name="2200"
 
 
 action="hisq"
@@ -44,12 +56,12 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="12nlpi"
+sbatch_jobname="hisqt"
 
-prefix="hisqnlpi"
-build_prefix="nlpi"
+prefix="hisqtun"
+build_prefix="tun"
 
-n_of_sub=4
+n_of_sub=1
 n_of_lat=1000
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
@@ -142,7 +154,7 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/yannis_puregauge/lattices/${lat_name}"
+directory="/lustre2/ahisq/yannis_puregauge/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec/${lat_name}"
 path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_puregauge/runs/runspec${prefix}${lat_name}"
