@@ -17,16 +17,16 @@ stream="a"
 xi_f=8.0
 xi_f_name="800"
 
-flow_action="wilson"
+flow_action="zeuthen"
 exp_order="16"
 dt="0.0078125"
-stoptime="6.0" # CAREFUL!!!
+stoptime="5.0" # CAREFUL!!!
 
 sbatch_time="20:00:00"
 sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=256 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("w68500" "w68570" "w69000" "w70000" "w71000")
+sbatch_jobname_arr=("zf68500" "zf68570" "zf69000" "zf70000" "zf71000")
 
 n_of_sub=4
 n_of_lat=500
