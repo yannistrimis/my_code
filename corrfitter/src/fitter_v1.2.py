@@ -22,8 +22,8 @@ def make_prior(N,M):
 
 #    prior['log(an)'] = gv.log(gv.gvar(['0.9(10000.0)', '0.1(10000.0)']))
 #    prior['log(dEn)'] = gv.log(gv.gvar(['0.2(10000.0)', '0.8(10000.0)']))
-    prior['an'] = gv.gvar(['1.1958(0.01)', '-0.15(10000.0)'])
-    prior['log(dEn)'] = gv.log(gv.gvar(['0.169314(0.01)', '0.10(10000.0)']))
+    prior['an'] = gv.gvar(['0.90(10000.0)', '-0.5(10000.0)'])
+    prior['log(dEn)'] = gv.log(gv.gvar(['0.12(10000.0)', '0.20(10000.0)']))
 
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.30(0.1)', '1.0(0.4)'])) #PION_0
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.66(10000.0)', '0.2(0.1)']))

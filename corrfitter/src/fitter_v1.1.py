@@ -21,9 +21,9 @@ def make_prior(N,M):
     prior = collections.OrderedDict()
 
 #    prior['log(an)'] = gv.log(gv.gvar(['0.9(10000.0)', '0.1(10000.0)']))
-#    prior['log(dEn)'] = gv.log(gv.gvar(['0.2(10000.0)', '0.8(10000.0)']))
-    prior['log(an)'] = gv.log(gv.gvar(N*['0.5(10000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.5(10000.0)']))
+#    prior['log(dEn)'] = gv.log(gv.gvar(['0.126(10000.0)', '0.3(0.1)']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['0.99(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.99(10000.0)']))
 
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.30(0.1)', '1.0(0.4)'])) #PION_0
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.66(10000.0)', '0.2(0.1)']))
@@ -52,6 +52,7 @@ def main():
     correlated = input()
     priors = input()
     fittype = input()
+    opp = input()
 
     tmin = int(str_tmin)
     tmax = int(str_tmax)
@@ -66,7 +67,7 @@ def main():
     my_tdata = range(tdatamin,tdatamax+1,tstep)
 
 
-    my_models = make_models(my_tdata,my_tfit,my_tp,str_sn,str_so)
+    my_models = make_models(my_tdata,my_tfit,my_tp,str_sn,str_so,opp)
     fitter = cf.CorrFitter(models=my_models)
 
     p0 = None
@@ -169,8 +170,8 @@ def main():
 def make_data(filename,str_bin):
     return gv.dataset.avg_data(cf.read_dataset(filename,binsize=int(str_bin)))
 
-def make_models(my_tdata,my_tfit,my_tp,str_sn,str_so):
-    return [cf.Corr2( datatag='PROP', tp=my_tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(float(str_sn),float(str_so)) )]
+def make_models(my_tdata,my_tfit,my_tp,str_sn,str_so,opp):
+    return [cf.Corr2( datatag='PROP', tp=my_tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(float(str_sn),float(str_so)), opp=opp )]
 
 
 def print_results(fit,N,M):
