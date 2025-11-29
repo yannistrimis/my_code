@@ -7,45 +7,32 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=16
-ny=16
-nz=32
-nt=64
+nx=20
+ny=20
+nz=20
+nt=320
 
-set_i_lat=101
-set_seed=78324
+set_i_lat=939
+set_seed=79309
 
-beta_name="704115"
-xi_0_name="181411"
-stream="zl"
+beta_name="726025"
+xi_0_name="689327"
+stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=32 # CHANGE ACCORDING TO nt
-source_prec=14 # CHANGE ACCORDING TO nt
+source_inc=160 # CHANGE ACCORDING TO nt
+source_prec=90 # CHANGE ACCORDING TO nt
 
-nmasses=5
-mass1=0.0146
-mass2=0.0073
-mass3=0.0292
-mass4=0.0730
-mass5=0.1022
+nmasses=1
+mass1=0.01416
 
-nxq=5
-xq1=1.980
-xq2=1.60
-xq3=1.80
-xq4=2.00
-xq5=2.20
+nxq=1
+xq1=7.87
 
-xq1_name="1980"
-xq2_name="1600"
-xq3_name="1800"
-xq4_name="2000"
-xq5_name="2200"
-
+xq1_name="7870"
 
 action="hisq"
 err=1e-6
@@ -56,10 +43,10 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="hisqt"
+sbatch_jobname="hisq8"
 
-prefix="hisqtun"
-build_prefix="tun"
+prefix="hisqnlpi"
+build_prefix="nlpi"
 
 n_of_sub=1
 n_of_lat=1000
