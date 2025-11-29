@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ens_name="1664b704115x181411a"
+ens_name="1648b694635x139939a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_i"
+taste="PION_s"
 
-xq="1980"
-mass="0.0146"
+xq="14972"
+mass="0.01494"
 
 mom="p000"
 
@@ -18,13 +18,13 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
 dir=${fitdir} # LAPTOP
 
 tdatamin=0
-tdatamax=32
+tdatamax=24
 tstep=1
-tp=64
-n_states=0
+tp=48
+n_states=2
 m_states=1
-sn="1.0"
-so="1.0"
+sn="-1.0"
+so="-1.0"
 binsize=1
 
 correlated="corr"
@@ -32,11 +32,11 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=29
+tmin_max=24
 tmin_step=1
 
-tmax_min=32
-tmax_max=32
+tmax_min=24
+tmax_max=24
 tmax_step=1
 
 tmin_one=20
