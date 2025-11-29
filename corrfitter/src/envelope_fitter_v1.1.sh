@@ -4,7 +4,7 @@ ens_name="1664b704115x181411a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_5"
+taste="PION_i"
 
 xq="1980"
 mass="0.0146"
@@ -21,26 +21,26 @@ tdatamin=0
 tdatamax=32
 tstep=1
 tp=64
-n_states=2
-m_states=0
+n_states=0
+m_states=1
 sn="1.0"
-so="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=2
-tmin_max=11
+tmin_min=0
+tmin_max=29
 tmin_step=1
 
 tmax_min=32
 tmax_max=32
-tmax_step=2
+tmax_step=1
 
-tmin_one=25
-tmax_one=32
+tmin_one=20
+tmax_one=21
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
@@ -59,7 +59,7 @@ fi
 
 for ((tmin=${tmin_min};tmin<=${tmin_max};tmin=${tmin}+${tmin_step}));do
 for ((tmax=${tmax_min};tmax<=${tmax_max};tmax=${tmax}+${tmax_step}));do
-
+echo ${tmin} ${tmax}
 
 python3 fitter_v1.1.py <<EOF >> ${fit_file}
 ${specdata_file}

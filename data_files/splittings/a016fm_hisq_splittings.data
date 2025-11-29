@@ -1,16 +1,14 @@
 
 # Relative signs for corrfitter:
 
-PION_5  (  1 ,  0 )	G5 x G5		No parity partner		MTC No. 2
-PION_05 ( -1 ,  1 )	G0G5 x G0G5	Parity partner: f_0(500)	MTC No. 1
-PION_i5 (  1 ,  0 )	G5 x GiG0	No parity partner		MTC No. 7
-PION_ij ( -1 ,  1 )	G0G5 x GiGj	Parity partner: a_0(980)	MTC No. 8
-PION_i0 (  0 ,  1 )	G5 x GiG0	No parity partner		MTC No. 14
-PION_i  (  1 ,  1 )	G0G5 x Gi	Parity partner: a_0(980)	MTC No. 13
-PION_0  (  0 , -1 )	G0 x G0		No parity partner		MTC No. 18
-PION_s  ( -1 , -1 )	G0G5 x 1	Parity partner: a_0(980)	MTC No. 17
-
-
+PION_5  (  1 ,  0 )	G5 x G5		No parity partner		MTC No. 2      *Secure with 2p0, opp signs
+PION_05 ( -1 ,  1 )	G0G5 x G0G5	Parity partner: f_0(500)	MTC No. 1      *Secure with 1p2, opp signs
+PION_i5 (  1 ,  0 )	G5 x GiG0	No parity partner		MTC No. 7      *Secure with 2p0, opp signs
+PION_ij ( -1 ,  1 )	G0G5 x GiGj	Parity partner: a_0(980)	MTC No. 8      *Secure with 1p1, 1p2, opp signs
+PION_i0 (  0 ,  1 )	G5 x GiG0	No parity partner		MTC No. 14     *Secure with 0p2, opp signs
+PION_i  (  1 ,  1 )	G0G5 x Gi	Parity partner: a_0(980)	MTC No. 13     *Secure with 1p1
+PION_0  (  0 , -1 )	G0 x G0		No parity partner		MTC No. 18     *Secure with 0p2, opp signs
+PION_s  ( -1 , -1 )	G0G5 x 1	Parity partner: a_0(980)	MTC No. 17     *Secure with 2p1, opp signs
 
 
 # xi_g = 1.0 HISQ - l1632b681823x100000a 
@@ -78,11 +76,15 @@ PION_s		13 24 0.68461449 8  0.70559616 an[0]: 0.2482 0.1045 En[0]: 0.431500 0.06
 
 # xi_g = 2.0 HISQ - l1664b704115x181411a
 
-PION_5          22 32 1.03646848 9 0.40754509 an[0]: 0.9185 0.0025 En[0]: 0.127545 0.000203
-PION_05
-PION_i5
-PION_ij
-PION_i0
-PION_i
-PION_0
-PION_s
+m_l = 0.0146
+
+#2000 configs
+
+PION_5          23 32 1.11318859 8  0.35032979 an[0]: 0.9194 0.0028 En[0]: 0.127608 0.000226
+PION_05         19 32 0.99435168 10 0.44546268 an[0]: 0.2543 0.1724 En[0]: 0.294810 0.079008 ao[0]: 0.1738 0.0006 Eo[0]: 0.128894 0.000262
+PION_i5         24 32 0.92142395 7  0.48829684 an[0]: 0.7039 0.0039 En[0]: 0.155837 0.000446
+PION_ij         17 32 1.01756424 14 0.43155669 ao[0]: 0.1771 0.0011 Eo[0]: 0.157190 0.000584
+PION_i0         22 32 1.02096623 9  0.42004151 ao[0]: 0.4551 0.0043 Eo[0]: 0.179089 0.000827
+PION_i          13 21 0.95550180 5  0.44363231 an[0]: 0.0916 0.0220 En[0]: 0.257164 0.038020 ao[0]: 0.1373 0.0012 Eo[0]: 0.178349 0.001111
+PION_0          7  32 1.04407663 22 0.40344307 ao[0]: 0.3576 0.0031 Eo[0]: 0.198701 0.000972 ao[1]: 0.1407 0.0686 Eo[1]: 0.539431 0.235005
+PION_s          11 30 1.05077911 16 0.39783158 an[0]: 0.1155 0.0146 En[0]: 0.262327 0.021899 ao[0]: 0.1289 0.0016 Eo[0]: 0.199925 0.001777

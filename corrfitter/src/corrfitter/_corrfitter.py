@@ -393,16 +393,15 @@ class Corr2(lsqfit.MultiFitterModel):
                         axis=1,
                         )
             elif self.opp == 'yes' :
-                
                 if tp_t is None:
                     sumdE = numpy.cumsum(p[dEi])
-                    if len(p[ai]>0) :
+                    if len(p[ai])>0 :
                         ans += ofaci * numpy.sum(
                             (p[ai] * p[bi])[None, 0]
                             * _gvar.exp(-t[:, None] * sumdE[None, 0]),
                             axis=1,
                             )
-                    if len(p[ai]>=2) :
+                    if len(p[ai])>1 :
                         ans -= ofaci * numpy.sum(
                             (p[ai] * p[bi])[None, 1]
                             * _gvar.exp(-t[:, None] * sumdE[None, 1]),
@@ -411,7 +410,7 @@ class Corr2(lsqfit.MultiFitterModel):
 
                 else:
                     sumdE = numpy.cumsum(p[dEi])
-                    if len(p[ai]>0) :
+                    if len(p[ai])>0 :
                         ans += ofaci * numpy.sum(
                             (p[ai] * p[bi])[None, 0] * (
                                 _gvar.exp(-t[:, None] * sumdE[None, 0])
@@ -419,7 +418,7 @@ class Corr2(lsqfit.MultiFitterModel):
                                 ),
                             axis=1,
                             )
-                    if len(p[ai]>=2) :
+                    if len(p[ai])>1 :
                         ans -= ofaci * numpy.sum(
                             (p[ai] * p[bi])[None, 1] * (
                                 _gvar.exp(-t[:, None] * sumdE[None, 1])
@@ -427,32 +426,6 @@ class Corr2(lsqfit.MultiFitterModel):
                                 ),
                             axis=1,
                             )
-                """
-                if tp_t is None:
-                    sumdE = numpy.cumsum(p[dEi])
-                    ans += ofaci * numpy.sum(
-                        (p[ai] * p[bi])[None, :]
-                        * _gvar.exp(-t[:, None] * sumdE[None, :]),
-                        axis=1,
-                        )
-                else:
-                    sumdE = numpy.cumsum(p[dEi])
-                    if ai == 'an' :
-                        ans += ofaci * numpy.sum(
-                            (p[ai] * p[bi])[None, 0] * (
-                                _gvar.exp(-t[:, None] * sumdE[None, 0])
-                                + pfac * _gvar.exp(-tp_t[:, None] * sumdE[None, 0])
-                                ),
-                            axis=1,
-                            )
-                        ans -= ofaci * numpy.sum(
-                            (p[ai] * p[bi])[None, 1] * (
-                                _gvar.exp(-t[:, None] * sumdE[None, 1])
-                                + pfac * _gvar.exp(-tp_t[:, None] * sumdE[None, 1])
-                                ),
-                            axis=1,
-                            )
-                """
         return ans
 
 
