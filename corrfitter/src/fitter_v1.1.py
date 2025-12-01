@@ -20,15 +20,15 @@ from python_funcs import *
 def make_prior(N,M):
     prior = collections.OrderedDict()
 
-#    prior['log(an)'] = gv.log(gv.gvar(['0.2537(10000.0)', '0.1(10000.0)']))
-#    prior['log(dEn)'] = gv.log(gv.gvar(['0.584122(10000.0)', '0.3(10000.0)']))
-    prior['log(an)'] = gv.log(gv.gvar(N*['0.2537(10000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.584122(10000.0)']))
+    prior['log(an)'] = gv.log(gv.gvar(['0.05(10000.0)', '0.15(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(['0.18(10000.0)', '0.2(10000.0)']))
+#    prior['log(an)'] = gv.log(gv.gvar(N*['0.4528(10000.0)']))
+#    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.063580(10000.0)']))
 
-    prior['log(ao)'] = gv.log(gv.gvar(['0.2577(10000.0)', '0.1(10000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(['0.371895(10000.0)', '0.3(10000.0)']))
-#    prior['log(ao)'] = gv.log(gv.gvar(M*['0.2577(10000.0)']))
-#    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.371895(10000.0)']))
+#    prior['log(ao)'] = gv.log(gv.gvar(['0.06(10000.0)', '0.1(10000.0)']))
+#    prior['log(dEo)'] = gv.log(gv.gvar(['0.100(10000.0)', '0.2(10000.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(M*['0.0670(10000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.1040(10000.0)']))
 
     return prior
 

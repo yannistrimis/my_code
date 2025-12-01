@@ -3,17 +3,17 @@ import numpy as np
 filename = input()
 
 tmin=0
-tmax=16
+tmax=64
 tstep=3
 
 confmin=0
-confmax=999
+confmax=1599
 confstep=1
 
 t_range = range(tmin+1,tmax+2,tstep) # +1 BECAUSE 0th ELEMENT IS "PROP"
 conf_range = range(confmin,confmax+1,confstep)
 
-temp_filename = filename + ".temp"
+temp_filename = filename + ".thin" + str(tstep)
 
 f_read = open(filename, "r")
 f_write = open(temp_filename, "w")
