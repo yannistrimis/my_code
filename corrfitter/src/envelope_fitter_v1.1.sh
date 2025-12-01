@@ -21,8 +21,8 @@ tdatamin=0
 tdatamax=16
 tstep=1
 tp=32
-n_states=2
-m_states=1
+n_states=1
+m_states=2
 sn="-1.0"
 so="-1.0"
 binsize=1
@@ -32,7 +32,7 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=12
+tmin_max=16
 tmin_step=1
 
 tmax_min=16
