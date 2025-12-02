@@ -43,7 +43,7 @@ tmax_step=2
 tmin_one=20
 tmax_one=21
 
-specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata.new"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
