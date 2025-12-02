@@ -1,3 +1,4 @@
+
 from __future__ import print_function   # makes this work for python2 and 3
 
 # RUN conda deactivate IF ON CMSE WORKSTATION
@@ -20,15 +21,15 @@ from python_funcs import *
 def make_prior(N,M):
     prior = collections.OrderedDict()
 
-#    prior['log(an)'] = gv.log(gv.gvar(['0.10(10000.0)', '0.18(10000.0)']))
-#    prior['log(dEn)'] = gv.log(gv.gvar(['0.16(10000.0)', '0.07(10000.0)']))
+#    prior['log(an)'] = gv.log(gv.gvar(['0.1581(10000.0)', '0.2(10000.0)']))
+#    prior['log(dEn)'] = gv.log(gv.gvar(['0.30(10000.0)', '0.2(10000.0)']))
     prior['log(an)'] = gv.log(gv.gvar(N*['0.12(10000.0)']))
     prior['log(dEn)'] = gv.log(gv.gvar(N*['0.20(10000.0)']))
 
-#    prior['log(ao)'] = gv.log(gv.gvar(['0.06(10000.0)', '0.05(10000.0)']))
-#    prior['log(dEo)'] = gv.log(gv.gvar(['0.100(10000.0)', '0.5(10000.0)']))
-    prior['log(ao)'] = gv.log(gv.gvar(M*['0.061(10000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.1002(10000.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(['0.1652(10000.0)', '0.1(10000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(['0.100(10000.0)', '0.2(10000.0)']))
+#    prior['log(ao)'] = gv.log(gv.gvar(M*['0.08(10000.0)']))
+#    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.08(10000.0)']))
 
     return prior
 

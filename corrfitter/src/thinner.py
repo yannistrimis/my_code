@@ -3,7 +3,7 @@ import numpy as np
 filename = input()
 
 tmin=0
-tmax=64
+tmax=63
 tstep=3
 
 confmin=0

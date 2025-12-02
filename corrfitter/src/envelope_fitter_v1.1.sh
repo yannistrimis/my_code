@@ -4,7 +4,7 @@ ens_name="16128b719156x348992a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_5"
+taste="PION_0"
 
 xq="4000"
 mass="0.01446"
@@ -22,7 +22,7 @@ tdatamax=64
 tstep=1
 tp=128
 n_states=1
-m_states=0
+m_states=2
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -37,10 +37,10 @@ tmin_step=1
 
 tmax_min=64
 tmax_max=64
-tmax_step=2
+tmax_step=1
 
-tmin_one=20
-tmax_one=21
+tmin_one=29
+tmax_one=59
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
