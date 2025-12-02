@@ -9,7 +9,7 @@ mas_len=${#masses[@]}
 prefix="hisqnlpi"
 
 xq_arr=("4000")
-sinks_arr=("PION_s" "PION_i5" "PION_i" "PION_s")
+sinks_arr=("PION_5") # "PION_i5" "PION_i" "PION_s")
 #sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
