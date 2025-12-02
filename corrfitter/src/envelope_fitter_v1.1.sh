@@ -19,10 +19,10 @@ dir=${fitdir} # CMSE
 # dir=${fitdir} # LAPTOP
 
 tdatamin=0
-tdatamax=633
-tstep=3
+tdatamax=64
+tstep=1
 tp=128
-n_states=2
+n_states=1
 m_states=1
 sn="-1.0"
 so="-1.0"
@@ -33,17 +33,17 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=36
-tmin_step=3
+tmin_max=40
+tmin_step=1
 
-tmax_min=63
-tmax_max=63
+tmax_min=54
+tmax_max=54
 tmax_step=2
 
 tmin_one=20
 tmax_one=21
 
-specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata.thin3"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
