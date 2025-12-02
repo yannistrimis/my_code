@@ -1,11 +1,10 @@
-
 #!/bin/bash
 
 ens_name="16128b719156x348992a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_s"
+taste="PION_5"
 
 xq="4000"
 mass="0.01446"
@@ -23,8 +22,8 @@ tdatamax=64
 tstep=1
 tp=128
 n_states=1
-m_states=1
-sn="-1.0"
+m_states=0
+sn="1.0"
 so="-1.0"
 binsize=1
 
@@ -33,17 +32,17 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=40
+tmin_max=55
 tmin_step=1
 
-tmax_min=54
-tmax_max=54
+tmax_min=64
+tmax_max=64
 tmax_step=2
 
 tmin_one=20
 tmax_one=21
 
-specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata.new"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
