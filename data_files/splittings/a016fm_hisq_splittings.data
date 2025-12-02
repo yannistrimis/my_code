@@ -6,9 +6,9 @@ PION_05 ( -1 ,  1 )	G0G5 x G0G5	Parity partner: f_0(500)	MTC No. 1      *Secure 
 PION_i5 (  1 ,  0 )	G5 x GiG0	No parity partner		MTC No. 7      *Secure with 2p0, opp signs
 PION_ij ( -1 ,  1 )	G0G5 x GiGj	Parity partner: a_0(980)	MTC No. 8      *Secure with 1p1, 1p2, opp signs
 PION_i0 (  0 ,  1 )	G5 x GiG0	No parity partner		MTC No. 14     *Secure with 0p2, opp signs. 1p2 also works
-PION_i  (  1 ,  1 )	G0G5 x Gi	Parity partner: a_0(980)	MTC No. 13     *Secure with 1p1
+PION_i  ( -1 ,  1 )	G0G5 x Gi	Parity partner: a_0(980)	MTC No. 13     *Secure with 1p1
 PION_0  (  0 , -1 )	G0 x G0		No parity partner		MTC No. 18     *Secure with 0p2, opp signs. 1p2 also works
-PION_s  ( -1 , -1 )	G0G5 x 1	Parity partner: a_0(980)	MTC No. 17     *Secure with 2p1, opp signs
+PION_s  (  1 , -1 )	G0G5 x 1	Parity partner: a_0(980)	MTC No. 17     *Secure with 1p1
 
 
 # xi_g = 1.0 HISQ - l1632b681823x100000a 
@@ -98,7 +98,7 @@ PION_ij         33 49 1.03106935 15 0.41839718 ao[0]: 0.0858 0.0008 Eo[0]: 0.078
 PION_i0         24 64 1.00570356 39 0.45990266 ao[0]: 0.2119 0.0011 Eo[0]: 0.090086 0.000324
 PION_i          24 64 1.02183051 37 0.43223795 an[0]: 0.0465 0.0177 En[0]: 0.144744 0.034613 ao[0]: 0.0659 0.0007 Eo[0]: 0.089761 0.000678
 PION_0          26 64 0.90929034 37 0.62719172 ao[0]: 0.1655 0.0014 Eo[0]: 0.100386 0.000585
-PION_s          13 54 1.14464792 36 0.25330102 an[0]: 0.0813 0.0725 En[0]: 0.155445 0.047103 an[1]: 0.1272 0.0278 En[1]: 0.252864 0.103403 ao[0]: 0.0608 0.0006 Eo[0]: 0.099919 0.000987
+PION_s          13 54 1.14464792 36 0.25330102 an[0]: 0.0813 0.0725 En[0]: 0.155443 0.047099 an[1]: 0.1272 0.0278 En[1]: 0.252869 0.103400 ao[0]: 0.0608 0.0006 Eo[0]: 0.099919 0.000987
 
 # xi_g = 8.0 HISQ
 

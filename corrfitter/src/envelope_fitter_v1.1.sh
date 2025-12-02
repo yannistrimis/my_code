@@ -1,10 +1,11 @@
+
 #!/bin/bash
 
 ens_name="16128b719156x348992a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_0"
+taste="PION_i"
 
 xq="4000"
 mass="0.01446"
@@ -21,10 +22,10 @@ tdatamin=0
 tdatamax=64
 tstep=1
 tp=128
-n_states=1
-m_states=2
+n_states=2
+m_states=1
 sn="1.0"
-so="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
@@ -39,8 +40,8 @@ tmax_min=64
 tmax_max=64
 tmax_step=1
 
-tmin_one=29
-tmax_one=59
+tmin_one=10
+tmax_one=64
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
