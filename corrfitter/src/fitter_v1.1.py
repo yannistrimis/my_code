@@ -79,7 +79,7 @@ def main():
 
     prior = make_prior(N,M)
     if correlated == "corr" :
-        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm') #,  svdcut=0.005)
+        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm',  svdcut=0.005)
     elif correlated == "uncorr" :
         fit = fitter.lsqfit( udata=data, prior=prior, p0=p0, method='lm' )
     if fittype == 'onefit' :
