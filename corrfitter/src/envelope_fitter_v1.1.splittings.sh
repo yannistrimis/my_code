@@ -5,7 +5,7 @@ ens_name="1664b704115x181411"
 stream="a"
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_i"
+taste="PION_s"
 
 xq="154707"
 mass="0.00725"

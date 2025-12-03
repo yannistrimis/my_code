@@ -21,10 +21,10 @@ from python_funcs import *
 def make_prior(N,M):
     prior = collections.OrderedDict()
 
-    prior['log(an)'] = gv.log(gv.gvar(['0.05(10000.0)', '0.12(10000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(['0.15(10000.0)', '0.15(10000.0)']))
-#    prior['log(an)'] = gv.log(gv.gvar(N*['0.08(10000.0)']))
-#    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.15(10000.0)']))
+#    prior['log(an)'] = gv.log(gv.gvar(['0.23(10000.0)', '0.1(10000.0)']))
+#    prior['log(dEn)'] = gv.log(gv.gvar(['0.03(10000.0)', '0.10(10000.0)']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['0.03(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.15(10000.0)']))
 
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.06(10000.0)', '0.1(10000.0)']))
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.09(10000.0)', '0.2(10000.0)']))
@@ -79,7 +79,7 @@ def main():
 
     prior = make_prior(N,M)
     if correlated == "corr" :
-        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm' )
+        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm') #,  svdcut=0.005)
     elif correlated == "uncorr" :
         fit = fitter.lsqfit( udata=data, prior=prior, p0=p0, method='lm' )
     if fittype == 'onefit' :
@@ -146,7 +146,7 @@ def main():
     Q_from_points = q_value(chi2bydof_from_points,dof_real)
     if fittype == 'onefit' :
         print('\n')
-        print('[','GOODNESS OF FIT FROM MANUALLY CALCD CHI_2 (ONLY FOR INFINITELY WIDE PRIORS):',']','\n')
+        print('[','GOODNESS OF FIT FROM MANUALLY CALCD CHI_2 (ONLY FOR INFINITELY WIDE PRIORS AND NO SVD CUTS):',']','\n')
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
 
 # THE FOLLOWING IS FOR CHECK OF COVARIANCE MATRIX EIGENVALUES
@@ -156,7 +156,7 @@ def main():
 
     elif fittype == 'scanfit' :
         if priors == 'no_priors' :
-            print("%d %d %.8f %d %.8f"%(tmin,tmax,chi2bydof_from_points,dof_real,Q_from_points), end="")
+            print("%d %d %.8f %d %.8f"%(tmin,tmax,chi2_real/dof_real,dof_real,Q_real), end="")
         if priors == 'yes_priors' :
             print("%d %d %.8f %d %.8f"%(tmin,tmax,fit.chi2/fit.dof,fit.dof,Q_man), end="")
         print_results_scan(fit,N,M)
