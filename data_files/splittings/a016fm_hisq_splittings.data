@@ -1,8 +1,8 @@
 
 # Relative sign for corrfitter:
 
-PION_5  (  1 ,  0 )	G5 x G5		No parity partner		MTC No. 2      *Secure with 2p0, opp signs
-PION_05 ( -1 ,  1 )	G0G5 x G0G5	Parity partner: f_0(500)	MTC No. 1      *Secure with 1p2, opp signs
+PION_5  (  1 ,  0 )	G5 x G5		No parity partner		MTC No. 2      *Secure with 2p0, opp signs. 2p1 also works
+PION_05 ( -1 ,  1 )	G0G5 x G0G5	Parity partner: f_0(500)	MTC No. 1      *Secure with 1p2, opp signs.
 PION_i5 (  1 ,  0 )	G5 x GiG0	No parity partner		MTC No. 7      *Secure with 2p0, opp signs
 PION_ij ( -1 ,  1 )	G0G5 x GiGj	Parity partner: a_0(980)	MTC No. 8      *Secure with 1p1, 1p2, opp signs
 PION_i0 (  0 ,  1 )	G5 x GiG0	No parity partner		MTC No. 14     *Secure with 0p2, opp signs. 1p2 also works
@@ -70,6 +70,7 @@ PION_i0		15 24 0.71252924 8  0.68076902 ao[0]: 0.6154 0.0029 Eo[0]: 0.236532 0.0
 PION_i		10 22 1.13640214 9  0.33237449 an[0]: 0.1866 0.0415 En[0]: 0.425715 0.047049 ao[0]: 0.1881 0.0011 Eo[0]: 0.241196 0.000865
 PION_0		10 21 1.04406208 10 0.40272260 ao[0]: 0.4921 0.0017 Eo[0]: 0.263395 0.000609
 PION_s          11 24 0.58789415 10 0.82532939 an[0]: 0.1946 0.0385 En[0]: 0.395038 0.037362 ao[0]: 0.1784 0.0025 Eo[0]: 0.269478 0.002101
+
 # xi_g = 2.0 HISQ - l1664b704115x181411a
 
 m_l = 0.0146
@@ -100,6 +101,18 @@ PION_i          24 64 1.02183051 37 0.43223795 an[0]: 0.0465 0.0177 En[0]: 0.144
 PION_0          26 64 0.90929034 37 0.62719172 ao[0]: 0.1655 0.0014 Eo[0]: 0.100386 0.000585
 PION_s          27 62 0.96542387 32 0.52242291 an[0]: 0.0645 0.0185 En[0]: 0.145167 0.022990 ao[0]: 0.0635 0.0016 Eo[0]: 0.102417 0.001729
 
-# xi_g = 8.0 HISQ
+# xi_g = 8.0 HISQ - l20320b726025x689327a
 
+m_l = 0.01416
 
+#1000 configs
+
+#PION_5          72 160 0.72(30)  87 0.98(15)   an[0]: 0.2303 0.0007 En[0]: 0.032563 0.000038 *Jackknife with 200 bins
+PION_5          
+PION_05
+PION_i5
+PION_ij
+PION_i0
+PION_i
+PION_0
+PION_s

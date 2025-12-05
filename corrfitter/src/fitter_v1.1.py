@@ -23,13 +23,13 @@ def make_prior(N,M):
 
 #    prior['log(an)'] = gv.log(gv.gvar(['0.23(10000.0)', '0.1(10000.0)']))
 #    prior['log(dEn)'] = gv.log(gv.gvar(['0.03(10000.0)', '0.10(10000.0)']))
-    prior['log(an)'] = gv.log(gv.gvar(N*['0.03(10000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.15(10000.0)']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['0.3(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.6(10000.0)']))
 
 #    prior['log(ao)'] = gv.log(gv.gvar(['0.06(10000.0)', '0.1(10000.0)']))
 #    prior['log(dEo)'] = gv.log(gv.gvar(['0.09(10000.0)', '0.2(10000.0)']))
-    prior['log(ao)'] = gv.log(gv.gvar(M*['0.06(10000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.099(10000.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(M*['0.17(10000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.155(10000.0)']))
 
     return prior
 
@@ -79,7 +79,7 @@ def main():
 
     prior = make_prior(N,M)
     if correlated == "corr" :
-        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm',  svdcut=0.005)
+        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm')
     elif correlated == "uncorr" :
         fit = fitter.lsqfit( udata=data, prior=prior, p0=p0, method='lm' )
     if fittype == 'onefit' :
@@ -93,6 +93,7 @@ def main():
     for i_state in range(N) :
         chi2_real = chi2_real - ( gv.exp(prior['log(an)'])[i_state].mean - fit.p['an'][i_state].mean )**2 / ( gv.exp(prior['log(an)'])[i_state].sdev )**2
         chi2_real = chi2_real - ( gv.exp(prior['log(dEn)'])[i_state].mean - fit.p['dEn'][i_state].mean )**2 / ( gv.exp(prior['log(dEn)'])[i_state].sdev )**2
+
 
     for i_state in range(M) :
         chi2_real = chi2_real - ( gv.exp(prior['log(ao)'])[i_state].mean - fit.p['ao'][i_state].mean )**2 / ( gv.exp(prior['log(ao)'])[i_state].sdev )**2
@@ -116,7 +117,6 @@ def main():
             it = it + 1
             it_shift = it + int((tmin-tdatamin)/tstep)
             print(t, data['PROP'][it_shift].mean, data['PROP'][it_shift].sdev, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].sdev,(data['PROP'][it_shift].mean-my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean)/data['PROP'][it_shift].sdev)
-
     cov_matrix = np.zeros((len(my_tfit),len(my_tfit)))
     meas_arr = np.zeros(len(my_tfit))
     fit_arr = np.zeros(len(my_tfit))
@@ -153,6 +153,12 @@ def main():
 #        data_array =  gv.dataset.Dataset(file_name)
 #        svd = gv.dataset.svd_diagnosis(data_array["PROP"])
 #        svd.plot_ratio(show=True)
+#        np.set_printoptions(threshold=sys.maxsize)
+#        print("covariance matrix:")
+#        print(cov_matrix)
+#        print("eigenvalues:")
+#        eigvals = gv.SVD(cov_matrix, svdcut=0.0).val
+#        print(eigvals)
 
     elif fittype == 'scanfit' :
         if priors == 'no_priors' :

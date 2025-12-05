@@ -3,8 +3,8 @@ import numpy as np
 filename = input()
 
 tmin=0
-tmax=160
-tstep=5
+tmax=152
+tstep=19
 
 confmin=0
 confmax=999
