@@ -1,43 +1,44 @@
+
 #!/bin/bash
 
 ens_name="20320b726025x689327a"
 
 src="eowfw"
 prefix="hisqnlpi"
-taste="PION_5"
+taste="PION_s"
 
 xq="7870"
 mass="0.01416"
 
 mom="p000"
 
-fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
-dir=${fitdir} # CMSE
+# fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
+# dir=${fitdir} # CMSE
 
-# fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
-# dir=${fitdir} # LAPTOP
+fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
+dir=${fitdir} # LAPTOP
 
 tdatamin=0
 tdatamax=160
 tstep=1
 tp=320
-n_states=1
-m_states=0
+n_states=0
+m_states=1
 sn="1.0"
-so="1.0"
-binsize=20
+so="-1.0"
+binsize=1
 
 correlated="uncorr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=0
-tmin_max=160
-tmin_step=10
+tmin_min=95
+tmin_max=95
+tmin_step=5
 
-tmax_min=160
+tmax_min=95
 tmax_max=160
-tmax_step=1
+tmax_step=5
 
 tmin_one=60
 tmax_one=160
@@ -50,7 +51,6 @@ if [ $1 == "scan" ]
 then
 
 fit_file="${fitdir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.${n_states}p${m_states}.bin${binsize}.scanfit"
-
 
 if [ -f ${fit_file} ]
 then
