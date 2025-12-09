@@ -1,15 +1,16 @@
 #!/bin/bash
 
-nt=128 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="16128b719156x348992a"
-masses=("0.01446")
+ens_name="1664b704115x181411a"
+masses=("0.0146")
 mas_len=${#masses[@]}
 
 prefix="hisqnlpi"
 
-xq_arr=("4000")
-sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+xq_arr=("1980")
+sinks_arr=("PION_s")
+#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
 #sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
@@ -23,7 +24,7 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=1700
+last=2100
 
 # output_dir="/home/trimis/spec_data"
 # data_dir="/home/trimis/spec_data"
