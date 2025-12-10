@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-ens_name="1664b704115x181411a"
+ens_name=""
 
 src="eowfw"
 prefix="hisqnlpi"
