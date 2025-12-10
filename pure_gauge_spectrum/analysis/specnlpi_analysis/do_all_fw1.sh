@@ -1,14 +1,14 @@
 #!/bin/bash
 
-nt=64 # DON'T FORGET TO CHANGE !!!
+nt=48 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1664b704115x181411a"
-masses=("0.0146")
+ens_name="1648b694635x139939a"
+masses=("0.01494")
 mas_len=${#masses[@]}
 
 prefix="hisqnlpi"
 
-xq_arr=("1980")
+xq_arr=("14972")
 sinks_arr=("PION_s")
 #sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
 #sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
