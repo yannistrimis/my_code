@@ -29,6 +29,7 @@ nt = int(str_nt)
 f_read = open('%s/l%s_outputs/%s.%s'%(cur_dir,ens_name,pre_name,i_file),'r')
 
 line_arr_a = []
+line_arr_b = []
 
 content = f_read.readlines()
 f_read.close()
@@ -65,22 +66,40 @@ for line in content:
                 counter = 1
                 if source_flag == 1 :
                         line_arr_a.append(line)
+                elif source_flag == 2 :
+                        line_arr_b.append(line)
         elif flag==6 and split_line[0]==str(counter) :
                 counter = counter + 1
                 if source_flag == 1 :
                         line_arr_a.append(line)
+                elif source_flag == 2 :
+                        line_arr_b.append(line)
         elif flag==6 and line.rstrip('\n')=='ENDPROP' :
                 flag = -1
                 counter = 0
 
+line_arr = []
+
+for i_line in range(len(line_arr_a)) :
+    re = 0.0
+    im = 0.0
+
+    split_a = line_arr_a[i_line].split(' ')
+    split_b = line_arr_b[i_line].split(' ')
+
+    re = 0.5*( float(split_a[1]) + float(split_b[1]) )
+    im = 0.5*( float(split_a[2]) + float(split_b[2]) )
+
+    appline = split_a[0] + ' ' + str(re) + ' ' + str(im)
+    line_arr.append(appline)
 
 fold_arr = np.zeros((int(nt/2)+1,3))
 ind_fold = -1
 re = 0.0
 im = 0.0
 foldflag = 0
-for i_line in range(len(line_arr_a)) :
-    split = line_arr_a[i_line].split(' ')
+for i_line in range(len(line_arr)) :
+    split = line_arr[i_line].split(' ')
     if split[0] == '0' :
         re = float(split[1])
         im = float(split[2])
@@ -98,7 +117,7 @@ for i_line in range(len(line_arr_a)) :
         fold_arr[ind_fold,1] = re
         fold_arr[ind_fold,2] = im
     elif foldflag == 1 :
-        split2 = line_arr_a[ i_line+nt-2*int(split[0]) ].split(' ')
+        split2 = line_arr[ i_line+nt-2*int(split[0]) ].split(' ')
         re = ( float(split[1]) + float(split2[1]) ) / 2
         im = ( float(split[2]) + float(split2[2]) ) / 2
         ind_fold += 1
