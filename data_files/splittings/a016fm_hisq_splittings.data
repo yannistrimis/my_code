@@ -1,15 +1,13 @@
-
 # Relative sign for corrfitter:
 
-PION_5  (  1 ,  0 )	G5 x G5		No parity partner		MTC No. 2      *Secure with 2p0, opp signs. 2p1 also works
-PION_05 ( -1 ,  1 )	G0G5 x G0G5	Parity partner: f_0(500)	MTC No. 1      *Secure with 1p2, opp signs.
-PION_i5 (  1 ,  0 )	G5 x GiG0	No parity partner		MTC No. 7      *Secure with 2p0, opp signs
-PION_ij ( -1 ,  1 )	G0G5 x GiGj	Parity partner: a_0(980)	MTC No. 8      *Secure with 1p1, 1p2, opp signs
-PION_i0 (  0 ,  1 )	G5 x GiG0	No parity partner		MTC No. 14     *Secure with 0p2, opp signs. 1p2 also works
-PION_i  (  1 ,  1 )	G0G5 x Gi	Parity partner: a_0(980)	MTC No. 13     *Secure with 1p1
-PION_0  (  0 , -1 )	G0 x G0		No parity partner		MTC No. 18     *Secure with 0p2, opp signs. 1p2 also works
-PION_s  ( -1 , -1 )	G0G5 x 1	Parity partner: a_0(980)	MTC No. 17     *Secure with 1p1
-
+PION_5  (  1 ,  0 )     G5 x G5         No parity partner               MTC No. 2      *Secure with 2p0, opp signs. 2p1 also works
+PION_05 ( -1 ,  1 )     G0G5 x G0G5     Parity partner: f_0(500)        MTC No. 1      *Secure with 1p2, opp signs.
+PION_i5 (  1 ,  0 )     G5 x GiG0       No parity partner               MTC No. 7      *Secure with 2p0, opp signs
+PION_ij ( -1 ,  1 )     G0G5 x GiGj     Parity partner: a_0(980)        MTC No. 8      *Secure with 1p1, 1p2, opp signs
+PION_i0 (  0 ,  1 )     G5 x GiG0       No parity partner               MTC No. 14     *Secure with 0p2, opp signs. 1p2 also works
+PION_i  (  1 ,  1 )     G0G5 x Gi       Parity partner: a_0(980)        MTC No. 13     *Secure with 1p1, scattering state with -1 nonosc
+PION_0  (  0 , -1 )     G0 x G0         No parity partner               MTC No. 18     *Secure with 0p2, opp signs. 1p2 also works
+PION_s  ( -1 , -1 )     G0G5 x 1        Parity partner: a_0(980)        MTC No. 17     *Secure with 1p1, scattering state with -1 nonosc 
 
 # xi_g = 1.0 HISQ - l1632b681823x100000a 
 
