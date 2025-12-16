@@ -401,12 +401,19 @@ class Corr2(lsqfit.MultiFitterModel):
                             * _gvar.exp(-t[:, None] * sumdE[None, 0]),
                             axis=1,
                             )
-                    if len(p[ai])>1 :
+                    if len(p[ai]) == 2 :
                         ans -= ofaci * numpy.sum(
                             (p[ai] * p[bi])[None, 1]
                             * _gvar.exp(-t[:, None] * sumdE[None, 1]),
                             axis=1,
                             )
+                    if len(p[ai]) == 3 :
+                        ans += ofaci * numpy.sum(
+                            (p[ai] * p[bi])[None, 2]
+                            * _gvar.exp(-t[:, None] * sumdE[None, 2]),
+                            axis=1,
+                            )
+
 
                 else:
                     sumdE = numpy.cumsum(p[dEi])
@@ -418,7 +425,7 @@ class Corr2(lsqfit.MultiFitterModel):
                                 ),
                             axis=1,
                             )
-                    if len(p[ai])>1 :
+                    if len(p[ai]) == 2 :
                         ans -= ofaci * numpy.sum(
                             (p[ai] * p[bi])[None, 1] * (
                                 _gvar.exp(-t[:, None] * sumdE[None, 1])
@@ -426,6 +433,15 @@ class Corr2(lsqfit.MultiFitterModel):
                                 ),
                             axis=1,
                             )
+                    if len(p[ai]) == 3 :
+                        ans += ofaci * numpy.sum(
+                            (p[ai] * p[bi])[None, 2] * (
+                                _gvar.exp(-t[:, None] * sumdE[None, 2])
+                                + pfac * _gvar.exp(-tp_t[:, None] * sumdE[None, 2])
+                                ),
+                            axis=1,
+                            )
+
         return ans
 
 
