@@ -1,29 +1,29 @@
 #!/bin/bash
 
-nt=320 # DON'T FORGET TO CHANGE !!!
+nt=32 # DON'T FORGET TO CHANGE !!!
 
-ens_name="20320b726025x689327a"
-masses=("0.01416")
+ens_name="1664b704115x181411zl"
+masses=("0.0146" "0.0730" "0.0073" "0.1022")
 mas_len=${#masses[@]}
 
-prefix="hisqnlpi"
+prefix="hisqtunz"
 
-xq_arr=("7870")
-#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
-sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
+xq_arr=("1980")
+sinks_arr=("PION_5")
 mom_arr=("p000")
+#mom_arr=("p100" "p110")
 
-source1="even_and_odd_wall"
-#source2="even_and_odd_wall/FUNNYWALL1"
-source2="even_and_odd_wall/FUNNYWALL2"
+source1="CORNER"
+#source1="CORNER/momentum"
+source2="CORNER"
 
-src_label="eowfw"
+src_label="cw"
 
 sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=1100
+last=600
 
 # output_dir="/home/trimis/spec_data"
 # data_dir="/home/trimis/spec_data"
