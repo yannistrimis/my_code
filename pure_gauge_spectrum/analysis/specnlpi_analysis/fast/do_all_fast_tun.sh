@@ -3,12 +3,12 @@
 nt=32 # DON'T FORGET TO CHANGE !!!
 
 ens_name="1664b704115x181411zl"
-masses=("0.0146" "0.0730" "0.0073" "0.1022")
+masses=("0.073")
 mas_len=${#masses[@]}
 
 prefix="hisqtunz"
 
-xq_arr=("1980")
+xq_arr=("1600" "2200")
 sinks_arr=("PION_5")
 mom_arr=("p000")
 #mom_arr=("p100" "p110")
