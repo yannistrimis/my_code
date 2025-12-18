@@ -3,7 +3,7 @@
 cluster=fnal
 
 n_of_lat=1000
-n_of_sub=5
+n_of_sub=10
 
 set_i_lat=101
 set_seed=78324
