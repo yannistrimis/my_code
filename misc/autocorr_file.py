@@ -21,7 +21,6 @@ mctime = int( str_mctime )
 autoc = np.zeros(nbins)
 
 for ibin in range(nbins):
-  corr = 0.0
   avg = 0.0
   for iline in range(ndata):
     if iline >= ibin*ninbin and iline < (ibin+1)*ninbin :
@@ -36,10 +35,9 @@ for ibin in range(nbins):
       continue
     else :
       count = count + 1
-      corr = corr + float( content[iline].strip() )*float( content[iline+mctime].strip() )
+      autoc[ibin] = autoc[ibin] + ( float(content[iline].strip()) - avg ) * ( float(content[iline+mctime].strip()) - avg )
 
-  corr = corr / count
-  autoc[ibin] = corr - avg**2
+  autoc[ibin] = autoc[ibin] / count
 
 autoc_avg, autoc_err = jackknife_for_binned(autoc)
 
