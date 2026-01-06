@@ -5,13 +5,13 @@ print('\n')
 
 # INPUT
 N_of_x0 = 3
-N_of_mass = 3
+N_of_mass = 4
 
 mss_phys = 685.8 # MeV
 hc = 197.327 # MeV * fm
 
 a = 0.16 # fm
-xi_g = 1.2
+xi_g = 1.5
 
 mss_lat = a * mss_phys / hc
 
