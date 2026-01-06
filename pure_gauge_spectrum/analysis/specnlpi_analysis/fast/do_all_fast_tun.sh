@@ -1,12 +1,12 @@
 #!/bin/bash
 
-nt=32 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
 ens_name="1664b704115x181411zl"
-masses=("0.073" "0.0073" "0.0146" "0.1022" "0.0292")
+masses=("0.0292")
 mas_len=${#masses[@]}
 
-prefix="hisqtunz"
+prefix="hisqtun"
 
 xq_arr=("1980" )
 sinks_arr=("PION_5")
