@@ -58,20 +58,21 @@ beta      xi0      xiT  Ns  Nt   a0s     xiq0    ms       Nspec    xiq     dxiq 
                    Note: Mss, xiq0 = 0.57963, 1.21699
                    Note: Prediction for ms, xiq0 = 0.03670, 1.23482
 
-7.04115   1.81411  2.0  16  64   ?.???   1.20    0.025    2222*                                            TODO: to NERSC   "specnaivtun"
-7.04115   1.81411  2.0  16  64   ?.???   1.60    0.025    2222*                                            TODO: to NERSC   "specnaivtun"
-7.04115   1.81411  2.0  16  64   ?.???   2       0.025    2222*                                            TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   1.20    0.025    2222*    1.70591 0.00300  0.272902   0.000168    TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   1.60    0.025    2222*    2.03778 0.00355  0.227170   0.000153    TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   2       0.025    2222*    2.36236 0.00925  0.197902   0.000137    TODO: to NERSC   "specnaivtun"
+                   Note: Mss, xiq0 = 0.46318, 1.55401
 
+7.04115   1.81411  2.0  16  64   ?.???   1.20    0.035    2222*    1.69864 0.00251  0.322346   0.000140    TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   1.60    0.035    2222*    2.04471 0.00109  0.267086   0.000129    TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   2       0.035    2222*    2.38075 0.00994  0.231842   0.000124    TODO: to NERSC   "specnaivtun"
+                   Note: Mss, xiq0 = 0.54635, 1.54767
 
-7.04115   1.81411  2.0  16  64   ?.???   1.20    0.035    2222*                                            TODO: to NERSC   "specnaivtun"
-7.04115   1.81411  2.0  16  64   ?.???   1.60    0.035    2222*                                            TODO: to NERSC   "specnaivtun"
-7.04115   1.81411  2.0  16  64   ?.???   2       0.035    2222*                                            TODO: to NERSC   "specnaivtun"
-
-
-7.04115   1.81411  2.0  16  64   ?.???   1.20    0.045    2222*                                            TODO: to NERSC   "specnaivtun"
-7.04115   1.81411  2.0  16  64   ?.???   1.60    0.045    2222*                                            TODO: to NERSC   "specnaivtun"
-7.04115   1.81411  2.0  16  64   ?.???   2       0.045    2222*                                            TODO: to NERSC   "specnaivtun"
-
+7.04115   1.81411  2.0  16  64   ?.???   1.20    0.045    2222*    1.69174 0.00088  0.365628   0.000134    TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   1.60    0.045    2222*    2.04908 0.00197  0.301599   0.000122    TODO: to NERSC   "specnaivtun"
+7.04115   1.81411  2.0  16  64   ?.???   2       0.045    2222*    2.39374 0.00565  0.260851   0.000115    TODO: to NERSC   "specnaivtun"
+                   Note: Mss, xiq0 = 0.61826, 1.54421
+                   Note: Prediction for ms, xiq0 = 0.03626, 1.54707
 
 
 
