@@ -3,11 +3,11 @@ import numpy as np
 filename = input()
 
 tmin=0
-tmax=152
-tstep=19
+tmax=160
+tstep=10
 
 confmin=0
-confmax=999
+confmax=299
 confstep=1
 
 t_range = range(tmin+1,tmax+2,tstep) # +1 BECAUSE 0th ELEMENT IS "PROP"

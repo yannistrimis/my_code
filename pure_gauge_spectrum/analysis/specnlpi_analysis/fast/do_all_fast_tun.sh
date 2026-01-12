@@ -1,14 +1,14 @@
 #!/bin/bash
 
-nt=64 # DON'T FORGET TO CHANGE !!!
+nt=320 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1664b704115x181411zl"
-masses=("0.0292")
+ens_name="20320b726025x689327a"
+masses=("0.07")
 mas_len=${#masses[@]}
 
-prefix="hisqtun"
+prefix="str"
 
-xq_arr=("1980" )
+xq_arr=("7870" )
 sinks_arr=("PION_5")
 mom_arr=("p000")
 #mom_arr=("p100" "p110")
@@ -23,16 +23,16 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=600
+last=400
 
 # output_dir="/home/trimis/spec_data"
 # data_dir="/home/trimis/spec_data"
 
-output_dir="/home/trimisio/all/spec_data"
-data_dir="/home/trimisio/all/spec_data"
+#output_dir="/home/trimisio/all/spec_data"
+#data_dir="/home/trimisio/all/spec_data"
 
-# output_dir="/home/yannis/Physics/LQCD/spec_data"
-# data_dir="/home/yannis/Physics/LQCD/spec_data"
+output_dir="/home/yannis/Physics/LQCD/spec_data"
+data_dir="/home/yannis/Physics/LQCD/spec_data"
 
 for mom in ${mom_arr[@]}
 do
