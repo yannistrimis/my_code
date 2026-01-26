@@ -12,6 +12,9 @@ g20=0.127608
 g40=0.063787 
 g80=0.032516
 
+gs40=0.138895
+gs80=0.069633
+
 set xlabel "{/Symbol x}"
 set ylabel "{m_{/Symbol p}^2-m_G^2}"
 
@@ -24,5 +27,7 @@ plot [0:16][]"a016fm_hisq_masses.dat" u ($1*0.2+1):(($2**2-g10**2)):($2*$3*2) w 
 "a016fm_hisq_masses.dat" u ($1*0.2+7):(1.5**2*($8**2-g15**2)):(1.5**2*$8*$9*2) w err lw 3 notitle,\
 "a016fm_hisq_masses.dat" u ($1*0.2+9):(2.0**2*($10**2-g20**2)):(2.0**2*$10*$11*2) w err lw 3 notitle,\
 "a016fm_hisq_masses.dat" u ($1*0.2+11):(4.0**2*($12**2-g40**2)):(4.0**2*$12*$13*2) w err lw 3 notitle,\
-"a016fm_hisq_masses.dat" u ($1*0.2+13):(8.0**2*($14**2-g80**2)):(8.0**2*$14*$15*2) w err lw 3 notitle
+"a016fm_hisq_masses.dat" u ($1*0.2+11):(4.0**2*($16**2-gs40**2)):(4.0**2*$16*$17*2) w err lw 3 notitle,\
+"a016fm_hisq_masses.dat" u ($1*0.2+13):(8.0**2*($14**2-g80**2)):(8.0**2*$14*$15*2) w err lw 3 notitle,\
+"a016fm_hisq_masses.dat" u ($1*0.2+13):(8.0**2*($18**2-gs80**2)):(8.0**2*$18*$19*2) w err lw 3 notitle
 
