@@ -2,7 +2,7 @@ Table for measurements with unimproved (naive) staggered fermions on anisotropic
 
 Notes:
 1.Notation: xi0 - bare gauge anisotropy, xiT - target renormalized anisotropy, xiq0 - bare fermion anisotropy, xiq - renormalized fermion anisotropy (as measured from fit to the dispersion relation), 
-ms - strange quark mass, Mss - eta_ss mass. The mass quantities are in temporal lattice units. That is, M_phys = M_table * xiT * 197/a0s, where a0s is the spatial lattice spacing in fermi.
+ms - strange quark mass, Mss - eta_ss mass. Mss are in units of temporal lattice spacing; Mss_phys = Mss * xiT / a_spat * hbar * c
 2.Nspec - number of spectrum measurements. If non-zero momenta are measured, indicated as e.g., 300* for [0,0,0], [1,0,0] and [1,1,0] units of momenta, respectively.
 3.Corner wall source is used for all tuning measurements.
 TODO: update below
@@ -33,17 +33,17 @@ beta      xi0      xiT  Ns  Nt   a0s     xiq0    ms       Nspec    xiq     dxiq 
 6.87348   1.15792  1.2  16  32   ?.???   1       0.05     951*     1.08536 0.00514  0.415365   0.000686                     "spechisqtun"
 6.87348   1.15792  1.2  16  32   ?.???   1.2     0.05     951*     1.20285 0.00412  0.375605   0.000646                     "spechisqtun"
 6.87348   1.15792  1.2  16  32   ?.???   1.4     0.05     951*     1.31816 0.00436  0.345529   0.000518                     "spechisqtun"
-                   Note: Prediction for Mss, xiq0 = 0.451756, 1.19510
+                   Note: Prediction for Mss, xiq0 = 0.376463, 1.19510
 
 6.87348   1.15792  1.2  16  32   ?.???   1       0.07     951*     1.08147 0.00394  0.491793   0.000542                     "spechisqtun"
 6.87348   1.15792  1.2  16  32   ?.???   1.2     0.07     951*     1.20262 0.00396  0.443484   0.000504                     "spechisqtun"
 6.87348   1.15792  1.2  16  32   ?.???   1.4     0.07     951*     1.31915 0.00358  0.406975   0.000446                     "spechisqtun"
-                   Note: Prediction for Mss, xiq0 = 0.533306, 1.19559
+                   Note: Prediction for Mss, xiq0 = 0.444422, 1.19559
 
 6.87348   1.15792  1.2  16  32   ?.???   1       0.09     951*     1.07831 0.00371  0.559310   0.000509                     "spechisqtun"
 6.87348   1.15792  1.2  16  32   ?.???   1.2     0.09     951*     1.20340 0.00399  0.503046   0.000450                     "spechisqtun"
 6.87348   1.15792  1.2  16  32   ?.???   1.4     0.09     951*     1.32398 0.00376  0.460540   0.000400                     "spechisqtun"
-                   Note: Prediction for Mss, xiq0 = 0.605300, 1.19447
+                   Note: Prediction for Mss, xiq0 = 0.504417, 1.19447
                    Note: Prediction for ms, xiq0 = 0.07604, 1.1954
 
 6.94635   1.39939  1.5  16  48   ?.???   1.05    0.07     500*     1.22511 0.00780  0.437793   0.000447                     "spechisqtun"
