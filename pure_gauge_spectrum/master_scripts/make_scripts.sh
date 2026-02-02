@@ -12,7 +12,7 @@ ny=20
 nz=20
 nt=320
 
-set_i_lat=939
+set_i_lat=101
 set_seed=79309
 
 beta_name="726025"
@@ -26,13 +26,19 @@ n_sources=2
 source_inc=160 # CHANGE ACCORDING TO nt
 source_prec=90 # CHANGE ACCORDING TO nt
 
-nmasses=1
-mass1=0.01416
+nmasses=3
+mass1=0.060803
+mass2=0.070803
+mass3=0.080803
 
-nxq=1
-xq1=7.87
+nxq=3
+xq1=7.47
+xq2=7.87
+xq3=8.27
 
-xq1_name="7870"
+xq1_name="7470"
+xq2_name="7870"
+xq3_name="8270"
 
 action="hisq"
 err=1e-6
@@ -43,13 +49,13 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="hisq8"
+sbatch_jobname="hisq8tun"
 
-prefix="hisqnlpi"
-build_prefix="nlpi"
+prefix="hisqtun"
+build_prefix="tun"
 
 n_of_sub=1
-n_of_lat=1000
+n_of_lat=500
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
