@@ -31,6 +31,8 @@ mainprogram.f90 :
 
         In call of heavyprop() argument 1 is passed as 1_KI
 
+        iaction = 7 corresponds to PRD 91 054511 (2015) setup
+
 heavyoperators.f90 :
 
 	Added ^3S_1 state for x,y,z Pauli matrices.
