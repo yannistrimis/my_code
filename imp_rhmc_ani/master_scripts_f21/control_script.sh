@@ -3,7 +3,7 @@ start_time=$(date +%s.%N)
 path=$1
 source ${path}/params.sh
 
-# guard FILE CONTAINS NUMBER AND SEED OF NEXT LATTICE TO BE PRODUCED
+# guard FILE CONTAINS NUMBER AND SEED OF LAST LATTICE THAT WAS PRODUCED
 
 if [ -f "${submit_dir}/guard" ]
 then
@@ -13,7 +13,7 @@ seed=$(head -n 2 "${submit_dir}/guard" | tail -n 1)
 
 else
 
-i_lat=1
+i_lat=0
 seed=${init_seed}
 cat << EOF > "${submit_dir}/guard"
 ${i_lat}
@@ -28,12 +28,15 @@ i=1
 while [ $i -le $n_of_lat ]
 do
 
-echo $seed $i_lat
-file_name="${out_dir}/${out_name}.${i_lat}"
+i_lat_curr=$((${i_lat}+${trajecs}))
+seed_curr=$((${seed}+1))
 
-if [ -f "${directory}/${lat_name}.${i_lat}" ] # PRECAUTION ABOUT THE BINARY
+echo $seed_curr $i_lat_curr
+file_name="${out_dir}/${out_name}.${i_lat_curr}"
+
+if [ -f "${directory}/${lat_name}.${i_lat_curr}" ] # PRECAUTION ABOUT THE BINARY
 then
-rm "${directory}/${lat_name}.${i_lat}"
+rm "${directory}/${lat_name}.${i_lat_curr}"
 fi
 
 if [ -f "${file_name}" ] # PRECAUTION ABOUT THE OUTPUT
@@ -41,7 +44,7 @@ then
 rm ${file_name}
 fi
 
-bash ${path}/make_input.sh $i_lat $seed $path
+bash ${path}/make_input.sh $i_lat $i_lat_curr $seed_curr $path
 
 cd ${run_dir}
 
@@ -64,15 +67,15 @@ fi
 
 cd ${submit_dir}
 
-text="Saved gauge configuration serially to binary file ${directory}/${lat_name}.${i_lat}"
+text="Saved gauge configuration serially to binary file ${directory}/${lat_name}.${i_lat_curr}"
 complete_flag=$(bash ${path}/is_complete.sh ${file_name} ${text})
 
 if [ "${complete_flag}" = "1" ]
 then
 
 n_produced=$((${n_produced}+1))
-i_lat=$(($i_lat+1))
-seed=$((${seed}+1))
+i_lat=${i_lat_curr}
+seed=${seed_curr}
 cat << EOF > "${submit_dir}/guard"
 ${i_lat}
 ${seed}

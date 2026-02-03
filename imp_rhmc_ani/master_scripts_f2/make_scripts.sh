@@ -55,7 +55,7 @@ sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 beta_s=$(python3 -c "b_s=${beta}/${xig};print('%.5lf'%b_s)")
 beta_t=$(python3 -c "b_t=${beta}*${xig};print('%.5lf'%b_t)")
 
-ensemble="${nx}${nt}f2b${beta_name}m${dyn_mass_name}xig${xig_name}xiq${xiq_name}${stream}"
+ensemble="${nx}${nt}f2b${beta_name}xig${xig_name}m${dyn_mass_name}xiq${xiq_name}${stream}"
 lat_name="l${ensemble}"
 out_name="out${ensemble}"
 

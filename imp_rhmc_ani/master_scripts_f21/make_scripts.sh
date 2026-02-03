@@ -8,48 +8,45 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=64
+nt=16
 
-beta=6.747
-beta_name="6747"
+beta=6.341
+beta_name="6341"
 
-xig=1.70
-xig_name="1700"
+xig=1.2
+xig_name="120"
 
-xiq=2.30
-xiq_name="2300"
+xiq=1.2
+xiq_name="120"
 
-dyn_mass_1=0.010
-dyn_mass_1_name="010"
+dyn_mass_1=0.0148
+dyn_mass_1_name="0148"
 
-dyn_mass_2=0.050
-dyn_mass_2_name="050"
+dyn_mass_2=0.0740
+dyn_mass_2_name="0740"
 
 warms=0
-trajecs=5
+trajecs=100
 traj_between_meas=1
-microcanonical_time_step_arr=(0.041666666666666664)
-steps_per_trajectory_arr=(24)
-rationals_file="rationals.m010m050"
+microcanonical_time_step=0.05
+steps_per_trajectory=20
+rationals_file="rationals.m0148m0740"
 
-stream_arr=("a")
+stream="a"
 
-sbatch_time="20:00:00"
+sbatch_time="02:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("5m1723a")
+sbatch_jobname_arr=("xig1200")
 
-n_of_sub=5
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=1
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
-microcanonical_time_step=${microcanonical_time_step_arr[${i_ens}]}
-steps_per_trajectory=${steps_per_trajectory_arr[${i_ens}]}
-stream=${stream_arr[${i_ens}]}
 sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 # var=${var_arr[${i_ens}]}
@@ -59,7 +56,7 @@ sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 beta_s=$(python3 -c "b_s=${beta}/${xig};print('%.5lf'%b_s)")
 beta_t=$(python3 -c "b_t=${beta}*${xig};print('%.5lf'%b_t)")
 
-ensemble="${nx}${nt}f21b${beta_name}m${dyn_mass_1_name}m${dyn_mass_2_name}xig${xig_name}xiq${xiq_name}${stream}"
+ensemble="${nx}${nt}f21b${beta_name}xig${xig_name}m${dyn_mass_1_name}m${dyn_mass_2_name}xif${xiq_name}${stream}"
 lat_name="l${ensemble}"
 out_name="out${ensemble}"
 

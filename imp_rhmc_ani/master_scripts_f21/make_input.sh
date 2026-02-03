@@ -1,9 +1,10 @@
 #!/bin/bash
 
-source ${3}/params.sh
+source ${4}/params.sh
 
-i_curr=$1
-seed=$2
+i_prev=$1
+i_curr=$2
+seed=$3
 
 cat << EOF > ${submit_dir}/input
 
@@ -57,15 +58,14 @@ error_for_propagator 1e-6
 rel_error_for_propagator 0
 EOF
 
-if [ $i_curr -gt 1 ]
+if [ $i_prev -gt 0 ]
 then
-i_prev=$((${i_curr}-1))
 
 cat << EOF >> ${submit_dir}/input
 reload_serial ${directory}/${lat_name}.${i_prev}
 EOF
 
-elif [ $i_curr -eq 1 ]
+elif [ $i_prev -eq 0 ]
 then
 
 cat << EOF >> ${submit_dir}/input
