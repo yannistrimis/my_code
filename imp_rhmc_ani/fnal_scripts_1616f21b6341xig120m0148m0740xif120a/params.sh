@@ -5,7 +5,7 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=1
+n_of_lat=20
 n_of_sub=1
 
 nx=16
@@ -22,7 +22,7 @@ dyn_mass_2=0.0740
 rationals_file="rationals.m0148m0740"
 
 warms=0
-trajecs=100
+trajecs=5
 traj_between_meas=1
 microcanonical_time_step=0.05
 steps_per_trajectory=20
@@ -38,13 +38,13 @@ path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungenl1616f21b6341xig120m0148m0740xif120a"
 submit_dir="/project/ahisq/yannis_dyn/submits/subgenl1616f21b6341xig120m0148m0740xif120a"
 
-executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250508"
-# executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250508"
+# executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250508"
+executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250508"
 
 sbatch_time="02:00:00"
 sbatch_nodes="2"
 sbatch_ntasks="64"
-sbatch_jobname="xig1200"
+sbatch_jobname="g12q12"
 sbatch_module1="gcc/12"
 sbatch_module2="openmpi/4"
 
