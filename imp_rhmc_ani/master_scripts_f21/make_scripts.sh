@@ -13,8 +13,8 @@ nt=16
 beta=6.341
 beta_name="6341"
 
-xig=1.2
-xig_name="120"
+xig=1.15
+xig_name="115"
 
 xiq=1.2
 xiq_name="120"
