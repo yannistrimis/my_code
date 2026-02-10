@@ -19,7 +19,7 @@
     use heavypropagators
     implicit none
 
-    character(len=1000)                    :: cfgfile, corrfile_1s0, corrfile_3s1
+    character(len=1000)                    :: cfgfile
     logical                              :: cutboundaries, backward, imp, &
                                             newgaugefield
     integer(kind=KI)                     :: it, nstoutsnk, nstoutsrc, &
@@ -31,21 +31,18 @@
                                             astoutsnk, aspect, bareM, &
                                             unitaritycf, csetmin
     real(kind=KR),    dimension(2,14)    :: cset
-    complex(kind=KC)                     :: corr1s0,corr3s1x,corr3s1y,corr3s1z, corr1p1x,corr1p1y,corr1p1z
+    complex(kind=KC)                     :: corr0,corr1x,corr1y,corr1z
 
     complex(kind=KC), allocatable, dimension(:,:,:,:)     :: Utad, Ufat
     complex(kind=KC), allocatable, dimension(:,:,:,:,:,:) :: Gt
-    complex(kind=KC), allocatable, dimension(:,:,:,:,:,:,7) :: Gbundle
 
 ! An integer that defines which NRQCD Lagrangian is used.
-    iaction = 7 ! Default is 4
+    iaction = 4
 
 ! Configuration file name.
+!    cfgfile = "RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
+!    cfgfile = "/lustre1/ahisq/yannis_puregauge/lattices/l2040b708567x181690a/l2040b708567x181690a.trunc.101"
     read *,cfgfile
-
-! Correlator files.
-    read *,corrfile_1s0
-    read *,corrfile_3s1
 
 ! Stout smearing.
     nstoutsrc = 0
@@ -68,16 +65,13 @@
     cset(1,1) = 1.0_KR
 
 ! Coefficients of the NRQCD action that are outside of mode.
-! YT20250218 Just cset(2,5) for Davies 1993; This corresponds to sigma.B.
-    
     cset(2,:) = 0.0_KR
-
-!    cset(2,2) = 1.0_KR
-!    cset(2,3) = 1.0_KR
-!    cset(2,4) = 1.0_KR
+    cset(2,2) = 1.0_KR
+    cset(2,3) = 1.0_KR
+    cset(2,4) = 1.0_KR
     cset(2,5) = 1.0_KR
-!    cset(2,6) = 1.0_KR
-!    cset(2,7) = 1.0_KR
+    cset(2,6) = 1.0_KR
+    cset(2,7) = 1.0_KR
 
 ! Source position.
     srcx = 1
@@ -85,7 +79,7 @@
     srcz = 1
 
 ! Bare heavy quark mass.
-    bareM = 2.3_KR
+    bareM = 1.9_KR
 
 ! Allocate large arrays. 
     allocate(Utad(nc,nc,ndir,nxyzt),stat=ierr)
@@ -124,11 +118,6 @@
      case(6)
       iform = 3
       imp = .true.
-
-     case(7)
-       iform = 4      ! YT20250212
-       imp = .false.  ! YT20250212
-
      case default ! never get here
       write(*,*) "mainprogram: invalid case(iaction)", iaction
       stop
@@ -146,10 +135,10 @@
     else
      cutboundaries = .false.
     endif
-!    call aveplaq(Utad,cutboundaries,bwdnbr,fwdnbr,plaq)
-!    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
-    call aveplaq(Utad,.false.,bwdnbr,fwdnbr,plaq) ! YT 20240620
-    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq ! YT 20240620
+    call aveplaq(Utad,cutboundaries,bwdnbr,fwdnbr,plaq)
+    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq
+!    call aveplaq(Utad,.false.,bwdnbr,fwdnbr,plaq) ! YT 20240620
+!    write(unit=*,fmt="(a,es18.10)") "plaq = ", plaq ! YT 20240620
 
 
 ! Apply the tadpole factors.
@@ -161,27 +150,12 @@
     call fatfield(Utad,uzeros,it,nstoutsrc,astoutsrc,bwdnbr,fwdnbr,Ufat)
     call Ssource(isrc,Gt)
 
-    Gbundle(:,:,:,:,:,:,1) = Gt
 
-    call Ssource( fwdnbr(isrc,1), Gbundle(:,:,:,:,:,:,2) )
-    call Ssource( bwdnbr(isrc,1), Gbundle(:,:,:,:,:,:,3) )
-    call Ssource( fwdnbr(isrc,2), Gbundle(:,:,:,:,:,:,4) )
-    call Ssource( bwdnbr(isrc,2), Gbundle(:,:,:,:,:,:,5) )
-    call Ssource( fwdnbr(isrc,3), Gbundle(:,:,:,:,:,:,6) )
-    call Ssource( bwdnbr(isrc,3), Gbundle(:,:,:,:,:,:,7) )
-
-! Open correlator files for ^1S_0, ^3S_1, ^1P_1, ^3P_0 states.
-
-    open(unit=11, file=corrfile_1s0, form="formatted", status="replace")
-    open(unit=12, file=corrfile_3s1, form ="formatted", status="replace")
-!    open(unit=13, file=corrfile_1p1, form="formatted", status="replace")
-!    open(unit=14, file=corrfile_3p0, form="formatted", status="replace")
-
+    write(*,*) "^1S_0 ^3S_1(x) ^3S_1(y) ^3S_1(z)"
 ! Compute the 2-point correlators at the source time step.
     call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
-    call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)
-    write(unit=11,fmt="(i5,2es18.10)") it, corr1s0
-    write(unit=12,fmt="(i5,2es18.10,2es18.10,2es18.10)") it, corr3s1x, corr3s1y, corr3s1z
+    call Smeson(Gt,corr0,corr1x,corr1y,corr1z)
+    write(unit=*,fmt="(i5,2es18.10,2es18.10,2es18.10,2es18.10)") it, corr0, corr1x, corr1y, corr1z
 
 ! Compute the heavy quark propagators and meson 2-point correlators.
     newgaugefield = .true.
@@ -193,9 +167,8 @@
                     newgaugefield,uzeros,uzerot)
      newgaugefield = .false.
      call fatfield(Utad,uzeros,it,nstoutsnk,astoutsnk,bwdnbr,fwdnbr,Ufat)
-     call Smeson(Gt,corr1s0,corr3s1x,corr3s1y,corr3s1z)
-     write(unit=11,fmt="(i5,2es18.10)") it, corr1s0
-     write(unit=12,fmt="(i5,2es18.10,2es18.10,2es18.10)") it, corr3s1x, corr3s1y, corr3s1z
+     call Smeson(Gt,corr0,corr1x,corr1y,corr1z)
+     write(unit=*,fmt="(i5,2es18.10,2es18.10,2es18.10,2es18.10)") it, corr0, corr1x, corr1y, corr1z
     enddo ! it
     write(*,*) "RUNNING COMPLETED"
 
@@ -205,12 +178,6 @@
     deallocate(Ufat,stat=ierr)
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-! Close correlator files
-    close(unit=11)
-    close(unit=12)
-!    close(unit=13)
-!    close(unit=14)
 
  end program mainprogram
 

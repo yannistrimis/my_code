@@ -9,7 +9,7 @@
     implicit none
 
 ! Define the integer precision, KI=4 for single and KI=8 for double.
-    integer, public, parameter :: KI=8
+    integer, public, parameter :: KI=4
 
 ! Define the real precision, KR=4 for single and KR=8 for double.
     integer, public, parameter :: KR=8
@@ -17,7 +17,7 @@
 ! Define the complex precision, KC=4 for single and KC=8 for double.
     integer, public, parameter :: KC=8
 
-    integer, public, parameter :: KC_CONFIG=4
+    integer, public, parameter :: KC_CONFIG=8
 
 ! Define the number of space-time dimensions.
 ! NOTE: At present the code will only work with ndir=4.
@@ -42,7 +42,7 @@
 ! NOTE: If nt<largeNt then correlation functions will only have nt-4 time steps
 !       because two initial time steps and two final time steps are needed
 !       for neighbours during the calculation of color-electric fields.
-    integer, public, parameter :: nt=32
+    integer, public, parameter :: nt=8
 
 ! ===============================================
 ! Abandon all hope, ye who tamper below this line.

@@ -1,4 +1,6 @@
-This version (1.0) is developed for comparison against PRD 91 054511 (2015)
+Version 1.0
+
+This version is developed for comparison against PRD 91 054511 (2015)
 
 Remarks :
 
@@ -12,7 +14,7 @@ Additions and changes:
 userparameters.f90 :
 
 	Precisions KI, KR, KC can be set to double (8) or single (4). Precision 
-        of the configuration itself is always single (KC_CONFIG=4)
+        of the configuration itself is always single for MILC (KC_CONFIG=4)
 
 gaugefields.f90 :
 

@@ -18,7 +18,7 @@
     private
 
 ! Define access to subroutines.
-    public :: Ssource, Smeson, Pmeson
+    public :: Ssource, Smeson
 
  contains
 
@@ -55,19 +55,19 @@
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
- subroutine Smeson(G1,corr1s0,corr3s1x,corr3s1y,corr3s1z)
+ subroutine Smeson(G1,corr0,corr1x,corr1y,corr1z)
 ! Construct a meson correlator at one time step from given propagators.
 ! INPUT:
 !   G1() is the propagator for the quark.
 ! OUTPUT:
-!   corr1s0 is the correlation function for ^1S_0 (0-+).
-!   corr3s1x/y/z are the correlation functions for ^3S_1 (1--).
+!   corr0 is the correlation function for ^1S_0 (0-+).
+!   corr1x/y/z are the correlation functions for ^3S_1 (1--).
 
     complex(kind=KC), intent(in),  dimension(:,:,:,:,:,:) :: G1
-    complex(kind=KC), intent(out)                         :: corr1s0
-    complex(kind=KC), intent(out)                         :: corr3s1x
-    complex(kind=KC), intent(out)                         :: corr3s1y
-    complex(kind=KC), intent(out)                         :: corr3s1z
+    complex(kind=KC), intent(out)                         :: corr0
+    complex(kind=KC), intent(out)                         :: corr1x
+    complex(kind=KC), intent(out)                         :: corr1y
+    complex(kind=KC), intent(out)                         :: corr1z
 
 
     complex(kind=KC),  dimension(np,np) :: sig_x
@@ -92,26 +92,27 @@
     sig_z(2,1) = (0.0_KR,0.0_KR)
     sig_z(2,2) = (-1.0_KR,0.0_KR)
 
-    corr1s0 = (0.0_KR,0.0_KR)
-    corr3s1x = (0.0_KR,0.0_KR)
-    corr3s1y = (0.0_KR,0.0_KR)
-    corr3s1z = (0.0_KR,0.0_KR)
-    
+    corr0 = (0.0_KR,0.0_KR)
+    corr1x = (0.0_KR,0.0_KR)
+    corr1y = (0.0_KR,0.0_KR)
+    corr1z = (0.0_KR,0.0_KR)
+
     ixyz = 0
     do iz = 1,nz
      do iy = 1,ny
       do ix = 1,nx
-       ixyz = ixyz + 1
+       ixyz = ixyz + 1       
+       
        do jc = 1,nc
         do ic = 1,nc
          do jp = 1,np
           do ip = 1,np
-           corr1s0 = corr1s0 + conjg(G1(ic,ip,ixyz,jc,jp,1))*G1(ic,ip,ixyz,jc,jp,1)
+           corr0 = corr0 + conjg(G1(ic,ip,ixyz,jc,jp,1))*G1(ic,ip,ixyz,jc,jp,1)
            do kp = 1,np          
             do lp = 1,np
-             corr3s1x = corr3s1x + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_x(ip,lp)*sig_x(kp,jp)
-             corr3s1y = corr3s1y + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_y(ip,lp)*sig_y(kp,jp)
-             corr3s1z = corr3s1z + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_z(ip,lp)*sig_z(kp,jp)
+             corr1x = corr1x + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_x(ip,lp)*sig_x(jp,kp)
+             corr1y = corr1y + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_y(ip,lp)*sig_y(jp,kp)
+             corr1z = corr1z + conjg(G1(ic,ip,ixyz,jc,kp,1))*G1(ic,lp,ixyz,jc,jp,1)*sig_z(ip,lp)*sig_z(jp,kp)
             enddo ! lp
            enddo ! kp
           enddo ! ip
@@ -121,75 +122,12 @@
       enddo ! ix
      enddo ! iy
     enddo ! iz
+      
+
 
  end subroutine Smeson
 
 ! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
- subroutine Pmeson(Gbundle,corr1p1x,corr1p1y,corr1p1z)
-! Construct a meson correlator at one time step from given propagators.
-! INPUT:
-!   G1() is the propagator for the quark.
-! OUTPUT:
-!   corr1p1x/y/z are the correlation functions for ^1P_1 (1+-).
-
-    complex(kind=KC), intent(in),  dimension(:,:,:,:,:,:,7) :: Gbundle
-
-    complex(kind=KC), intent(out)                           :: corr1p1x
-    complex(kind=KC), intent(out)                           :: corr1p1y
-    complex(kind=KC), intent(out)                           :: corr1p1z
-
-
-    complex(kind=KC),  dimension(np,np) :: sig_x
-    complex(kind=KC),  dimension(np,np) :: sig_y
-    complex(kind=KC),  dimension(np,np) :: sig_z
-
-    integer(kind=KI) :: ic, ip, ix, iy, iz, ixyz, jc, jp
-    integer(kind=KI) :: kp, lp
-
-    sig_x(1,1) = (0.0_KR,0.0_KR)
-    sig_x(1,2) = (1.0_KR,0.0_KR)
-    sig_x(2,1) = (1.0_KR,0.0_KR)
-    sig_x(2,2) = (0.0_KR,0.0_KR)
-
-    sig_y(1,1) = (0.0_KR,0.0_KR)
-    sig_y(1,2) = (0.0_KR,-1.0_KR)
-    sig_y(2,1) = (0.0_KR,1.0_KR)
-    sig_y(2,2) = (0.0_KR,0.0_KR)
-
-    sig_z(1,1) = (1.0_KR,0.0_KR)
-    sig_z(1,2) = (0.0_KR,0.0_KR)
-    sig_z(2,1) = (0.0_KR,0.0_KR)
-    sig_z(2,2) = (-1.0_KR,0.0_KR)
-
-    corr1p1x = (0.0_KR,0.0_KR)
-    corr1p1y = (0.0_KR,0.0_KR)
-    corr1p1z = (0.0_KR,0.0_KR)
-
-    ixyz = 0
-    do iz = 1,nz
-     do iy = 1,ny
-      do ix = 1,nx
-       ixyz = ixyz + 1
-       do jc = 1,nc
-        do ic = 1,nc
-         do jp = 1,np
-          do ip = 1,np
-          enddo ! ip
-         enddo ! jp
-        enddo ! ic
-       enddo ! jc
-      enddo ! ix
-     enddo ! iy
-    enddo ! iz
-
-
- end subroutine Pmeson
-
-
-
-! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
  end module heavyoperators
 
