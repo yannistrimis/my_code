@@ -1,8 +1,11 @@
-Version 1.0
+Version 1.1
 
 This version is developed for comparison against PRD 91 054511 (2015)
 
-The 1s0.sample-out and 3s1.sample-out have output that corresponds to the configuration:
+It differs from 1.0 in the output of 3s1 states. The current version
+averages over x,y,z components.
+
+The s_corrs.sample-out havs output that corresponds to the configuration:
 
 "../code_v0.0/RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
 
