@@ -1,25 +1,24 @@
 Version 1.1
 
 This version is developed for comparison against PRD 91 054511 (2015)
+Particularly, for comparison against Alejandro's MILC implementation.
 
 It differs from 1.0 in the output of 3s1 states. The current version
 averages over x,y,z components.
 
-The s_corrs.sample-out havs output that corresponds to the configuration:
+The configuration used for the test is: lat.sample.l8888.trunc
 
-"../code_v0.0/RC16x32_B1830Kud013760Ks013760C1761-1-000410.delime.testlat"
-
-which is what has to be supplied as input when running the code.
-
+The file s_corrs.sample-out-1 uses just kinetic and sigma.B terms, i.e. cset(1,1) and cset(2,5)
+and iaction = 3, mode = 2, bareM = 1.9 and source at (1,1,1,1) (or (0,0,0,0) in MILC notation).
 
 Remarks :
 
-	If the code is compiled in double precision the 6*plaquette matches
+	1. If the code is compiled in double precision the 6*plaquette matches
 	MILC plaquette up to 10 significant digits.
 
-Additions and changes:
+	2. The configreadshift() function reads only nt timeslices and discards the rest.
 
-1st batch:
+Additions and changes:
 
 userparameters.f90 :
 
