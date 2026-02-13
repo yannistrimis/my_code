@@ -31,6 +31,7 @@ sbatch_jobname_arr=("zf68500" "zf68570" "zf69000" "zf70000" "zf71000")
 n_of_sub=4
 n_of_lat=500
 first_lattice=101
+traj_step=1
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -74,6 +75,7 @@ cat <<EOF > ../${my_dir}/params.sh
 cluster=${cluster}
 
 first_lattice=${first_lattice}
+traj_step=${traj_step}
 
 n_of_lat=${n_of_lat}
 n_of_sub=${n_of_sub}

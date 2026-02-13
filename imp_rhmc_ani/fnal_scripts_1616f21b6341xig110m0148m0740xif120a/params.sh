@@ -4,8 +4,8 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=20
-n_of_sub=1
+n_of_lat=100
+n_of_sub=5
 
 nx=16
 ny=16
@@ -40,7 +40,7 @@ submit_dir="/project/ahisq/yannis_dyn/submits/subgenl1616f21b6341xig110m0148m074
 # executable="su3_rhmd_hisq_a_dbl_gcc12openmpi4_20250508"
 executable="su3_rhmc_hisq_a_dbl_gcc12openmpi4_20250508"
 
-sbatch_time="02:00:00"
+sbatch_time="10:00:00"
 sbatch_nodes="2"
 sbatch_ntasks="64"
 sbatch_jobname="g11q12"

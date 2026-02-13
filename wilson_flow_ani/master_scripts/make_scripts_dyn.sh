@@ -8,19 +8,19 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=128
+nt=16
 
-beta_name="6747"
+beta_name="6341"
 flavors="f21"
-masses="m014m070"
-xig="3500"
-xiq="3900"
+masses="m0148m0740"
+xig="120"
+xiq="120"
 
 
 stream="a"
 
-xi_f_arr=(4.4780)
-xi_f_name_arr=("44780")
+xi_f_arr=(1.2)
+xi_f_name_arr=("120")
 
 flow_action="wilson"
 exp_order="16"
@@ -28,14 +28,15 @@ dt="0.015625"
 stoptime="6.0" # CAREFUL!!!
 
 sbatch_time="20:00:00"
-sbatch_nodes=4 # MAY OR MAY NOT BE RELEVANT
+sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("39fl")
+sbatch_ntasks=64 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("wf1212")
 
 n_of_sub=1
-n_of_lat=200
-first_lattice=101
+n_of_lat=10
+first_lattice=105
+traj_step=5
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
@@ -47,7 +48,7 @@ sbatch_jobname=${sbatch_jobname_arr[${i_ens}]}
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
-ensemble_nostream="${nx}${nt}${flavors}b${beta_name}${masses}xig${xig}xiq${xiq}"
+ensemble_nostream="${nx}${nt}${flavors}b${beta_name}xig${xig}${masses}xif${xiq}"
 ensemble="${ensemble_nostream}${stream}"
 lat_name="l${ensemble}"
 
@@ -78,6 +79,7 @@ cat <<EOF > ../${my_dir}/params.sh
 cluster=${cluster}
 
 first_lattice=${first_lattice}
+traj_step=${traj_step}
 
 n_of_lat=${n_of_lat}
 n_of_sub=${n_of_sub}

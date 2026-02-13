@@ -3,19 +3,16 @@ start_time=$(date +%s.%N)
 path=$1
 source ${path}/params.sh
 
-# guard FILE CONTAINS NUMBER OF NEXT LATTICE TO BE FLOWED
+# guard FILE CONTAINS NUMBER OF LAST LATTICE THAT HAS BEEN FLOWED
 
 if [ -f "${submit_dir}/guard" ]
 then
 
-i_lat=$(head -n 1 "${submit_dir}/guard" | tail -n 1)
+i_lat_prev=$(head -n 1 "${submit_dir}/guard" | tail -n 1)
 
 else
 
-i_lat=${first_lattice}
-cat << EOF > "${submit_dir}/guard"
-${i_lat}
-EOF
+i_lat_prev=$((${first_lattice}-${traj_step}))
 
 fi
 
@@ -24,6 +21,8 @@ n_flowed=0
 i=1
 while [ $i -le $n_of_lat ]
 do
+
+i_lat=$((${i_lat_prev}+${traj_step}))
 
 if [ ! -f "${directory}/${lat_name}.${i_lat}" ]
 then
@@ -68,9 +67,9 @@ if [ "${complete_flag}" = "1" ]
 then
 
 n_flowed=$((${n_flowed}+1))
-i_lat=$(($i_lat+1))
+i_lat_prev=${i_lat}
 cat << EOF > "${submit_dir}/guard"
-${i_lat}
+${i_lat_prev}
 EOF
 
 fi

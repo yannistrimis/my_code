@@ -15,8 +15,8 @@ cat <<EOF > ${submit_dir}/submit_script.sb
 #SBATCH --job-name=${sbatch_jobname}
 
 module purge
-module load ${sbatch_module1}
-module load ${sbatch_module2}
+module load GCC/12
+module load OpenMPI/4
 
 bash ${1}/control_script.sh ${1}
 
@@ -32,14 +32,17 @@ cat <<EOF > ${submit_dir}/submit_script.sb
 #SBATCH --partition=lq1_cpu
 #SBATCH --nodes=${sbatch_nodes}
 #SBATCH --ntasks=${sbatch_ntasks}
-#SBATCH -A ahisq
+#SBATCH -A ahisq.lq1_cpu
 #SBATCH --qos=normal
 
 #SBATCH --job-name=${sbatch_jobname}
 
+#SBATCH -o ${submit_dir}/slurm.out
+#SBATCH -e ${submit_dir}/slurm.err
+
 module purge
-module load ${sbatch_module1}
-module load ${sbatch_module2}
+module load gcc/12
+module load openmpi/4
 
 bash ${1}/control_script.sh ${1}
 
@@ -63,4 +66,6 @@ bash ${1}/control_script.sh ${1}
 
 EOF
 
+
 fi
+ 
