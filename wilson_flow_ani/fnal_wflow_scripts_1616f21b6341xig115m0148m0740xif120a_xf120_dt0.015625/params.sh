@@ -3,10 +3,10 @@
 
 cluster=fnal
 
-first_lattice=105
+first_lattice=5
 traj_step=5
 
-n_of_lat=500
+n_of_lat=600
 n_of_sub=1
 
 nx=16
