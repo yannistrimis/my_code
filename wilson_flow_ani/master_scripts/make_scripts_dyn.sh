@@ -13,7 +13,7 @@ nt=16
 beta_name="6341"
 flavors="f21"
 masses="m0148m0740"
-xig="120"
+xig="110"
 xiq="120"
 
 
@@ -31,7 +31,7 @@ sbatch_time="20:00:00"
 sbatch_nodes=2 # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
 sbatch_ntasks=64 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("wf1212")
+sbatch_jobname_arr=("wf11012")
 
 n_of_sub=1
 n_of_lat=10
@@ -129,7 +129,7 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/yannis_dyn/lattices/${lat_name}"
+directory="/lustre2/ahisq/yannis_dyn/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_dyn/outputs/${lat_name}"
 path_build="/home/trimisio/all/my_code/wilson_flow_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/run${prefix}${lat_name}_xf${xi_f_name}"

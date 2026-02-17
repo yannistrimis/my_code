@@ -3,18 +3,18 @@
 nt=320 # DON'T FORGET TO CHANGE !!!
 
 ens_name="20320b726025x689327a"
-masses=("0.07")
+masses=("0.060803" "0.070803" "0.080803")
 mas_len=${#masses[@]}
 
-prefix="str"
+prefix="hisqtun"
 
-xq_arr=("7870" )
+xq_arr=("7470" "7870" "8270")
 sinks_arr=("PION_5")
-mom_arr=("p000")
-#mom_arr=("p100" "p110")
+# mom_arr=("p000")
+mom_arr=("p100" "p110")
 
-source1="CORNER"
-#source1="CORNER/momentum"
+# source1="CORNER"
+source1="CORNER/momentum"
 source2="CORNER"
 
 src_label="cw"
@@ -23,16 +23,16 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=400
+last=430
 
 # output_dir="/home/trimis/spec_data"
 # data_dir="/home/trimis/spec_data"
 
-#output_dir="/home/trimisio/all/spec_data"
-#data_dir="/home/trimisio/all/spec_data"
+output_dir="/home/trimisio/all/spec_data"
+data_dir="/home/trimisio/all/spec_data"
 
-output_dir="/home/yannis/Physics/LQCD/spec_data"
-data_dir="/home/yannis/Physics/LQCD/spec_data"
+# output_dir="/home/yannis/Physics/LQCD/spec_data"
+# data_dir="/home/yannis/Physics/LQCD/spec_data"
 
 for mom in ${mom_arr[@]}
 do
