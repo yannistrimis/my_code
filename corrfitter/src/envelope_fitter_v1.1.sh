@@ -1,14 +1,14 @@
 
 #!/bin/bash
 
-ens_name="16128b719156x348992a"
+ens_name="20320b726025x689327a"
 
-src="eowfw"
-prefix="hisqnlpi_str"
-taste="PION_s"
+src="cw"
+prefix="hisqtun"
+taste="PION_5"
 
-xq="4000"
-mass="0.0723"
+xq="7470"
+mass="0.060803"
 
 mom="p000"
 
@@ -19,11 +19,11 @@ dir=${fitdir} # CMSE
 # dir=${fitdir} # LAPTOP
 
 tdatamin=0
-tdatamax=64
+tdatamax=160
 tstep=1
-tp=128
+tp=320
 n_states=2
-m_states=1
+m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -33,15 +33,15 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=60
+tmin_max=36
 tmin_step=1
 
-tmax_min=60
-tmax_max=60
-tmax_step=2
+tmax_min=36
+tmax_max=36
+tmax_step=3
 
-tmin_one=35
-tmax_one=120
+tmin_one=13
+tmax_one=43
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
