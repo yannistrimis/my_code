@@ -7,10 +7,10 @@ src="cw"
 prefix="hisqtun"
 taste="PION_5"
 
-xq="7470"
+xq="8270"
 mass="0.060803"
 
-mom="p000"
+mom="p100"
 
 fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
 dir=${fitdir} # CMSE
@@ -22,8 +22,8 @@ tdatamin=0
 tdatamax=160
 tstep=1
 tp=320
-n_states=2
-m_states=0
+n_states=1
+m_states=1
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -32,12 +32,12 @@ correlated="corr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=0
-tmin_max=36
-tmin_step=1
+tmin_min=30
+tmin_max=120
+tmin_step=3
 
-tmax_min=36
-tmax_max=36
+tmax_min=159
+tmax_max=159
 tmax_step=3
 
 tmin_one=13
