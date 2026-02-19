@@ -8,9 +8,9 @@ prefix="hisqtun"
 taste="PION_5"
 
 xq="8270"
-mass="0.060803"
+mass="0.070803"
 
-mom="p100"
+mom="p110"
 
 fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
 dir=${fitdir} # CMSE
@@ -32,16 +32,16 @@ correlated="corr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=30
-tmin_max=120
-tmin_step=3
+tmin_min=20
+tmin_max=60
+tmin_step=1
 
-tmax_min=159
-tmax_max=159
-tmax_step=3
+tmax_min=60
+tmax_max=60
+tmax_step=1
 
-tmin_one=13
-tmax_one=43
+tmin_one=103
+tmax_one=160
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
