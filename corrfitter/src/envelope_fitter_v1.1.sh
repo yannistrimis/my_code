@@ -8,7 +8,7 @@ prefix="hisqtun"
 taste="PION_5"
 
 xq="8270"
-mass="0.070803"
+mass="0.080803"
 
 mom="p110"
 
@@ -32,13 +32,13 @@ correlated="corr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=20
-tmin_max=60
+tmin_min=60
+tmin_max=110
 tmin_step=1
 
-tmax_min=60
-tmax_max=60
-tmax_step=1
+tmax_min=100
+tmax_max=100
+tmax_step=3
 
 tmin_one=103
 tmax_one=160

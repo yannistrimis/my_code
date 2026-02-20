@@ -11,18 +11,18 @@ mss_phys = 685.8 # MeV
 hc = 197.327 # MeV * fm
 
 a = 0.16 # fm
-xi_g = 1.2
+xi_g = 8.0
 
 mss_lat = a * mss_phys / hc
 
-x0_arr = np.array([ 1.0, 1.2, 1.4 ])
-mass_arr = np.array([ 0.02, 0.04, 0.06 ])
-x0_per_mass = np.array([ 1.06833,  1.05652, 1.04104 ])
+x0_arr = np.array([ 7.47, 7.87, 8.27 ])
+mass_arr = np.array([ 0.060803, 0.070803, 0.080803 ])
+x0_per_mass = np.array([ 7.90159, 7.90416, 8.00342 ])
 
 my_arr = np.array([\
-[0.358196, 0.000442,       0.315668, 0.000414,       0.283860, 0.000387],\
-[0.498545, 0.000247,       0.436800, 0.000257,       0.390631, 0.000234],\
-[0.603992, 0.000218,       0.526787, 0.000210,       0.468990, 0.000178]])
+[0.066512, 0.000059,        0.064663, 0.000059,       0.062925, 0.000056],\
+[0.071795, 0.000057,        0.069747, 0.000056,       0.067846, 0.000054],\
+[0.076753, 0.000054,        0.074532, 0.000053,       0.072489, 0.000052]])
 
 #ENDETH INPUT
 
@@ -51,7 +51,7 @@ coeffs[2] = coeffs[2] - mss_lat
 solutions = np.roots(coeffs)
 
 for ii in range( len(solutions) ): # FOR SECURITY
-  if solutions[ii] < 0.10 and solutions[ii] > 0.01 :
+  if solutions[ii] < 0.1 and solutions[ii] > 0.01 :
     m_quark = np.real(solutions[ii])
     break
 
