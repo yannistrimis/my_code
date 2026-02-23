@@ -14,28 +14,29 @@ w0phys = 0.17355
 # cur_dir = '/home/trimis/outputs'
 # write_dir = '/home/trimis/flow_data'
 
-cur_dir = "/global/cfs/projectdirs/m1416/yannis_puregauge/outputs"
-write_dir = "/global/homes/t/trimisio/flow_data"
+cur_dir = "/project/ahisq/yannis_dyn/outputs"
+write_dir = "/home/trimisio/all/flow_data"
 
-ens_pre = "20160b7433x"
+ens_pre = "1616f21b6341xig"
 
-x0_vec = ["68500", "68570", "69000", "70000", "71000"]
-x0_float_vec = [6.8500, 6.8570, 6.9000, 7.0000, 7.1000]
+x0_vec = ["110"]
+x0_float_vec = [1.1]
 
-ens_post="a"
+ens_post="m0148m0740xif120a"
 
-xf = "800"
-xf_float = 8.0
+xf = "120"
+xf_float = 1.2
 
 flow_type = input()
 obs_type = input()
 check_single_ens = input() # THIS IS RELEVANT IF A SINGLE ENSEMBLE NEEDS TO
 # BE CHECKED WRT LATTICE SPACING (w_0) AND RENORMALIZED ANISOTROPY (xi_g);
 # IF xi_g IS CORRECTLY TUNED THEN THE RATIO w_0s/w_0t SHOULD BE 1.0 WITHIN ERRORS.
-dt = '0.0078125'
-n_files = 200
-first_file = 101
-n_bins = 25
+dt = "0.015625"
+n_files = 400
+file_step = 5
+first_file = 605
+n_bins = 40
 i_x0_rec = 0 # WHICH ONE OF THE BARE ANISOTROPIES TO PICK FOR RECORDING
 
 f_write = open( '%s/data_%sflow%s%s%s_xf%s_dt%s_obs_%s'%(write_dir,flow_type,ens_pre,x0_vec[i_x0_rec],ens_post,xf,dt,obs_type) , 'w' )
