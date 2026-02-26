@@ -13,31 +13,31 @@ nt=16
 beta=6.341
 beta_name="6341"
 
-xig=1.15
-xig_name="115"
+xig=1.1
+xig_name="110"
 
 xiq=1.2
 xiq_name="120"
 
-dyn_mass_1=0.0148
-dyn_mass_1_name="0148"
+dyn_mass_1=0.014
+dyn_mass_1_name="014"
 
-dyn_mass_2=0.0740
-dyn_mass_2_name="0740"
+dyn_mass_2=0.070
+dyn_mass_2_name="070"
 
 warms=0
 trajecs=100
 traj_between_meas=1
 microcanonical_time_step=0.05
 steps_per_trajectory=20
-rationals_file="rationals.m0148m0740"
+rationals_file="rationals.m014m070"
 
 stream="a"
 
 sbatch_time="02:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("xig1200")
+sbatch_jobname_arr=("xg110m07")
 
 n_of_sub=1
 n_of_lat=1
