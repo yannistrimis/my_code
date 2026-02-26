@@ -1,3 +1,4 @@
+
 import numpy as np
 from matplotlib import pyplot as plt
 import sys
@@ -11,16 +12,13 @@ from python_funcs import *
 
 w0phys = 0.17355
 
-# cur_dir = '/home/trimis/outputs'
-# write_dir = '/home/trimis/flow_data'
-
-cur_dir = "/project/ahisq/yannis_dyn/outputs"
-write_dir = "/home/trimisio/all/flow_data"
+cur_dir = '/home/trimis/fnal/all/outputs'
+write_dir = '/home/trimis/fnal/all/flow_data'
 
 ens_pre = "1616f21b6341xig"
 
-x0_vec = ["110"]
-x0_float_vec = [1.1]
+x0_vec = ["120"]
+x0_float_vec = [1.2]
 
 ens_post="m0148m0740xif120a"
 
@@ -48,8 +46,9 @@ i_x0 = -1
 for x0 in x0_vec :
     i_x0 += 1
     print('%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt))
-    for i_file in range(first_file,n_files+first_file):
-        i = i_file - first_file
+    i = -1
+    for i_file in range(first_file,n_files*file_step+first_file,file_step):
+        i = i+1
         f_read = open( '%s/l%s%s%s/%sflow%s%s%s_xf%s_dt%s.%d'%(cur_dir,ens_pre,x0,ens_post,flow_type,ens_pre,x0,ens_post,xf,dt,i_file) , 'r' )
         content = f_read.readlines()
         f_read.close()
@@ -221,7 +220,7 @@ if check_single_ens == 'yes' :
     a_s_mean = w0phys / w0_single_ens[0]
     a_s_sdev = ( w0phys / w0_single_ens[0]**2 ) * w0_single_ens[1]
     print('SPATIAL LATTICE SPACING:')
-    print('a_s = %.6f +- %.6f'%(a_s_mean,a_s_sdev))
+    print('a_s = %.6f +- %.6f fm'%(a_s_mean,a_s_sdev))
     sys.exit()
 
 predicted_x0_binned = np.zeros(n_bins)
@@ -269,7 +268,6 @@ predicted_w0s = jackknife_for_binned(predicted_w0s_binned)
 #for i_bins in range(n_bins):
 #    plt.errorbar(x0_float_vec,ratios[i_bins,:],yerr=ratio_errors, fmt='.')
 #    plt.axvline(x=predicted_x0_binned[i_bins], linestyle='-')
-
 
 #f2 = plt.figure(2)
 #for i_bins in range(n_bins):
