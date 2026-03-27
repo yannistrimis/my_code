@@ -12,14 +12,15 @@ ny=16
 nz=16
 nt=32
 
-set_i_lat=101
+set_i_lat=105
 set_seed=78324
+traj_step=5
 
 flavors="f21"
-beta_name="6396"
-masses="m014m070"
-xig="1100"
-xiq="1100"
+beta_name="6341"
+masses="m0148m0740"
+xig="112492"
+xiq="120"
 
 stream="a"
 
@@ -31,12 +32,12 @@ source_inc=16 # CHANGE ACCORDING TO nt
 source_prec=10 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.014
+mass1=0.074
 
 nxq=1
-xq1=1.1
+xq1=1.2
 
-xq1_name="1100"
+xq1_name="120"
 
 action="hisq"
 err=1e-6
@@ -44,22 +45,22 @@ max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=4
+sbatch_nodes=1
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
-sbatch_ntasks=128
-sbatch_jobname="ahnl"
+sbatch_ntasks=32
+sbatch_jobname="specdyn"
 
 prefix="hisqnlpi"
 build_prefix="nlpi"
 
-n_of_sub=2
-n_of_lat=1000
+n_of_sub=1
+n_of_lat=1
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
 
-ensemble_nostream="${nx}${nt}${flavors}b${beta_name}${masses}xig${xig}xiq${xiq}"
+ensemble_nostream="${nx}${nt}${flavors}b${beta_name}xig${xig}${masses}xif${xiq}"
 ensemble="${ensemble_nostream}${stream}"
 lat_name="l${ensemble}"
 
@@ -85,6 +86,8 @@ n_of_sub=${n_of_sub}
 
 set_i_lat=${set_i_lat}
 set_seed=${set_seed}
+
+traj_step=${traj_step}
 
 nx=${nx}
 ny=${ny}
@@ -145,7 +148,7 @@ then
 
 cat <<EOF >> ../${my_dir}/params.sh
 
-directory="/lustre1/ahisq/yannis_dyn/lattices/${lat_name}"
+directory="/lustre2/ahisq/yannis_dyn/lattices/${lat_name}"
 out_dir="/project/ahisq/yannis_dyn/outputs/spec/${lat_name}"
 path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
 run_dir="/project/ahisq/yannis_dyn/runs/runspec${prefix}${lat_name}"

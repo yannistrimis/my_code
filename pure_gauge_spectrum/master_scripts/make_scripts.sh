@@ -15,6 +15,8 @@ nt=320
 set_i_lat=101
 set_seed=79309
 
+traj_step=1
+
 beta_name="726025"
 xi_0_name="689327"
 stream="a"
@@ -87,6 +89,8 @@ n_of_sub=${n_of_sub}
 
 set_i_lat=${set_i_lat}
 set_seed=${set_seed}
+
+traj_step=${traj_step}
 
 nx=${nx}
 ny=${ny}

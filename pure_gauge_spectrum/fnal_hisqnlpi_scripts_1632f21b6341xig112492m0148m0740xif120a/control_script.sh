@@ -17,7 +17,7 @@ i_lat_prev=$((${set_i_lat}-${traj_step}))
 seed=${set_seed}
 
 cat << EOF > "${submit_dir}/guard"
-${i_lat}
+${i_lat_prev}
 ${seed}
 EOF
 
