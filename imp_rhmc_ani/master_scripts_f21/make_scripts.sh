@@ -8,13 +8,13 @@ cluster="fnal"
 n_of_ens=1
 
 nx=16
-nt=16
+nt=32
 
 beta=6.341
 beta_name="6341"
 
-xig=1.1
-xig_name="110"
+xig=1.12492
+xig_name="112492"
 
 xiq=1.2
 xiq_name="120"
@@ -26,10 +26,10 @@ dyn_mass_2=0.070
 dyn_mass_2_name="070"
 
 warms=0
-trajecs=100
+trajecs=5
 traj_between_meas=1
-microcanonical_time_step=0.05
-steps_per_trajectory=20
+microcanonical_time_step=0.03846154
+steps_per_trajectory=26
 rationals_file="rationals.m014m070"
 
 stream="a"
@@ -37,10 +37,10 @@ stream="a"
 sbatch_time="02:00:00"
 sbatch_nodes=4
 sbatch_ntasks=128
-sbatch_jobname_arr=("xg110m07")
+sbatch_jobname_arr=("x12m07")
 
 n_of_sub=1
-n_of_lat=1
+n_of_lat=10
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
