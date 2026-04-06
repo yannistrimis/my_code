@@ -7,40 +7,34 @@
 cluster="fnal"
 n_of_ens=1
 
-nx=20
-ny=20
-nz=20
-nt=320
+nx=16
+ny=16
+nz=16
+nt=128
 
 set_i_lat=101
 set_seed=79309
 
 traj_step=1
 
-beta_name="726025"
-xi_0_name="689327"
+beta_name="719156"
+xi_0_name="348992"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=160 # CHANGE ACCORDING TO nt
-source_prec=90 # CHANGE ACCORDING TO nt
+source_inc=64 # CHANGE ACCORDING TO nt
+source_prec=34 # CHANGE ACCORDING TO nt
 
-nmasses=3
-mass1=0.060803
-mass2=0.070803
-mass3=0.080803
+nmasses=1
+mass1=0.072277
 
-nxq=3
-xq1=7.47
-xq2=7.87
-xq3=8.27
+nxq=1
+xq1=4.0
 
-xq1_name="7470"
-xq2_name="7870"
-xq3_name="8270"
+xq1_name="4000"
 
 action="hisq"
 err=1e-6
@@ -51,9 +45,9 @@ sbatch_time="20:00:00"
 sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
 sbatch_ntasks=128
-sbatch_jobname="hisq8tun"
+sbatch_jobname="h40check"
 
-prefix="hisqtun"
+prefix="tuncheck"
 build_prefix="tun"
 
 n_of_sub=1
