@@ -17,7 +17,7 @@ nz=16
 nt=32
 
 lat_name="l1632b681823x100000a"
-out_name="spectuncheck1632b681823x100000"
+out_name="specnaivtuncheck1632b681823x100000"
 
 nmasses=1
 mass_arr=( 0.04273      )
@@ -38,17 +38,17 @@ err=1e-6
 max_cg_iterations=300
 precision=2
 
-build_script=build_input_tun_new.sh
+build_script=build_input_tun_new_cw.sh
 
 
-directory="/lustre2/ahisq/yannis_puregauge/lattices/l1632b681823x100000a"
+directory="/lustre1/ahisq/yannis_puregauge/lattices/l1632b681823x100000a"
 out_dir="/project/ahisq/yannis_puregauge/outputs/pure_gauge_spec/l1632b681823x100000a"
 path_build="/home/trimisio/all/my_code/pure_gauge_spectrum/build"
-run_dir="/project/ahisq/yannis_puregauge/runs/runspectuncheckl1632b681823x100000a"
-submit_dir="/project/ahisq/yannis_puregauge/submits/subspectuncheckl1632b681823x100000a"
+run_dir="/project/ahisq/yannis_puregauge/runs/runspecnaivtuncheckl1632b681823x100000a"
+submit_dir="/project/ahisq/yannis_puregauge/submits/subspecnaivtuncheckl1632b681823x100000a"
 
 # executable="ks_spectrum_ani_hisq_dbl_gcc12openmpi4_20250423"
-# executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20250423"
+executable="ks_spectrum_ani_naive_dbl_gcc12openmpi4_20250423"
 
 sbatch_time="20:00:00"
 sbatch_nodes="2"

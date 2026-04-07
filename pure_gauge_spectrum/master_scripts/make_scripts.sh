@@ -10,44 +10,44 @@ n_of_ens=1
 nx=16
 ny=16
 nz=16
-nt=128
+nt=64
 
 set_i_lat=101
 set_seed=79309
 
 traj_step=1
 
-beta_name="719156"
-xi_0_name="348992"
+beta_name="704115"
+xi_0_name="181411"
 stream="a"
 
 u0=1
 
 set_source_start=0
 n_sources=2
-source_inc=64 # CHANGE ACCORDING TO nt
-source_prec=34 # CHANGE ACCORDING TO nt
+source_inc=32 # CHANGE ACCORDING TO nt
+source_prec=18 # CHANGE ACCORDING TO nt
 
 nmasses=1
-mass1=0.072277
+mass1=0.03626
 
 nxq=1
-xq1=4.0
+xq1=1.54707
 
-xq1_name="4000"
+xq1_name="154707"
 
-action="hisq"
+action="naive"
 err=1e-6
 max_cg_iterations=300
 precision=2
 
 sbatch_time="20:00:00"
-sbatch_nodes=4
+sbatch_nodes=2
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE NEEDED.
-sbatch_ntasks=128
-sbatch_jobname="h40check"
+sbatch_ntasks=64
+sbatch_jobname="n20check"
 
-prefix="tuncheck"
+prefix="naivtuncheck"
 build_prefix="tun"
 
 n_of_sub=1
