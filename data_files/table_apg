@@ -1,0 +1,323 @@
+Table for tuning and production anisotropic pure gauge runs (tree-level Symanzik-improved gauge action)
+
+Notes:
+1) Notation: xi0 - bare gauge anisotropy, xiT - target renormalized anisotropy, xiGF - anisotropy in the gradient flow.
+2) Main tuning is SWC, w0s is listed in that scheme. The ratio Rw0 is defined as Rw0=w0s/w0t.
+3) xi0 is bare gauge anisotropy, xiT is the target renormalized anisotropy, xiGF is the anisotropy in the flow.
+4) Anisotropic gradient flow is used as in 1802.07718: the flow is run with the gradient flow anisotropy set to the target renormalized anisotropy. For tuning ensembles, the ratio Rw0=w0s/w0t is not equal to 1, therefore, w0s is not meaningful.
+5) For tuned ensembles, w0s is listed together with Rw0 (Rw0 shows how well the anisotropy is tuned).
+6) Nconf is the number of configurations, Nflow is the number of configurations used for the flow.
+7) Spatial lattice spacing a0s is computed with w0=0.17355(92) fm from 2411.04268.
+8) If different flows are measured on different number of configurations, the lowest/highest pair is shown under Nflow.
+9) Most of the analysis propagates errors with jackknife (20 bins), quadratic fits with 10,000 bootstrap samples are used for predicting xi0.
+
+beta     xi0     xiT  Ns  Nt  Nconf  xiGF  Nflow    Rw0     dRw0     w0s     dw0s     a0s      da0s      tape
+
+                 ### tuned xiT=1
+6.71789  1       1    16  32  2100   1     500      1.00034 0.00020  0.93114 0.00039  0.186384 0.000078  NERSC
+6.81823  1       1    16  32  4525   1     500      0.99969 0.00029  1.04147 0.00049  0.166639 0.000078  NERSC
+
+                 ### tuned xiT=1.1
+6.84652  1.07865 1.1  16  32  4891   1.1   300      0.99944 0.00026  1.04393 0.00087  0.166247 0.000139  NERSC
+
+                 ### tuned xiT=1.2
+6.87348  1.15792 1.2  16  32  4998   1.2   600      0.99946 0.00030  1.04411 0.00041  0.166218 0.000065  NERSC
+                                     1.15  600      1.02299 0.00030  1.04939 0.00041                     NERSC
+                                     1.25  600      0.97706 0.00029  1.03889 0.00040                     NERSC
+
+                 ### tuned xiT=1.5
+6.94635  1.39939 1.5  16  48  4787   1.5   500      1.00080 0.00043  1.04090 0.00056  0.166731 0.000090  NERSC
+
+                 ### tuned xiT=2
+6.93563  1.80060 2    16  64  2286   2     300      0.99960 0.00036  0.93182 0.00062  0.186248 0.000124  NERSC
+7.04115  1.81411 2    16  64  2322   2     452      0.99970 0.00034  1.04158 0.00079  0.166622 0.000126  NERSC
+
+                 ### tuned xiT=4
+7.19156  3.48992 4    16  128 1749   4     445/1649 1.00043 0.00017  1.04165 0.00032  0.166611 0.000051  NERSC
+
+                 ### tuned xiT=8
+7.147    6.82    8    20  160 202    8     100/102  1.00008 0.00044  0.92546 0.00105  0.187528 0.000213  NERSC
+7.26025  6.89327 8    20  320 1109   8     112/321  0.99897 0.00025  1.03859 0.00078  0.167102 0.000125  NERSC
+
+                 #### group of ensembles with xiT=2
+6.9      1.78    2    16  32  510    2     410      1.00257 0.00043  0.89945 0.00057                     NERSC
+6.9      1.80    2    16  32  500    2     400      0.99918 0.00042  0.89591 0.00065                     NERSC
+6.9      1.82    2    16  32  500    2     400      0.99597 0.00045  0.89453 0.00055                     NERSC
+6.9      1.84    2    16  32  500    2     400      0.99259 0.00034  0.89242 0.00048                     NERSC
+6.9      1.86    2    16  32  500    2     400      0.98952 0.00043  0.88983 0.00055                     NERSC
+6.9      1.88    2    16  32  500    2     400      0.98653 0.00038  0.88815 0.00086                     NERSC
+6.9      1.90    2    16  32  500    2     400      0.98381 0.00040  0.88573 0.00042                     NERSC
+6.9      1.92    2    16  32  500    2     400      0.98071 0.00035  0.88323 0.00059                     NERSC
+6.9      1.94    2    16  32  500    2     400      0.97728 0.00026  0.88236 0.00060                     NERSC
+		 NOTE: predicted from fit xi0 = 1.79516 +/- 0.00158  w0s = 0.89729 +/- 0.00036
+
+7.0      1.78    2    16  32  600    2     500      1.00488 0.00043  1.00014 0.00085                     NERSC
+7.0      1.80    2    16  32  600    2     500      1.00177 0.00045  1.00037 0.00070                     NERSC
+7.0      1.82    2    16  32  600    2     500      0.99838 0.00047  0.99828 0.00062                     NERSC
+7.0      1.84    2    16  32  600    2     500      0.99494 0.00037  0.99394 0.00073                     NERSC
+7.0      1.86    2    16  32  600    2     500      0.99231 0.00028  0.99196 0.00086                     NERSC
+7.0      1.88    2    16  32  600    2     500      0.98940 0.00043  0.98951 0.00086                     NERSC
+7.0      1.90    2    16  32  600    2     500      0.98711 0.00036  0.98773 0.00089                     NERSC
+7.0      1.92    2    16  32  600    2     500      0.98422 0.00031  0.98490 0.00062                     NERSC
+7.0      1.94    2    16  32  600    2     500      0.98109 0.00037  0.98368 0.00052                     NERSC
+		 NOTE: predicted from fit xi0 = 1.80940 +/- 0.00173  w0s = 0.99908 +/- 0.00044
+
+7.1      1.78    2    16  32  500    2     400      1.00502 0.00075  1.11196 0.00080                     NERSC
+7.1      1.80    2    16  32  500    2     400      1.00301 0.00054  1.10847 0.00137                     NERSC
+7.1      1.82    2    16  32  500    2     400      1.00011 0.00063  1.10784 0.00109                     NERSC
+7.1      1.84    2    16  32  500    2     400      0.99602 0.00060  1.10406 0.00108                     NERSC
+7.1      1.86    2    16  32  500    2     400      0.99360 0.00040  1.10181 0.00104                     NERSC
+7.1      1.88    2    16  32  500    2     400      0.99018 0.00051  1.09698 0.00134                     NERSC
+7.1      1.90    2    16  32  500    2     400      0.98844 0.00053  1.09797 0.00123                     NERSC
+7.1      1.92    2    16  32  500    2     400      0.98667 0.00058  1.09390 0.00118                     NERSC
+7.1      1.94    2    16  32  500    2     400      0.98343 0.00075  1.09289 0.00096                     NERSC
+		 NOTE: predicted from fit xi0 = 1.81854 +/- 0.00231  w0s = 1.10752 +/- 0.00069
+
+7.2      1.76    2    20  40  600    2     500      1.00949 0.00034  1.22996 0.00083                     NERSC
+7.2      1.78    2    20  40  600    2     500      1.00607 0.00030  1.22774 0.00097                     NERSC
+7.2      1.80    2    20  40  600    2     500      1.00323 0.00044  1.22442 0.00118                     NERSC
+7.2      1.82    2    20  40  600    2     500      1.00035 0.00051  1.22353 0.00092                     NERSC
+7.2      1.84    2    20  40  600    2     500      0.99732 0.00047  1.21807 0.00089                     NERSC
+7.2      1.86    2    20  40  600    2     500      0.99568 0.00046  1.21680 0.00076                     NERSC
+7.2      1.88    2    20  40  600    2     500      0.99245 0.00028  1.21416 0.00090                     NERSC
+7.2      1.90    2    20  40  600    2     500      0.98906 0.00035  1.21431 0.00090                     NERSC
+7.2      1.92    2    20  40  600    2     500      0.98706 0.00028  1.21040 0.00108                     NERSC
+7.2      1.94    2    20  40  600    2     500      0.98401 0.00029  1.20758 0.00108                     NERSC
+		 NOTE: predicted from fit xi0 = 1.82301 +/- 0.00213  w0s = 1.22169 +/- 0.00056
+
+7.3      1.76    2    24  48  502    2     402      1.00944 0.00038  1.35406 0.00109                     NERSC
+7.3      1.78    2    24  48  503    2     403      1.00656 0.00052  1.35216 0.00069                     NERSC
+7.3      1.80    2    24  48  504    2     404      1.00387 0.00047  1.35018 0.00151                     NERSC
+7.3      1.82    2    24  48  508    2     408      1.00091 0.00043  1.34604 0.00093                     NERSC
+7.3      1.84    2    24  48  500    2     400      0.99852 0.00031  1.34489 0.00086                     NERSC
+7.3      1.86    2    24  48  500    2     400      0.99462 0.00040  1.33944 0.00090                     NERSC
+7.3      1.88    2    24  48  500    2     400      0.99237 0.00043  1.33740 0.00106                     NERSC
+7.3      1.90    2    24  48  502    2     402      0.99060 0.00041  1.33619 0.00104                     NERSC
+7.3      1.92    2    24  48  505    2     403/405  0.98796 0.00034  1.33313 0.00085                     NERSC
+		 NOTE: predicted from fit xi0 = 1.82752 +/- 0.00169  w0s = 1.34566 +/- 0.00060
+
+                 #### group of ensembles with xiT=4
+7        3       4    16  64  641    4     260/439  1.03731 0.00035  0.86050 0.00058                     NERSC
+7        3.1     4    16  64  628    4     218/409  1.02829 0.00048  0.85797 0.00058                     NERSC
+7        3.2     4    16  64  699    4     298/500  1.01968 0.00030  0.85661 0.00060                     NERSC
+7        3.3     4    16  64  700    4     300/500  1.01152 0.00035  0.85531 0.00046                     NERSC
+7        3.4     4    16  64  864    4     299/483  1.00347 0.00033  0.85524 0.00050                     NERSC
+7        3.5     4    16  64  698    4     299/500  0.99526 0.00035  0.85252 0.00051                     NERSC
+7        3.6     4    16  64  657    4     235/461  0.98759 0.00036  0.85065 0.00050                     NERSC
+7        3.7     4    16  64  879    4     300/496  0.97938 0.00038  0.84916 0.00052                     NERSC
+7        3.8     4    16  64  700    4     295/500  0.97209 0.00035  0.84816 0.00045                     NERSC
+7        3.9     4    16  64  658    4     300/406  0.96510 0.00026  0.84645 0.00040                     NERSC
+		 NOTE: predicted from fit xi0 = 3.44273 +/- 0.00266  w0s = 0.85377 +/- 0.00032
+
+7.1      3       4    16  64  350    4     250      1.03857 0.00078  0.95483 0.00096                     NERSC
+7.1      3.1     4    16  64  348    4     248      1.02827 0.00051  0.95276 0.00077                     NERSC
+7.1      3.2     4    16  64  321    4     221      1.02164 0.00059  0.95366 0.00113                     NERSC
+7.1      3.3     4    16  64  350    4     222/250  1.01371 0.00071  0.94822 0.00093                     NERSC
+7.1      3.4     4    16  64  350    4     250      1.00439 0.00052  0.94851 0.00080                     NERSC
+7.1      3.5     4    16  64  348    4     248      0.99787 0.00049  0.94814 0.00104                     NERSC
+7.1      3.6     4    16  64  350    4     250      0.99139 0.00054  0.94560 0.00083                     NERSC
+7.1      3.7     4    16  64  350    4     250      0.98253 0.00051  0.94400 0.00108                     NERSC
+7.1      3.8     4    16  64  350    4     201/250  0.97588 0.00060  0.94353 0.00075                     NERSC
+7.1      3.9     4    16  64  350    4     250      0.97021 0.00052  0.94481 0.00097                     NERSC
+		 NOTE: predicted from fit xi0 = 3.46990 +/- 0.00430  w0s = 0.94726 +/- 0.00056
+
+7.2      3       4    16  64  400    4     257/300  1.03708 0.00057  1.05545 0.00144                     NERSC
+7.2      3.1     4    16  64  400    4     295/300  1.02978 0.00053  1.05441 0.00115                     NERSC
+7.2      3.2     4    16  64  400    4     300      1.02207 0.00084  1.05431 0.00143                     NERSC
+7.2      3.3     4    16  64  399    4     358/399  1.01616 0.00047  1.05498 0.00119                     NERSC
+7.2      3.4     4    16  64  400    4     238/300  1.00775 0.00046  1.05184 0.00090                     NERSC
+7.2      3.5     4    16  64  400    4     299/300  0.99922 0.00065  1.05018 0.00118                     NERSC
+7.2      3.6     4    16  64  400    4     300      0.99244 0.00086  1.05015 0.00151                     NERSC
+7.2      3.7     4    16  64  315    4     207/215  0.98408 0.00068  1.04696 0.00154                     NERSC
+7.2      3.8     4    16  64  354    4     212/254  0.97903 0.00068  1.04847 0.00174                     NERSC
+7.2      3.9     4    16  64  400    4     299/300  0.97020 0.00069  1.04526 0.00152                     NERSC
+		 NOTE: predicted from fit xi0 = 3.50009 +/- 0.00465  w0s = 1.05072 +/- 0.00069
+
+7.3      3       4    16  64  400    4     252/300  1.03727 0.00092  1.16218 0.00157                     NERSC
+7.3      3.1     4    16  64  345    4     245      1.03035 0.00070  1.16654 0.00204                     NERSC
+7.3      3.2     4    16  64  399    4     299      1.02245 0.00088  1.16566 0.00211                     NERSC
+7.3      3.3     4    16  64  310    4     210      1.01505 0.00086  1.16688 0.00182                     NERSC
+7.3      3.4     4    16  64  338    4     214/238  1.00765 0.00097  1.16039 0.00248                     NERSC
+7.3      3.5     4    16  64  323    4     223      1.00037 0.00074  1.15951 0.00189                     NERSC
+7.3      3.6     4    16  64  400    4     300      0.99531 0.00085  1.16111 0.00179                     NERSC
+7.3      3.7     4    16  64  380    4     259/280  0.98708 0.00053  1.15694 0.00153                     NERSC
+7.3      3.8     4    16  64  317    4     217      0.97731 0.00078  1.15144 0.00250                     NERSC
+7.3      3.9     4    16  64  360    4     260      0.97449 0.00091  1.15701 0.00193                     NERSC
+		 NOTE: predicted from fit xi0 = 3.52260 +/- 0.00679  w0s = 1.16084 +/- 0.00120
+
+                 #### group of ensembles with xiT=8 TO BE ADDED
+
+                 #### ensembles for Namekawa et al. 2001, with plaquette action
+
+#beta            xi0          Ns  Nt Nconf plaqss   dplaqss   plaqst   dplaqst    
+5.8              1.67401280   16  8  4000  1.388337 0.000145  2.066757 0.000059
+                 Note: At FNAL, lustre2   
+6.51881026       1.75986308   20  40 3000  1.631896 0.000020  2.236386 0.000009
+                 Note: At FNAL, lustre2
+
+                 #### ensemble for Nomura et al. 2004, with plaquette action
+#beta            xi0           Nx Ny Nz Nt Nconf
+5.75             3.136         12 12 24 96 500
+                 Note: At FNAL, lustre1
+
+1. PURE GAUGE ANI ENSEMBLES AT 0.166 and 0.186 fm
+
+1.1 l1632b681823x100000a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b681823x100000a/wflow1632b681823x100000xf100a_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.041473 +- 0.000551    w_0s/w_0t = 0.999691 +- 0.000312
+SPATIAL LATTICE SPACING:
+a_s = 0.166639 +- 0.000088
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.2 l1632b671789x100000a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b671789x100000a/wflow1632b671789x100000xf100a_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 0.931142 +- 0.000389    w_0s/w_0t = 1.000341 +- 0.000198
+SPATIAL LATTICE SPACING:
+a_s = 0.186384 +- 0.000078
+
+QUARKS: N/A
+
+1.3 l1632b684652x107865a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b684652x107865a/wflow1632b684652x107865xf110a_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.043927 +- 0.000872    w_0s/w_0t = 0.999442 +- 0.000260
+SPATIAL LATTICE SPACING:
+a_s = 0.166247 +- 0.000139
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.4 l1632b687348x115792a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1632b687348x115792a/wflow1632b687348x115792a_xf120_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.044396 +- 0.000505    w_0s/w_0t = 0.999407 +- 0.000328
+SPATIAL LATTICE SPACING:
+a_s = 0.166173 +- 0.000080
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.5 l1648b694635x139939a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1648b694635x139939a/wflow1648b694635x139939a_xf150_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.040904 +- 0.000555    w_0s/w_0t = 1.000797 +- 0.000430
+SPATIAL LATTICE SPACING:
+a_s = 0.166730 +- 0.000089
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.6 l1664b704115x181411a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1664b704115x181411a/wflow1664b704115x181411a_xf200_dt0.015625
+FOR THIS ENSEMBLE:
+w_0s = 1.041307 +- 0.000722    w_0s/w_0t = 0.999701 +- 0.000422
+SPATIAL LATTICE SPACING:
+a_s = 0.166666 +- 0.000116
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.7 l1664b693563x180060a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l1664b693563x180060a/wflow1664b693563x180060a_xf200_dt0.015625
+xi_0 = 1.8006    w_0s/w_0t = 0.999599 +- 0.000354
+FOR THIS ENSEMBLE:
+w_0s = 0.931824 +- 0.000635    w_0s/w_0t = 0.999599 +- 0.000354
+SPATIAL LATTICE SPACING:
+a_s = 0.186248 +- 0.000127
+
+QUARKS: N/A
+
+1.8 l16128b719156x348992a LQ-/lustre1/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l16128b719156x348992a/wflow16128b719156x348992a_xf400_dt0.0078125
+FOR THIS ENSEMBLE:
+w_0s = 1.041900 +- 0.000597    w_0s/w_0t = 1.000801 +- 0.000277
+SPATIAL LATTICE SPACING:
+a_s = 0.166571 +- 0.000095
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.9 l20320b726025x689327a LQ-/lustre2/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l20320b726025x689327a/wflow20320b726025x689327a_xf800_dt0.0078125
+FOR THIS ENSEMBLE:
+w_0s = 1.038610 +- 0.000845    w_0s/w_0t = 0.998927 +- 0.000289
+SPATIAL LATTICE SPACING:
+a_s = 0.167098 +- 0.000136
+
+QUARKS: LQ-ahisq/yannis_puregauge/outputs/pure_gauge_spec/
+
+1.10 l20160b7147x682a LQ-/lustre2/ahisq/yannis_puregauge/lattices/
+GAUGE: LQ-ahisq/yannis_puregauge/outputs/
+/home/trimis/outputs/l20160b7147x682a/wflow20160b7147x682a_xf800_dt0.0078125
+FOR THIS ENSEMBLE:
+w_0s = 0.925460 +- 0.001049    w_0s/w_0t = 1.000080 +- 0.000444
+SPATIAL LATTICE SPACING:
+a_s = 0.187528 +- 0.000213
+
+QUARKS: N/A
+
+
+2. PURE GAUGE ANI ENSEMBLES FOR COMPARISON AGAINST NAMEKAWA ET AL
+
+2.1 l168b5800x167401280p LQ-/lustre2/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+2.2 l2040b651881026x175986308p LQ-/lustre2/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+
+3. PURE GAUGE ANI ENSEMBLES FOR COMPARISON AGAINST NOMURA ET AL
+
+3.1 l1296b575x3136p LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+
+4. PURE GAUGE ANI ENSEMBLES FOR SCHEMES AND PADE AT XI=2 AND XI=4
+
+4.1 l1632b6900x[178-194]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.2 l1632b7000x[1780-1940]a LOST, LQ-ahisq/yannis_puregauge/outputs/
+
+4.3 l1632b7100x[178-194]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.4 l2040b7200x[1760-1940]a LOST, iCER-/mnt/home/trimisio/outputs
+
+4.5 l2448b7300x[1760-1920]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.6 l1664b6900x[3000-3900]a LOST, iCER-/mnt/home/trimisio/outputs *regenerated for some x on LQ-/lustre2
+
+4.7 l1664b7000x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.8 l1664b7100x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.9 l1664b7200x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+4.10 l1664b7300x[3000-3900]a LQ-/lustre1/ahisq/yannis_puregauge/lattices/, LQ-ahisq/yannis_puregauge/outputs/
+
+
+5. PURE GAUGE ANI HMC ENSEMBLES FOR TOPOLOGY
+
+5.1 l64128b858814x100000h PERLMUTTER-/global/cfs/projectdirs/m1416/yannis_puregauge/[lattices,outputs]
+
+5.2 l16128b719156x348992h PERLMUTTER-/global/cfs/projectdirs/m1416/yannis_puregauge/[lattices,outputs]
+
+
+6. 2-FLAVOR ANI NAIVE DYN ENSEMBLES FOR COMPARISON AGAINST LEVKOVA ET AL
+
+6.1 l1624f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+6.2 l1612f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+ 
+6.3 l168f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+6.4 l1632f2b5425m0375xig15xiq15a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+NLPI: LQ-/project/ahisq/yannis_dyn/outputs/spec
+
+6.4 l1664f2b5300m024xig30xiq30a LQ-/lustre1/ahisq/yannis_dyn/lattices, LQ-/project/ahisq/yannis_dyn/outputs
+
+NLPI: LQ-/project/ahisq/yannis_dyn/outputs/spec
