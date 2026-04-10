@@ -4,8 +4,8 @@
 cluster=icer
 
 init_seed=1158
-n_of_lat=1000
-n_of_sub=8
+n_of_lat=1
+n_of_sub=1
 
 nx=20
 ny=20
@@ -49,10 +49,10 @@ submit_dir="/mnt/home/trimisio/submits/subgenl20160b7147x682a"
 
 executable="su3_ora_symzk0_a_dbl_GCC12OpenMPI4_20250321"
 
-sbatch_time="20:00:00"
-sbatch_nodes="5"
+sbatch_time="01:00:00"
+sbatch_nodes="NA"
 sbatch_ntasks_per_node="NA"
-sbatch_ntasks="200"
+sbatch_ntasks="100"
 sbatch_jobname="8gen"
 #sbatch_module1="GCC/12"
 #sbatch_module2="OpenMPI/4"
