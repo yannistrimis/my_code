@@ -21,19 +21,19 @@ from python_funcs import *
 def make_prior(N,M):
     prior = collections.OrderedDict()
 
-    prior['log(an)'] = gv.log(gv.gvar(N*['0.2(10000.0)']))
-    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.4(10000.0)']))
+    prior['log(an)'] = gv.log(gv.gvar(N*['0.30(10000.0)']))
+    prior['log(dEn)'] = gv.log(gv.gvar(N*['0.38(10000.0)']))
 
 
-#    prior['log(an)'] = gv.log(gv.gvar(['0.366(10000.0)', '0.3(10000.0)']))
-#    prior['log(dEn)'] = gv.log(gv.gvar(['0.296(10000.0)', '0.2(10000.0)']))
+#    prior['log(an)'] = gv.log(gv.gvar(['0.27(10000.0)', '0.1(10000.0)']))
+#    prior['log(dEn)'] = gv.log(gv.gvar(['0.35(10000.0)', '0.3(10000.0)']))
 
 
-    prior['log(ao)'] = gv.log(gv.gvar(['0.24(10000.0)', '0.16(10000.0)']))
-    prior['log(dEo)'] = gv.log(gv.gvar(['0.298(10000.0)', '0.16(10000.0)']))
+#    prior['log(ao)'] = gv.log(gv.gvar(['0.14(10000.0)', '0.1(10000.0)']))
+#    prior['log(dEo)'] = gv.log(gv.gvar(['0.14(10000.0)', '0.7(10000.0)']))
 
-#    prior['log(ao)'] = gv.log(gv.gvar(M*['0.24(10000.0)']))
-#    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.298(10000.0)']))
+    prior['log(ao)'] = gv.log(gv.gvar(M*['0.14(10000.0)']))
+    prior['log(dEo)'] = gv.log(gv.gvar(M*['0.12(10000.0)']))
 
     return prior
 
@@ -154,6 +154,7 @@ def main():
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
 
 # THE FOLLOWING IS FOR CHECK OF COVARIANCE MATRIX EIGENVALUES
+
 #        data_array =  gv.dataset.Dataset(file_name)
 #        svd = gv.dataset.svd_diagnosis(data_array["PROP"])
 #        svd.plot_ratio(show=True)

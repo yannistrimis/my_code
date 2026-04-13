@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ens_name="1296b575x3136p"
+ens_name="1664f2b5300m024xig30xiq30a"
 
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_ij"
+taste="PION_05"
 
-xq="283"
-mass="0.1"
+xq="30"
+mass="0.024"
 
 mom="p000"
 
@@ -18,11 +18,11 @@ dir=${fitdir} # CMSE
 #dir=${fitdir} # LAPTOP
 
 tdatamin=0
-tdatamax=48
-tstep=1
-tp=96
+tdatamax=30
+tstep=3
+tp=64
 n_states=1
-m_states=2
+m_states=1
 sn="-1.0"
 so="1.0"
 binsize=1
@@ -32,17 +32,17 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=48
-tmin_step=1
+tmin_max=30
+tmin_step=3
 
-tmax_min=48
-tmax_max=48
-tmax_step=1
+tmax_min=0
+tmax_max=30
+tmax_step=3
 
-tmin_one=0
-tmax_one=16
+tmin_one=10
+tmax_one=32
 
-specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
+specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata.thin3"
 
 echo "xq: ${xq}, mom: ${mom}, mass: ${mass}"
 
