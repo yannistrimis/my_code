@@ -4,7 +4,7 @@
 cluster=fnal
 
 init_seed=1158
-n_of_lat=1000
+n_of_lat=2100
 n_of_sub=1
 
 nx=16
@@ -30,7 +30,7 @@ lat_name="l1632f2b5425m0375xig15xiq15a"
 out_name="out1632f2b5425m0375xig15xiq15a"
 
 
-directory="/lustre1/ahisq/yannis_dyn/lattices/l1632f2b5425m0375xig15xiq15a"
+directory="/lustre2/ahisq/yannis_dyn/lattices/l1632f2b5425m0375xig15xiq15a"
 out_dir="/project/ahisq/yannis_dyn/outputs/l1632f2b5425m0375xig15xiq15a"
 path_build="/home/trimisio/all/my_code/imp_rhmc_ani/build"
 run_dir="/project/ahisq/yannis_dyn/runs/rungenl1632f2b5425m0375xig15xiq15a"
