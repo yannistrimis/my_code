@@ -1,15 +1,18 @@
 #!/bin/bash
 
-nt=320 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="20320b726025x689327a"
-masses=("0.0708")
+ens_name="1664f2b5300m024xig30xiq30a"
+masses=("0.024")
 mas_len=${#masses[@]}
 
-prefix="hisqnlpi_str"
+prefix="naivnlpi"
 
-xq_arr=("7870")
-sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
+xq_arr=("30")
+sinks_arr=("PION_5")
+
+
+#sinks_arr=("PION_5" "PION_i5" "PION_i" "PION_s")
 #sinks_arr=("PION_05" "PION_ij" "PION_i0" "PION_0")
 mom_arr=("p000")
 
@@ -22,14 +25,14 @@ src_label="eowfw"
 sinkop1="identity"
 sinkop2="identity"
 
-first=101
-last=600
+first=201
+last=1000
 
-# output_dir="/home/trimis/spec_data"
-# data_dir="/home/trimis/spec_data"
+output_dir="/home/trimis/spec_data"
+data_dir="/home/trimis/spec_data"
 
-output_dir="/home/trimisio/all/spec_data"
-data_dir="/home/trimisio/all/spec_data"
+# output_dir="/home/trimisio/all/spec_data"
+# data_dir="/home/trimisio/all/spec_data"
 
 # output_dir="/home/yannis/Physics/LQCD/spec_data"
 # data_dir="/home/yannis/Physics/LQCD/spec_data"
@@ -52,11 +55,10 @@ for xq in "${xq_arr[@]}"
 do
 
 
-correlatordata_name="${data_dir}/l${ens_name}/${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}.specdata"
-
-if [ -f "${correlatordata_name}" ]
+correlatordata_name="${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}"
+if [ -f "${data_dir}/l${ens_name}/${correlatordata_name}.specdata" ]
 then
-rm ${correlatordata_name}
+rm "${data_dir}/l${ens_name}/${correlatordata_name}.specdata"
 fi
 
 
@@ -77,7 +79,7 @@ ${source2}
 ${sinkop1}
 ${sinkop2}
 ${sinks}
-${prefix}${mom}${src_label}${ens_name}_xq${xq}_m${mass1}m${mass2}${sinks}
+${correlatordata_name}
 ${output_dir}
 ${data_dir}
 ${nt}
