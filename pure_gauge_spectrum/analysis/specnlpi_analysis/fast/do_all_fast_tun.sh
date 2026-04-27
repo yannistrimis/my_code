@@ -1,20 +1,20 @@
 #!/bin/bash
 
-nt=320 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="20320b726025x689327a"
-masses=("0.060803" "0.070803" "0.080803")
+ens_name="1664b704115x181411a"
+masses=("0.07")
 mas_len=${#masses[@]}
 
-prefix="hisqtun"
+prefix="tun"
 
-xq_arr=("7470" "7870" "8270")
+xq_arr=("1840" "1920" "2000")
 sinks_arr=("PION_5")
-# mom_arr=("p000")
-mom_arr=("p100" "p110")
+mom_arr=("p000")
+# mom_arr=("p100" "p110")
 
-# source1="CORNER"
-source1="CORNER/momentum"
+source1="CORNER"
+# source1="CORNER/momentum"
 source2="CORNER"
 
 src_label="cw"
@@ -23,7 +23,7 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=430
+last=500
 
 # output_dir="/home/trimis/spec_data"
 # data_dir="/home/trimis/spec_data"
