@@ -3,12 +3,12 @@
 nt=64 # DON'T FORGET TO CHANGE !!!
 
 ens_name="1664b704115x181411a"
-masses=("0.07")
+masses=("0.03" "0.05" "0.07" "0.09" "0.11")
 mas_len=${#masses[@]}
 
-prefix="tun"
+prefix="str"
 
-xq_arr=("1840" "1920" "2000")
+xq_arr=("1980")
 sinks_arr=("PION_5")
 mom_arr=("p000")
 # mom_arr=("p100" "p110")
@@ -23,13 +23,13 @@ sinkop1="identity"
 sinkop2="identity"
 
 first=101
-last=500
+last=600
 
-# output_dir="/home/trimis/spec_data"
-# data_dir="/home/trimis/spec_data"
+output_dir="/home/trimis/spec_data"
+data_dir="/home/trimis/spec_data"
 
-output_dir="/home/trimisio/all/spec_data"
-data_dir="/home/trimisio/all/spec_data"
+# output_dir="/home/trimisio/all/spec_data"
+# data_dir="/home/trimisio/all/spec_data"
 
 # output_dir="/home/yannis/Physics/LQCD/spec_data"
 # data_dir="/home/yannis/Physics/LQCD/spec_data"

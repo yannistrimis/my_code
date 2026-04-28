@@ -3,13 +3,13 @@
 ens_name="1664b704115x181411a"
 
 src="cw"
-prefix="tun"
+prefix="str"
 taste="PION_5"
 
-xq="1840"
-mass="0.07"
+xq="1980"
+mass="0.11"
 
-mom="p110"
+mom="p000"
 
 fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
 dir=${fitdir} # CMSE
@@ -22,7 +22,7 @@ tdatamax=32
 tstep=1
 tp=64
 n_states=2
-m_states=1
+m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -31,15 +31,15 @@ correlated="corr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=2
-tmin_max=20
+tmin_min=0
+tmin_max=26
 tmin_step=1
 
-tmax_min=30
-tmax_max=30
+tmax_min=26
+tmax_max=26
 tmax_step=1
 
-tmin_one=5
+tmin_one=15
 tmax_one=30
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"

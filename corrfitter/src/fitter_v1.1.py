@@ -28,8 +28,8 @@ def make_prior(N,M):
 
     elif N == 2 :
 
-        prior['log(an)'] = gv.log(gv.gvar(['16.4(10000.0)', '10.0(10000.0)']))
-        prior['log(dEn)'] = gv.log(gv.gvar(['0.2827(10000.0)', '0.4(10000.0)']))
+        prior['log(an)'] = gv.log(gv.gvar(['15.0(10000.0)', '10.0(10000.0)']))
+        prior['log(dEn)'] = gv.log(gv.gvar(['0.309(10000.0)', '0.35(10000.0)']))
 
     if M == 0 or M == 1 :
 
