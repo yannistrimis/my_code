@@ -1,0 +1,11 @@
+1. Maximal set of commuting operators.
+
+If you know that 
+
+  G = { Xi_mu , R_kl } x { 1 , P }
+
+do you know how many operators to expect in the maximally commuting set?
+Because if you know they are 3 then things are easy.
+
+
+2. 
