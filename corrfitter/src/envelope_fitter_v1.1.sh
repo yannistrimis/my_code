@@ -4,14 +4,14 @@ ens_name="1632f2b5425m0375xig15xiq15a"
 
 src="eowfw"
 prefix="naivnlpi"
-taste="PION_5"
+taste="PION_05"
 
 xq="15"
 mass="0.0375"
 
 mom="p000"
 
-fitdir="/home/trimis/spec_data/l${ens_name}_OLD" # CMSE
+fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
 dir=${fitdir} # CMSE
 
 # fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
@@ -21,10 +21,10 @@ tdatamin=0
 tdatamax=16
 tstep=1
 tp=32
-n_states=2
-m_states=0
-sn="1.0"
-so="-1.0"
+n_states=1
+m_states=2
+sn="-1.0"
+so="1.0"
 binsize=1
 
 correlated="corr"
@@ -32,11 +32,11 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=16
+tmin_max=10
 tmin_step=1
 
-tmax_min=16
-tmax_max=16
+tmax_min=15
+tmax_max=15
 tmax_step=1
 
 tmin_one=0
