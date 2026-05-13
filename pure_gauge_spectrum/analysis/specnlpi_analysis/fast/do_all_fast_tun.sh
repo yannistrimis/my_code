@@ -1,20 +1,20 @@
 #!/bin/bash
 
-nt=64 # DON'T FORGET TO CHANGE !!!
+nt=48 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1664b704115x181411a"
-masses=("0.03" "0.05" "0.07" "0.09" "0.11")
+ens_name="1648b694635x139939a"
+masses=("0.05" "0.07" "0.09")
 mas_len=${#masses[@]}
 
-prefix="str"
+prefix="naivtun"
 
-xq_arr=("1980")
+xq_arr=("1050" "1250" "1450" "1650")
 sinks_arr=("PION_5")
-mom_arr=("p000")
-# mom_arr=("p100" "p110")
+# mom_arr=("p000")
+mom_arr=("p100" "p110")
 
-source1="CORNER"
-# source1="CORNER/momentum"
+# source1="CORNER"
+source1="CORNER/momentum"
 source2="CORNER"
 
 src_label="cw"
@@ -25,11 +25,11 @@ sinkop2="identity"
 first=101
 last=600
 
-output_dir="/home/trimis/spec_data"
-data_dir="/home/trimis/spec_data"
+# output_dir="/home/trimis/spec_data"
+# data_dir="/home/trimis/spec_data"
 
-# output_dir="/home/trimisio/all/spec_data"
-# data_dir="/home/trimisio/all/spec_data"
+output_dir="/home/trimisio/all/spec_data"
+data_dir="/home/trimisio/all/spec_data"
 
 # output_dir="/home/yannis/Physics/LQCD/spec_data"
 # data_dir="/home/yannis/Physics/LQCD/spec_data"
