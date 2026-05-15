@@ -23,23 +23,23 @@ def make_prior(N,M):
 
     if N == 0 or N == 1 :
 
-        prior['log(an)'] = gv.log(gv.gvar(N*['0.50(10000.0)']))
-        prior['log(dEn)'] = gv.log(gv.gvar(N*['0.65(10000.0)']))
+        prior['log(an)'] = gv.log(gv.gvar(N*['24.0(10000.0)']))
+        prior['log(dEn)'] = gv.log(gv.gvar(N*['0.33(10000.0)']))
 
     elif N == 2 :
 
-        prior['log(an)'] = gv.log(gv.gvar(['4.86(10000.0)', '2.45(10000.0)']))
-        prior['log(dEn)'] = gv.log(gv.gvar(['0.081(10000.0)', '0.08(10000.0)']))
+        prior['log(an)'] = gv.log(gv.gvar(['14.0(10000.0)', '6.0(10000.0)']))
+        prior['log(dEn)'] = gv.log(gv.gvar(['0.48(10000.0)', '0.5(10000.0)']))
 
     if M == 0 or M == 1 :
 
-        prior['log(ao)'] = gv.log(gv.gvar(M*['3.0(10000.0)']))
-        prior['log(dEo)'] = gv.log(gv.gvar(M*['0.1(10000.0)']))
+        prior['log(ao)'] = gv.log(gv.gvar(M*['5.0(10000.0)']))
+        prior['log(dEo)'] = gv.log(gv.gvar(M*['0.65(10000.0)']))
 
     elif M == 2 :
 
-        prior['log(ao)'] = gv.log(gv.gvar(['1.3(10000.0)', '0.9(10000.0)']))
-        prior['log(dEo)'] = gv.log(gv.gvar(['0.119(10000.0)', '0.1(10000.0)']))
+        prior['log(ao)'] = gv.log(gv.gvar(['6.0(10000.0)', '3.0(10000.0)']))
+        prior['log(dEo)'] = gv.log(gv.gvar(['0.7(10000.0)', '0.3(10000.0)']))
 
 
     return prior

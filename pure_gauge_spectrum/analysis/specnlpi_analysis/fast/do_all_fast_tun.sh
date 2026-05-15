@@ -6,15 +6,15 @@ ens_name="1648b694635x139939a"
 masses=("0.05" "0.07" "0.09")
 mas_len=${#masses[@]}
 
-prefix="naivtun"
+prefix="hisqtun"
 
 xq_arr=("1050" "1250" "1450" "1650")
 sinks_arr=("PION_5")
-# mom_arr=("p000")
-mom_arr=("p100" "p110")
+mom_arr=("p000")
+# mom_arr=("p100" "p110")
 
-# source1="CORNER"
-source1="CORNER/momentum"
+source1="CORNER"
+# source1="CORNER/momentum"
 source2="CORNER"
 
 src_label="cw"
@@ -28,11 +28,11 @@ last=600
 # output_dir="/home/trimis/spec_data"
 # data_dir="/home/trimis/spec_data"
 
-output_dir="/home/trimisio/all/spec_data"
-data_dir="/home/trimisio/all/spec_data"
+# output_dir="/home/trimisio/all/spec_data"
+# data_dir="/home/trimisio/all/spec_data"
 
-# output_dir="/home/yannis/Physics/LQCD/spec_data"
-# data_dir="/home/yannis/Physics/LQCD/spec_data"
+output_dir="/home/yannis/Physics/LQCD/spec_data"
+data_dir="/home/yannis/Physics/LQCD/spec_data"
 
 for mom in ${mom_arr[@]}
 do
