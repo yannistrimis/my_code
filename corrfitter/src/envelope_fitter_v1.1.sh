@@ -3,13 +3,13 @@
 ens_name="1632b684652x107865a"
 
 src="cw"
-prefix="hisqtun"
+prefix="hisqstr"
 taste="PION_5"
 
-xq="1000"
-mass="0.06"
+xq="1080"
+mass="0.1"
 
-mom="p110"
+mom="p000"
 
 # fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
 # dir=${fitdir} # CMSE
@@ -21,8 +21,8 @@ tdatamin=0
 tdatamax=16
 tstep=1
 tp=32
-n_states=1
-m_states=1
+n_states=2
+m_states=0
 sn="1.0"
 so="-1.0"
 binsize=1
