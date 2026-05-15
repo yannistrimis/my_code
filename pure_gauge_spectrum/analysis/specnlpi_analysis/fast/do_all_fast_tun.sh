@@ -3,7 +3,7 @@
 nt=48 # DON'T FORGET TO CHANGE !!!
 
 ens_name="1648b694635x139939a"
-masses=("0.05" "0.07" "0.09")
+masses=("0.03")
 mas_len=${#masses[@]}
 
 prefix="hisqtun"
