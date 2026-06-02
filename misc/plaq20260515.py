@@ -4,6 +4,7 @@ sys.path.insert(0, '..')
 from python_funcs import *
 import numpy as np
 
+xi = input()
 ssfilename = input()
 stfilename = input()
 
@@ -35,8 +36,10 @@ for i in range(nbins):
   quant_ss_jackarr[i] = np.sqrt( ss_jackarr[i] )
   quant_st_jackarr[i] = np.sqrt( st_jackarr[i]*st_jackarr[i]/ss_jackarr[i] )
 
-ss_avg, ss_err = jackknife_for_binned(quant_ss_jackarr)
-st_avg, st_err = jackknife_for_binned(quant_st_jackarr)
+quant_ss_avg, quant_ss_err = jackknife_for_binned(quant_ss_jackarr)
+quant_st_avg, quant_st_err = jackknife_for_binned(quant_st_jackarr)
 
-print('ss plaq: %s +- %s'%(ss_avg, ss_err))
-print('st plaq: %s +- %s'%(st_avg, st_err))
+ss_avg , ss_err = jackknife_for_binned(ss_jackarr)
+st_avg , st_err = jackknife_for_binned(st_jackarr)
+
+print("%s %f %f %f %f %f %f %f %f"%(xi, ss_avg, ss_err, st_avg, st_err, quant_ss_avg, quant_ss_err, quant_st_avg, quant_st_err))
