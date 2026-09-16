@@ -8,24 +8,24 @@ cluster="fnal"
 n_of_ens=4
 
 nx=16
-nt=96
+nt=16
 
-beta_arr=(7.23 7.23 7.25 7.25)
-beta_name_arr=("723000" "723000" "725000" "725000")
+beta_arr=(6.76 6.76 6.78 6.78)
+beta_name_arr=("676000" "676000" "678000" "678000")
 
-xi_0_arr=(5.02 5.32 5.02 5.32)
-xi_0_name_arr=("502000" "532000" "502000" "532000")
+xi_0_arr=(0.84 1 0.84 1)
+xi_0_name_arr=("084000" "100000" "084000" "100000")
 
 stream="a"
 
 sbatch_time="20:00:00"
-sbatch_nodes=4
+sbatch_nodes=2
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("x6b23x02" "x6b23x32" "x6b25x02" "x6b25x32")
+sbatch_ntasks=64 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("x09ens1" "x09ens2" "x09ens3" "x09ens4")
 
-n_of_sub=4
-n_of_lat=150
+n_of_sub=2
+n_of_lat=300
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
