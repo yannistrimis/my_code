@@ -84,7 +84,7 @@ random_color_wall
 field_type KS
 subset full
 t0 ${t0}
-ncolor 3
+ncolor 7
 momentum 0 0 0
 source_label rcw0
 forget_source

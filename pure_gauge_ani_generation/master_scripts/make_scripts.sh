@@ -4,33 +4,36 @@
 # IF MULTIPLE DIRECTORIES ARE NEEDED, THE USER CAN CREATE ARRAYS
 # FOR THE CHANGING PARAMETERS.
 
-cluster="nersc"
-n_of_ens=1
+cluster="fnal"
+n_of_ens=4
 
-nx=20
-nt=320
+nx=16
+nt=96
 
-beta=7.26025
-beta_name="726025"
+beta_arr=(7.23 7.23 7.25 7.25)
+beta_name_arr=("723000" "723000" "725000" "725000")
 
-xi_0_arr=(6.89327)
-xi_0_name_arr=("689327")
+xi_0_arr=(5.02 5.32 5.02 5.32)
+xi_0_name_arr=("502000" "532000" "502000" "532000")
 
 stream="a"
 
 sbatch_time="20:00:00"
-sbatch_nodes=2
+sbatch_nodes=4
 sbatch_ntasks_per_node=NA # MAY OR MAY NOT BE RELEVANT
-sbatch_ntasks=200 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
-sbatch_jobname_arr=("pg8000")
+sbatch_ntasks=128 # IN HYPER_SL32 EACH SUBLAT SHOULD HAVE MULTIPLE OF 32 POINTS
+sbatch_jobname_arr=("x6b23x02" "x6b23x32" "x6b25x02" "x6b25x32")
 
-n_of_sub=1
-n_of_lat=1
+n_of_sub=4
+n_of_lat=150
 
 
 for (( i_ens=0; i_ens<${n_of_ens}; i_ens++ )); do
 
 # SUBSTITUTE ARRAY ELEMENTS HERE, IF ANY
+
+beta=${beta_arr[${i_ens}]}
+beta_name=${beta_name_arr[${i_ens}]}
 
 xi_0=${xi_0_arr[${i_ens}]}
 xi_0_name=${xi_0_name_arr[${i_ens}]}
