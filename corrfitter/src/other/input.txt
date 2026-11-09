@@ -1,0 +1,16 @@
+1
+2
+64
+-1
+1 -1
+1
+1
+0.2973
+0.373183
+0.1741 0.013865
+0.128981 0.853897
+31
+31
+correlated
+/home/yannis/Physics/LQCD/spec_data/l1664b704115x181411a/hisqnlpip000eowfw1664b704115x181411a_xq1980_m0.0146m0.0146PION_05.specdata
+partial_output

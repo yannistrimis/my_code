@@ -23,74 +23,67 @@ def make_prior(N,M):
 
     if N == 0 or N == 1 :
 
-        prior['log(an)'] = gv.log(gv.gvar(N*['30.0(10000.0)']))
-        prior['log(dEn)'] = gv.log(gv.gvar(N*['0.47(10000.0)']))
+        prior['log(an)'] = gv.log(gv.gvar(N*['4.691170(10000.0)']))
+        prior['log(dEn)'] = gv.log(gv.gvar(N*['0.029542(10000.0)']))
 
     elif N == 2 :
 
-        prior['log(an)'] = gv.log(gv.gvar(['30.0(10000.0)', '20.0(10000.0)']))
-        prior['log(dEn)'] = gv.log(gv.gvar(['0.47(10000.0)', '0.9(10000.0)']))
+        prior['log(an)'] = gv.log(gv.gvar(['22.358188(10000.0)', '10(10000.0)']))
+        prior['log(dEn)'] = gv.log(gv.gvar(['0.032578(10000.0)', '0.1(10000.0)']))
 
     if M == 0 or M == 1 :
 
-        prior['log(ao)'] = gv.log(gv.gvar(M*['15.0(10000.0)']))
-        prior['log(dEo)'] = gv.log(gv.gvar(M*['0.65(10000.0)']))
+        prior['log(ao)'] = gv.log(gv.gvar(M*['0.716265(10000.0)']))
+        prior['log(dEo)'] = gv.log(gv.gvar(M*['0.028071(10000.0)']))
 
     elif M == 2 :
 
-        prior['log(ao)'] = gv.log(gv.gvar(['6.0(10000.0)', '3.0(10000.0)']))
-        prior['log(dEo)'] = gv.log(gv.gvar(['0.7(10000.0)', '0.3(10000.0)']))
+        prior['log(ao)'] = gv.log(gv.gvar(['4.256161(10000.0)', '1.114130(10000.0)']))
+        prior['log(dEo)'] = gv.log(gv.gvar(['0.032482(10000.0)', '0.10(10000.0)']))
 
 
     return prior
 
+##################################################################################################
+
 def main():
 
     file_name = input()
-    str_tmin = input()
-    str_tmax = input()
-    str_tdatamin = input()
-    str_tdatamax = input()
-    str_tstep = input() # tstep for tfit and tdata is the same
-    str_tp = input()
-    str_N = input()
-    str_M = input()
-    str_sn = input()
-    str_so = input()
-    str_bin = input()
+    tmin = int(input())
+    tmax = int(input())
+    tdatamin = int(input())
+    tdatamax = int(input())
+    tstep = int(input()) # tstep for tfit and tdata is the same
+    tp = int(input())
+    N = int(input())
+    M = int(input())
+    sn = float(input())
+    so = float(input())
+    bin = int(input())
     correlated = input()
     priors = input()
     fittype = input()
     opp = input()
 
-    tmin = int(str_tmin)
-    tmax = int(str_tmax)
-    tdatamin = int(str_tdatamin)
-    tdatamax = int(str_tdatamax)
-    tstep = int(str_tstep)
-    my_tp = int(str_tp)
-
-    data = make_data(file_name,str_bin)
+    data = make_data(file_name,bin)
 
     my_tfit = range(tmin,tmax+1,tstep)
     my_tdata = range(tdatamin,tdatamax+1,tstep)
 
 
-    my_models = make_models(my_tdata,my_tfit,my_tp,str_sn,str_so,opp)
+    my_models = make_models(my_tdata,my_tfit,tp,sn,so,opp)
     fitter = cf.CorrFitter(models=my_models)
 
     p0 = None
-
-    N = int(str_N)
-    M = int(str_M)
 
     if fittype == 'onefit' :
         print('\ndata from: ',file_name,'\n')
         print('tmin = ',tmin,'   tmax = ',tmax,'\n')
 
     prior = make_prior(N,M)
+
     if correlated == "corr" :
-        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm')
+        fit = fitter.lsqfit( data=data, prior=prior, p0=p0, method='lm' )
     elif correlated == "uncorr" :
         fit = fitter.lsqfit( udata=data, prior=prior, p0=p0, method='lm' )
     if fittype == 'onefit' :
@@ -112,6 +105,7 @@ def main():
 
     Q_man = 1-gammainc(0.5*fit.dof,0.5*fit.chi2)
     Q_real = 1-gammainc(0.5*dof_real,0.5*chi2_real)
+
     if fittype == 'onefit' :
         print('\n')
         if correlated == "corr" :
@@ -127,7 +121,8 @@ def main():
         for t in my_tfit :
             it = it + 1
             it_shift = it + int((tmin-tdatamin)/tstep)
-            print(t, data['PROP'][it_shift].mean, data['PROP'][it_shift].sdev, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].sdev,(data['PROP'][it_shift].mean-my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean)/data['PROP'][it_shift].sdev)
+            print( t, data['PROP'][it_shift].mean, data['PROP'][it_shift].sdev, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean, my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].sdev,(data['PROP'][it_shift].mean-my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean)/data['PROP'][it_shift].sdev )
+
     cov_matrix = np.zeros((len(my_tfit),len(my_tfit)))
     meas_arr = np.zeros(len(my_tfit))
     fit_arr = np.zeros(len(my_tfit))
@@ -143,6 +138,7 @@ def main():
             cov_matrix[it,jt] = gv.evalcov(data)['PROP','PROP'][it_shift,jt_shift]
         meas_arr[it] = data['PROP'][it_shift].mean
         fit_arr[it] = my_models[0].fitfcn(p=fit.p,t=my_tfit)[it].mean
+
     if correlated == "corr" :
         chi2bydof_from_points = chisq_by_dof(meas_arr,fit_arr,cov_matrix,dof_real)
     elif correlated == "uncorr" :
@@ -161,16 +157,23 @@ def main():
         print( 'chi2/dof from fit points [dof]: %.3f [%d]\tQ = %.3f\n'%(chi2bydof_from_points,dof_real,Q_from_points) )
 
 # THE FOLLOWING IS FOR CHECK OF COVARIANCE MATRIX EIGENVALUES
-
 #        data_array =  gv.dataset.Dataset(file_name)
 #        svd = gv.dataset.svd_diagnosis(data_array["PROP"])
 #        svd.plot_ratio(show=True)
 #        np.set_printoptions(threshold=sys.maxsize)
 #        print("covariance matrix:")
-#        print(cov_matrix)
 #        print("eigenvalues:")
 #        eigvals = gv.SVD(cov_matrix, svdcut=0.0).val
 #        print(eigvals)
+
+        f = open("cov_matrix.dat", "w")
+
+        for ic in range(len(cov_matrix[0,:])):
+            for jc in range(len(cov_matrix[0,:])):
+                print(jc+tmin, cov_matrix[ic,jc], file=f)
+
+        f.close()
+
 
     elif fittype == 'scanfit' :
         if priors == 'no_priors' :
@@ -181,13 +184,11 @@ def main():
         print("")
 
 
+def make_data(filename,bin):
+    return 10000.0 * gv.dataset.avg_data( cf.read_dataset(filename,binsize=bin) )
 
-
-def make_data(filename,str_bin):
-    return gv.dataset.avg_data(cf.read_dataset(filename,binsize=int(str_bin)))
-
-def make_models(my_tdata,my_tfit,my_tp,str_sn,str_so,opp):
-    return [cf.Corr2( datatag='PROP', tp=my_tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(float(str_sn),float(str_so)), opp=opp )]
+def make_models(my_tdata,my_tfit,tp,sn,so,opp):
+    return [cf.Corr2( datatag='PROP', tp=tp, tdata=my_tdata, tfit=my_tfit, a=('an','ao'), b=('an','ao'), dE=('dEn','dEo'), s=(float(sn),float(so)), opp=opp )]
 
 
 def print_results(fit,N,M):
@@ -202,9 +203,9 @@ def print_results(fit,N,M):
         ao = p['ao']
 
     for i_state in range(N) :
-        print('an[%d] = %s\t En[%d] = %s\n'%(i_state,an[i_state],i_state,En[i_state]))
+        print('an[%d] = %.6f +- %.6f\t En[%d] = %.6f +- %.6f\n'%( i_state, an[i_state].mean, an[i_state].sdev, i_state, En[i_state].mean, En[i_state].sdev ) )
     for j_state in range(M) :
-        print('ao[%d] = %s\t Eo[%d] = %s\n'%(j_state,ao[j_state],j_state,Eo[j_state]))
+        print('ao[%d] = %.6f +- %.6f\t Eo[%d] = %.6f +- %.6f\n'%( j_state, ao[j_state].mean, ao[j_state].sdev, j_state, Eo[j_state].mean, Eo[j_state].sdev ) )
 
 
 def print_results_scan(fit,N,M):
@@ -219,9 +220,9 @@ def print_results_scan(fit,N,M):
         ao = p['ao']
 
     for i_state in range(N) :
-        print(" an[%d]: %.4f %.4f En[%d]: %.6f %.6f"%(i_state,an[i_state].mean,an[i_state].sdev,i_state,En[i_state].mean,En[i_state].sdev), end="")
+        print(" an[%d]: %.6f %.6f En[%d]: %.6f %.6f"%(i_state,an[i_state].mean,an[i_state].sdev,i_state,En[i_state].mean,En[i_state].sdev), end="")
     for j_state in range(M) :
-        print(" ao[%d]: %.4f %.4f Eo[%d]: %.6f %.6f"%(j_state,ao[j_state].mean,ao[j_state].sdev,j_state,Eo[j_state].mean,Eo[j_state].sdev), end="")
+        print(" ao[%d]: %.6f %.6f Eo[%d]: %.6f %.6f"%(j_state,ao[j_state].mean,ao[j_state].sdev,j_state,Eo[j_state].mean,Eo[j_state].sdev), end="")
 
 
 
@@ -240,31 +241,6 @@ def test_param(fit,N,M,to_print_state,to_print_nr):
     if M>0:
         Eo = np.cumsum(p['dEo'])
         ao = p['ao']
-
-#    for i_state in range(N) :
-#        if ( np.abs(En[i_state].mean) < 0.05*np.abs(ref_E_mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(En[i_state].mean) > 100*np.abs(ref_E_mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(an[i_state].mean) < 0.005*np.abs(ref_a_mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(En[i_state].sdev) > 100*np.abs(En[i_state].mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(an[i_state].sdev) > 100*np.abs(an[i_state].mean) ) :
-#            flag = 'not_ok'
-
-#    for j_state in range(M) :
-#        if ( np.abs(Eo[j_state].mean) < 0.05*np.abs(ref_E_mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(Eo[j_state].mean) > 100*np.abs(ref_E_mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(ao[j_state].mean) < 0.005*np.abs(ref_a_mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(Eo[j_state].sdev) > 100*np.abs(Eo[j_state].mean) ) :
-#            flag = 'not_ok'
-#        if ( np.abs(ao[j_state].sdev) > 100*np.abs(ao[j_state].mean) ) :
-#            flag = 'not_ok'
-
 
     return flag
 

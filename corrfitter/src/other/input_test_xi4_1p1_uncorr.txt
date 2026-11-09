@@ -1,0 +1,13 @@
+1
+1
+128
+-1
+1
+0.037397
+0.222580
+0.007195
+0.063909
+30
+62
+uncorrelated
+/home/yannis/Physics/LQCD/spec_data/l16128b719156x348992a/hisqnlpip000eowfw16128b719156x348992a_xq4000_m0.01446m0.01446PION_05.specdata

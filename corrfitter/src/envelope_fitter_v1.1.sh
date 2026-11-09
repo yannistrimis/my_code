@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ens_name="1632b684652x107865a"
+ens_name="20320b726025x689327a"
 
-src="cw"
-prefix="hisqstr"
+src="eowfw"
+prefix="hisqnlpi"
 taste="PION_5"
 
-xq="1080"
-mass="0.1"
+xq="7870"
+mass="0.01416"
 
 mom="p000"
 
@@ -18,11 +18,11 @@ fitdir="/home/yannis/Physics/LQCD/spec_data/l${ens_name}" # LAPTOP
 dir=${fitdir} # LAPTOP
 
 tdatamin=0
-tdatamax=16
+tdatamax=160
 tstep=1
-tp=32
-n_states=2
-m_states=0
+tp=320
+n_states=1
+m_states=1
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -31,16 +31,16 @@ correlated="corr"
 priors="no_priors"
 opp="yes"
 
-tmin_min=0
-tmin_max=16
-tmin_step=1
+tmin_min=10
+tmin_max=159
+tmin_step=3
 
-tmax_min=16
-tmax_max=16
-tmax_step=1
+tmax_min=159
+tmax_max=159
+tmax_step=3
 
-tmin_one=22
-tmax_one=66
+tmin_one=115
+tmax_one=159
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
