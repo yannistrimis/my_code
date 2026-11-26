@@ -1,20 +1,22 @@
 #!/bin/bash
 
-nt=48 # DON'T FORGET TO CHANGE !!!
+nt=64 # DON'T FORGET TO CHANGE !!!
 
-ens_name="1648b694635x139939a"
-masses=("0.03")
+ens_name="1664b704115x181411a"
+masses=("0.073037")
 mas_len=${#masses[@]}
 
-prefix="hisqtun"
+prefix="hisqtuncheck"
 
-xq_arr=("1050" "1250" "1450" "1650")
+xq_arr=("1980")
 sinks_arr=("PION_5")
-mom_arr=("p000")
-# mom_arr=("p100" "p110")
 
-source1="CORNER"
-# source1="CORNER/momentum"
+# mom_arr=("p000")
+mom_arr=("p100" "p110")
+
+# source1="CORNER"
+source1="CORNER/momentum"
+
 source2="CORNER"
 
 src_label="cw"

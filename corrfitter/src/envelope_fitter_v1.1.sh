@@ -2,14 +2,14 @@
 
 ens_name="16128b719156x348992a"
 
-src="eowfw"
-prefix="hisqnlpi"
+src="cw"
+prefix="hisqtuncheck"
 taste="PION_5"
 
 xq="4000"
-mass="0.01446"
+mass="0.072277"
 
-mom="p000"
+mom="p110"
 
 # fitdir="/home/trimis/spec_data/l${ens_name}" # CMSE
 # dir=${fitdir} # CMSE
@@ -22,7 +22,7 @@ tdatamax=64
 tstep=1
 tp=128
 n_states=2
-m_states=0
+m_states=1
 sn="1.0"
 so="-1.0"
 binsize=1
@@ -32,15 +32,15 @@ priors="no_priors"
 opp="yes"
 
 tmin_min=0
-tmin_max=55
+tmin_max=44
 tmin_step=1
 
-tmax_min=57
-tmax_max=57
+tmax_min=44
+tmax_max=44
 tmax_step=1
 
-tmin_one=15
-tmax_one=32
+tmin_one=14
+tmax_one=44
 
 specdata_file="${dir}/${prefix}${mom}${src}${ens_name}_xq${xq}_m${mass}m${mass}${taste}.specdata"
 
